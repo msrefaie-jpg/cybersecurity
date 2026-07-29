@@ -279,12 +279,12 @@
     <span class="shield">🛡️</span>
     <h1>الأمن السيبراني <span>ببساطة</span></h1>
     <p class="sub">دليل تفاعلي يشرح لك — بدون أي خلفية تقنية — كيف تفهم مخاطر العالم الرقمي وكيف تحمي نفسك وبياناتك، مع الصياغة الإنجليزية الأصلية لمن يستعد للاختبار.</p>
-    <span class="badge">مُستخلص من قسم الأمن السيبراني في مذكرة التحول الرقمي</span>
+    <span class="badge">مُستخلص من مذكرة التحول الرقمي ومُطابَق مع المادة التدريبية الرسمية (المجلس الأعلى للجامعات / EG-CERT)</span>
     <div class="stats">
       <div class="stat"><b>37</b><span>سؤالاً في المذكرة</span></div>
-      <div class="stat"><b>20</b><span>مصطلحاً أساسياً</span></div>
+      <div class="stat"><b>27</b><span>مصطلحاً أساسياً</span></div>
       <div class="stat"><b>8</b><span>تهديدات مشروحة</span></div>
-      <div class="stat"><b>3</b><span>أضلاع لمثلث الحماية</span></div>
+      <div class="stat"><b>6</b><span>فصول في المادة الرسمية</span></div>
     </div>
   </div>
 </header>
@@ -295,6 +295,7 @@
     <a href="#cia">مثلث الحماية</a>
     <a href="#threats">التهديدات</a>
     <a href="#hackers">أنواع المخترقين</a>
+    <a href="#official">من المادة الرسمية</a>
     <a href="#traps">مصيدة الكلمات</a>
     <a href="#protect">احمِ نفسك</a>
     <a href="#quiz">اختبر نفسك</a>
@@ -387,6 +388,9 @@
     <div class="analogy">
       💡 <strong>الخلاصة:</strong> أي نظام آمن يجب أن يحقق الثلاثة معاً: بيانات <strong>سرّية</strong> لا يراها الغرباء، <strong>سليمة</strong> لا يعبث بها أحد، و<strong>متوفرة</strong> لأصحابها وقت الحاجة. لو سقط ضلع واحد، سقطت الحماية كلها.
     </div>
+    <div class="analogy">
+      📌 <strong>ملاحظة امتحانية:</strong> المادة التدريبية الرسمية تكتب اسم النموذج أحياناً بترتيب <span class="en">CAI Triad Model</span> بدلاً من <span class="en">CIA</span> — لا ترتبك إن رأيت أياً من الترتيبين في الاختبار؛ فالمقصود واحد: السرّية والسلامة والتوافر.
+    </div>
   </div>
 </section>
 
@@ -415,8 +419,9 @@
     <div class="acc">
       <button class="acc-head" aria-expanded="false"><span class="th-icon">🪱</span> ديدان الكمبيوتر <span class="en">Worms</span> <span class="lvl high">خطر مرتفع</span><span class="chev">▼</span></button>
       <div class="acc-body"><div class="inner">
-        نوع من فيروسات البريد الإلكتروني يقوم بتكرار نفسه تلقائياً أو سرقة المعلومات أو الإضرار بنظام الكمبيوتر — والفرق عن الفيروس العادي أنها تنتشر وحدها دون أن تحتاج منك فتح أي ملف.
+        بحسب المادة الرسمية: برمجيات ضارة <strong>تختلف عن الفيروسات</strong> — فهي قائمة بذاتها ولا تحتاج «مضيفاً» تلتصق به، وتنتشر وحدها عبر الشبكات. كثيراً ما تصل عبر مرفقات البريد الإلكتروني، ثم ترسل نسخة من نفسها إلى كل جهة اتصال في قائمة بريد الجهاز المُصاب.
         <div class="tip"><b>كيف تحمي نفسك؟</b> فعّل جدار الحماية (Firewall) وحافظ على تحديث نظام التشغيل.</div>
+        <div class="tip" style="background:rgba(251,191,36,.08);border-right-color:var(--warn)"><b style="color:var(--warn)">تنبيه امتحاني:</b> المذكرة صاغتها «نوع من فيروسات البريد الإلكتروني يكرر نفسه» — صياغة مبسطة قد تظهر هكذا في الاختبار، لكن الأدق (وفق المادة الرسمية) أنها مختلفة عن الفيروسات.</div>
       </div></div>
     </div>
 
@@ -494,17 +499,71 @@
         <span class="hat">🩵</span>
         <span class="tag blue">القبعة الزرقاء <span class="en">Blue Hat</span></span>
         <h3>ليس مخترقاً!</h3>
-        <p>سؤال المذكرة: «أيٌّ مما يلي <em>لا</em> يُعد مخترقاً للأجهزة؟» والإجابة المعتمدة: <strong style="color:var(--accent)">مخترق القبعة الزرقاء</strong>.</p>
-        <span class="memo-note">🎯 للاختبار احفظ: Blue Hat ← ليس مخترقاً</span>
+        <p>المادة الرسمية تصنّف المخترقين إلى <strong>ثلاث فئات فقط</strong> (سوداء وبيضاء ورمادية) ولا تذكر «القبعة الزرقاء» إطلاقاً — ولهذا كانت الإجابة المعتمدة لسؤال «مَن لا يُعد مخترقاً؟» هي: <strong style="color:var(--accent)">القبعة الزرقاء</strong>.</p>
+        <span class="memo-note">🎯 للاختبار احفظ: Blue Hat ← ليس مخترقاً (غير مذكور في المنهج)</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===================== 5. Word traps ===================== -->
+<!-- ===================== 5. Official material extras ===================== -->
+<section id="official">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">05.</span> من المادة الرسمية — ما لا تغطيه المذكرة</h2>
+    <p class="sec-lead">
+      أسئلة المذكرة تركز على الفصل الأول من المادة الرسمية تقريباً، بينما تضم المادة 6 فصول كاملة.
+      هذه أهم الموضوعات الإضافية الواردة رسمياً — وقد تأتي منها أسئلة جديدة في الاختبار:
+    </p>
+
+    <div class="grid cols-2">
+      <div class="card">
+        <span class="icon">🧮</span>
+        <h3>معادلة المخاطر</h3>
+        <p>المادة الرسمية تفرّق بين ثلاثة مفاهيم: <strong style="color:var(--text)">الثغرة الأمنية</strong> <span class="en">Vulnerability</span> (نقطة ضعف في جهاز أو برنامج)، و<strong style="color:var(--text)">التهديد</strong> <span class="en">Threat</span> (من يحاول استغلالها)، وتلخصها في معادلة: <strong style="color:var(--accent)">التهديدات + الثغرة الأمنية = المخاطر</strong>.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🏛️</span>
+        <h3>الهيئات المصرية المعنية</h3>
+        <p><strong style="color:var(--text)">EG-CERT</strong>: المركز الوطني للاستعداد لطوارئ الحاسبات والشبكات (أُنشئ 2009 داخل الجهاز القومي لتنظيم الاتصالات) يتعامل مع الحوادث السيبرانية. و<strong style="color:var(--text)">ESCC</strong>: المجلس الأعلى المصري للأمن السيبراني (2014) يضع الخطة الاستراتيجية الوطنية.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🐴</span>
+        <h3>برمجيات ضارة إضافية</h3>
+        <p><strong style="color:var(--text)">أحصنة طروادة</strong>: تختبئ داخل برنامج يبدو مفيداً ولا تنسخ نفسها بل تفتح «باباً خلفياً». <strong style="color:var(--text)">برمجيات التجسس</strong>: تجمع معلوماتك وترسلها للمهاجم. <strong style="color:var(--text)">الجذور الخفية Rootkits</strong>: تتخفى من مكافح الفيروسات وتتيح التحكم بجهازك عن بُعد.</p>
+      </div>
+      <div class="card">
+        <span class="icon">💥</span>
+        <h3>هجمات إضافية</h3>
+        <p><strong style="color:var(--text)">يوم الصفر Zero-day</strong>: استغلال ثغرة جديدة لم يصدر لها تصحيح بعد. <strong style="color:var(--text)">التوأم الشرير Evil Twin</strong>: شبكة واي فاي وهمية تحمل اسم الشبكة الأصلية. إضافة إلى انتحال عنوان البريد، وتزوير رقم المتصل، وحقن أدوات الاستغلال.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🚦</span>
+        <h3>بروتوكول الإشارة الضوئية TLP</h3>
+        <p>نظام ألوان لمشاركة المعلومات الحساسة: <strong style="color:var(--bad)">أحمر</strong> (للمتلقّي فقط)، <strong style="color:var(--warn)">برتقالي</strong> (مشاركة محدودة داخل الجهة)، <strong style="color:var(--good)">أخضر</strong> (داخل نفس المجتمع دون نشر علني)، <strong style="color:var(--text)">أبيض</strong> (مشاركة غير محدودة).</p>
+      </div>
+      <div class="card">
+        <span class="icon">⚖️</span>
+        <h3>التشريعات المصرية</h3>
+        <p>قانون مكافحة جرائم تقنية المعلومات <strong style="color:var(--text)">175 لسنة 2018</strong>، وقانون حماية البيانات الشخصية <strong style="color:var(--text)">151 لسنة 2020</strong>، وقانون الطفل (12/1996 المعدل بـ126/2008)، والمادة 57 من الدستور (حرمة الحياة الخاصة).</p>
+      </div>
+      <div class="card">
+        <span class="icon">📵</span>
+        <h3>التنمر الإلكتروني وحماية الأطفال</h3>
+        <p>فصل كامل عن أنواع التنمر (النبذ، الاصطياد Catfishing، المطاردة، التشهير Doxing، انتحال الشخصية...) وعلامات تعرّض الطفل له، مع <strong style="color:var(--accent)">الخط الساخن 16000</strong> للإبلاغ عن مخاطر الأطفال على الإنترنت.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🛍️</span>
+        <h3>المواقع الاحتيالية وعلاماتها</h3>
+        <p>أنواعها: مواقع الويب المخادعة، التسوق الاحتيالي برابط مزيف <span class="en">Spoofed URL</span>، مسابقات اليانصيب، ومواقع التخويف <span class="en">Scareware</span>. وعلاماتها: عبارات عاطفية مثيرة، رداءة التصميم، وأخطاء إملائية ونحوية.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 6. Word traps ===================== -->
 <section id="traps">
   <div class="container">
-    <h2 class="sec-title"><span class="num">05.</span> مصيدة الكلمات المُطلَقة</h2>
+    <h2 class="sec-title"><span class="num">06.</span> مصيدة الكلمات المُطلَقة</h2>
     <p class="sec-lead">
       نمط متكرر في أسئلة صح/خطأ بالمذكرة: كلمة مُطلَقة واحدة مثل <span class="en">always</span> («دائماً») تقلب العبارة من صحيحة إلى خاطئة، أو كلمة مستبدلة خلسة.
       اضغط أي عبارة لكشف الحكم والسبب — الكلمة المصيدة <span class="mark">مظللة بالأحمر</span>.
@@ -516,7 +575,7 @@
 <!-- ===================== 6. Protect ===================== -->
 <section id="protect">
   <div class="container">
-    <h2 class="sec-title"><span class="num">06.</span> احمِ نفسك — قائمة عملية</h2>
+    <h2 class="sec-title"><span class="num">07.</span> احمِ نفسك — قائمة عملية</h2>
     <p class="sec-lead">هذه أهم العادات الوقائية المذكورة في المذكرة. اضغط على كل عادة تطبّقها فعلاً وشاهد درجة حمايتك — تقدمك يُحفظ في متصفحك تلقائياً:</p>
 
     <div class="progress-wrap">
@@ -540,7 +599,7 @@
 <!-- ===================== 7. Quiz ===================== -->
 <section id="quiz">
   <div class="container">
-    <h2 class="sec-title"><span class="num">07.</span> اختبر نفسك 🎯</h2>
+    <h2 class="sec-title"><span class="num">08.</span> اختبر نفسك 🎯</h2>
     <p class="sec-lead">١٠ أسئلة من المذكرة بصياغتها الإنجليزية الأصلية (كما ستراها في الاختبار) مع ترجمة عربية وشرح لكل إجابة.</p>
 
     <div class="quiz-box" id="quiz-box"></div>
@@ -550,7 +609,7 @@
 <!-- ===================== 8. Glossary ===================== -->
 <section id="glossary">
   <div class="container">
-    <h2 class="sec-title"><span class="num">08.</span> قاموس المصطلحات</h2>
+    <h2 class="sec-title"><span class="num">09.</span> قاموس المصطلحات</h2>
     <p class="sec-lead">اضغط على أي بطاقة لقلبها: التعريف بالعربية ثم بصياغته الإنجليزية كما ورد في المذكرة. استخدم الفلاتر للتصفية.</p>
 
     <div class="filters" id="filters"></div>
@@ -560,7 +619,7 @@
 
 <footer>
   <div class="container">
-    <p>📚 هذا الدليل مُستخلص ومبسَّط من قسم <span class="en">Cyber Security Exam Sample 2026</span> في مذكرة «تحرير سيناء» لأسئلة مقرر التحول الرقمي — د. أحمد عمارة (إصدار يونيو 2026).</p>
+    <p>📚 هذا الدليل مُستخلص ومبسَّط من قسم <span class="en">Cyber Security Exam Sample 2026</span> في مذكرة «تحرير سيناء» لأسئلة مقرر التحول الرقمي — د. أحمد عمارة (إصدار يونيو 2026)، وتمت مراجعة محتواه ومطابقته مع المادة التدريبية الرسمية «الأمن السيبراني 2026» الصادرة عن الوحدة المركزية للتدريب على تكنولوجيا المعلومات بالمجلس الأعلى للجامعات بالتعاون مع EG-CERT.</p>
     <p class="disclaimer">⚠️ تنبيه من المذكرة نفسها: الأسئلة تقريبية وغير شاملة والإجابات اجتهاد شخصي يحتمل الصواب والخطأ، ولا غنى عن قراءة المادة التدريبية الأصلية الصادرة عن المجلس الأعلى للجامعات.</p>
     <p style="margin-top:10px">صُمم ليكون مفهوماً لغير المتخصصين — شاركه مع من يحتاجه 🛡️</p>
   </div>
@@ -716,10 +775,10 @@ const QUIZ=[
    a:0,exp:'<span class="en">Using more than one method to verify identity</span> — كلمة مرور + رمز للهاتف مثلاً.'},
   {en:'Which of the following is an example of authentication?',ar:'أيٌّ مما يلي يُعتبر مثالاً للمصادقة؟',
    opts:['Username','Firewall','Backup','Antivirus'],
-   a:0,exp:'المثال المعتمد في المذكرة: اسم المستخدم <span class="en">Username</span>.'},
+   a:0,exp:'المثال المعتمد في المذكرة: اسم المستخدم <span class="en">Username</span>. ⚠️ ملاحظة: هذا المثال غير وارد في المادة الرسمية، وعلمياً اسم المستخدم «تعريف» بينما تتم المصادقة بكلمة المرور — لكنه يبقى الإجابة المعتمدة امتحانياً.'},
   {en:'Which of the following is not a hacker?',ar:'أيٌّ مما يلي لا يُعد مخترقاً للأجهزة؟',
    opts:['Black hat hacker','White hat hacker','Blue hat hacker','Grey hat hacker'],
-   a:2,exp:'الإجابة المعتمدة في المذكرة: القبعة الزرقاء <span class="en">Blue hat hacker</span>.'}
+   a:2,exp:'القبعة الزرقاء <span class="en">Blue hat</span> — فالمادة الرسمية تصنّف المخترقين إلى ثلاث فئات فقط: سوداء وبيضاء ورمادية، ولا تذكر الزرقاء.'}
 ];
 let qi=0,score=0,answered=false;
 const quizBox=document.getElementById('quiz-box');
@@ -801,8 +860,8 @@ const TERMS=[
   d:'جزء من التعليمات البرمجية قادر على نسخ نفسه، وله تأثير ضار كإتلاف النظام أو تدمير البيانات.',
   e:'A piece of code that can copy itself and harm a device, such as damaging the system or destroying data.'},
  {c:'mal',ar:'ديدان الكمبيوتر',en:'Worms',
-  d:'نوع من فيروسات البريد الإلكتروني تكرر نفسها أو تسرق المعلومات أو تضر بنظام الكمبيوتر.',
-  e:'A type of email virus that replicates itself, steals information, or damages a computer system.'},
+  d:'برمجيات ضارة قائمة بذاتها تختلف عن الفيروسات (لا تحتاج مضيفاً)، تنتشر عبر الشبكات وكثيراً ما تصل بمرفقات البريد وترسل نسخة لكل جهات اتصالك. (صيغة المذكرة: «نوع من فيروسات البريد الإلكتروني»)',
+  e:'Standalone malware that, unlike viruses, needs no host; often spreads via email attachments, sending copies to every contact.'},
  {c:'mal',ar:'برمجيات الفدية',en:'Ransomware',
   d:'برمجيات ضارة مصممة لمنع الوصول إلى نظام الكمبيوتر حتى يتم دفع مبلغ مالي معين.',
   e:'Malicious software designed to block access to a computer system until a certain amount of money is paid.'},
@@ -838,7 +897,28 @@ const TERMS=[
   e:'Installing reliable antivirus software helps prevent malware and viruses.'},
  {c:'def',ar:'تقليل سطح الهجوم',en:'Attack Surface',
   d:'الحد من نقل المعلومات الشخصية يقلّص سطح هجوم الهندسة الاجتماعية.',
-  e:'Minimizing the transmission of personal information reduces the social engineering attack surface.'}
+  e:'Minimizing the transmission of personal information reduces the social engineering attack surface.'},
+ {c:'basic',ar:'الثغرة الأمنية',en:'Vulnerability',
+  d:'أوجه الضعف الموجودة في أجهزة أو برامج أو خدمة معينة، ويمكن استغلالها عبر شبكة الإنترنت. (التهديدات + الثغرة الأمنية = المخاطر)',
+  e:'Weaknesses in devices, software, or services that can be exploited over the internet.'},
+ {c:'mal',ar:'أحصنة طروادة',en:'Trojans',
+  d:'برنامج ضار يختبئ داخل برنامج يبدو مفيداً؛ لا ينسخ نفسه (بعكس الفيروس)، ويُستخدم عادة لفتح «باب خلفي» يستغله المهاجمون.',
+  e:'Malware hiding inside a seemingly useful program; unlike viruses it does not replicate, and usually opens a backdoor.'},
+ {c:'mal',ar:'برمجيات التجسس',en:'Spyware',
+  d:'تُثبَّت لجمع معلومات عن المستخدم وعاداته في التصفح، وتُرسل للمهاجم الذي قد يستغلها في الابتزاز أو تنزيل برامج ضارة أخرى.',
+  e:'Installed to collect information about users and browsing habits, sent to a remote attacker.'},
+ {c:'mal',ar:'الجذور الخفية',en:'Rootkits',
+  d:'برمجيات متطورة صُممت لتتخفى من المستخدم وبرامج مكافحة الفيروسات، وتفتح باباً خلفياً يسمح للمهاجم بالتحكم في الجهاز عن بُعد.',
+  e:'Advanced malware designed to hide from users and antivirus, opening a backdoor for remote control.'},
+ {c:'att',ar:'هجوم يوم الصفر',en:'Zero-day Attack',
+  d:'يستغل المهاجم ثغرة أمنية جديدة في إحدى الشبكات لم يصدر بعد تصحيح لمعالجتها.',
+  e:'Exploits a new security vulnerability for which no fix has been released yet.'},
+ {c:'att',ar:'التوأم الشرير',en:'Evil Twin Attack',
+  d:'ينشئ المهاجم نقطة اتصال واي فاي وهمية تحمل نفس اسم الشبكة الأصلية وبإشارة أقوى، فيتصل بها الضحايا دون قصد.',
+  e:'A fake Wi-Fi access point with the same name as the original network, but a stronger signal.'},
+ {c:'def',ar:'بروتوكول الإشارة الضوئية',en:'TLP',
+  d:'نظام ألوان لمشاركة المعلومات الحساسة بأمان: أحمر (للمتلقي فقط)، برتقالي (مشاركة محدودة)، أخضر (داخل نفس المجتمع)، أبيض (غير محدودة).',
+  e:'Traffic Light Protocol: red (recipient only), amber (limited), green (community), white (unlimited sharing).'}
 ];
 const grid=document.getElementById('flip-grid');
 const filtersEl=document.getElementById('filters');
