@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الأمن السيبراني ببساطة — دليل تفاعلي لغير المتخصصين</title>
+<meta name="description" content="دليل تفاعلي مبسّط يشرح مفاهيم الأمن السيبراني لغير المتخصصين: التهديدات، مثلث حماية المعلومات، مصائد أسئلة الامتحان، وكيف تحمي نفسك على الإنترنت.">
+<meta name="theme-color" content="#0f172a">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="الأمن السيبراني">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/app.css">
+</head>
+<body>
+
+<header class="hero">
+  <div class="container">
+    <span class="shield">🛡️</span>
+    <h1>الأمن السيبراني <span>ببساطة</span></h1>
+    <p class="sub">دليل تفاعلي يشرح لك — بدون أي خلفية تقنية — كيف تفهم مخاطر العالم الرقمي وكيف تحمي نفسك وبياناتك، مع الصياغة الإنجليزية الأصلية لمن يستعد للاختبار.</p>
+    <span class="badge">مُستخلص من مذكرة التحول الرقمي ومُطابَق مع المادة التدريبية الرسمية (المجلس الأعلى للجامعات / EG-CERT)</span>
+    <div class="stats">
+      <div class="stat"><b>37</b><span>سؤالاً في المذكرة</span></div>
+      <div class="stat"><b>27</b><span>مصطلحاً أساسياً</span></div>
+      <div class="stat"><b>8</b><span>تهديدات مشروحة</span></div>
+      <div class="stat"><b>6</b><span>فصول في المادة الرسمية</span></div>
+      <div class="stat"><b>22</b><span>سؤالاً متوقعاً جديداً</span></div>
+    </div>
+  </div>
+</header>
+
+<nav class="tabs" aria-label="أقسام الدليل">
+  <div class="inner">
+    <a class="home-link" href="./">🏠 الرئيسية</a>
+    <a href="#basics" class="active">المفاهيم الأساسية</a>
+    <a href="#cia">مثلث الحماية</a>
+    <a href="#threats">التهديدات</a>
+    <a href="#hackers">أنواع المخترقين</a>
+    <a href="#protect">احمِ نفسك</a>
+    <a href="#glossary">القاموس</a>
+    <a href="#official">من المنهج الرسمي</a>
+    <a href="#traps">مصيدة الكلمات</a>
+    <a href="#quiz">أسئلة المذكرة</a>
+    <a href="#predicted">أسئلة متوقعة</a>
+  </div>
+</nav>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="part-banner memo-src">
+  <div class="container">
+    <span class="part-tag">الجزء الأول · الشروحات التفاعلية</span>
+    <h2>شروحات المذكرة</h2>
+    <p>شرح مبسّط بتشبيهات من الحياة اليومية لكل ما ورد في قسم الأمن السيبراني بالمذكرة.</p>
+  </div>
+</div>
+
+<!-- ===================== 1. Basics ===================== -->
+<section id="basics">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">01.</span> ما هو الأمن السيبراني؟</h2>
+    <p class="sec-lead">
+      الأمن السيبراني <span class="en">Cybersecurity</span> هو <strong style="color:var(--text)">حالة الحماية والتأمين ضد الاستخدام الإجرامي أو غير المصرّح به لبياناتك الإلكترونية</strong>.
+      بمعنى آخر: كل ما تفعله لكي لا يصل الغرباء إلى صورك، رسائلك، حساباتك البنكية، وملفاتك.
+    </p>
+
+    <div class="analogy">
+      🏠 <strong>تشبيه من الحياة اليومية:</strong>
+      فكّر في بياناتك كأنها منزلك. الأمن السيبراني هو الأقفال على الأبواب، وستائر النوافذ، وجرس الإنذار، وعادتك ألا تعطي مفتاح البيت لأي شخص غريب يطرق الباب. لا يوجد قفل واحد يكفي — بل مجموعة عادات وأدوات تعمل معاً.
+    </div>
+
+    <div class="grid cols-2">
+      <div class="card">
+        <span class="icon">⚔️</span>
+        <h3>ما هو الهجوم السيبراني؟ <span class="en">Cyberattack</span></h3>
+        <p>محاولة إتلاف أو تدمير شبكة أو نظام كمبيوتر يقوم بها المهاجمون. مثل محاولة لص كسر باب منزلك — لكن عبر الإنترنت.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🔑</span>
+        <h3>ما هي كلمة المرور؟ <span class="en">Password</span></h3>
+        <p>كلمة أو عبارة سرّية تستخدمها للوصول إلى حساباتك. هي «مفتاح منزلك الرقمي» — ولهذا يجب ألا تكون سهلة التخمين ولا مستخدمة في أكثر من مكان.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🔐</span>
+        <h3>ما هو التشفير؟ <span class="en">Encryption</span></h3>
+        <p>تحويل المعلومات إلى رموز غير مفهومة لمنع الوصول غير المصرّح به. كأنك تكتب رسالة بلغة سرية لا يفهمها إلا من يملك «مفتاح فك الشفرة».</p>
+      </div>
+      <div class="card">
+        <span class="icon">💾</span>
+        <h3>ما هي النسخة الاحتياطية؟ <span class="en">Backup</span></h3>
+        <p>نسخ ملفاتك الأصلية وحفظها في مكان آخر (قرص خارجي أو سحابة). إذا ضاع جهازك أو أصيب بفيروس، تبقى ملفاتك بأمان.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🪪</span>
+        <h3>ما هي المصادقة؟ <span class="en">Authentication</span></h3>
+        <p>إثبات أنك أنت فعلاً صاحب الحساب — والمثال المعتمد في المذكرة هو <strong style="color:var(--accent)">اسم المستخدم</strong> <span class="en">Username</span>. كإبراز بطاقتك الشخصية قبل الدخول إلى مبنى.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🧑</span>
+        <h3>أكبر تهديد للأمن السيبراني؟</h3>
+        <p>مفاجأة: ليس التقنية، بل <strong style="color:var(--warn)">العامل البشري</strong> <span class="en">The human factor</span>! أغلب الاختراقات تنجح لأن شخصاً ضغط على رابط مشبوه أو أعطى معلوماته لمن لا يستحق الثقة.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ===================== 2. CIA Triad ===================== -->
+<section id="cia">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">02.</span> مثلث حماية المعلومات <span class="en">CIA Triad</span></h2>
+    <p class="sec-lead">
+      الإطار الإرشادي الذي تتبعه المؤسسات لحماية المعلومات — وتسعة أسئلة من أصل 37 في المذكرة تدور حوله وحده، فهو أهم جزء في القسم.
+      <strong style="color:var(--text)">اضغط على أي رأس من رؤوس المثلث:</strong>
+    </p>
+
+    <div class="triad">
+      <svg class="triad-svg" viewBox="0 0 320 290" role="img" aria-label="مثلث حماية المعلومات: السرية والسلامة والتوافر">
+        <polygon class="tri-side" points="160,34 288,250 32,250"></polygon>
+        <text class="tri-core" x="160" y="180">أمن</text>
+        <text class="tri-core" x="160" y="198">المعلومات</text>
+        <g class="tri-node" data-cia="c" tabindex="0" role="button" aria-label="السرية Confidentiality">
+          <circle cx="160" cy="34" r="32"></circle>
+          <text class="sym" x="160" y="30">C</text>
+          <text x="160" y="48">السرّية</text>
+        </g>
+        <g class="tri-node" data-cia="i" tabindex="0" role="button" aria-label="السلامة Integrity">
+          <circle cx="288" cy="250" r="32"></circle>
+          <text class="sym" x="288" y="246">I</text>
+          <text x="288" y="264">السلامة</text>
+        </g>
+        <g class="tri-node" data-cia="a" tabindex="0" role="button" aria-label="التوافر Availability">
+          <circle cx="32" cy="250" r="32"></circle>
+          <text class="sym" x="32" y="246">A</text>
+          <text x="32" y="264">التوافر</text>
+        </g>
+      </svg>
+      <div class="cia-detail" id="cia-panel" aria-live="polite"></div>
+    </div>
+
+    <div class="analogy">
+      💡 <strong>الخلاصة:</strong> أي نظام آمن يجب أن يحقق الثلاثة معاً: بيانات <strong>سرّية</strong> لا يراها الغرباء، <strong>سليمة</strong> لا يعبث بها أحد، و<strong>متوفرة</strong> لأصحابها وقت الحاجة. لو سقط ضلع واحد، سقطت الحماية كلها.
+    </div>
+    <div class="analogy">
+      📌 <strong>ملاحظة امتحانية:</strong> المادة التدريبية الرسمية تكتب اسم النموذج أحياناً بترتيب <span class="en">CAI Triad Model</span> بدلاً من <span class="en">CIA</span> — لا ترتبك إن رأيت أياً من الترتيبين في الاختبار؛ فالمقصود واحد: السرّية والسلامة والتوافر.
+    </div>
+  </div>
+</section>
+<!-- ===================== 3. Threats ===================== -->
+<section id="threats">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">03.</span> أشهر التهديدات — اعرف عدوك</h2>
+    <p class="sec-lead">اضغط على أي تهديد لتعرف ما هو، وكيف يعمل، والأهم: كيف تتجنبه.</p>
+
+    <div class="acc">
+      <button class="acc-head" aria-expanded="false"><span class="th-icon">🦠</span> البرمجيات الخبيثة <span class="en">Malware</span> <span class="lvl high">خطر مرتفع</span><span class="chev">▼</span></button>
+      <div class="acc-body"><div class="inner">
+        برامج مصمّمة خصيصاً لتعطيل نظام الكمبيوتر أو إتلافه أو الوصول إليه بشكل غير مصرّح به. وهي المظلة الكبيرة التي تندرج تحتها الفيروسات والديدان وبرمجيات الفدية.
+        <div class="tip"><b>كيف تحمي نفسك؟</b> ثبّت برنامجاً موثوقاً لمكافحة الفيروسات، ولا تحمّل برامج من مصادر مجهولة.</div>
+      </div></div>
+    </div>
+
+    <div class="acc">
+      <button class="acc-head" aria-expanded="false"><span class="th-icon">🧬</span> فيروس الكمبيوتر <span class="en">Virus</span> <span class="lvl high">خطر مرتفع</span><span class="chev">▼</span></button>
+      <div class="acc-body"><div class="inner">
+        جزء من التعليمات البرمجية قادر على نسخ نفسه، وله تأثير ضار على الجهاز: مثل إتلاف النظام أو تدمير البيانات. تماماً كالفيروس الحقيقي — ينتشر من ملف لملف ومن جهاز لجهاز.
+        <div class="tip"><b>كيف تحمي نفسك؟</b> لا تفتح مرفقات بريد من مرسلين لا تعرفهم، وحدّث نظامك وبرامجك باستمرار.</div>
+      </div></div>
+    </div>
+
+    <div class="acc">
+      <button class="acc-head" aria-expanded="false"><span class="th-icon">🪱</span> ديدان الكمبيوتر <span class="en">Worms</span> <span class="lvl high">خطر مرتفع</span><span class="chev">▼</span></button>
+      <div class="acc-body"><div class="inner">
+        بحسب المادة الرسمية: برمجيات ضارة <strong>تختلف عن الفيروسات</strong> — فهي قائمة بذاتها ولا تحتاج «مضيفاً» تلتصق به، وتنتشر وحدها عبر الشبكات. كثيراً ما تصل عبر مرفقات البريد الإلكتروني، ثم ترسل نسخة من نفسها إلى كل جهة اتصال في قائمة بريد الجهاز المُصاب.
+        <div class="tip"><b>كيف تحمي نفسك؟</b> فعّل جدار الحماية (Firewall) وحافظ على تحديث نظام التشغيل.</div>
+        <div class="tip" style="background:rgba(251,191,36,.08);border-right-color:var(--warn)"><b style="color:var(--warn)">تنبيه امتحاني:</b> المذكرة صاغتها «نوع من فيروسات البريد الإلكتروني يكرر نفسه» — صياغة مبسطة قد تظهر هكذا في الاختبار، لكن الأدق (وفق المادة الرسمية) أنها مختلفة عن الفيروسات.</div>
+      </div></div>
+    </div>
+
+    <div class="acc">
+      <button class="acc-head" aria-expanded="false"><span class="th-icon">💰</span> برمجيات الفدية <span class="en">Ransomware</span> <span class="lvl high">خطر مرتفع</span><span class="chev">▼</span></button>
+      <div class="acc-body"><div class="inner">
+        برمجيات خبيثة مصمّمة لمنعك من الوصول إلى جهازك وملفاتك حتى تدفع مبلغاً مالياً «فدية». كخاطف يحتجز ملفاتك رهينة ويطلب المال مقابل إعادتها — والدفع لا يضمن استعادتها!
+        <div class="tip"><b>كيف تحمي نفسك؟</b> النسخ الاحتياطي المنتظم هو سلاحك الأقوى: إذا كانت ملفاتك محفوظة في مكان آخر، يفقد الابتزاز قيمته.</div>
+      </div></div>
+    </div>
+
+    <div class="acc">
+      <button class="acc-head" aria-expanded="false"><span class="th-icon">🎣</span> التصيّد الاحتيالي <span class="en">Phishing</span> <span class="lvl high">خطر مرتفع</span><span class="chev">▼</span></button>
+      <div class="acc-body"><div class="inner">
+        رسائل ومواقع <strong>مزيّفة</strong> تنتحل شكل جهات موثوقة (بنك، شركة شحن، جهة حكومية) لخداعك حتى تُدخل بنفسك بيانات الدخول الخاصة بك في موقع وهمي. سُمّي «تصيّداً» لأن المهاجم يرمي الطُعم وينتظر من يعلق.
+        <div class="tip"><b>كيف تحمي نفسك؟</b> لا تضغط روابط في رسائل غير متوقعة، وتحقق من عنوان الموقع حرفاً حرفاً قبل إدخال أي بيانات.</div>
+      </div></div>
+    </div>
+
+    <div class="acc">
+      <button class="acc-head" aria-expanded="false"><span class="th-icon">🎭</span> الهندسة الاجتماعية <span class="en">Social Engineering</span> <span class="lvl high">خطر مرتفع</span><span class="chev">▼</span></button>
+      <div class="acc-body"><div class="inner">
+        التلاعب بالأشخاص عبر الإنترنت بهدف كشف معلومات سرّية. هذا الهجوم <strong>يستهدف الإنسان لا الأجهزة</strong> — نصّاب يتقمص دور موظف البنك أو صديق في ورطة ليكسب ثقتك ثم يسرقك.
+        <div class="tip"><b>كيف تحمي نفسك؟</b> قلّل مشاركة معلوماتك الشخصية علناً (فهذا يقلّص «سطح الهجوم» <span class="en">Attack surface</span>)، وتذكّر: لا جهة رسمية تطلب كلمة مرورك أبداً.</div>
+      </div></div>
+    </div>
+
+    <div class="acc">
+      <button class="acc-head" aria-expanded="false"><span class="th-icon">🔓</span> هجمات كلمات المرور <span class="en">Password Attacks</span> <span class="lvl med">خطر متوسط</span><span class="chev">▼</span></button>
+      <div class="acc-body"><div class="inner">
+        هجمات يحاول فيها المهاجمون تحديد أو تخمين كلمات المرور الخاصة بحساباتك المحمية ومنصات التواصل الاجتماعي — بتجربة ملايين الاحتمالات آلياً، أو باستخدام كلمات مرور مسرّبة من مواقع أخرى.
+        <div class="tip"><b>كيف تحمي نفسك؟</b> كلمة مرور طويلة وفريدة لكل حساب + مدير كلمات مرور + مصادقة متعددة العوامل.</div>
+      </div></div>
+    </div>
+
+    <div class="acc">
+      <button class="acc-head" aria-expanded="false"><span class="th-icon">🚧</span> هجوم حجب الخدمة <span class="en">DoS</span> <span class="lvl med">خطر متوسط</span><span class="chev">▼</span></button>
+      <div class="acc-body"><div class="inner">
+        هجوم يهدف إلى إغراق الأنظمة أو الشبكات بحركة مرور كثيفة لجعلها غير متاحة. تخيّل ألف شخص يتصلون بمطعم في نفس اللحظة بطلبات وهمية — لن يستطيع الزبائن الحقيقيون الطلب. هذا الهجوم يضرب ضلع «التوافر» في مثلث الحماية تحديداً.
+        <div class="tip"><b>لمن يهمه؟</b> هذا هجوم يستهدف المواقع والمؤسسات غالباً، وتتصدى له فرق تقنية متخصصة — لكن فهمه يفسّر لماذا «يقع» موقع مشهور أحياناً.</div>
+      </div></div>
+    </div>
+  </div>
+</section>
+<!-- ===================== 4. Hackers ===================== -->
+<section id="hackers">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">04.</span> من هم المخترقون؟ وهل كلهم أشرار؟</h2>
+    <p class="sec-lead">
+      المخترق <span class="en">Hacker</span> هو شخص يستخدم الكمبيوتر للدخول غير المصرّح به إلى أجهزة الآخرين وسرقة معلوماتهم الشخصية.
+      لكن ليس كل من يملك مهارات الاختراق مجرماً — يصنَّفون بحسب «لون القبعة»:
+    </p>
+
+    <div class="grid cols-2">
+      <div class="card hat-card">
+        <span class="hat">🤍</span>
+        <span class="tag white">القبعة البيضاء <span class="en">White Hat</span></span>
+        <h3>المخترق الأخلاقي</h3>
+        <p>يستخدم مهاراته لإجراء «اختبارات اختراق» ويكشف الثغرات الأمنية ويبلّغ عنها مالك المؤسسة مقابل المال — كخبير أقفال تستأجره ليفحص أبواب منزلك.</p>
+      </div>
+      <div class="card hat-card">
+        <span class="hat">🖤</span>
+        <span class="tag black">القبعة السوداء <span class="en">Black Hat</span></span>
+        <h3>المجرم السيبراني</h3>
+        <p>يخترق الأنظمة لأهداف إجرامية: سرقة البيانات، الابتزاز، التخريب. هذا هو «اللص» الذي تحمي نفسك منه، وهو المقصود بتعريف «مخترق الكمبيوتر» في المذكرة.</p>
+      </div>
+      <div class="card hat-card">
+        <span class="hat">🩶</span>
+        <span class="tag grey">القبعة الرمادية <span class="en">Grey Hat</span></span>
+        <h3>بين الاثنين</h3>
+        <p>يخترق الأنظمة دون إذن (وهذا خطأ) لكنه غالباً لا يهدف للإضرار — وقد يبلغ عن الثغرة بعد اكتشافها.</p>
+      </div>
+      <div class="card hat-card answer">
+        <span class="hat">🩵</span>
+        <span class="tag blue">القبعة الزرقاء <span class="en">Blue Hat</span></span>
+        <h3>ليس مخترقاً!</h3>
+        <p>المادة الرسمية تصنّف المخترقين إلى <strong>ثلاث فئات فقط</strong> (سوداء وبيضاء ورمادية) ولا تذكر «القبعة الزرقاء» إطلاقاً — ولهذا كانت الإجابة المعتمدة لسؤال «مَن لا يُعد مخترقاً؟» هي: <strong style="color:var(--accent)">القبعة الزرقاء</strong>.</p>
+        <span class="memo-note">🎯 للاختبار احفظ: Blue Hat ← ليس مخترقاً (غير مذكور في المنهج)</span>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ===================== 6. Protect ===================== -->
+<section id="protect">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">05.</span> احمِ نفسك — قائمة عملية</h2>
+    <p class="sec-lead">هذه أهم العادات الوقائية المذكورة في المذكرة. اضغط على كل عادة تطبّقها فعلاً وشاهد درجة حمايتك — تقدمك يُحفظ في متصفحك تلقائياً:</p>
+
+    <div class="progress-wrap">
+      <div class="progress-bar"><div class="progress-fill" id="prog-fill"></div></div>
+      <div class="progress-label" id="prog-label" aria-live="polite">درجة حمايتك: 0 من 8</div>
+    </div>
+
+    <div class="check-list" id="check-list">
+      <button class="check-item" aria-pressed="false"><span class="box">✓</span><span><h4>🔑 كلمات مرور طويلة وفريدة</h4><p>أنشئ كلمة مرور طويلة ومختلفة لكل حساب، واستخدم «مدير كلمات مرور» ليحفظها عنك — فهذه من أهم طرق حماية بياناتك.</p></span></button>
+      <button class="check-item" aria-pressed="false"><span class="box">✓</span><span><h4>📲 المصادقة متعددة العوامل (MFA)</h4><p>استخدام أكثر من طريقة للتحقق من هويتك: كلمة المرور + رمز يصل لهاتفك. حتى لو سُرقت كلمة مرورك، يبقى حسابك مقفلاً.</p></span></button>
+      <button class="check-item" aria-pressed="false"><span class="box">✓</span><span><h4>🔒 تصفّح مواقع HTTPS فقط</h4><p>تجنّب زيارة المواقع التي لا يحتوي عنوانها على HTTPS — فالقفل في شريط العنوان يعني أن اتصالك بالموقع مشفّر.</p></span></button>
+      <button class="check-item" aria-pressed="false"><span class="box">✓</span><span><h4>🛡️ برنامج مكافحة فيروسات موثوق</h4><p>تثبيت برنامج موثوق لمكافحة الفيروسات يساعد على منع البرامج الضارة والفيروسات قبل أن تصل لجهازك.</p></span></button>
+      <button class="check-item" aria-pressed="false"><span class="box">✓</span><span><h4>💾 نسخ احتياطي منتظم</h4><p>انسخ ملفاتك المهمة إلى قرص خارجي أو خدمة سحابية. هي شبكة الأمان ضد الفدية والأعطال والفقدان.</p></span></button>
+      <button class="check-item" aria-pressed="false"><span class="box">✓</span><span><h4>📶 الحذر من الواي فاي العام</h4><p>شبكات الواي فاي العامة (مقاهي، مطارات) ليست آمنة — تجنّب الدخول لحساباتك البنكية أو إدخال بيانات حساسة عبرها.</p></span></button>
+      <button class="check-item" aria-pressed="false"><span class="box">✓</span><span><h4>🤐 قلّل مشاركة معلوماتك الشخصية</h4><p>الحد من نقل ونشر معلوماتك الشخصية يقلّص «سطح هجوم» الهندسة الاجتماعية — كلما قلّ ما يعرفه النصّاب عنك، صعُب خداعك.</p></span></button>
+      <button class="check-item" aria-pressed="false"><span class="box">✓</span><span><h4>🧐 لا تثق بالمظاهر</h4><p>عدد التحميلات الكبير لا يضمن أبداً أن التطبيق آمن، والرسالة «الرسمية الشكل» قد تكون تصيّداً. تحقّق دائماً قبل أن تثق.</p></span></button>
+    </div>
+  </div>
+</section>
+<!-- ===================== 8. Glossary ===================== -->
+<section id="glossary">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">06.</span> قاموس المصطلحات</h2>
+    <p class="sec-lead">اضغط على أي بطاقة لقلبها: التعريف بالعربية ثم بصياغته الإنجليزية كما ورد في المذكرة. استخدم الفلاتر للتصفية.</p>
+
+    <div class="filters" id="filters"></div>
+    <div class="flip-grid" id="flip-grid"></div>
+  </div>
+</section>
+<div class="part-banner official-src">
+  <div class="container">
+    <span class="part-tag">شروحات إضافية</span>
+    <h2>من المنهج الرسمي</h2>
+    <p>موضوعات لا تغطيها المذكرة — مضافة من المادة التدريبية الرسمية (المجلس الأعلى للجامعات / EG-CERT).</p>
+  </div>
+</div>
+
+<!-- ===================== 5. Official material extras ===================== -->
+<section id="official">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">07.</span> من المادة الرسمية — ما لا تغطيه المذكرة</h2>
+    <p class="sec-lead">
+      أسئلة المذكرة تركز على الفصل الأول من المادة الرسمية تقريباً، بينما تضم المادة 6 فصول كاملة.
+      هذه أهم الموضوعات الإضافية الواردة رسمياً — وقد تأتي منها أسئلة جديدة في الاختبار:
+    </p>
+
+    <div class="grid cols-2">
+      <div class="card">
+        <span class="icon">🧮</span>
+        <h3>معادلة المخاطر</h3>
+        <p>المادة الرسمية تفرّق بين ثلاثة مفاهيم: <strong style="color:var(--text)">الثغرة الأمنية</strong> <span class="en">Vulnerability</span> (نقطة ضعف في جهاز أو برنامج)، و<strong style="color:var(--text)">التهديد</strong> <span class="en">Threat</span> (من يحاول استغلالها)، وتلخصها في معادلة: <strong style="color:var(--accent)">التهديدات + الثغرة الأمنية = المخاطر</strong>.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🏛️</span>
+        <h3>الهيئات المصرية المعنية</h3>
+        <p><strong style="color:var(--text)">EG-CERT</strong>: المركز الوطني للاستعداد لطوارئ الحاسبات والشبكات (أُنشئ 2009 داخل الجهاز القومي لتنظيم الاتصالات) يتعامل مع الحوادث السيبرانية. و<strong style="color:var(--text)">ESCC</strong>: المجلس الأعلى المصري للأمن السيبراني (2014) يضع الخطة الاستراتيجية الوطنية.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🐴</span>
+        <h3>برمجيات ضارة إضافية</h3>
+        <p><strong style="color:var(--text)">أحصنة طروادة</strong>: تختبئ داخل برنامج يبدو مفيداً ولا تنسخ نفسها بل تفتح «باباً خلفياً». <strong style="color:var(--text)">برمجيات التجسس</strong>: تجمع معلوماتك وترسلها للمهاجم. <strong style="color:var(--text)">الجذور الخفية Rootkits</strong>: تتخفى من مكافح الفيروسات وتتيح التحكم بجهازك عن بُعد.</p>
+      </div>
+      <div class="card">
+        <span class="icon">💥</span>
+        <h3>هجمات إضافية</h3>
+        <p><strong style="color:var(--text)">يوم الصفر Zero-day</strong>: استغلال ثغرة جديدة لم يصدر لها تصحيح بعد. <strong style="color:var(--text)">التوأم الشرير Evil Twin</strong>: شبكة واي فاي وهمية تحمل اسم الشبكة الأصلية. إضافة إلى انتحال عنوان البريد، وتزوير رقم المتصل، وحقن أدوات الاستغلال.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🚦</span>
+        <h3>بروتوكول الإشارة الضوئية TLP</h3>
+        <p>نظام ألوان لمشاركة المعلومات الحساسة: <strong style="color:var(--bad)">أحمر</strong> (للمتلقّي فقط)، <strong style="color:var(--warn)">برتقالي</strong> (مشاركة محدودة داخل الجهة)، <strong style="color:var(--good)">أخضر</strong> (داخل نفس المجتمع دون نشر علني)، <strong style="color:var(--text)">أبيض</strong> (مشاركة غير محدودة).</p>
+      </div>
+      <div class="card">
+        <span class="icon">⚖️</span>
+        <h3>التشريعات المصرية</h3>
+        <p>قانون مكافحة جرائم تقنية المعلومات <strong style="color:var(--text)">175 لسنة 2018</strong>، وقانون حماية البيانات الشخصية <strong style="color:var(--text)">151 لسنة 2020</strong>، وقانون الطفل (12/1996 المعدل بـ126/2008)، والمادة 57 من الدستور (حرمة الحياة الخاصة).</p>
+      </div>
+      <div class="card">
+        <span class="icon">📵</span>
+        <h3>التنمر الإلكتروني وحماية الأطفال</h3>
+        <p>فصل كامل عن أنواع التنمر (النبذ، الاصطياد Catfishing، المطاردة، التشهير Doxing، انتحال الشخصية...) وعلامات تعرّض الطفل له، مع <strong style="color:var(--accent)">الخط الساخن 16000</strong> للإبلاغ عن مخاطر الأطفال على الإنترنت.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🛍️</span>
+        <h3>المواقع الاحتيالية وعلاماتها</h3>
+        <p>أنواعها: مواقع الويب المخادعة، التسوق الاحتيالي برابط مزيف <span class="en">Spoofed URL</span>، مسابقات اليانصيب، ومواقع التخويف <span class="en">Scareware</span>. وعلاماتها: عبارات عاطفية مثيرة، رداءة التصميم، وأخطاء إملائية ونحوية.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="part-banner memo-src">
+  <div class="container">
+    <span class="part-tag">الجزء الثاني · الأسئلة</span>
+    <h2>أسئلة المذكرة</h2>
+    <p>مصيدة الكلمات المطلقة واختبار تفاعلي من أسئلة المذكرة الفعلية.</p>
+  </div>
+</div>
+
+<!-- ===================== 7. Word traps ===================== -->
+<section id="traps">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">08.</span> مصيدة الكلمات المُطلَقة</h2>
+    <p class="sec-lead">
+      نمط متكرر في أسئلة صح/خطأ بالمذكرة: كلمة مُطلَقة واحدة مثل <span class="en">always</span> («دائماً») تقلب العبارة من صحيحة إلى خاطئة، أو كلمة مستبدلة خلسة.
+      اضغط أي عبارة لكشف الحكم والسبب — الكلمة المصيدة <span class="mark">مظللة بالأحمر</span>.
+    </p>
+    <div id="traps-list"></div>
+  </div>
+</section>
+<!-- ===================== 7. Quiz ===================== -->
+<section id="quiz">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">09.</span> أسئلة المذكرة — اختبر نفسك 🎯</h2>
+    <p class="sec-lead">١٠ أسئلة من المذكرة بصياغتها الإنجليزية الأصلية (كما ستراها في الاختبار) مع ترجمة عربية وشرح لكل إجابة.</p>
+
+    <div class="quiz-box" id="quiz-box"></div>
+  </div>
+</section>
+<div class="part-banner official-src">
+  <div class="container">
+    <span class="part-tag">أسئلة إضافية</span>
+    <h2>أسئلة متوقعة من المنهج الرسمي</h2>
+    <p>22 سؤالاً تدريبياً من الفصول التي لا تغطيها المذكرة.</p>
+  </div>
+</div>
+
+<!-- ===================== 6. Predicted questions ===================== -->
+<section id="predicted">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">10.</span> أسئلة متوقعة 🔮</h2>
+    <p class="sec-lead">
+      22 سؤالاً جديداً مصوغاً من الفصول التي <strong style="color:var(--text)">لا تغطيها المذكرة</strong> في المادة الرسمية (الهيئات المصرية، البرمجيات والهجمات الإضافية، بروتوكول TLP، القوانين، التنمر الإلكتروني...) بنفس أسلوب أسئلة الامتحان.
+      <br><span style="font-size:14px">⚠️ هذه أسئلة تدريبية متوقعة بناءً على محتوى المادة الرسمية — وليست منقولة من امتحانات فعلية.</span>
+    </p>
+    <div class="quiz-box" id="quiz2-box"></div>
+  </div>
+</section>
+<nav class="tabbar" aria-label="تنقل سريع">
+  <a href="#basics" class="active"><span class="ico">📖</span>الشرح</a>
+  <a href="#official"><span class="ico">🏛️</span>المنهج</a>
+  <a href="#traps"><span class="ico">🧩</span>الأسئلة</a>
+  <a href="#glossary"><span class="ico">📇</span>القاموس</a>
+</nav>
+
+<script>
+/* ===== Nav active state ===== */
+const navLinks=document.querySelectorAll('nav.tabs a[href^="#"]');
+const sections=[...navLinks].map(a=>document.querySelector(a.getAttribute('href')));
+const tabLinks=document.querySelectorAll('.tabbar a');
+const TABMAP={basics:'#basics',cia:'#basics',threats:'#basics',hackers:'#basics',protect:'#basics',glossary:'#glossary',official:'#official',traps:'#traps',quiz:'#traps',predicted:'#traps'};
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      navLinks.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id));
+      const t=TABMAP[e.target.id];
+      if(t)tabLinks.forEach(a=>a.classList.toggle('active',a.getAttribute('href')===t));
+    }
+  });
+},{rootMargin:'-40% 0px -55% 0px'});
+sections.forEach(s=>s&&obs.observe(s));
+
+/* ===== CIA triad ===== */
+const CIA={
+  c:{icon:'🤫',ar:'السرّية',lat:'Confidentiality',
+     def:'قدرة النظام على المحافظة على خصوصية البيانات وتقييد اطّلاع الأشخاص غير المصرّح لهم عليها — لا يقرأ بياناتك إلا من تسمح له.',
+     ex:'<strong>مثال من المذكرة:</strong> تشفير المستندات على جهازك بحيث لا يستطيع قراءتها إلا المستخدم المصرّح له.<br><strong>تشبيه:</strong> رسالة داخل ظرف مغلق لا يفتحه إلا المرسَل إليه — وليست بطاقة بريدية يقرؤها كل من تمر عليه.'},
+  i:{icon:'✅',ar:'السلامة',lat:'Integrity',
+     def:'ضمان عدم قدرة أي شخص على تعديل البيانات دون تصريح، وضمان موثوقيتها واتساقها ودقتها — لا يعدّل بياناتك أحد دون إذن.',
+     ex:'<strong>مثال عملي:</strong> إذا كان رصيدك البنكي 1000، يجب ألا يستطيع أحد تغييره إلى 10 — ولا حتى بالخطأ.<br><strong>تشبيه:</strong> عقد موقّع بختم رسمي؛ أي محاولة كشط أو تعديل عليه تُكتشف فوراً.'},
+  a:{icon:'🕐',ar:'التوافر',lat:'Availability',
+     def:'ضمان إمكانية وصول المستخدمين المصرّح لهم إلى البيانات عند حاجتهم إليها في فترة زمنية مناسبة وبشكل متسق وموثوق.',
+     ex:'<strong>مثال عملي:</strong> أن يعمل تطبيق البنك عندما تريد تحويل مبلغ مستعجل — لا أن يكون «خارج الخدمة». هجوم حجب الخدمة (DoS) يستهدف هذا الضلع تحديداً.<br><strong>تشبيه:</strong> صيدلية مناوبة ٢٤ ساعة؛ الدواء متاح وقت الحاجة، وليس خلف باب مغلق.'}
+};
+const ciaPanel=document.getElementById('cia-panel');
+function showCIA(k){
+  const t=CIA[k];
+  ciaPanel.innerHTML=`<h3>${t.icon} ${t.ar}</h3><span class="lat">${t.lat}</span><p>${t.def}</p><p style="margin-top:12px">${t.ex}</p>`;
+  document.querySelectorAll('.tri-node').forEach(n=>n.classList.toggle('on',n.dataset.cia===k));
+}
+document.querySelectorAll('.tri-node').forEach(n=>{
+  n.addEventListener('click',()=>showCIA(n.dataset.cia));
+  n.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();showCIA(n.dataset.cia);}});
+});
+showCIA('c');
+
+/* ===== Accordion ===== */
+document.querySelectorAll('.acc-head').forEach(h=>{
+  h.addEventListener('click',()=>{
+    const open=h.closest('.acc').classList.toggle('open');
+    h.setAttribute('aria-expanded',open);
+  });
+});
+
+/* ===== Word traps ===== */
+const TRAPS=[
+ {q:'A large number of downloads <span class="mark">always guarantees</span> that an app is safe.',
+  ar:'عدد التنزيلات الكبير يضمن دائماً أن التطبيق آمن.',ok:false,
+  a:'<b>خطأ.</b> كثرة التنزيلات لا تضمن الأمان إطلاقاً — تطبيقات خبيثة كثيرة حققت ملايين التحميلات قبل اكتشافها. الكلمة المُطلقة <span class="en">always</span> هي التي أفسدت العبارة.'},
+ {q:'ATM Fraud <span class="mark">always requires</span> knowing the victim\'s PIN.',
+  ar:'عمليات الاحتيال على الصراف الآلي تتطلب دائماً معرفة الرقم السري للضحية.',ok:false,
+  a:'<b>خطأ.</b> الاحتيال يمكن أن يتم بمعرفة الرقم السري أو بدونه. لاحظ <span class="en">always requires</span>.'},
+ {q:'Public Wi-Fi networks are <span class="mark">always secure</span>.',
+  ar:'شبكات الواي فاي العامة آمنة دائماً.',ok:false,
+  a:'<b>خطأ.</b> العكس هو الصحيح: الشبكات العامة غير آمنة <span class="en">unsecure</span> بطبيعتها.'},
+ {q:'Online Piracy is <span class="mark">a legal</span> activity if done online.',
+  ar:'القرصنة الإلكترونية نشاط قانوني إذا تم القيام بها عبر الإنترنت.',ok:false,
+  a:'<b>خطأ.</b> القرصنة غير قانونية <span class="en">illegal</span> سواء تمت عبر الإنترنت أو خارجه.'},
+ {q:'The CIA Triad model focuses on data availability, integrity, and <span class="mark">reliability</span>.',
+  ar:'يركز نموذج مثلث أمن المعلومات على توافر البيانات وسلامتها واعتماد صحتها.',ok:false,
+  a:'<b>خطأ.</b> الضلع الثالث هو السرّية <span class="en">confidentiality</span> وليس <span class="en">reliability</span>. هنا المصيدة استبدال كلمة، لا إضافة كلمة مُطلقة.'},
+ {q:'The primary goal of the CIA Triad is to protect data from any unauthorized access.',
+  ar:'الهدف الأساسي لمثلث أمن المعلومات هو حماية البيانات من أي وصول غير مصرّح به.',ok:true,
+  a:'<b>صح.</b> والمذكرة تضيف إليه السلامة والتوافر، لكن العبارة كما هي معتمدة صحيحة.'},
+ {q:'In phishing attacks, victims provide their login information on fake websites.',
+  ar:'في هجمات التصيد الاحتيالي، يقدم الضحايا معلومات تسجيل الدخول على مواقع مزيفة.',ok:true,
+  a:'<b>صح.</b> هذا هو جوهر التصيّد: موقع مزيف يشبه الأصلي فيسلّمه الضحية بياناته بنفسه.'},
+ {q:'The social engineering targets people.',
+  ar:'تستهدف الهندسة الاجتماعية الأفراد.',ok:true,
+  a:'<b>صح.</b> وهو ما يفسّر لماذا يُعد العامل البشري أكبر تهديد للأمن السيبراني.'}
+];
+const trapsEl=document.getElementById('traps-list');
+TRAPS.forEach((t,i)=>{
+  const d=document.createElement('div');d.className='trap';
+  d.innerHTML=`<button class="trap-q" aria-expanded="false">
+      <span class="num">${String(i+1).padStart(2,'0')}</span>
+      <span class="txt"><span class="en">${t.q}</span><br><span class="ar-line">${t.ar}</span></span>
+      <span class="verdict" style="color:${t.ok?'var(--good)':'var(--bad)'}">${t.ok?'✓':'✕'}</span>
+    </button>
+    <div class="trap-a"><div class="trap-a-in">${t.a}</div></div>`;
+  const btn=d.querySelector('.trap-q');
+  btn.addEventListener('click',()=>{const o=d.classList.toggle('open');btn.setAttribute('aria-expanded',o);});
+  trapsEl.appendChild(d);
+});
+
+/* ===== Checklist (persisted) ===== */
+const CHECK_KEY='cyberguide-checklist';
+const items=document.querySelectorAll('.check-item');
+const fill=document.getElementById('prog-fill');
+const label=document.getElementById('prog-label');
+const msgs=[
+  'ابدأ رحلتك نحو الأمان 💪',
+  'بداية طيبة — واصل!',
+  'تتحسن حمايتك خطوة بخطوة',
+  'أنت في منتصف الطريق تقريباً',
+  'جيد جداً! أكمل الباقي',
+  'حماية قوية 👏',
+  'ممتاز! اقتربت من القمة',
+  'شبه مكتمل — خطوة واحدة!',
+  'درجة كاملة! أنت حصن منيع 🏆'
+];
+function loadChecks(){
+  try{return JSON.parse(localStorage.getItem(CHECK_KEY))||[];}catch(e){return [];}
+}
+function saveChecks(){
+  const done=[...items].map((it,i)=>it.classList.contains('done')?i:-1).filter(i=>i>=0);
+  try{localStorage.setItem(CHECK_KEY,JSON.stringify(done));}catch(e){}
+}
+function updateProgress(){
+  const done=document.querySelectorAll('.check-item.done').length;
+  fill.style.width=(done/items.length*100)+'%';
+  label.textContent=`درجة حمايتك: ${done} من ${items.length} — ${msgs[done]}`;
+}
+loadChecks().forEach(i=>{if(items[i]){items[i].classList.add('done');items[i].setAttribute('aria-pressed','true');}});
+items.forEach(it=>it.addEventListener('click',()=>{
+  const on=it.classList.toggle('done');
+  it.setAttribute('aria-pressed',on);
+  saveChecks();updateProgress();
+}));
+updateProgress();
+
+/* ===== Quiz ===== */
+const QUIZ=[
+  {en:'What is cybersecurity?',ar:'ما المقصود بـ«الأمن السيبراني»؟',
+   opts:['برنامج لتسريع الإنترنت','حالة الحماية ضد الاستخدام الإجرامي أو غير المصرّح به للبيانات الإلكترونية','نوع من أنواع الفيروسات','تطبيق للتواصل الاجتماعي'],
+   a:1,exp:'الصياغة الأصلية: <span class="en">The state of protection against criminal or unauthorized use of electronic data.</span>'},
+  {en:'What is the biggest threat to cybersecurity?',ar:'ما هو أكبر تهديد للأمن السيبراني؟',
+   opts:['الفيروسات','أجهزة الكمبيوتر القديمة','العامل البشري','الواي فاي'],
+   a:2,exp:'الإجابة: <span class="en">The human factor</span> — أغلب الاختراقات تبدأ بخطأ بشري كالضغط على رابط مشبوه.'},
+  {en:'The CIA Triad model includes …',ar:'يتضمن نموذج مثلث حماية المعلومات:',
+   opts:['السرعة والقوة والدقة','السرّية والسلامة والتوافر','التشفير والنسخ والحذف','الهجوم والدفاع والمراقبة'],
+   a:1,exp:'<span class="en">Confidentiality, Integrity, Availability</span> — سرّية البيانات وسلامتها وتوافرها.'},
+  {en:'"Availability" ensures that authorized users can access data when they need it.',ar:'«ضمان وصول المستخدمين المصرّح لهم إلى بياناتهم عند الحاجة» — هذا تعريف:',
+   opts:['السرّية','السلامة','التوافر','التشفير'],
+   a:2,exp:'التوافر <span class="en">Availability</span> يضمن أن تكون البيانات متاحة لأصحابها في فترة زمنية مناسبة.'},
+  {en:'What is ransomware?',ar:'ما هي برمجيات الفدية؟',
+   opts:['برامج تسرّع الجهاز','برمجيات تمنع وصولك لنظامك حتى تدفع مبلغاً مالياً','برامج مجانية للحماية','نوع من النسخ الاحتياطي'],
+   a:1,exp:'<span class="en">Blocks access to a computer system until a certain amount of money is paid</span> — والنسخ الاحتياطي أفضل حماية منها.'},
+  {en:'In phishing attacks, victims provide their login information on …',ar:'في هجمات التصيّد الاحتيالي، يقدم الضحايا بيانات دخولهم على:',
+   opts:['مواقع ويب مزيفة','تطبيقات البنك الرسمية','أجهزة الصراف الآلي','مواقع حكومية موثقة'],
+   a:0,exp:'<span class="en">Fake websites</span> — المهاجم ينشئ موقعاً مزيفاً يشبه الحقيقي، والضحية يسلّم بياناته بنفسه.'},
+  {en:'Public Wi-Fi networks are always secure.',ar:'شبكات الواي فاي العامة آمنة دائماً.',
+   opts:['صح','خطأ'],
+   a:1,exp:'خطأ — الشبكات العامة غير آمنة <span class="en">unsecure</span>. وانتبه لكلمة المصيدة <span class="en">always</span>.'},
+  {en:'Multi-Factor Authentication (MFA) means …',ar:'المصادقة متعددة العوامل تعني:',
+   opts:['استخدام أكثر من طريقة للتحقق من الهوية','تغيير كلمة المرور يومياً','استخدام نفس كلمة المرور في كل الحسابات','إغلاق الحساب نهائياً'],
+   a:0,exp:'<span class="en">Using more than one method to verify identity</span> — كلمة مرور + رمز للهاتف مثلاً.'},
+  {en:'Which of the following is an example of authentication?',ar:'أيٌّ مما يلي يُعتبر مثالاً للمصادقة؟',
+   opts:['Username','Firewall','Backup','Antivirus'],
+   a:0,exp:'المثال المعتمد في المذكرة: اسم المستخدم <span class="en">Username</span>. ⚠️ ملاحظة: هذا المثال غير وارد في المادة الرسمية، وعلمياً اسم المستخدم «تعريف» بينما تتم المصادقة بكلمة المرور — لكنه يبقى الإجابة المعتمدة امتحانياً.'},
+  {en:'Which of the following is not a hacker?',ar:'أيٌّ مما يلي لا يُعد مخترقاً للأجهزة؟',
+   opts:['Black hat hacker','White hat hacker','Blue hat hacker','Grey hat hacker'],
+   a:2,exp:'القبعة الزرقاء <span class="en">Blue hat</span> — فالمادة الرسمية تصنّف المخترقين إلى ثلاث فئات فقط: سوداء وبيضاء ورمادية، ولا تذكر الزرقاء.'}
+];
+/* أسئلة متوقعة من الفصول التي لا تغطيها المذكرة — مصوغة من المادة الرسمية */
+const QUIZ2=[
+  {en:'Threats + Vulnerability = .....',ar:'التهديدات + الثغرة الأمنية = .....',
+   opts:['المخاطر (Risks)','الجرائم','الخدمات السيبرانية','التشفير'],
+   a:0,exp:'معادلة واردة نصاً في الفصل الأول من المادة الرسمية: التهديدات + الثغرة الأمنية = المخاطر.'},
+  {en:'What is a security vulnerability?',ar:'ما المقصود بالثغرة الأمنية؟',
+   opts:['نوع من الفيروسات','أوجه الضعف في أجهزة أو برامج أو خدمة يمكن استغلالها عبر الإنترنت','برنامج حماية','هجوم إلكتروني منظم'],
+   a:1,exp:'<span class="en">Vulnerability</span>: أوجه الضعف الموجودة في أجهزة أو برامج أو خدمة معينة ويمكن استغلالها.'},
+  {en:'EG-CERT (National Computer Emergency Readiness Team) was established in .....',ar:'أُنشئ المركز الوطني للاستعداد لطوارئ الحاسبات والشبكات EG-CERT عام...',
+   opts:['2003','2009','2014','2018'],
+   a:1,exp:'أنشأه الجهاز القومي لتنظيم الاتصالات (NTRA) في أبريل 2009، ويتعامل مع الحوادث السيبرانية ويدعم الجهات الحكومية.'},
+  {en:'The Egyptian Supreme Cybersecurity Council (ESCC) is responsible for .....',ar:'المجلس الأعلى المصري للأمن السيبراني ESCC مسؤول عن...',
+   opts:['إصلاح أجهزة الكمبيوتر','وضع الخطة الاستراتيجية الوطنية للأمن السيبراني','بيع برامج الحماية','إدارة شبكات الجامعات'],
+   a:1,exp:'أنشأه مجلس الوزراء عام 2014 وكُلف بوضع الخطة الاستراتيجية الوطنية للأمن السيبراني.'},
+  {en:'A zero-day attack exploits .....',ar:'هجوم يوم الصفر يستغل...',
+   opts:['ثغرة قديمة معروفة','ثغرة جديدة لم يصدر تصحيح لمعالجتها بعد','كلمة مرور ضعيفة','جهازاً غير متصل بالإنترنت'],
+   a:1,exp:'<span class="en">Zero-day</span>: ثغرة أمنية جديدة لم يصدر بعد تصحيح لمعالجتها — ولهذا سميت «يوم الصفر».'},
+  {en:'Unlike viruses, Trojans do not replicate themselves; they are usually used to create a .....',ar:'أحصنة طروادة لا تنسخ نفسها بعكس الفيروسات، وتُستخدم عادة لإنشاء...',
+   opts:['نافذة إعلانية','باب خلفي (Backdoor)','نسخة احتياطية','شبكة افتراضية'],
+   a:1,exp:'حصان طروادة يختبئ داخل برنامج يبدو مفيداً، وعادةً يُستخدم في إنشاء باب خلفي يمكن للمهاجمين استغلاله.'},
+  {en:'Malware designed to hide from users and antivirus programs while allowing remote control is called .....',ar:'البرمجيات المصممة للتخفي من المستخدم ومكافح الفيروسات مع إتاحة التحكم عن بُعد تسمى...',
+   opts:['برمجيات الفدية','برامج الإعلانات','برمجيات الجذور الخفية (Rootkits)','جدار الحماية'],
+   a:2,exp:'<span class="en">Rootkits</span>: برمجيات متطورة تتخفى من المستخدم النهائي وبرامج المكافحة وتفتح باباً خلفياً للتحكم بالجهاز عن بُعد.'},
+  {en:'Spyware is installed to .....',ar:'تُثبَّت برمجيات التجسس بهدف...',
+   opts:['تسريع الجهاز','جمع معلومات عن المستخدمين وعادات التصفح وإرسالها للمهاجم','حذف الفيروسات','عمل نسخ احتياطي'],
+   a:1,exp:'تجمع معلومات عن المستخدمين والأنظمة وعادات التصفح وترسلها للمهاجم الذي قد يستغلها في الابتزاز أو تنزيل برامج ضارة أخرى.'},
+  {en:'Electronic blackmail is a crime where the attacker demands ..... to stop the attack.',ar:'الابتزاز الإلكتروني جريمة يطلب فيها المهاجم ... مقابل إيقاف الهجوم أو معالجة آثاره.',
+   opts:['اعتذاراً علنياً','مبلغاً مالياً','إعجاباً ومتابعة','معلومات تقنية'],
+   a:1,exp:'وفق المادة الرسمية: «يتم في هذه الجريمة طلب مبلغ مالي من أحد الأفراد مقابل إيقاف الهجوم أو معالجة آثاره وتداركها».'},
+  {en:'Penetration testing is .....',ar:'اختبار الاختراق هو...',
+   opts:['هجوم إجرامي حقيقي','عملية أمنية (محاكاة لهجوم) للكشف عن الثغرات الأمنية في النظام','نوع من الفيروسات','تحديث لنظام التشغيل'],
+   a:1,exp:'عملية أمنية سيبرانية (أو محاكاة لهجوم) تحاول الكشف عن الثغرات الموجودة في النظام وتحديد نقاط الضعف — وهي عمل مخترقي القبعة البيضاء.'},
+  {en:'In an Evil Twin attack, the attacker creates .....',ar:'في هجوم التوأم الشرير ينشئ المهاجم...',
+   opts:['نقطة اتصال وهمية تحمل نفس اسم الشبكة الأصلية وبإشارة أقوى','فيروساً ينسخ نفسه','موقع تسوق حقيقياً','تطبيق ألعاب مجانياً'],
+   a:0,exp:'<span class="en">Evil Twin</span>: نقطة اتصال وهمية بنفس اسم الشبكة الأصلية (SSID) وبإشارة بث أقوى، فيتصل بها الضحايا دون قصد.'},
+  {en:'WPA2 and WPA3 protocols are used to ..... data transferred between the router and wireless devices.',ar:'بروتوكولا WPA2 وWPA3 يُستخدمان لـ... البيانات المنقولة بين الراوتر والأجهزة اللاسلكية.',
+   opts:['حذف','تشفير','ضغط','بيع'],
+   a:1,exp:'الجيلان الثاني والثالث لبروتوكول الوصول المحمي للشبكات اللاسلكية (WPA) يوفران تشفير المعلومات المنقولة بين الراوتر والمعدات اللاسلكية.'},
+  {en:'A VPN encrypts communications at both ends of sending and receiving data.',ar:'الشبكة الخاصة الافتراضية VPN تشفر الاتصالات عند طرفي إرسال واستلام البيانات.',
+   opts:['صح','خطأ'],
+   a:0,exp:'صحيح — ولهذا يُنصح باستخدامها، فهي تشفر الاتصالات وتحجب حركة المرور التي لم يتم تشفيرها بشكل كافٍ.'},
+  {en:'A recently released app with millions of downloads is most likely .....',ar:'تطبيق صدر منذ فترة وجيزة وعدد تنزيلاته مرتفع جداً — غالباً يكون...',
+   opts:['تطبيقاً موثوقاً','تطبيقاً احتيالياً','تحديثاً رسمياً','تطبيقاً حكومياً'],
+   a:1,exp:'وفق المادة الرسمية: البرامج الموثوق بها تحتاج فترة طويلة لتصل لتنزيلات مرتفعة؛ فالتطبيق حديث الإصدار بتنزيلات ضخمة مؤشر احتيال.'},
+  {en:'According to the Traffic Light Protocol (TLP), information marked ..... may not be shared beyond the recipient.',ar:'وفق بروتوكول الإشارة الضوئية TLP، المعلومات الموسومة باللون ... لا تجوز مشاركتها خارج متلقيها.',
+   opts:['الأبيض','الأخضر','الأحمر','البرتقالي'],
+   a:2,exp:'الأحمر = شخصي وسري للمتلقي فقط. (البرتقالي: مشاركة محدودة داخل الجهة، الأخضر: داخل نفس المجتمع دون نشر علني، الأبيض: غير محدودة).'},
+  {en:'The TLP color that allows unlimited sharing is .....',ar:'اللون الذي يسمح بمشاركة غير محدودة في بروتوكول TLP هو...',
+   opts:['الأحمر','الأبيض','البرتقالي','الأخضر'],
+   a:1,exp:'الأبيض = مشاركة غير محدودة مع الجميع عبر قنوات الاتصال العامة (مع احترام حقوق التأليف والنشر).'},
+  {en:'Scareware scam websites trick you by using .....',ar:'مواقع التخويف المخادعة Scareware تخدعك باستخدام...',
+   opts:['تنبيهات أمان زائفة (نوافذ منبثقة تخبرك أن جهازك مصاب)','عروض توظيف حقيقية','أخبار رياضية','خرائط تفاعلية'],
+   a:0,exp:'تستخدم نوافذ تنبيهات أمان زائفة تُشعرك بالخوف فتُسرع بتنزيل ملف تظنه علاجاً وهو في الحقيقة برنامج ضار.'},
+  {en:'The Egyptian Anti-Cyber and Information Technology Crimes Law is Law No. .....',ar:'قانون مكافحة جرائم تقنية المعلومات المصري هو القانون رقم...',
+   opts:['151 لسنة 2020','175 لسنة 2018','12 لسنة 1996','126 لسنة 2008'],
+   a:1,exp:'قانون 175 لسنة 2018 (45 مادة في 4 أبواب) — أول تشريع مصري شامل لمكافحة جرائم الفضاء الإلكتروني.'},
+  {en:'The Egyptian Personal Data Protection Law is Law No. .....',ar:'قانون حماية البيانات الشخصية المصري هو القانون رقم...',
+   opts:['175 لسنة 2018','151 لسنة 2020','57 لسنة 2014','10 لسنة 2003'],
+   a:1,exp:'قانون 151 لسنة 2020 (49 مادة) — ويَعتبر بيانات الأطفال في جميع الأحوال «بيانات شخصية حساسة».'},
+  {en:'Creating a fake online identity to build a relationship with the victim and gain their trust is called .....',ar:'انتحال هوية وهمية عبر الإنترنت لبناء علاقة مع الضحية وكسب ثقته يسمى...',
+   opts:['التصيد Trolling','الاصطياد الإلكتروني Catfishing','الإهانة المباشرة Flaming','النبذ Exclusion'],
+   a:1,exp:'<span class="en">Catfishing</span>: تزوير الهوية بملف تعريف مزيف والتظاهر بأنه شخص آخر لكسب ثقة الضحية والحصول على معلوماته ثم الإساءة له.'},
+  {en:'Egypt\'s hotline for reporting online risks against children is .....',ar:'الخط الساخن المصري للإبلاغ عن مخاطر الأطفال على الإنترنت هو...',
+   opts:['15000','16000','17000','122'],
+   a:1,exp:'أطلقه المجلس القومي للطفولة والأمومة (NCCM) لحماية الأطفال — للإبلاغ عن التنمر والتحرش الإلكتروني والمحتوى غير اللائق.'},
+  {en:'Paying the ransom always guarantees that attackers will decrypt your data.',ar:'دفع الفدية يضمن دائماً أن المهاجمين سيفكّون تشفير بياناتك.',
+   opts:['صح','خطأ'],
+   a:1,exp:'خطأ — نص المادة الرسمية: «قد يقوم المهاجمون بفك البيانات بعد حصولهم على مبلغ الفدية لكنهم عادةً لا يفعلون ذلك». وانتبه لكلمة المصيدة <span class="en">always</span>.'}
+];
+
+function initQuiz(boxId,DATA){
+  let qi=0,score=0,answered=false;
+  const quizBox=document.getElementById(boxId);
+  function renderQ(){
+    if(qi>=DATA.length){showResult();return;}
+    const item=DATA[qi];answered=false;
+    quizBox.innerHTML=`
+      <div class="quiz-progress">
+        <span>السؤال ${qi+1} من ${DATA.length}</span>
+        <span style="color:var(--accent)">نتيجتك: ${score}</span>
+      </div>
+      <div class="quiz-bar"><i style="width:${qi/DATA.length*100}%"></i></div>
+      <div class="quiz-q"><span class="en">${item.en}</span></div>
+      <div class="quiz-q-ar">${item.ar}</div>
+      <div class="quiz-opts"></div>
+      <div class="quiz-feedback" aria-live="polite"></div>
+      <button class="quiz-next" disabled>${qi===DATA.length-1?'عرض النتيجة 🏁':'السؤال التالي ←'}</button>`;
+    const optsEl=quizBox.querySelector('.quiz-opts');
+    item.opts.forEach((o,i)=>{
+      const b=document.createElement('button');
+      b.className='quiz-opt';b.textContent=o;
+      b.addEventListener('click',()=>answer(i,b,item,optsEl));
+      optsEl.appendChild(b);
+    });
+    quizBox.querySelector('.quiz-next').addEventListener('click',()=>{qi++;renderQ();});
+  }
+  function answer(i,btn,item,optsEl){
+    if(answered)return;answered=true;
+    const fbEl=quizBox.querySelector('.quiz-feedback');
+    [...optsEl.children].forEach((b,j)=>{
+      b.disabled=true;
+      if(j===item.a)b.classList.add('correct');
+    });
+    if(i===item.a){score++;fbEl.className='quiz-feedback show ok';fbEl.innerHTML='✅ <b>إجابة صحيحة!</b> '+item.exp;}
+    else{btn.classList.add('wrong');fbEl.className='quiz-feedback show no';fbEl.innerHTML='❌ <b>ليست الإجابة الصحيحة.</b> '+item.exp;}
+    quizBox.querySelector('.quiz-progress span:last-child').textContent='نتيجتك: '+score;
+    quizBox.querySelector('.quiz-next').disabled=false;
+  }
+  function showResult(){
+    const pct=Math.round(score/DATA.length*100);
+    let msg,icon;
+    if(pct===100){icon='🏆';msg='ممتاز! أنت جاهز تماماً — درجة كاملة!';}
+    else if(pct>=70){icon='🎉';msg='نتيجة رائعة! لديك فهم قوي لأساسيات الأمن السيبراني.';}
+    else if(pct>=40){icon='📖';msg='بداية جيدة — راجع الأقسام بالأعلى وأعد المحاولة.';}
+    else{icon='💪';msg='لا بأس! اقرأ الدليل مرة أخرى وستتحسن نتيجتك كثيراً.';}
+    quizBox.innerHTML=`
+      <div class="quiz-result">
+        <div style="font-size:56px">${icon}</div>
+        <div class="score">${score} / ${DATA.length}</div>
+        <p>${msg}</p>
+        <button class="quiz-next">إعادة الاختبار 🔄</button>
+      </div>`;
+    quizBox.querySelector('.quiz-next').addEventListener('click',()=>{qi=0;score=0;renderQ();});
+  }
+  renderQ();
+}
+initQuiz('quiz-box',QUIZ);
+initQuiz('quiz2-box',QUIZ2);
+
+/* ===== Glossary ===== */
+const CATS={all:'الكل',basic:'مفاهيم أساسية',mal:'برمجيات ضارة',att:'هجمات',def:'وسائل حماية'};
+const TERMS=[
+ {c:'basic',ar:'الأمن السيبراني',en:'Cybersecurity',
+  d:'حالة التأمين والحماية من الاستخدام الإجرامي أو غير المصرح به للبيانات الإلكترونية.',
+  e:'The state of protection against criminal or unauthorized use of electronic data.'},
+ {c:'basic',ar:'التشفير',en:'Encryption',
+  d:'تحويل المعلومات أو البيانات إلى كود (رمز) بهدف منع الوصول غير المصرح به لها.',
+  e:'Converting information or data into code to prevent unauthorized access.'},
+ {c:'basic',ar:'كلمة المرور',en:'Password',
+  d:'كلمة أو عبارة سرية تستخدمها للدخول إلى حسابك على شبكة الإنترنت.',
+  e:'A secret word or phrase used to access your online account.'},
+ {c:'basic',ar:'المصادقة',en:'Authentication',
+  d:'التحقق من هوية المستخدم. المثال المعتمد في المذكرة: اسم المستخدم.',
+  e:'Example of authentication → Username.'},
+ {c:'basic',ar:'النسخ الاحتياطي',en:'Backup',
+  d:'نسخ الملفات الأصلية المخزنة على الكمبيوتر المحمول أو سطح المكتب أو القرص الصلب الخارجي.',
+  e:'Copying original files stored on a laptop, desktop, or external hard drive.'},
+ {c:'mal',ar:'البرمجيات الضارة',en:'Malware',
+  d:'برامج مصممة خصيصاً لتعطيل نظام الكمبيوتر أو إتلافه أو الوصول إليه بشكل غير مصرح به.',
+  e:'Programs specifically designed to disrupt, damage, or gain unauthorized access to a computer system.'},
+ {c:'mal',ar:'فيروس الكمبيوتر',en:'Virus',
+  d:'جزء من التعليمات البرمجية قادر على نسخ نفسه، وله تأثير ضار كإتلاف النظام أو تدمير البيانات.',
+  e:'A piece of code that can copy itself and harm a device, such as damaging the system or destroying data.'},
+ {c:'mal',ar:'ديدان الكمبيوتر',en:'Worms',
+  d:'برمجيات ضارة قائمة بذاتها تختلف عن الفيروسات (لا تحتاج مضيفاً)، تنتشر عبر الشبكات وكثيراً ما تصل بمرفقات البريد وترسل نسخة لكل جهات اتصالك. (صيغة المذكرة: «نوع من فيروسات البريد الإلكتروني»)',
+  e:'Standalone malware that, unlike viruses, needs no host; often spreads via email attachments, sending copies to every contact.'},
+ {c:'mal',ar:'برمجيات الفدية',en:'Ransomware',
+  d:'برمجيات ضارة مصممة لمنع الوصول إلى نظام الكمبيوتر حتى يتم دفع مبلغ مالي معين.',
+  e:'Malicious software designed to block access to a computer system until a certain amount of money is paid.'},
+ {c:'att',ar:'الهجوم السيبراني',en:'Cyberattack',
+  d:'محاولة إتلاف أو تدمير شبكة أو نظام كمبيوتر تتم بواسطة المهاجمين.',
+  e:'An attempt to damage or destroy a computer network or system carried out by attackers.'},
+ {c:'att',ar:'مخترق الكمبيوتر',en:'Hacker',
+  d:'شخص يستخدم الكمبيوتر لاختراق جهازك بشكل غير قانوني وسرقة معلوماتك الشخصية.',
+  e:'A person who uses a computer to illegally hack into your computer and steal your personal information.'},
+ {c:'att',ar:'الهندسة الاجتماعية',en:'Social Engineering',
+  d:'التلاعب بالأشخاص عبر الإنترنت بهدف الكشف عن معلومات سرية — تستهدف الأفراد لا الأجهزة.',
+  e:'Manipulating people over the internet to reveal confidential information.'},
+ {c:'att',ar:'التصيد الاحتيالي',en:'Phishing',
+  d:'هجوم يقدّم فيه الضحايا معلومات تسجيل الدخول الخاصة بهم على مواقع ويب مزيفة.',
+  e:'In phishing attacks, victims provide their login information on fake websites.'},
+ {c:'att',ar:'هجمات كلمات المرور',en:'Password Attacks',
+  d:'هجمات يحاول فيها المهاجمون اكتشاف كلمات مرور الحسابات المحمية ومنصات التواصل الاجتماعي.',
+  e:'Attacks in which attackers attempt to discover passwords for protected online accounts.'},
+ {c:'att',ar:'حجب الخدمة',en:'DoS Attack',
+  d:'إغراق الأنظمة أو الشبكات بحركة مرور كثيفة لجعلها غير متاحة.',
+  e:'Overwhelm systems or networks with traffic to make them unavailable.'},
+ {c:'def',ar:'المصادقة متعددة العوامل',en:'MFA',
+  d:'استخدام أكثر من طريقة واحدة للتحقق من الهوية، لا الاكتفاء بكلمة المرور وحدها.',
+  e:'Using more than one method to verify identity.'},
+ {c:'def',ar:'مدير كلمات المرور',en:'Password Manager',
+  d:'إحدى طرق حماية بياناتك: إنشاء كلمات مرور طويلة وفريدة واستخدام مدير كلمات المرور.',
+  e:'Creating long unique passwords and using a password manager.'},
+ {c:'def',ar:'بروتوكول آمن',en:'HTTPS',
+  d:'تجنّب زيارة المواقع الإلكترونية التي لا تحتوي على HTTPS في عنوان URL.',
+  e:"Avoid visiting websites that don't have HTTPS in the URL."},
+ {c:'def',ar:'مكافح الفيروسات',en:'Antivirus',
+  d:'تثبيت برامج مكافحة الفيروسات الموثوقة يساعد على منع البرامج الضارة والفيروسات.',
+  e:'Installing reliable antivirus software helps prevent malware and viruses.'},
+ {c:'def',ar:'تقليل سطح الهجوم',en:'Attack Surface',
+  d:'الحد من نقل المعلومات الشخصية يقلّص سطح هجوم الهندسة الاجتماعية.',
+  e:'Minimizing the transmission of personal information reduces the social engineering attack surface.'},
+ {c:'basic',ar:'الثغرة الأمنية',en:'Vulnerability',
+  d:'أوجه الضعف الموجودة في أجهزة أو برامج أو خدمة معينة، ويمكن استغلالها عبر شبكة الإنترنت. (التهديدات + الثغرة الأمنية = المخاطر)',
+  e:'Weaknesses in devices, software, or services that can be exploited over the internet.'},
+ {c:'mal',ar:'أحصنة طروادة',en:'Trojans',
+  d:'برنامج ضار يختبئ داخل برنامج يبدو مفيداً؛ لا ينسخ نفسه (بعكس الفيروس)، ويُستخدم عادة لفتح «باب خلفي» يستغله المهاجمون.',
+  e:'Malware hiding inside a seemingly useful program; unlike viruses it does not replicate, and usually opens a backdoor.'},
+ {c:'mal',ar:'برمجيات التجسس',en:'Spyware',
+  d:'تُثبَّت لجمع معلومات عن المستخدم وعاداته في التصفح، وتُرسل للمهاجم الذي قد يستغلها في الابتزاز أو تنزيل برامج ضارة أخرى.',
+  e:'Installed to collect information about users and browsing habits, sent to a remote attacker.'},
+ {c:'mal',ar:'الجذور الخفية',en:'Rootkits',
+  d:'برمجيات متطورة صُممت لتتخفى من المستخدم وبرامج مكافحة الفيروسات، وتفتح باباً خلفياً يسمح للمهاجم بالتحكم في الجهاز عن بُعد.',
+  e:'Advanced malware designed to hide from users and antivirus, opening a backdoor for remote control.'},
+ {c:'att',ar:'هجوم يوم الصفر',en:'Zero-day Attack',
+  d:'يستغل المهاجم ثغرة أمنية جديدة في إحدى الشبكات لم يصدر بعد تصحيح لمعالجتها.',
+  e:'Exploits a new security vulnerability for which no fix has been released yet.'},
+ {c:'att',ar:'التوأم الشرير',en:'Evil Twin Attack',
+  d:'ينشئ المهاجم نقطة اتصال واي فاي وهمية تحمل نفس اسم الشبكة الأصلية وبإشارة أقوى، فيتصل بها الضحايا دون قصد.',
+  e:'A fake Wi-Fi access point with the same name as the original network, but a stronger signal.'},
+ {c:'def',ar:'بروتوكول الإشارة الضوئية',en:'TLP',
+  d:'نظام ألوان لمشاركة المعلومات الحساسة بأمان: أحمر (للمتلقي فقط)، برتقالي (مشاركة محدودة)، أخضر (داخل نفس المجتمع)، أبيض (غير محدودة).',
+  e:'Traffic Light Protocol: red (recipient only), amber (limited), green (community), white (unlimited sharing).'}
+];
+const grid=document.getElementById('flip-grid');
+const filtersEl=document.getElementById('filters');
+Object.entries(CATS).forEach(([k,v],i)=>{
+  const b=document.createElement('button');
+  b.className='chip'+(i===0?' on':'');b.textContent=v;
+  b.addEventListener('click',()=>{
+    document.querySelectorAll('.chip').forEach(c=>c.classList.remove('on'));
+    b.classList.add('on');renderTerms(k);
+  });
+  filtersEl.appendChild(b);
+});
+const OFFICIAL_TERMS=new Set(['Vulnerability','Trojans','Spyware','Rootkits','Zero-day Attack','Evil Twin Attack','TLP']);
+function renderTerms(k){
+  grid.innerHTML='';
+  TERMS.filter(t=>k==='all'||t.c===k).forEach(t=>{
+    const d=document.createElement('button');
+    d.className='flip';d.setAttribute('aria-label','بطاقة '+t.ar);
+    const isOff=OFFICIAL_TERMS.has(t.en);
+    d.innerHTML=`<div class="flip-inner">
+      <div class="flip-face flip-front"><span class="src ${isOff?'o':'m'}">${isOff?'من المنهج':'من المذكرة'}</span><div class="cat">${CATS[t.c]}</div><div class="term">${t.ar}</div><div class="en">${t.en}</div><div class="hint">اضغط لرؤية المعنى 👆</div></div>
+      <div class="flip-face flip-back"><div>${t.d}<div class="def-en">${t.e}</div></div></div>
+    </div>`;
+    d.addEventListener('click',()=>d.classList.toggle('flipped'));
+    grid.appendChild(d);
+  });
+}
+renderTerms('all');
+</script>
+</body>
+</html>

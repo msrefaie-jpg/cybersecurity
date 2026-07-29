@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>تكنولوجيا المعلومات ونظم التشغيل ببساطة — دليل تفاعلي</title>
+<meta name="description" content="دليل تفاعلي مبسّط لقسم تكنولوجيا المعلومات ونظم التشغيل من دورة التحول الرقمي: مكونات الحاسب، الذاكرة، نظم التشغيل، الاختصارات، واختبارات تفاعلية.">
+<meta name="theme-color" content="#0f172a">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="التحول الرقمي">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/app.css">
+</head>
+<body>
+
+<header class="hero">
+  <div class="container">
+    <span class="shield">💻</span>
+    <h1>تكنولوجيا المعلومات ونظم التشغيل <span>ببساطة</span></h1>
+    <p class="sub">دليل تفاعلي يشرح لك مكونات الحاسب والذاكرة ونظم التشغيل — بدون خلفية تقنية، مع الصياغة الإنجليزية الأصلية لمن يستعد للاختبار.</p>
+    <span class="badge">مُستخلص من المذكرة ومُطابَق مع المادة الرسمية (BIT 01 — الإصدار 3 / 2024)</span>
+    <div class="stats">
+      <div class="stat"><b>42</b><span>سؤالاً في المذكرة</span></div>
+      <div class="stat"><b>27</b><span>مصطلحاً أساسياً</span></div>
+      <div class="stat"><b>22</b><span>سؤالاً متوقعاً</span></div>
+      <div class="stat"><b>123</b><span>صفحة بالمادة الرسمية</span></div>
+    </div>
+  </div>
+</header>
+
+<nav class="tabs" aria-label="أقسام الدليل">
+  <div class="inner">
+    <a class="home-link" href="./">🏠 الرئيسية</a>
+    <a href="#hw" class="active">مكونات الحاسب</a>
+    <a href="#mem">الذاكرة والتخزين</a>
+    <a href="#os">نظم التشغيل</a>
+    <a href="#sw">البرمجيات</a>
+    <a href="#types">أنواع الحاسبات</a>
+    <a href="#keys">الاختصارات</a>
+    <a href="#glossary">القاموس</a>
+    <a href="#official">من المنهج الرسمي</a>
+    <a href="#traps">مصيدة الكلمات</a>
+    <a href="#quiz">أسئلة المذكرة</a>
+    <a href="#predicted">أسئلة متوقعة</a>
+  </div>
+</nav>
+
+<div class="part-banner memo-src">
+  <div class="container">
+    <span class="part-tag">الجزء الأول · الشروحات التفاعلية</span>
+    <h2>شروحات المذكرة</h2>
+    <p>شرح مبسّط بتشبيهات من الحياة اليومية لكل ما ورد في قسم تكنولوجيا المعلومات ونظم التشغيل بالمذكرة.</p>
+  </div>
+</div>
+
+<!-- ===================== 1. Hardware ===================== -->
+<section id="hw">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">01.</span> مكونات الحاسب — ماذا يوجد داخل الصندوق؟</h2>
+    <p class="sec-lead">
+      يتكون الحاسب من نوعين: <strong style="color:var(--text)">مكونات مادية</strong> <span class="en">Hardware</span> يمكن مشاهدتها ولمسها،
+      و<strong style="color:var(--text)">مكونات برمجية</strong> <span class="en">Software</span> لا تُرى ولا تُلمس لكن نرى تأثير عملها.
+    </p>
+
+    <div class="analogy">
+      🏢 <strong>تشبيه من الحياة اليومية:</strong>
+      الحاسب كشركة: <strong>وحدة النظام</strong> هي مبنى الشركة، و<strong>المعالج</strong> هو المدير الذي ينفذ القرارات، وداخل مكتب المدير قسمان: <strong>وحدة الحساب والمنطق</strong> (المحاسب الذي يجري العمليات) و<strong>وحدة التحكم</strong> (رئيس العمليات الذي يوجه الجميع — ولهذا تُوصف بأنها «دماغ الحاسب»).
+    </div>
+
+    <div class="grid cols-2">
+      <div class="card">
+        <span class="icon">📦</span>
+        <h3>وحدة النظام <span class="en">System Unit</span></h3>
+        <p>الصندوق المعدني الذي يحتوي على جميع مكونات الحاسب الأساسية تقريباً. انتبه: ليست «وحدة الطاقة» — فتلك مكوّن داخلها يمد الجهاز بالكهرباء فقط.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🧠</span>
+        <h3>المعالج <span class="en">CPU</span></h3>
+        <p>«عقل الحاسب» الذي ينفذ كل العمليات. تقاس سرعته بالميجاهرتز (MHz)، وأشهر شركاته Intel وAMD. وفي قلبه تقع وحدة الحساب والمنطق ALU.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🎛️</span>
+        <h3>وحدة التحكم <span class="en">Control Unit</span></h3>
+        <p>تُعتبر بمثابة <strong style="color:var(--accent)">الدماغ بالنسبة للحاسب</strong> — توجّه سير البيانات بين الوحدات. سؤال المذكرة الخادع: «وحدة الذاكرة هي عقل الكمبيوتر» ❌ الصحيح: وحدة التحكم.</p>
+      </div>
+      <div class="card">
+        <span class="icon">➕</span>
+        <h3>وحدة الحساب والمنطق <span class="en">ALU</span></h3>
+        <p>تجري العمليات الحسابية (جمع وطرح...) والمنطقية (مقارنات)، وتقع داخل وحدة المعالجة المركزية CPU.</p>
+      </div>
+      <div class="card">
+        <span class="icon">⌨️</span>
+        <h3>وحدات الإدخال والإخراج</h3>
+        <p>الإدخال: لوحة المفاتيح، الفأرة، الماسح الضوئي، الميكروفون. الإخراج: الشاشة، الطابعة، السماعات. ومفاتيح الوظائف F1–F12 <strong style="color:var(--warn)">تختلف وظيفتها من برنامج لآخر</strong>.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🔌</span>
+        <h3>اللوحة الأم ووحدة الطاقة</h3>
+        <p>اللوحة الأم تربط كل المكونات ببعضها، ووحدة الطاقة <span class="en">Power Supply</span> تمد الجهاز بالكهرباء — وهي غير وحدة النظام.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 2. Memory & Storage ===================== -->
+<section id="mem">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">02.</span> الذاكرة والتخزين — أين تعيش بياناتك؟</h2>
+    <p class="sec-lead"><strong style="color:var(--text)">اضغط على كل نوع ذاكرة لتفهم دوره:</strong></p>
+
+    <div class="cia-wrap">
+      <button class="cia-btn" data-mem="ram">
+        <span class="icon">⚡</span>
+        <h3>العشوائية</h3>
+        <span class="en">RAM</span>
+      </button>
+      <button class="cia-btn" data-mem="rom">
+        <span class="icon">🔒</span>
+        <h3>القراءة فقط</h3>
+        <span class="en">ROM</span>
+      </button>
+      <button class="cia-btn" data-mem="cache">
+        <span class="icon">🚀</span>
+        <h3>المخبأة</h3>
+        <span class="en">Cache</span>
+      </button>
+    </div>
+    <div class="cia-detail" id="mem-panel" aria-live="polite"></div>
+
+    <div class="analogy" style="margin-top:24px">
+      🍳 <strong>تشبيه المطبخ:</strong> <strong>RAM</strong> هي طاولة التحضير — كل ما تعمل عليه الآن موضوع عليها، وعند إغلاق المطبخ (فصل الكهرباء) تُخلى تماماً. <strong>ROM</strong> هي كتيّب تعليمات تشغيل المطبخ المثبّت على الحائط — لا يتغير ولا يضيع. <strong>القرص الصلب</strong> هو المخزن — كل شيء محفوظ فيه حتى لو أُغلق المطبخ لسنة.
+    </div>
+
+    <div class="grid cols-2">
+      <div class="card">
+        <span class="icon">💽</span>
+        <h3>القرص الصلب <span class="en">HDD</span></h3>
+        <p>جهاز التخزين الثانوي <strong style="color:var(--accent)">الرئيسي</strong> في الحاسب: قرص معدني مغطى بطبقة مغناطيسية تُسجل البيانات عليه برأس قراءة وكتابة أثناء دورانه.</p>
+      </div>
+      <div class="card">
+        <span class="icon">⚡</span>
+        <h3>القرص الصلب <span class="en">SSD</span></h3>
+        <p>يخزّن البيانات على ذاكرة فلاش (كذاكرة USB): بلا أجزاء متحركة، أسرع، أقل استهلاكاً للطاقة، ومقاوم للصدمات.</p>
+      </div>
+      <div class="card">
+        <span class="icon">📏</span>
+        <h3>وحدات قياس البيانات</h3>
+        <p>البت (0 أو 1) أصغر وحدة ← البايت = 8 بت ← الكيلوبايت = 1024 بايت ← ميجا ← جيجا ← تيرا... وكل وحدة = 1024 من سابقتها.</p>
+      </div>
+      <div class="card">
+        <span class="icon">💿</span>
+        <h3>وسائط أخرى</h3>
+        <p>أقراص CD ثلاثة أنواع (قراءة فقط / كتابة مرة / إعادة كتابة)، وDVD بسعة 7.4–17 جيجا، وفلاش USB حتى 2 تيرابايت.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 3. Operating systems ===================== -->
+<section id="os">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">03.</span> نظم التشغيل — مدير الجهاز</h2>
+    <p class="sec-lead">
+      نظام التشغيل هو العمود الفقري للحاسب وحلقة الوصل بين المستخدم والجهاز.
+      <strong style="color:var(--text)">الحاسب يمكنه العمل بدون برامج تطبيقية، لكنه لا يعمل أبداً بدون نظام تشغيل</strong> — احفظها فهي سؤال متكرر بالعكس!
+    </p>
+
+    <div class="cia-wrap" style="grid-template-columns:repeat(auto-fit,minmax(200px,1fr))">
+      <button class="cia-btn" data-ui="gui">
+        <span class="icon">🖱️</span>
+        <h3>واجهة رسومية</h3>
+        <span class="en">GUI</span>
+      </button>
+      <button class="cia-btn" data-ui="cli">
+        <span class="icon">⌨️</span>
+        <h3>واجهة أوامر</h3>
+        <span class="en">CLI</span>
+      </button>
+    </div>
+    <div class="cia-detail" id="ui-panel" aria-live="polite"></div>
+
+    <div class="grid cols-2" style="margin-top:24px">
+      <div class="card">
+        <span class="icon">🪟</span>
+        <h3>Windows</h3>
+        <p>أول إصدار عام <strong style="color:var(--accent)">1985</strong> أعلنه بيل جيتس. ويندوز 10 (2015): كورتانا + متصفح Edge + قائمة ابدأ الرسومية. ويندوز 11: يشغّل تطبيقات وألعاب أندرويد مباشرة. يستخدمه 95% من مستخدمي الحواسيب الشخصية.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🐧</span>
+        <h3>Linux</h3>
+        <p>نظام مفتوح المصدر مجاني بالكامل، يتمتع <strong style="color:var(--accent)">بدرجة عالية من الحرية في التعديل والتشغيل والتوزيع والتطوير</strong> — لا تنسب هذه الميزة لويندوز في الامتحان!</p>
+      </div>
+      <div class="card">
+        <span class="icon">🤖</span>
+        <h3>Android</h3>
+        <p>نظام مفتوح المصدر يعتمد على Linux، طورته <strong style="color:var(--accent)">Google والتحالف المفتوح للهواتف النقالة OHA</strong> — وليس ويندوز.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🍎</span>
+        <h3>Mac OS</h3>
+        <p>أول نظام تشغيل يستخدم الواجهة الرسومية GUI، وهو مثال المذكرة على <strong style="color:var(--accent)">النظام متعدد المهام</strong> (مع ويندوز ولينكس). أما MS-DOS فمثال النظام أحادي المهام.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 4. Software ===================== -->
+<section id="sw">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">04.</span> البرمجيات والتطبيقات</h2>
+    <p class="sec-lead">تنقسم برمجيات الحاسب إلى <strong style="color:var(--text)">نوعين رئيسيين</strong>: نظم التشغيل، والبرمجيات التطبيقية.</p>
+
+    <div class="grid cols-2">
+      <div class="card">
+        <span class="icon">🏢</span>
+        <h3>حزمة Microsoft Office</h3>
+        <p>Word وExcel وPowerPoint وAccess وOutlook وTeams وOneDrive... مؤسس الشركة <strong style="color:var(--accent)">بيل جيتس</strong>. وGoogle Drive <strong style="color:var(--bad)">ليس</strong> من تطبيقات مايكروسوفت — إنه سؤال الاستثناء الشهير.</p>
+      </div>
+      <div class="card">
+        <span class="icon">☁️</span>
+        <h3>OneDrive</h3>
+        <p>خدمة التخزين السحابي من مايكروسوفت — تمنح المستخدم <strong style="color:var(--accent)">5 جيجابايت مجاناً</strong> فقط (وليس 1 تيرابايت!) مع إمكانية الترقية مقابل رسوم.</p>
+      </div>
+      <div class="card">
+        <span class="icon">👨‍💻</span>
+        <h3>البرمجة <span class="en">Programming</span></h3>
+        <p>العملية التي تنجز بها فكرة معينة أو تحل مشكلة ما عن طريق <strong style="color:var(--accent)">تقسيم الفكرة أو المشكلة إلى خطوات متتالية</strong> قابلة للتكرار — كوصفة طبخ مكتوبة خطوة بخطوة.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🦠</span>
+        <h3>البرامج الضارة <span class="en">Malware</span></h3>
+        <p>أي برنامج تكون كل مهامه أو أحدها إحداث ضرر بالنظام: تجسس، تخريب، أو استنزاف للموارد (المعالج، الذاكرة، الشبكة...).</p>
+      </div>
+      <div class="card">
+        <span class="icon">⏱️</span>
+        <h3>Timer و Calendar</h3>
+        <p>في المذكرة: لحساب مدة مهمة نستخدم <span class="en">Timer</span>، ولتخطيط الأحداث نستخدم <span class="en">Calendar</span>. <strong style="color:var(--warn)">⚠️ تنبيه:</strong> هاتان الإجابتان غير واردتين نصاً في المادة الرسمية (Calendar مذكور فقط ضمن قائمة البرامج المساعدة) — احفظهما كإجابتين امتحانيتين من المذكرة.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 5. Computer types ===================== -->
+<section id="types">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">05.</span> أنواع الحاسبات</h2>
+    <p class="sec-lead">تصنَّف الحاسبات وفق طبيعة البيانات التي تعالجها — وهنا تكثر أسئلة الخلط المتعمد:</p>
+
+    <div class="grid cols-3">
+      <div class="card">
+        <span class="icon">🌡️</span>
+        <h3>التناظري <span class="en">Analog</span></h3>
+        <p>يلتقط بيانات من العالم الحقيقي (حرارة، ضغط) — <strong style="color:var(--bad)">لا يعالج بيانات رقمية</strong> ولا يستخدم الأرقام الثنائية.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🔢</span>
+        <h3>الرقمي <span class="en">Digital</span></h3>
+        <p>يعمل على البيانات الرقمية المقدمة في شكل <strong style="color:var(--accent)">أرقام ثنائية (0 و1)</strong> — وهو حاسبك الشخصي وجوالك.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🩺</span>
+        <h3>الهجين <span class="en">Hybrid</span></h3>
+        <p><strong style="color:var(--accent)">مزيج من التناظري والرقمي</strong> — يستخدم في الطب (تخطيط القلب) ومضخات البنزين. المذكرة تخدعك بنسبة هذا التعريف للتناظري!</p>
+      </div>
+    </div>
+
+    <div class="analogy">
+      📏 <strong>وبالحجم أيضاً (من المنهج الرسمي):</strong> العملاق <span class="en">Supercomputer</span> للأبحاث الضخمة ← المركزي <span class="en">Mainframe</span> للبنوك ← المتوسط <span class="en">Mini</span> (يخدم 5–300 مستخدم) ← محطة العمل <span class="en">Workstation</span> للتصميم الهندسي ← الدقيق <span class="en">Micro/PC</span> وهو جهازك الشخصي.
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 6. Shortcuts ===================== -->
+<section id="keys">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">06.</span> اختصارات لوحة المفاتيح ⌨️</h2>
+    <p class="sec-lead">أكثر ما يتكرر في الامتحان — احفظ هذه الاختصارات (كلها من المذكرة والمادة الرسمية):</p>
+
+    <div class="grid cols-3">
+      <div class="card key-card"><kbd>F2</kbd><h3>إعادة تسمية</h3><p>ملف أو مجلد محدد</p></div>
+      <div class="card key-card"><kbd>Ctrl + C</kbd><h3>نسخ</h3><p>وأيضاً <span class="en">Ctrl + Insert</span> — إجابة المذكرة المعتمدة</p></div>
+      <div class="card key-card"><kbd>Ctrl + X</kbd><h3>قص</h3><p>نقل العنصر بدلاً من نسخه</p></div>
+      <div class="card key-card"><kbd>Ctrl + V</kbd><h3>لصق</h3><p>وأيضاً <span class="en">Shift + Insert</span></p></div>
+      <div class="card key-card"><kbd>Shift + Delete</kbd><h3>حذف نهائي</h3><p>بدون المرور بسلة المحذوفات!</p></div>
+      <div class="card key-card"><kbd>Win + E</kbd><h3>مستكشف الملفات</h3><p><span class="en">File Explorer</span></p></div>
+      <div class="card key-card"><kbd>Ctrl + Shift + Esc</kbd><h3>مدير المهام</h3><p><span class="en">Task Manager</span></p></div>
+      <div class="card key-card"><kbd>Win + R ← winver</kbd><h3>معرفة إصدار ويندوز</h3><p>نافذة التشغيل Run</p></div>
+      <div class="card key-card"><kbd>Win + L</kbd><h3>قفل الجهاز</h3><p>عند مغادرة مكتبك</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 7. Glossary ===================== -->
+<section id="glossary">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">07.</span> قاموس المصطلحات</h2>
+    <p class="sec-lead">اضغط على أي بطاقة لقلبها — وكل بطاقة موسومة بمصدرها: من المذكرة أو من المنهج الرسمي.</p>
+    <div class="filters" id="filters"></div>
+    <div class="flip-grid" id="flip-grid"></div>
+  </div>
+</section>
+
+<div class="part-banner official-src">
+  <div class="container">
+    <span class="part-tag">شروحات إضافية</span>
+    <h2>من المنهج الرسمي</h2>
+    <p>موضوعات لا تغطيها المذكرة — مضافة من المادة التدريبية الرسمية (المجلس الأعلى للجامعات).</p>
+  </div>
+</div>
+
+<!-- ===================== 8. Official extras ===================== -->
+<section id="official">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">08.</span> ما لا تغطيه المذكرة</h2>
+    <p class="sec-lead">أسئلة المذكرة تركز على المكونات ونظم التشغيل، بينما المادة الرسمية (123 صفحة) تغطي أكثر — وقد تأتي منها أسئلة جديدة:</p>
+
+    <div class="grid cols-2">
+      <div class="card">
+        <span class="icon">🎓</span>
+        <h3>هيكل شهادة FDTC</h3>
+        <p>10 برامج تدريبية بأكواد BIT 01 – BIT 10 (هذا القسم هو BIT 01)، النجاح في 7 برامج: <strong style="color:var(--text)">5 إجبارية + 2 اختيارية</strong>، ومدة كل برنامج يومان. الاختبار متاح بالعربية أو الإنجليزية.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🧬</span>
+        <h3>BIOS والإقلاع</h3>
+        <p><span class="en">Basic Input Output System</span>: برنامج مخزّن في ذاكرة ROM مسؤول عن أساسيات عمل الحاسب وتشغيله الأولي — ولهذا كانت ROM «مفيدة في التشغيل الأولي».</p>
+      </div>
+      <div class="card">
+        <span class="icon">🔢</span>
+        <h3>سلسلة وحدات القياس كاملة</h3>
+        <p>بت ← بايت (8 بت) ← KB ← MB ← GB ← TB ← PB ← EB ← ZB ← YB، وكل وحدة = 1024 من سابقتها.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🔌</span>
+        <h3>إصدارات USB</h3>
+        <p>1.1 (عام 1998) ← 2.0 (2000، بسرعة 480Mb) ← 3.0 (2008) ← 3.1 (2015) ← 3.2 (2018) ← 4.0 (2019، بسرعة 40Gb).</p>
+      </div>
+      <div class="card">
+        <span class="icon">🕰️</span>
+        <h3>محطات في تاريخ ويندوز</h3>
+        <p>2.0 (1987): أول نسخة وورد وإكسل · 95: أول معيار 32بت وقائمة Start · ME وVista: وُصفا بالفاشلَين · 10 (2015) · 11 (أُعلن رسمياً 2022): Snap Layouts وTeams مدمج.</p>
+      </div>
+      <div class="card">
+        <span class="icon">⚙️</span>
+        <h3>وظائف نظام التشغيل الست</h3>
+        <p>إدارة المعدات، إدارة الذاكرة الرئيسية، إدارة عمل المعالج، إدارة الملفات، توفير واجهة العمل، وتمكين البرامج من العمل.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🖥️</span>
+        <h3>متطلبات Windows 11 الدنيا</h3>
+        <p>معالج 1GHz بنواتين 64بت، ذاكرة 4GB RAM، تخزين 64GB، شريحة أمان TPM 2.0، وUEFI مع Secure Boot — جدول بالإنجليزية في المادة مرشح قوي للامتحان.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🛡️</span>
+        <h3>أمان ويندوز وتسجيل الدخول</h3>
+        <p>ألوان Windows Security: أخضر (سليم) / أصفر (توصية) / أحمر (تحذير فوري). وWindows Hello: دخول بالوجه أو البصمة، وكلمة مرور بصورة، وقفل ديناميكي يقفل الجهاز عند ابتعاد جوالك. كلمة المرور القوية: 8 أحرف على الأقل.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🌐</span>
+        <h3>الإنترنت والتقنيات الحديثة</h3>
+        <p>نشأ الإنترنت عام <strong style="color:var(--text)">1969</strong> باسم ARPANET لدعم الأبحاث العسكرية الأمريكية. والمادة تعرّف: الذكاء الاصطناعي وتطبيقاته الثلاثة، الحوسبة السحابية، إنترنت الأشياء IoT، والفرق بين الواقع الافتراضي VR والمعزز AR.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🇪🇬</span>
+        <h3>منصات مصرية</h3>
+        <p>منصة مصر الرقمية digital.gov.eg للخدمات الحكومية، وبنك المعرفة المصري ekb.eg — مجاني لكل المصريين من كل الأعمار.</p>
+      </div>
+      <div class="card">
+        <span class="icon">📄</span>
+        <h3>الملفات والامتدادات</h3>
+        <p>اسم الملف لا يزيد عن 255 حرفاً، وأغلب الامتدادات 3 حروف: docx وورد، xlsx إكسل، pptx بوربوينت، mp3 صوت، mp4 فيديو، jpg صور، zip/rar مضغوطة.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🗓️</span>
+        <h3>Microsoft Office تاريخياً</h3>
+        <p>أعلنه بيل جيتس في 1 أغسطس 1988، وأول إصدار عام 1990 (وورد وإكسل وبوربوينت فقط)، ومتوفر اليوم بـ35 لغة. وAccess هو نظام إدارة قواعد بيانات DBMS.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="part-banner memo-src">
+  <div class="container">
+    <span class="part-tag">الجزء الثاني · الأسئلة</span>
+    <h2>أسئلة المذكرة</h2>
+    <p>مصيدة الكلمات واختبار تفاعلي من أسئلة المذكرة الفعلية (42 سؤالاً).</p>
+  </div>
+</div>
+
+<!-- ===================== 9. Word traps ===================== -->
+<section id="traps">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">09.</span> مصيدة الكلمات — أسئلة الخلط المتعمد</h2>
+    <p class="sec-lead">في هذا القسم لا تعتمد المصيدة على كلمة «دائماً» بل على <strong style="color:var(--text)">تبديل مصطلح بآخر</strong>. اضغط أي عبارة لكشف الحكم — كلمة المصيدة <span class="mark">مظللة</span>.</p>
+    <div id="traps-list"></div>
+  </div>
+</section>
+
+<!-- ===================== 10. Memo quiz ===================== -->
+<section id="quiz">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">10.</span> أسئلة المذكرة — اختبر نفسك 🎯</h2>
+    <p class="sec-lead">14 سؤالاً من المذكرة بصياغتها الإنجليزية الأصلية مع ترجمة وشرح مستند إلى صفحات المادة الرسمية.</p>
+    <div class="quiz-box" id="quiz-box"></div>
+  </div>
+</section>
+
+<div class="part-banner official-src">
+  <div class="container">
+    <span class="part-tag">أسئلة إضافية</span>
+    <h2>أسئلة متوقعة من المنهج الرسمي</h2>
+    <p>22 سؤالاً تدريبياً من الموضوعات التي لا تغطيها المذكرة.</p>
+  </div>
+</div>
+
+<!-- ===================== 11. Predicted quiz ===================== -->
+<section id="predicted">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">11.</span> أسئلة متوقعة 🔮</h2>
+    <p class="sec-lead">⚠️ أسئلة تدريبية مصوغة من محتوى المادة الرسمية — وليست منقولة من امتحانات فعلية.</p>
+    <div class="quiz-box" id="quiz2-box"></div>
+  </div>
+</section>
+
+<nav class="tabbar" aria-label="تنقل سريع">
+  <a href="#hw" class="active"><span class="ico">📖</span>الشرح</a>
+  <a href="#official"><span class="ico">🏛️</span>المنهج</a>
+  <a href="#traps"><span class="ico">🧩</span>الأسئلة</a>
+  <a href="#glossary"><span class="ico">📇</span>القاموس</a>
+</nav>
+
+<script src="assets/app.js"></script>
+<script>
+/* ===== لوحات الذاكرة التفاعلية ===== */
+const MEM={
+  ram:{icon:'⚡',ar:'ذاكرة الوصول العشوائي',lat:'RAM — Random Access Memory',
+    def:'الذاكرة المؤقتة التي يعمل عليها الجهاز الآن. بمجرد إطفاء الحاسب أو انقطاع التيار تفقد جميع محتوياتها — ولذلك سميت «الذاكرة المتطايرة» Volatile.',
+    ex:'<strong>معلومة امتحانية:</strong> كلما ازداد حجم هذه الذاكرة كان الحاسب أسرع. وهي إجابة سؤال «ما هي الذاكرة المتغيرة volatile؟»'},
+  rom:{icon:'🔒',ar:'ذاكرة القراءة فقط',lat:'ROM — Read Only Memory',
+    def:'ذاكرة إلكترونية تحتوي معلومات دائمة وغير متطايرة لا تُفقد حتى أثناء فصل التيار الكهربائي، وتفيد في عملية التشغيل الأولية للجهاز.',
+    ex:'<strong>من المنهج الرسمي:</strong> يُخزَّن فيها برنامج BIOS المسؤول عن أساسيات تشغيل الحاسب.'},
+  cache:{icon:'🚀',ar:'الذاكرة المخبأة',lat:'Cache Memory',
+    def:'ذاكرة خاصة بشريحة المعالج، أصغر من RAM وأسرع منها بكثير — يستخدمها المعالج لتخزين البيانات الأكثر تكراراً.',
+    ex:'<strong>من المنهج الرسمي:</strong> الوصول إليها غير مفتوح للتطبيقات — فهي حكر على المعالج نفسه.'}
+};
+const memPanel=document.getElementById('mem-panel');
+function showMem(k){
+  const t=MEM[k];
+  memPanel.innerHTML=`<h3>${t.icon} ${t.ar}</h3><span class="lat">${t.lat}</span><p>${t.def}</p><p style="margin-top:12px">${t.ex}</p>`;
+  document.querySelectorAll('[data-mem]').forEach(b=>b.classList.toggle('active',b.dataset.mem===k));
+}
+document.querySelectorAll('[data-mem]').forEach(b=>b.addEventListener('click',()=>showMem(b.dataset.mem)));
+showMem('ram');
+
+/* ===== GUI vs CLI ===== */
+const UI={
+  gui:{icon:'🖱️',ar:'الواجهة الرسومية',lat:'GUI — Graphical User Interface',
+    def:'تعتمد على القوائم والنوافذ والأيقونات والفأرة — كواجهة ويندوز التي تعرفها. وماك أو إس كان أول نظام تشغيل يستخدمها.',
+    ex:'<strong>تشبيه:</strong> مطعم تختار فيه طلبك من قائمة مصورة بالإشارة.'},
+  cli:{icon:'⌨️',ar:'واجهة سطر الأوامر',lat:'CLI — Command-Line Interface',
+    def:'تعتمد على كتابة الأوامر نصاً بلوحة المفاتيح — مثل نظام MS-DOS القديم الذي لا يستخدم الفأرة إطلاقاً.',
+    ex:`<strong>هكذا تبدو:</strong><div class="term-demo"><span class="muted">C:\\&gt;</span> copy report.docx D:\\backup\\<br><span class="muted">1 file(s) copied.</span></div>`}
+};
+const uiPanel=document.getElementById('ui-panel');
+function showUI(k){
+  const t=UI[k];
+  uiPanel.innerHTML=`<h3>${t.icon} ${t.ar}</h3><span class="lat">${t.lat}</span><p>${t.def}</p><p style="margin-top:12px">${t.ex}</p>`;
+  document.querySelectorAll('[data-ui]').forEach(b=>b.classList.toggle('active',b.dataset.ui===k));
+}
+document.querySelectorAll('[data-ui]').forEach(b=>b.addEventListener('click',()=>showUI(b.dataset.ui)));
+showUI('gui');
+
+/* ===== مصيدة الكلمات ===== */
+App.renderTraps('traps-list',[
+ {q:'The user interface that relies on writing commands is referred to as <span class="mark">GUI</span>.',
+  ar:'واجهة المستخدم المعتمدة على كتابة الأوامر تسمى GUI.',ok:false,
+  a:'<b>خطأ.</b> كتابة الأوامر = <span class="en">CLI</span>؛ أما GUI فهي الواجهة الرسومية بالقوائم والنوافذ. (المادة ص23)'},
+ {q:'A computer can operate <span class="mark">without an operating system</span> but cannot operate without application software.',
+  ar:'يمكن للكمبيوتر العمل بدون نظام تشغيل لكن لا يعمل بدون برامج تطبيقية.',ok:false,
+  a:'<b>خطأ — العبارة معكوسة.</b> نص المادة (م44): «جهاز الحاسوب لا يعمل دون نظام تشغيل... ويمكن للحاسوب أن يعمل بدون» البرامج التطبيقية.'},
+ {q:'One Drive offers <span class="mark">1TB</span> of free storage space per user.',
+  ar:'ون درايف يوفر 1 تيرابايت تخزيناً مجانياً لكل مستخدم.',ok:false,
+  a:'<b>خطأ.</b> المساحة المجانية <span class="en">5GB</span> فقط (المادة م92)، والترقية مدفوعة.'},
+ {q:'Permanent memory is an electronic chip that stores information <span class="mark">temporarily</span>.',
+  ar:'الذاكرة الدائمة شريحة تخزن المعلومات مؤقتاً.',ok:false,
+  a:'<b>خطأ.</b> الدائمة (ROM) معلوماتها دائمة لا تُفقد بفصل التيار؛ المؤقتة هي RAM. (المادة ص14-15)'},
+ {q:'<span class="mark">Windows</span> system enjoys a high degree of freedom to modify, operate, distribute and develop its parts.',
+  ar:'نظام ويندوز يتمتع بحرية عالية في التعديل والتشغيل والتوزيع والتطوير.',ok:false,
+  a:'<b>خطأ.</b> هذه صفة <span class="en">Linux</span> مفتوح المصدر المجاني. (المادة ص24 وم51)'},
+ {q:'<span class="mark">Analog</span> computers are a combination of an analog and digital computers.',
+  ar:'الحاسبات التناظرية مزيج من التناظرية والرقمية.',ok:false,
+  a:'<b>خطأ.</b> المزيج هو الحاسب الهجين <span class="en">Hybrid</span> (المادة م30). التناظري يلتقط بيانات العالم الحقيقي فقط.'},
+ {q:'The <span class="mark">memory unit</span> is considered the brain of a computer.',
+  ar:'وحدة الذاكرة تعتبر عقل الكمبيوتر.',ok:false,
+  a:'<b>خطأ.</b> وحدة التحكم <span class="en">Control Unit</span> هي التي «تعتبر بمثابة الدماغ بالنسبة للحاسب» (المادة ص10).'},
+ {q:'Once the computer is turned off, <span class="mark">ROM</span> loses all its contents.',
+  ar:'بمجرد إطفاء الكمبيوتر تفقد ROM جميع محتوياتها.',ok:false,
+  a:'<b>خطأ.</b> التي تفقد محتوياتها هي RAM «المتطايرة»؛ أما ROM فمعلوماتها «دائمة وغير متطايرة حتى في أثناء فصل التيار» (المادة ص14-15).'},
+ {q:'All functions keys do <span class="mark">same functions</span> in all programs.',
+  ar:'كل مفاتيح الوظائف تؤدي نفس الوظيفة في جميع البرامج.',ok:false,
+  a:'<b>خطأ.</b> نص المادة (ص16): «تختلف وظائف هذه المفاتيح من برنامج إلى آخر».'},
+ {q:'Metal part that contains most of computer parts is <span class="mark">Power unit</span>.',
+  ar:'الجزء المعدني الحاوي لمعظم مكونات الكمبيوتر هو وحدة الطاقة.',ok:false,
+  a:'<b>خطأ.</b> إنه وحدة النظام <span class="en">System Unit</span> (المادة ص8)؛ وحدة الطاقة مجرد مكوّن داخله.'}
+]);
+
+/* ===== أسئلة المذكرة ===== */
+App.initQuiz('quiz-box',[
+ {en:'Who is the founder of Microsoft Corporation?',ar:'من مؤسس شركة مايكروسوفت؟',
+  opts:['Steve Jobs','Bill Gates','Mark Zuckerberg','Elon Musk'],a:1,
+  exp:'بيل جيتس — نص المادة (م53): «قام مؤسس شركة مايكروسوفت بيل جيتس بالإعلان عن أول نظام ويندوز... 1985».'},
+ {en:'An electronic memory that contains information useful in the initial operation of the device.',ar:'ذاكرة إلكترونية تحتوي معلومات مفيدة في التشغيل الأولي للجهاز.',
+  opts:['RAM','ROM','Cache','HDD'],a:1,
+  exp:'ROM — «تفيد هذه المعلومات في عملية التشغيل الأولية للجهاز» (المادة ص14)، وفيها يُخزَّن BIOS.'},
+ {en:'The ……… system is an example of a multitasking program.',ar:'نظام ... مثال على البرنامج متعدد المهام.',
+  opts:['MS-DOS','Mac OS','BIOS','CLI'],a:1,
+  exp:'المادة (ص22) تذكر أمثلة تعدد المهام: «windows، linux، mac OS» — وMS-DOS مثال الأحادي.'},
+ {en:'All these software applications are provided by Microsoft except …',ar:'كل هذه التطبيقات من مايكروسوفت ما عدا...',
+  opts:['Word','OneDrive','Google Drive','Excel'],a:2,
+  exp:'Google Drive من جوجل — قائمة برامج مايكروسوفت في المادة (م42) لا تتضمنه.'},
+ {en:'… types of hard disks store data on flash memory.',ar:'نوع الأقراص الصلبة الذي يخزن البيانات على ذاكرة فلاش هو...',
+  opts:['HDD','CD-ROM','SSD','DVD'],a:2,
+  exp:'SSD — «تقوم هذه الأنواع بتخزين البيانات على ذاكرة فلاش» (المادة ص20).'},
+ {en:'A metal box that contains almost all of the basic computer components …',ar:'الصندوق المعدني الحاوي لجميع مكونات الحاسب الأساسية تقريباً...',
+  opts:['Power unit','System unit','CPU','Motherboard'],a:1,
+  exp:'وحدة النظام — «الصندوق المعدني الذي يحتوي على جميع مكونات الحاسب الأساسية تقريباً» (المادة ص8).'},
+ {en:'………. is a volatile memory.',ar:'... ذاكرة متطايرة (متغيرة).',
+  opts:['ROM','RAM','SSD','BIOS'],a:1,
+  exp:'RAM — «بمجرد إطفاء الحاسب تفقد جميع محتوياتها ولذلك سميت بالذاكرة المتطايرة» (المادة ص14).'},
+ {en:'The process by which you can achieve a specific idea or solve a problem by dividing it into successive steps …',ar:'العملية التي تحقق بها فكرة أو تحل مشكلة بتقسيمها لخطوات متتالية...',
+  opts:['التشفير','البرمجة Programming','النسخ الاحتياطي','الفهرسة'],a:1,
+  exp:'البرمجة — التعريف حرفي من المادة (م45).'},
+ {en:'Microsoft released its first version of the Windows operating system in …',ar:'أصدرت مايكروسوفت أول نسخة من ويندوز عام...',
+  opts:['1975','1985','1995','2000'],a:1,
+  exp:'1985 — «ويندوز (1.0) عام 1985» (المادة ص24 وم53). أما أول نظام مستقل فكان 95.'},
+ {en:'Hard disk covered with a magnetic layer …',ar:'القرص الصلب المغطى بطبقة مغناطيسية...',
+  opts:['SSD','HDD','USB Flash','Cache'],a:1,
+  exp:'HDD — «قرص معدني مغطى بطبقة مغناطيسية وتسجل البيانات برأس قراءة وكتابة» (المادة ص19).'},
+ {en:'The name of the file or folder is changed using a key …',ar:'يُعاد تسمية الملف أو المجلد بمفتاح...',
+  opts:['F1','F2','F5','F12'],a:1,
+  exp:'F2 — (المادة م64 وجدول الاختصارات م115: Rename the selected item).'},
+ {en:'To copy files and folders …',ar:'لنسخ الملفات والمجلدات...',
+  opts:['CTRL + X','CTRL + INSERT','SHIFT + DELETE','ALT + F4'],a:1,
+  exp:'إجابة المذكرة المعتمدة CTRL+INSERT — والمادة (م64): «Copy او Ctrl+C أو الضغط على مفتاحي CTRL+Insert».'},
+ {en:'To count the duration of performing a task, use …',ar:'لحساب مدة تنفيذ مهمة نستخدم...',
+  opts:['Calendar','Timer','Clock','Calculator'],a:1,
+  exp:'Timer — إجابة المذكرة. ⚠️ غير واردة نصاً في المادة الرسمية؛ احفظها كإجابة امتحانية.'},
+ {en:'The application used for planning events …',ar:'التطبيق المستخدم لتخطيط الأحداث...',
+  opts:['Paint','Calendar','WordPad','Sticky Notes'],a:1,
+  exp:'Calendar — إجابة المذكرة. ⚠️ المادة تذكره فقط ضمن قائمة البرامج المساعدة (م86) دون هذا التعريف.'}
+]);
+
+/* ===== أسئلة متوقعة ===== */
+App.initQuiz('quiz2-box',[
+ {en:'How many bits are in one Byte?',ar:'كم عدد البتات في البايت الواحد؟',
+  opts:['4','8','16','1024'],a:1,exp:'البايت = 8 بت، والكيلوبايت = 1024 بايت (المادة ص12-13).'},
+ {en:'The processor speed is measured in .....',ar:'تقاس سرعة المعالج بوحدة...',
+  opts:['Gigabyte','MegaHertz (MHz)','Watt','Pixel'],a:1,exp:'الميجاهرتز MHz — وحدة قياس التردد (المادة ص10).'},
+ {en:'The BIOS program is stored in .....',ar:'يُخزَّن برنامج BIOS في ذاكرة...',
+  opts:['RAM','ROM','Cache','HDD'],a:1,exp:'BIOS مخزّن في ROM وهو مسؤول عن أساسيات عمل الحاسب (المادة ص15).'},
+ {en:'The memory that is smaller and much faster than RAM, dedicated to the CPU chip is .....',ar:'الذاكرة الأصغر والأسرع بكثير من RAM والخاصة بشريحة المعالج هي...',
+  opts:['ROM','Cache','SSD','Flash'],a:1,exp:'الذاكرة المخبأة Cache — والوصول إليها غير مفتوح للتطبيقات (المادة ص14).'},
+ {en:'The CD type that can be rewritten multiple times is .....',ar:'نوع الأقراص المضغوطة القابل لإعادة الكتابة عدة مرات هو...',
+  opts:['CD-ROM','CD-R','CD-RW','DVD-ROM'],a:2,exp:'CD-RW قابل لإعادة الكتابة؛ CD-R كتابة مرة واحدة؛ CD-ROM قراءة فقط (المادة ص20).'},
+ {en:'An example of a single-tasking operating system is .....',ar:'مثال على نظام التشغيل أحادي المهام...',
+  opts:['Windows','Linux','MS-DOS','Mac OS'],a:2,exp:'MS-DOS مثال النظام أحادي المهام (المادة ص22)، وأنتجته IBM ويعمل بكتابة الأوامر فقط.'},
+ {en:'The first operating system to use a graphical user interface (GUI) was .....',ar:'أول نظام تشغيل استخدم الواجهة الرسومية هو...',
+  opts:['Windows','Mac OS','Linux','Android'],a:1,exp:'Mac OS «يعد أول نظام تشغيل يستخدم واجهة مستخدم رسومية GUI» (المادة ص25).'},
+ {en:'Windows 95 introduced for the first time .....',ar:'قدّم ويندوز 95 لأول مرة...',
+  opts:['متصفح Edge','معيار 32بت وقائمة Start','المساعد كورتانا','تطبيقات أندرويد'],a:1,exp:'ويندوز 95: اعتماد معيار 32بت لأول مرة وإضافة قائمة Start (المادة م55).'},
+ {en:'The basic functions of an operating system are ..... functions.',ar:'عدد الوظائف الأساسية لنظام التشغيل...',
+  opts:['3','4','6','9'],a:2,exp:'ست وظائف: إدارة المعدات والذاكرة والمعالج والملفات وواجهة العمل وتمكين البرامج (المادة م61).'},
+ {en:'Linux operating system was designed in .....',ar:'صُمم نظام لينكس عام...',
+  opts:['1985','1991','1995','2001'],a:1,exp:'Linux صُمم عام 1991، مفتوح المصدر ومجاني (المادة م51).'},
+ {en:'About ..... of personal computer users use Windows.',ar:'يستخدم ويندوز نحو ... من مستخدمي الحواسيب الشخصية.',
+  opts:['50%','75%','95%','25%'],a:2,exp:'95% من مستخدمي الحواسيب الشخصية يستخدمون ويندوز (المادة م62).'},
+ {en:'Snap Layouts and integrating Microsoft Teams into the taskbar are features of .....',ar:'تخطيطات Snap ودمج Teams في شريط المهام من مميزات...',
+  opts:['Windows 7','Windows 10','Windows 11','Windows XP'],a:2,exp:'من مميزات ويندوز 11 الذي أُعلن رسمياً عام 2022 (المادة م60-61).'},
+ {en:'The file name must not exceed ..... characters.',ar:'يجب ألا يزيد اسم الملف عن ... حرفاً.',
+  opts:['64','128','255','512'],a:2,exp:'255 حرفاً، ومعظم الامتدادات ثلاثة حروف (المادة م66).'},
+ {en:'Windows logo key + E opens .....',ar:'اختصار Win + E يفتح...',
+  opts:['الإعدادات','مستكشف الملفات File Explorer','مدير المهام','المتصفح'],a:1,exp:'Win+E يفتح File Explorer (المادة م65). أما الإعدادات فـ Win+I.'},
+ {en:'To know your Windows version, open Run and type .....',ar:'لمعرفة إصدار الويندوز نفتح نافذة Run ونكتب...',
+  opts:['version','winver','sysinfo','about'],a:1,exp:'Win+R ثم كتابة winver (المادة م67).'},
+ {en:'Among Windows 11 minimum requirements: a security chip called .....',ar:'من متطلبات ويندوز 11 الدنيا: شريحة أمان تسمى...',
+  opts:['TPM 2.0','GPU 4.0','USB 3.0','DDR 5'],a:0,exp:'TPM 2.0 مع UEFI وSecure Boot، ومعالج 1GHz وذاكرة 4GB (جدول المادة م68).'},
+ {en:'To open Task Manager directly, press .....',ar:'لفتح مدير المهام مباشرة نضغط...',
+  opts:['Ctrl+Shift+Esc','Ctrl+C','Win+L','F5'],a:0,exp:'Ctrl+Shift+Esc — ويعرض أداء المعالج والذاكرة والقرص والشبكة (المادة م66).'},
+ {en:'In Windows Security, the red icon means .....',ar:'في أمان ويندوز، اللون الأحمر يعني...',
+  opts:['كل شيء سليم','توصية تتعلق بالسلامة','تحذير يتطلب انتباهاً فورياً','تحديث متاح'],a:2,exp:'أخضر = سليم، أصفر = توصية، أحمر = تحذير فوري (المادة م89-90).'},
+ {en:'A strong password must not be less than ..... characters.',ar:'كلمة المرور القوية يجب ألا تقل عن ... أحرف.',
+  opts:['4','6','8','12'],a:2,exp:'8 أحرف على الأقل مع مزيج أرقام وحروف ورموز خاصة (المادة م94).'},
+ {en:'The Internet started in 1969 in the USA under the name .....',ar:'نشأ الإنترنت عام 1969 في أمريكا باسم...',
+  opts:['ARPANET','Ethernet','Intranet','WWW'],a:0,exp:'ARPANET لدعم الأبحاث العسكرية — ويسمى الإنترنت «شبكة الشبكات» (المادة م96).'},
+ {en:'Microsoft Office was first announced by Bill Gates in .....',ar:'أعلن بيل جيتس عن Microsoft Office لأول مرة عام...',
+  opts:['1985','1988','1990','1995'],a:1,exp:'أُعلن في 1 أغسطس 1988، وصدر أول إصدار عام 1990 بثلاثة برامج فقط (المادة م97).'},
+ {en:'Microsoft Access is a .....',ar:'برنامج Microsoft Access هو...',
+  opts:['معالج نصوص','نظام إدارة قواعد بيانات DBMS','متصفح ويب','برنامج عروض تقديمية'],a:1,exp:'Access = نظام إدارة قواعد بيانات DBMS (المادة م99).'}
+]);
+
+/* ===== القاموس ===== */
+App.renderGlossary({
+  gridId:'flip-grid',filtersId:'filters',
+  cats:{all:'الكل',hw:'مكونات مادية',mem:'ذاكرة وتخزين',os:'نظم تشغيل',sw:'برمجيات'},
+  officialSet:new Set(['Motherboard','Cache','BIOS','Algorithm','Bit & Byte','Publisher']),
+  terms:[
+   {c:'hw',ar:'المكونات المادية',en:'Hardware',d:'مكونات الحاسب التي يمكن مشاهدتها ولمسها، بعكس البرمجية التي نرى تأثير عملها فقط.',e:'Physical components that can be seen and touched.'},
+   {c:'hw',ar:'وحدة النظام',en:'System Unit',d:'الصندوق المعدني الذي يحتوي على جميع مكونات الحاسب الأساسية تقريباً.',e:'A metal box that contains almost all basic computer components.'},
+   {c:'hw',ar:'المعالج',en:'CPU',d:'عقل الحاسب المنفذ لكل العمليات؛ سرعته بالميجاهرتز، وأشهر شركاته Intel وAMD.',e:'Central Processing Unit — the brain executing all operations.'},
+   {c:'hw',ar:'وحدة الحساب والمنطق',en:'ALU',d:'تجري العمليات الحسابية والمنطقية، وتقع في قلب وحدة المعالجة المركزية.',e:'Arithmetic & Logic Unit — located inside the CPU.'},
+   {c:'hw',ar:'وحدة التحكم',en:'Control Unit',d:'تعتبر بمثابة الدماغ بالنسبة للحاسب — توجه سير البيانات بين الوحدات.',e:'Considered the brain of the computer.'},
+   {c:'hw',ar:'اللوحة الأم',en:'Motherboard',d:'اللوحة الرئيسية التي تربط جميع مكونات الحاسب ببعضها.',e:'The main board connecting all computer components.'},
+   {c:'mem',ar:'ذاكرة الوصول العشوائي',en:'RAM',d:'الذاكرة المؤقتة «المتطايرة»: تفقد محتوياتها بانقطاع التيار، وكلما زادت كان الحاسب أسرع.',e:'Volatile memory; loses contents when power is off.'},
+   {c:'mem',ar:'ذاكرة القراءة فقط',en:'ROM',d:'معلومات دائمة لا تُفقد بفصل التيار، تفيد في التشغيل الأولي للجهاز.',e:'Permanent memory useful in the initial operation of the device.'},
+   {c:'mem',ar:'الذاكرة المخبأة',en:'Cache',d:'خاصة بشريحة المعالج؛ أصغر وأسرع بكثير من RAM، وغير متاحة للتطبيقات.',e:'CPU-dedicated memory, smaller and much faster than RAM.'},
+   {c:'mem',ar:'القرص الصلب المغناطيسي',en:'HDD',d:'قرص معدني مغطى بطبقة مغناطيسية، وهو جهاز التخزين الثانوي الرئيسي.',e:'Metal disk covered with a magnetic layer; main secondary storage.'},
+   {c:'mem',ar:'القرص الصلب الإلكتروني',en:'SSD',d:'يخزن البيانات على ذاكرة فلاش: أسرع، بلا أجزاء متحركة، ومقاوم للصدمات.',e:'Stores data on flash memory; faster with no moving parts.'},
+   {c:'mem',ar:'البت والبايت',en:'Bit & Byte',d:'البت أصغر وحدة (0 أو 1)، والبايت = 8 بت، والكيلوبايت = 1024 بايت.',e:'Bit is the smallest unit; 1 Byte = 8 bits; 1 KB = 1024 Bytes.'},
+   {c:'os',ar:'نظام التشغيل',en:'Operating System',d:'العمود الفقري للحاسب وحلقة الوصل بين المستخدم والجهاز — لا يعمل الحاسب بدونه.',e:'The backbone linking user and machine; a computer cannot run without it.'},
+   {c:'os',ar:'الواجهة الرسومية',en:'GUI',d:'تعتمد على القوائم والنوافذ والأيقونات — وماك أو إس أول من استخدمها.',e:'Graphical User Interface with menus, windows and icons.'},
+   {c:'os',ar:'واجهة سطر الأوامر',en:'CLI',d:'تعتمد على كتابة الأوامر نصاً بلوحة المفاتيح — مثل MS-DOS.',e:'Command-Line Interface relying on typed commands.'},
+   {c:'os',ar:'تعدد المهام',en:'Multitasking',d:'تشغيل أكثر من برنامج معاً: ويندوز ولينكس وماك أمثلة له، وMS-DOS أحادي المهام.',e:'Running multiple programs; Windows, Linux and Mac OS are examples.'},
+   {c:'os',ar:'ويندوز',en:'Windows',d:'أول إصدار 1985؛ ويندوز 10: كورتانا وEdge وقائمة ابدأ؛ ويندوز 11: تطبيقات أندرويد مباشرة.',e:'First release 1985; Win11 runs Android apps directly.'},
+   {c:'os',ar:'لينكس',en:'Linux',d:'مفتوح المصدر مجاني بدرجة عالية من حرية التعديل والتشغيل والتوزيع والتطوير.',e:'Open-source with high freedom to modify, operate and distribute.'},
+   {c:'os',ar:'أندرويد',en:'Android',d:'نظام مفتوح المصدر يعتمد على لينكس، طورته Google والتحالف المفتوح OHA.',e:'Open-source Linux-based OS by Google and the OHA.'},
+   {c:'os',ar:'ماك أو إس',en:'Mac OS',d:'أول نظام تشغيل استخدم الواجهة الرسومية، ومثال المذكرة على تعدد المهام.',e:'First OS to use a GUI; a multitasking example.'},
+   {c:'os',ar:'نظام الإدخال والإخراج الأساسي',en:'BIOS',d:'برنامج مخزن في ROM مسؤول عن أساسيات عمل الحاسب وتشغيله الأولي.',e:'Basic Input Output System stored in ROM.'},
+   {c:'sw',ar:'البرمجيات',en:'Software',d:'تنقسم إلى نوعين رئيسيين: نظم التشغيل والبرمجيات التطبيقية.',e:'Divided into two types: operating systems and applications.'},
+   {c:'sw',ar:'البرمجة',en:'Programming',d:'إنجاز فكرة أو حل مشكلة بتقسيمها إلى خطوات متتالية قابلة للتكرار.',e:'Solving a problem by dividing it into successive steps.'},
+   {c:'sw',ar:'الخوارزمية',en:'Algorithm',d:'خطوات محددة ومرتبة لحل مشكلة — أساس كل برنامج.',e:'Ordered, defined steps to solve a problem.'},
+   {c:'sw',ar:'البرامج الضارة',en:'Malware',d:'أي برنامج كل مهامه أو أحدها إحداث ضرر بالنظام: تجسس أو تخريب أو استنزاف موارد.',e:'Any program whose tasks (all or one) cause damage to the system.'},
+   {c:'sw',ar:'ون درايف',en:'OneDrive',d:'خدمة التخزين السحابي من مايكروسوفت — 5 جيجابايت مجاناً لكل مستخدم.',e:'Microsoft cloud storage — 5GB free per user.'},
+   {c:'sw',ar:'الناشر المكتبي',en:'Publisher',d:'برنامج مايكروسوفت للنشر المكتبي: بطاقات التهنئة والدعوة والكتالوجات.',e:'Microsoft desktop publishing app for cards and catalogs.'}
+  ]
+});
+
+/* ===== الأكورديون والتنقل ===== */
+App.initAccordions();
+App.initNav({hw:'#hw',mem:'#hw',os:'#hw',sw:'#hw',types:'#hw',keys:'#hw',glossary:'#glossary',official:'#official',traps:'#traps',quiz:'#traps',predicted:'#traps'});
+</script>
+</body>
+</html>
