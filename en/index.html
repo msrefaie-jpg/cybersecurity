@@ -10,7 +10,13 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="FDTC Guide">
+<script>try{if(localStorage.getItem('lang')==='ar')location.replace('../')}catch(e){}</script>
 <link rel="manifest" href="../manifest.webmanifest">
+<link rel="canonical" href="https://msrefaie-jpg.github.io/cybersecurity/en/">
+<link rel="alternate" hreflang="ar" href="https://msrefaie-jpg.github.io/cybersecurity/">
+<link rel="alternate" hreflang="en" href="https://msrefaie-jpg.github.io/cybersecurity/en/">
+<link rel="alternate" hreflang="x-default" href="https://msrefaie-jpg.github.io/cybersecurity/">
+<link rel="prefetch" href="../index.html">
 <link rel="icon" href="../icon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="../icon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -46,7 +52,7 @@
 <section id="sections" style="border-bottom:none">
   <div class="container">
     <h2 class="sec-title">Course Chapters</h2>
-    <p class="sec-lead">Pick the chapter you want to study — chapters marked ✓ are fully ready. <a href="../" style="color:var(--accent)">النسخة العربية 🌐</a></p>
+    <p class="sec-lead">Pick the chapter you want to study — chapters marked ✓ are fully ready. <a href="../" class="to-ar" style="color:var(--accent)">النسخة العربية 🌐</a></p>
 
     <div class="hub-grid">
       <a class="hub-card" href="cyber.html">
@@ -125,10 +131,11 @@
 
 <footer class="app-footer">
   A training app on the FDTC digital transformation course content<br>
-  App copyright © Eng. Mohamed Salah · <a href="#" id="show-intro">Show dedication 🎁</a> · <a href="../">العربية 🌐</a>
+  App copyright © Eng. Mohamed Salah · <a href="#" id="show-intro">Show dedication 🎁</a> · <a href="../" class="to-ar">العربية 🌐</a>
 </footer>
 
 <script>
+document.querySelectorAll('a.to-ar').forEach(a=>a.addEventListener('click',()=>{try{localStorage.setItem('lang','ar')}catch(e){}}));
 const intro=document.getElementById('intro');
 const show=()=>intro.classList.remove('hide');
 const hide=()=>{intro.classList.add('hide');try{localStorage.setItem('intro-seen','1')}catch(e){}};

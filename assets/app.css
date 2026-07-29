@@ -386,3 +386,22 @@
   [dir="ltr"] nav.tabs .inner{mask-image:linear-gradient(to right,transparent 0,#000 22px,#000 calc(100% - 22px),transparent 100%);-webkit-mask-image:linear-gradient(to right,transparent 0,#000 22px,#000 calc(100% - 22px),transparent 100%)}
   .lang-btn{background:none;border:1px solid var(--line);color:var(--text);font-size:13px;font-weight:700;padding:5px 12px;cursor:pointer;border-radius:999px;line-height:1.4;flex:0 0 auto;text-decoration:none;font-family:var(--mono,'IBM Plex Mono',monospace)}
   .lang-btn:hover{background:var(--card);color:var(--accent)}
+
+  /* ===== Smooth cross-document transitions (View Transitions API) ===== */
+  @view-transition{navigation:auto}
+  @media (prefers-reduced-motion:reduce){@view-transition{navigation:none}}
+  ::view-transition-old(root){animation-duration:.22s}
+  ::view-transition-new(root){animation-duration:.22s}
+  html{scroll-behavior:smooth;scroll-padding-top:70px}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+  /* ===== Prev/Next chapter pager ===== */
+  .pager{border-top:1px solid var(--card);margin-top:10px}
+  .pager .pager-in{display:flex;gap:12px;padding-top:22px;padding-bottom:6px}
+  .pg{flex:1;min-width:0;display:flex;flex-direction:column;gap:6px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:14px 18px;text-decoration:none;color:var(--text);transition:border-color .2s,background .2s,transform .2s}
+  .pg:hover{border-color:var(--accent);background:var(--card-2);transform:translateY(-2px)}
+  .pg .pg-l{font-size:12px;color:var(--muted);font-weight:500}
+  .pg .pg-t{font-weight:700;font-size:14.5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .pg.next{text-align:end;align-items:flex-end}
+  .pg.ghost{visibility:hidden;padding:0;border:0}
+  @media (max-width:560px){.pager .pager-in{flex-direction:column}.pg.ghost{display:none}}
