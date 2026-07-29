@@ -5,6 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>الأمن السيبراني ببساطة — دليل تفاعلي لغير المتخصصين</title>
 <meta name="description" content="دليل تفاعلي مبسّط يشرح مفاهيم الأمن السيبراني لغير المتخصصين: التهديدات، مثلث حماية المعلومات، مصائد أسئلة الامتحان، وكيف تحمي نفسك على الإنترنت.">
+<meta name="theme-color" content="#0f172a">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="الأمن السيبراني">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
@@ -270,6 +278,53 @@
     section{padding:40px 0}
     .hero{padding:48px 0 32px}
   }
+
+  /* ===== Part banners ===== */
+  .part-banner{padding:40px 0 0}
+  .part-banner .part-tag{display:inline-block;font-size:12.5px;padding:4px 14px;border-radius:999px;margin-bottom:10px;font-weight:700;letter-spacing:.3px}
+  .part-banner h2{font-size:clamp(21px,4.2vw,30px);font-weight:800;margin-bottom:4px}
+  .part-banner p{color:var(--muted);font-size:15px;max-width:640px}
+  .part-banner.memo-src .part-tag{background:rgba(56,189,248,.15);color:var(--accent);border:1px solid rgba(56,189,248,.3)}
+  .part-banner.official-src .part-tag{background:rgba(52,211,153,.15);color:var(--good);border:1px solid rgba(52,211,153,.3)}
+
+  /* ===== Glossary source chip ===== */
+  .flip-front .src{position:absolute;top:10px;left:10px;font-size:10px;padding:2px 9px;border-radius:999px;font-weight:700}
+  .src.m{background:rgba(56,189,248,.15);color:var(--accent)}
+  .src.o{background:rgba(52,211,153,.15);color:var(--good)}
+
+  /* ===== Mobile bottom tab bar ===== */
+  .tabbar{display:none}
+  @media (max-width:768px){
+    .tabbar{
+      position:fixed;bottom:0;right:0;left:0;z-index:60;display:flex;
+      background:rgba(15,23,42,.97);backdrop-filter:blur(10px);
+      border-top:1px solid var(--line);
+      padding:6px 4px calc(6px + env(safe-area-inset-bottom));
+    }
+    .tabbar a{
+      flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;
+      color:var(--muted);text-decoration:none;font-size:11.5px;font-weight:500;
+      padding:4px 0;border-radius:10px;transition:.2s;
+    }
+    .tabbar a .ico{font-size:20px;line-height:1.2}
+    .tabbar a.active{color:var(--accent)}
+    body{padding-bottom:76px}
+  }
+
+  /* ===== Mobile polish ===== */
+  @media (max-width:600px){
+    .hero .shield{font-size:52px}
+    .stats{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+    .stat{min-width:0;padding:10px 14px}
+    .quiz-box{padding:20px 16px}
+    .acc-head{font-size:15.5px;padding:14px 16px;gap:10px}
+    .acc-head .th-icon{font-size:22px}
+    .trap-q{padding:14px 14px}
+    .cia-detail{min-height:0}
+    .analogy{padding:14px 16px;font-size:15px}
+    .part-banner{padding:30px 0 0}
+  }
+
 </style>
 </head>
 <body>
@@ -296,14 +351,33 @@
     <a href="#cia">مثلث الحماية</a>
     <a href="#threats">التهديدات</a>
     <a href="#hackers">أنواع المخترقين</a>
-    <a href="#official">من المادة الرسمية</a>
-    <a href="#predicted">أسئلة متوقعة</a>
-    <a href="#traps">مصيدة الكلمات</a>
     <a href="#protect">احمِ نفسك</a>
-    <a href="#quiz">اختبر نفسك</a>
-    <a href="#glossary">قاموس المصطلحات</a>
+    <a href="#glossary">القاموس</a>
+    <a href="#official">من المنهج الرسمي</a>
+    <a href="#traps">مصيدة الكلمات</a>
+    <a href="#quiz">أسئلة المذكرة</a>
+    <a href="#predicted">أسئلة متوقعة</a>
   </div>
 </nav>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="part-banner memo-src">
+  <div class="container">
+    <span class="part-tag">الجزء الأول · الشروحات التفاعلية</span>
+    <h2>شروحات المذكرة</h2>
+    <p>شرح مبسّط بتشبيهات من الحياة اليومية لكل ما ورد في قسم الأمن السيبراني بالمذكرة.</p>
+  </div>
+</div>
 
 <!-- ===================== 1. Basics ===================== -->
 <section id="basics">
@@ -353,7 +427,6 @@
     </div>
   </div>
 </section>
-
 <!-- ===================== 2. CIA Triad ===================== -->
 <section id="cia">
   <div class="container">
@@ -395,7 +468,6 @@
     </div>
   </div>
 </section>
-
 <!-- ===================== 3. Threats ===================== -->
 <section id="threats">
   <div class="container">
@@ -468,7 +540,6 @@
     </div>
   </div>
 </section>
-
 <!-- ===================== 4. Hackers ===================== -->
 <section id="hackers">
   <div class="container">
@@ -507,11 +578,51 @@
     </div>
   </div>
 </section>
+<!-- ===================== 6. Protect ===================== -->
+<section id="protect">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">05.</span> احمِ نفسك — قائمة عملية</h2>
+    <p class="sec-lead">هذه أهم العادات الوقائية المذكورة في المذكرة. اضغط على كل عادة تطبّقها فعلاً وشاهد درجة حمايتك — تقدمك يُحفظ في متصفحك تلقائياً:</p>
+
+    <div class="progress-wrap">
+      <div class="progress-bar"><div class="progress-fill" id="prog-fill"></div></div>
+      <div class="progress-label" id="prog-label" aria-live="polite">درجة حمايتك: 0 من 8</div>
+    </div>
+
+    <div class="check-list" id="check-list">
+      <button class="check-item" aria-pressed="false"><span class="box">✓</span><span><h4>🔑 كلمات مرور طويلة وفريدة</h4><p>أنشئ كلمة مرور طويلة ومختلفة لكل حساب، واستخدم «مدير كلمات مرور» ليحفظها عنك — فهذه من أهم طرق حماية بياناتك.</p></span></button>
+      <button class="check-item" aria-pressed="false"><span class="box">✓</span><span><h4>📲 المصادقة متعددة العوامل (MFA)</h4><p>استخدام أكثر من طريقة للتحقق من هويتك: كلمة المرور + رمز يصل لهاتفك. حتى لو سُرقت كلمة مرورك، يبقى حسابك مقفلاً.</p></span></button>
+      <button class="check-item" aria-pressed="false"><span class="box">✓</span><span><h4>🔒 تصفّح مواقع HTTPS فقط</h4><p>تجنّب زيارة المواقع التي لا يحتوي عنوانها على HTTPS — فالقفل في شريط العنوان يعني أن اتصالك بالموقع مشفّر.</p></span></button>
+      <button class="check-item" aria-pressed="false"><span class="box">✓</span><span><h4>🛡️ برنامج مكافحة فيروسات موثوق</h4><p>تثبيت برنامج موثوق لمكافحة الفيروسات يساعد على منع البرامج الضارة والفيروسات قبل أن تصل لجهازك.</p></span></button>
+      <button class="check-item" aria-pressed="false"><span class="box">✓</span><span><h4>💾 نسخ احتياطي منتظم</h4><p>انسخ ملفاتك المهمة إلى قرص خارجي أو خدمة سحابية. هي شبكة الأمان ضد الفدية والأعطال والفقدان.</p></span></button>
+      <button class="check-item" aria-pressed="false"><span class="box">✓</span><span><h4>📶 الحذر من الواي فاي العام</h4><p>شبكات الواي فاي العامة (مقاهي، مطارات) ليست آمنة — تجنّب الدخول لحساباتك البنكية أو إدخال بيانات حساسة عبرها.</p></span></button>
+      <button class="check-item" aria-pressed="false"><span class="box">✓</span><span><h4>🤐 قلّل مشاركة معلوماتك الشخصية</h4><p>الحد من نقل ونشر معلوماتك الشخصية يقلّص «سطح هجوم» الهندسة الاجتماعية — كلما قلّ ما يعرفه النصّاب عنك، صعُب خداعك.</p></span></button>
+      <button class="check-item" aria-pressed="false"><span class="box">✓</span><span><h4>🧐 لا تثق بالمظاهر</h4><p>عدد التحميلات الكبير لا يضمن أبداً أن التطبيق آمن، والرسالة «الرسمية الشكل» قد تكون تصيّداً. تحقّق دائماً قبل أن تثق.</p></span></button>
+    </div>
+  </div>
+</section>
+<!-- ===================== 8. Glossary ===================== -->
+<section id="glossary">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">06.</span> قاموس المصطلحات</h2>
+    <p class="sec-lead">اضغط على أي بطاقة لقلبها: التعريف بالعربية ثم بصياغته الإنجليزية كما ورد في المذكرة. استخدم الفلاتر للتصفية.</p>
+
+    <div class="filters" id="filters"></div>
+    <div class="flip-grid" id="flip-grid"></div>
+  </div>
+</section>
+<div class="part-banner official-src">
+  <div class="container">
+    <span class="part-tag">شروحات إضافية</span>
+    <h2>من المنهج الرسمي</h2>
+    <p>موضوعات لا تغطيها المذكرة — مضافة من المادة التدريبية الرسمية (المجلس الأعلى للجامعات / EG-CERT).</p>
+  </div>
+</div>
 
 <!-- ===================== 5. Official material extras ===================== -->
 <section id="official">
   <div class="container">
-    <h2 class="sec-title"><span class="num">05.</span> من المادة الرسمية — ما لا تغطيه المذكرة</h2>
+    <h2 class="sec-title"><span class="num">07.</span> من المادة الرسمية — ما لا تغطيه المذكرة</h2>
     <p class="sec-lead">
       أسئلة المذكرة تركز على الفصل الأول من المادة الرسمية تقريباً، بينما تضم المادة 6 فصول كاملة.
       هذه أهم الموضوعات الإضافية الواردة رسمياً — وقد تأتي منها أسئلة جديدة في الاختبار:
@@ -561,23 +672,18 @@
     </div>
   </div>
 </section>
-
-<!-- ===================== 6. Predicted questions ===================== -->
-<section id="predicted">
+<div class="part-banner memo-src">
   <div class="container">
-    <h2 class="sec-title"><span class="num">06.</span> أسئلة متوقعة 🔮</h2>
-    <p class="sec-lead">
-      22 سؤالاً جديداً مصوغاً من الفصول التي <strong style="color:var(--text)">لا تغطيها المذكرة</strong> في المادة الرسمية (الهيئات المصرية، البرمجيات والهجمات الإضافية، بروتوكول TLP، القوانين، التنمر الإلكتروني...) بنفس أسلوب أسئلة الامتحان.
-      <br><span style="font-size:14px">⚠️ هذه أسئلة تدريبية متوقعة بناءً على محتوى المادة الرسمية — وليست منقولة من امتحانات فعلية.</span>
-    </p>
-    <div class="quiz-box" id="quiz2-box"></div>
+    <span class="part-tag">الجزء الثاني · الأسئلة</span>
+    <h2>أسئلة المذكرة</h2>
+    <p>مصيدة الكلمات المطلقة واختبار تفاعلي من أسئلة المذكرة الفعلية.</p>
   </div>
-</section>
+</div>
 
 <!-- ===================== 7. Word traps ===================== -->
 <section id="traps">
   <div class="container">
-    <h2 class="sec-title"><span class="num">07.</span> مصيدة الكلمات المُطلَقة</h2>
+    <h2 class="sec-title"><span class="num">08.</span> مصيدة الكلمات المُطلَقة</h2>
     <p class="sec-lead">
       نمط متكرر في أسئلة صح/خطأ بالمذكرة: كلمة مُطلَقة واحدة مثل <span class="en">always</span> («دائماً») تقلب العبارة من صحيحة إلى خاطئة، أو كلمة مستبدلة خلسة.
       اضغط أي عبارة لكشف الحكم والسبب — الكلمة المصيدة <span class="mark">مظللة بالأحمر</span>.
@@ -585,68 +691,53 @@
     <div id="traps-list"></div>
   </div>
 </section>
-
-<!-- ===================== 6. Protect ===================== -->
-<section id="protect">
-  <div class="container">
-    <h2 class="sec-title"><span class="num">08.</span> احمِ نفسك — قائمة عملية</h2>
-    <p class="sec-lead">هذه أهم العادات الوقائية المذكورة في المذكرة. اضغط على كل عادة تطبّقها فعلاً وشاهد درجة حمايتك — تقدمك يُحفظ في متصفحك تلقائياً:</p>
-
-    <div class="progress-wrap">
-      <div class="progress-bar"><div class="progress-fill" id="prog-fill"></div></div>
-      <div class="progress-label" id="prog-label" aria-live="polite">درجة حمايتك: 0 من 8</div>
-    </div>
-
-    <div class="check-list" id="check-list">
-      <button class="check-item" aria-pressed="false"><span class="box">✓</span><span><h4>🔑 كلمات مرور طويلة وفريدة</h4><p>أنشئ كلمة مرور طويلة ومختلفة لكل حساب، واستخدم «مدير كلمات مرور» ليحفظها عنك — فهذه من أهم طرق حماية بياناتك.</p></span></button>
-      <button class="check-item" aria-pressed="false"><span class="box">✓</span><span><h4>📲 المصادقة متعددة العوامل (MFA)</h4><p>استخدام أكثر من طريقة للتحقق من هويتك: كلمة المرور + رمز يصل لهاتفك. حتى لو سُرقت كلمة مرورك، يبقى حسابك مقفلاً.</p></span></button>
-      <button class="check-item" aria-pressed="false"><span class="box">✓</span><span><h4>🔒 تصفّح مواقع HTTPS فقط</h4><p>تجنّب زيارة المواقع التي لا يحتوي عنوانها على HTTPS — فالقفل في شريط العنوان يعني أن اتصالك بالموقع مشفّر.</p></span></button>
-      <button class="check-item" aria-pressed="false"><span class="box">✓</span><span><h4>🛡️ برنامج مكافحة فيروسات موثوق</h4><p>تثبيت برنامج موثوق لمكافحة الفيروسات يساعد على منع البرامج الضارة والفيروسات قبل أن تصل لجهازك.</p></span></button>
-      <button class="check-item" aria-pressed="false"><span class="box">✓</span><span><h4>💾 نسخ احتياطي منتظم</h4><p>انسخ ملفاتك المهمة إلى قرص خارجي أو خدمة سحابية. هي شبكة الأمان ضد الفدية والأعطال والفقدان.</p></span></button>
-      <button class="check-item" aria-pressed="false"><span class="box">✓</span><span><h4>📶 الحذر من الواي فاي العام</h4><p>شبكات الواي فاي العامة (مقاهي، مطارات) ليست آمنة — تجنّب الدخول لحساباتك البنكية أو إدخال بيانات حساسة عبرها.</p></span></button>
-      <button class="check-item" aria-pressed="false"><span class="box">✓</span><span><h4>🤐 قلّل مشاركة معلوماتك الشخصية</h4><p>الحد من نقل ونشر معلوماتك الشخصية يقلّص «سطح هجوم» الهندسة الاجتماعية — كلما قلّ ما يعرفه النصّاب عنك، صعُب خداعك.</p></span></button>
-      <button class="check-item" aria-pressed="false"><span class="box">✓</span><span><h4>🧐 لا تثق بالمظاهر</h4><p>عدد التحميلات الكبير لا يضمن أبداً أن التطبيق آمن، والرسالة «الرسمية الشكل» قد تكون تصيّداً. تحقّق دائماً قبل أن تثق.</p></span></button>
-    </div>
-  </div>
-</section>
-
 <!-- ===================== 7. Quiz ===================== -->
 <section id="quiz">
   <div class="container">
-    <h2 class="sec-title"><span class="num">09.</span> اختبر نفسك 🎯</h2>
+    <h2 class="sec-title"><span class="num">09.</span> أسئلة المذكرة — اختبر نفسك 🎯</h2>
     <p class="sec-lead">١٠ أسئلة من المذكرة بصياغتها الإنجليزية الأصلية (كما ستراها في الاختبار) مع ترجمة عربية وشرح لكل إجابة.</p>
 
     <div class="quiz-box" id="quiz-box"></div>
   </div>
 </section>
-
-<!-- ===================== 8. Glossary ===================== -->
-<section id="glossary">
+<div class="part-banner official-src">
   <div class="container">
-    <h2 class="sec-title"><span class="num">10.</span> قاموس المصطلحات</h2>
-    <p class="sec-lead">اضغط على أي بطاقة لقلبها: التعريف بالعربية ثم بصياغته الإنجليزية كما ورد في المذكرة. استخدم الفلاتر للتصفية.</p>
+    <span class="part-tag">أسئلة إضافية</span>
+    <h2>أسئلة متوقعة من المنهج الرسمي</h2>
+    <p>22 سؤالاً تدريبياً من الفصول التي لا تغطيها المذكرة.</p>
+  </div>
+</div>
 
-    <div class="filters" id="filters"></div>
-    <div class="flip-grid" id="flip-grid"></div>
+<!-- ===================== 6. Predicted questions ===================== -->
+<section id="predicted">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">10.</span> أسئلة متوقعة 🔮</h2>
+    <p class="sec-lead">
+      22 سؤالاً جديداً مصوغاً من الفصول التي <strong style="color:var(--text)">لا تغطيها المذكرة</strong> في المادة الرسمية (الهيئات المصرية، البرمجيات والهجمات الإضافية، بروتوكول TLP، القوانين، التنمر الإلكتروني...) بنفس أسلوب أسئلة الامتحان.
+      <br><span style="font-size:14px">⚠️ هذه أسئلة تدريبية متوقعة بناءً على محتوى المادة الرسمية — وليست منقولة من امتحانات فعلية.</span>
+    </p>
+    <div class="quiz-box" id="quiz2-box"></div>
   </div>
 </section>
-
-<footer>
-  <div class="container">
-    <p>📚 هذا الدليل مُستخلص ومبسَّط من قسم <span class="en">Cyber Security Exam Sample 2026</span> في مذكرة «تحرير سيناء» لأسئلة مقرر التحول الرقمي — د. أحمد عمارة (إصدار يونيو 2026)، وتمت مراجعة محتواه ومطابقته مع المادة التدريبية الرسمية «الأمن السيبراني 2026» الصادرة عن الوحدة المركزية للتدريب على تكنولوجيا المعلومات بالمجلس الأعلى للجامعات بالتعاون مع EG-CERT.</p>
-    <p class="disclaimer">⚠️ تنبيه من المذكرة نفسها: الأسئلة تقريبية وغير شاملة والإجابات اجتهاد شخصي يحتمل الصواب والخطأ، ولا غنى عن قراءة المادة التدريبية الأصلية الصادرة عن المجلس الأعلى للجامعات.</p>
-    <p style="margin-top:10px">صُمم ليكون مفهوماً لغير المتخصصين — شاركه مع من يحتاجه 🛡️</p>
-  </div>
-</footer>
+<nav class="tabbar" aria-label="تنقل سريع">
+  <a href="#basics" class="active"><span class="ico">📖</span>الشرح</a>
+  <a href="#official"><span class="ico">🏛️</span>المنهج</a>
+  <a href="#traps"><span class="ico">🧩</span>الأسئلة</a>
+  <a href="#glossary"><span class="ico">📇</span>القاموس</a>
+</nav>
 
 <script>
 /* ===== Nav active state ===== */
 const navLinks=document.querySelectorAll('nav.tabs a');
 const sections=[...navLinks].map(a=>document.querySelector(a.getAttribute('href')));
+const tabLinks=document.querySelectorAll('.tabbar a');
+const TABMAP={basics:'#basics',cia:'#basics',threats:'#basics',hackers:'#basics',protect:'#basics',glossary:'#glossary',official:'#official',traps:'#traps',quiz:'#traps',predicted:'#traps'};
 const obs=new IntersectionObserver(entries=>{
   entries.forEach(e=>{
     if(e.isIntersecting){
       navLinks.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id));
+      const t=TABMAP[e.target.id];
+      if(t)tabLinks.forEach(a=>a.classList.toggle('active',a.getAttribute('href')===t));
     }
   });
 },{rootMargin:'-40% 0px -55% 0px'});
@@ -1019,13 +1110,15 @@ Object.entries(CATS).forEach(([k,v],i)=>{
   });
   filtersEl.appendChild(b);
 });
+const OFFICIAL_TERMS=new Set(['Vulnerability','Trojans','Spyware','Rootkits','Zero-day Attack','Evil Twin Attack','TLP']);
 function renderTerms(k){
   grid.innerHTML='';
   TERMS.filter(t=>k==='all'||t.c===k).forEach(t=>{
     const d=document.createElement('button');
     d.className='flip';d.setAttribute('aria-label','بطاقة '+t.ar);
+    const isOff=OFFICIAL_TERMS.has(t.en);
     d.innerHTML=`<div class="flip-inner">
-      <div class="flip-face flip-front"><div class="cat">${CATS[t.c]}</div><div class="term">${t.ar}</div><div class="en">${t.en}</div><div class="hint">اضغط لرؤية المعنى 👆</div></div>
+      <div class="flip-face flip-front"><span class="src ${isOff?'o':'m'}">${isOff?'من المنهج':'من المذكرة'}</span><div class="cat">${CATS[t.c]}</div><div class="term">${t.ar}</div><div class="en">${t.en}</div><div class="hint">اضغط لرؤية المعنى 👆</div></div>
       <div class="flip-face flip-back"><div>${t.d}<div class="def-en">${t.e}</div></div></div>
     </div>`;
     d.addEventListener('click',()=>d.classList.toggle('flipped'));
