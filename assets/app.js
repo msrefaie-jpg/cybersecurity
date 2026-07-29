@@ -160,3 +160,83 @@ const App = {
     render('all');
   }
 };
+
+/* ===== فصول الدورة ===== */
+App.CHAPTERS = [
+  { href: './', icon: '🏠', name: 'الصفحة الرئيسية', ready: true },
+  { href: 'cyber.html', icon: '🛡️', name: 'الأمن السيبراني', ready: true },
+  { href: 'it-os.html', icon: '💻', name: 'تكنولوجيا المعلومات ونظم التشغيل', ready: true },
+  { href: 'word.html', icon: '📝', name: 'معالج النصوص (وورد)', ready: true },
+  { href: 'ppt.html', icon: '📽️', name: 'العروض التقديمية (بوربوينت)', ready: true },
+  { icon: '📊', name: 'جداول البيانات (إكسل)' },
+  { icon: '🗄️', name: 'قواعد البيانات (أكسيس)' },
+  { icon: '📱', name: 'تطبيقات الهاتف المحمول' },
+  { icon: '🔎', name: 'البحث على الإنترنت' },
+  { icon: '🌐', name: 'الشبكات' }
+];
+
+/* قشرة التطبيق المشتركة: درج الفصول + تذييل الحقوق + تمركز التبويب النشط */
+App.initShell = function (current) {
+  // 1) درج الفصول
+  const overlay = document.createElement('div');
+  overlay.className = 'drawer-overlay';
+  const drawer = document.createElement('aside');
+  drawer.className = 'drawer';
+  drawer.setAttribute('aria-label', 'فصول الدورة');
+  let rows = '<div class="d-head"><h3>📚 فصول الدورة</h3><button class="d-close" aria-label="إغلاق">✕</button></div>';
+  App.CHAPTERS.forEach(ch => {
+    if (ch.ready) {
+      const cur = ch.href === current ? ' current' : '';
+      rows += `<a href="${ch.href}" class="${cur.trim()}"><span class="d-ico">${ch.icon}</span>${ch.name}<span class="chev">${ch.href === current ? '●' : '‹'}</span></a>`;
+    } else {
+      rows += `<div class="soon-row"><span class="d-ico">${ch.icon}</span>${ch.name}<span class="soon-tag">قريباً</span></div>`;
+    }
+  });
+  drawer.innerHTML = rows;
+  document.body.appendChild(overlay);
+  document.body.appendChild(drawer);
+  const toggle = (open) => {
+    drawer.classList.toggle('open', open);
+    overlay.classList.toggle('open', open);
+  };
+  overlay.addEventListener('click', () => toggle(false));
+  drawer.querySelector('.d-close').addEventListener('click', () => toggle(false));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') toggle(false); });
+
+  // زر ☰ في الشريط العلوي
+  const navInner = document.querySelector('nav.tabs .inner');
+  if (navInner) {
+    const btn = document.createElement('button');
+    btn.className = 'drawer-btn';
+    btn.setAttribute('aria-label', 'فصول الدورة');
+    btn.textContent = '☰';
+    btn.addEventListener('click', () => toggle(true));
+    navInner.insertBefore(btn, navInner.firstChild);
+  }
+
+  // تبويب «الفصول» في الشريط السفلي
+  const tabbar = document.querySelector('.tabbar');
+  if (tabbar) {
+    const t = document.createElement('a');
+    t.href = '#';
+    t.innerHTML = '<span class="ico">☰</span>الفصول';
+    t.addEventListener('click', e => { e.preventDefault(); toggle(true); });
+    tabbar.appendChild(t);
+  }
+
+  // 2) تذييل الحقوق
+  const f = document.createElement('footer');
+  f.className = 'app-footer';
+  f.innerHTML = 'تطبيق تدريبي على محتوى دورة التحول الرقمي (FDTC)<br>حقوق التطبيق © م. محمد صلاح';
+  document.body.appendChild(f);
+
+  // 3) إبقاء التبويب النشط ظاهراً في منتصف الشريط العلوي
+  if (navInner) {
+    const center = () => {
+      const act = navInner.querySelector('a.active');
+      if (act) act.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+    };
+    new MutationObserver(center).observe(navInner, { subtree: true, attributes: true, attributeFilter: ['class'] });
+    setTimeout(center, 300);
+  }
+};

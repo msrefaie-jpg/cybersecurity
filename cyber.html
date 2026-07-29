@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>الأمن السيبراني ببساطة — دليل تفاعلي لغير المتخصصين</title>
 <meta name="description" content="دليل تفاعلي مبسّط يشرح مفاهيم الأمن السيبراني لغير المتخصصين: التهديدات، مثلث حماية المعلومات، مصائد أسئلة الامتحان، وكيف تحمي نفسك على الإنترنت.">
-<meta name="theme-color" content="#0f172a">
+<meta name="theme-color" content="#000000">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -413,11 +413,12 @@
 </section>
 <nav class="tabbar" aria-label="تنقل سريع">
   <a href="#basics" class="active"><span class="ico">📖</span>الشرح</a>
+  <a href="#glossary"><span class="ico">📇</span>القاموس</a>
   <a href="#official"><span class="ico">🏛️</span>المنهج</a>
   <a href="#traps"><span class="ico">🧩</span>الأسئلة</a>
-  <a href="#glossary"><span class="ico">📇</span>القاموس</a>
 </nav>
 
+<script src="assets/app.js"></script>
 <script>
 /* ===== Nav active state ===== */
 const navLinks=document.querySelectorAll('nav.tabs a[href^="#"]');
@@ -818,6 +819,7 @@ function renderTerms(k){
   });
 }
 renderTerms('all');
+App.initShell('cyber.html');
 </script>
 </body>
 </html>

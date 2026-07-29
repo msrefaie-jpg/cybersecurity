@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>التحول الرقمي ببساطة — دليل تفاعلي</title>
 <meta name="description" content="دليل تفاعلي مبسّط لأقسام دورة التحول الرقمي (FDTC): شروحات بتشبيهات يومية، مطابقة مع المنهج الرسمي، واختبارات تفاعلية.">
-<meta name="theme-color" content="#0f172a">
+<meta name="theme-color" content="#000000">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -19,6 +19,20 @@
 <link rel="stylesheet" href="assets/app.css">
 </head>
 <body>
+
+<div class="intro hide" id="intro">
+  <div class="intro-card">
+    <span class="gift">🎁</span>
+    <h2>إهداء</h2>
+    <p class="ded">إلى أختي الغالية…<br>
+    صنعتُ لكِ هذا التطبيق ليكون رفيقكِ في مذاكرة دورة التحول الرقمي —<br>
+    ذاكري باطمئنان، فكل سؤال هنا خطوة نحو نجاحكِ.<br>
+    بالتوفيق دائماً 🤍</p>
+    <p class="sig">— م. محمد صلاح</p>
+    <p class="disc">تطبيق تدريبي على محتوى دورة التحول الرقمي (FDTC)<br>حقوق التطبيق © م. محمد صلاح</p>
+    <button id="intro-btn" class="quiz-next">ابدئي الرحلة ✨</button>
+  </div>
+</div>
 
 <header class="hero">
   <div class="container">
@@ -53,12 +67,12 @@
         <h3>معالج النصوص (وورد)</h3>
         <p>49 سؤال مذكرة + 22 متوقعاً · خريطة التبويبات · الحواشي · الاختصارات</p>
       </a>
-      <div class="hub-card soon">
-        <span class="status soon-b">قريباً</span>
+      <a class="hub-card" href="ppt.html">
+        <span class="status ready">متاح ✓</span>
         <span class="h-icon">📽️</span>
         <h3>العروض التقديمية (بوربوينت)</h3>
-        <p>قيد الإعداد</p>
-      </div>
+        <p>67 سؤال مذكرة + 22 متوقعاً · خريطة التبويبات · الامتدادات · الحركات</p>
+      </a>
       <div class="hub-card soon">
         <span class="status soon-b">قريباً</span>
         <span class="h-icon">📊</span>
@@ -97,5 +111,19 @@
   </div>
 </section>
 
+
+<footer class="app-footer">
+  تطبيق تدريبي على محتوى دورة التحول الرقمي (FDTC)<br>
+  حقوق التطبيق © م. محمد صلاح · <a href="#" id="show-intro">عرض الإهداء 🎁</a>
+</footer>
+
+<script>
+const intro=document.getElementById('intro');
+const show=()=>intro.classList.remove('hide');
+const hide=()=>{intro.classList.add('hide');try{localStorage.setItem('intro-seen','1')}catch(e){}};
+try{if(!localStorage.getItem('intro-seen'))show();}catch(e){show();}
+document.getElementById('intro-btn').addEventListener('click',hide);
+document.getElementById('show-intro').addEventListener('click',e=>{e.preventDefault();show();});
+</script>
 </body>
 </html>
