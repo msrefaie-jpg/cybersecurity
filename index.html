@@ -285,6 +285,7 @@
       <div class="stat"><b>27</b><span>مصطلحاً أساسياً</span></div>
       <div class="stat"><b>8</b><span>تهديدات مشروحة</span></div>
       <div class="stat"><b>6</b><span>فصول في المادة الرسمية</span></div>
+      <div class="stat"><b>22</b><span>سؤالاً متوقعاً جديداً</span></div>
     </div>
   </div>
 </header>
@@ -296,6 +297,7 @@
     <a href="#threats">التهديدات</a>
     <a href="#hackers">أنواع المخترقين</a>
     <a href="#official">من المادة الرسمية</a>
+    <a href="#predicted">أسئلة متوقعة</a>
     <a href="#traps">مصيدة الكلمات</a>
     <a href="#protect">احمِ نفسك</a>
     <a href="#quiz">اختبر نفسك</a>
@@ -560,10 +562,22 @@
   </div>
 </section>
 
-<!-- ===================== 6. Word traps ===================== -->
+<!-- ===================== 6. Predicted questions ===================== -->
+<section id="predicted">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">06.</span> أسئلة متوقعة 🔮</h2>
+    <p class="sec-lead">
+      22 سؤالاً جديداً مصوغاً من الفصول التي <strong style="color:var(--text)">لا تغطيها المذكرة</strong> في المادة الرسمية (الهيئات المصرية، البرمجيات والهجمات الإضافية، بروتوكول TLP، القوانين، التنمر الإلكتروني...) بنفس أسلوب أسئلة الامتحان.
+      <br><span style="font-size:14px">⚠️ هذه أسئلة تدريبية متوقعة بناءً على محتوى المادة الرسمية — وليست منقولة من امتحانات فعلية.</span>
+    </p>
+    <div class="quiz-box" id="quiz2-box"></div>
+  </div>
+</section>
+
+<!-- ===================== 7. Word traps ===================== -->
 <section id="traps">
   <div class="container">
-    <h2 class="sec-title"><span class="num">06.</span> مصيدة الكلمات المُطلَقة</h2>
+    <h2 class="sec-title"><span class="num">07.</span> مصيدة الكلمات المُطلَقة</h2>
     <p class="sec-lead">
       نمط متكرر في أسئلة صح/خطأ بالمذكرة: كلمة مُطلَقة واحدة مثل <span class="en">always</span> («دائماً») تقلب العبارة من صحيحة إلى خاطئة، أو كلمة مستبدلة خلسة.
       اضغط أي عبارة لكشف الحكم والسبب — الكلمة المصيدة <span class="mark">مظللة بالأحمر</span>.
@@ -575,7 +589,7 @@
 <!-- ===================== 6. Protect ===================== -->
 <section id="protect">
   <div class="container">
-    <h2 class="sec-title"><span class="num">07.</span> احمِ نفسك — قائمة عملية</h2>
+    <h2 class="sec-title"><span class="num">08.</span> احمِ نفسك — قائمة عملية</h2>
     <p class="sec-lead">هذه أهم العادات الوقائية المذكورة في المذكرة. اضغط على كل عادة تطبّقها فعلاً وشاهد درجة حمايتك — تقدمك يُحفظ في متصفحك تلقائياً:</p>
 
     <div class="progress-wrap">
@@ -599,7 +613,7 @@
 <!-- ===================== 7. Quiz ===================== -->
 <section id="quiz">
   <div class="container">
-    <h2 class="sec-title"><span class="num">08.</span> اختبر نفسك 🎯</h2>
+    <h2 class="sec-title"><span class="num">09.</span> اختبر نفسك 🎯</h2>
     <p class="sec-lead">١٠ أسئلة من المذكرة بصياغتها الإنجليزية الأصلية (كما ستراها في الاختبار) مع ترجمة عربية وشرح لكل إجابة.</p>
 
     <div class="quiz-box" id="quiz-box"></div>
@@ -609,7 +623,7 @@
 <!-- ===================== 8. Glossary ===================== -->
 <section id="glossary">
   <div class="container">
-    <h2 class="sec-title"><span class="num">09.</span> قاموس المصطلحات</h2>
+    <h2 class="sec-title"><span class="num">10.</span> قاموس المصطلحات</h2>
     <p class="sec-lead">اضغط على أي بطاقة لقلبها: التعريف بالعربية ثم بصياغته الإنجليزية كما ورد في المذكرة. استخدم الفلاتر للتصفية.</p>
 
     <div class="filters" id="filters"></div>
@@ -780,60 +794,134 @@ const QUIZ=[
    opts:['Black hat hacker','White hat hacker','Blue hat hacker','Grey hat hacker'],
    a:2,exp:'القبعة الزرقاء <span class="en">Blue hat</span> — فالمادة الرسمية تصنّف المخترقين إلى ثلاث فئات فقط: سوداء وبيضاء ورمادية، ولا تذكر الزرقاء.'}
 ];
-let qi=0,score=0,answered=false;
-const quizBox=document.getElementById('quiz-box');
-function renderQ(){
-  if(qi>=QUIZ.length){showResult();return;}
-  const item=QUIZ[qi];answered=false;
-  quizBox.innerHTML=`
-    <div class="quiz-progress">
-      <span>السؤال ${qi+1} من ${QUIZ.length}</span>
-      <span style="color:var(--accent)">نتيجتك: ${score}</span>
-    </div>
-    <div class="quiz-bar"><i style="width:${qi/QUIZ.length*100}%"></i></div>
-    <div class="quiz-q"><span class="en">${item.en}</span></div>
-    <div class="quiz-q-ar">${item.ar}</div>
-    <div class="quiz-opts" id="quiz-opts"></div>
-    <div class="quiz-feedback" id="quiz-feedback" aria-live="polite"></div>
-    <button class="quiz-next" id="quiz-next" disabled>${qi===QUIZ.length-1?'عرض النتيجة 🏁':'السؤال التالي ←'}</button>`;
-  const optsEl=document.getElementById('quiz-opts');
-  item.opts.forEach((o,i)=>{
-    const b=document.createElement('button');
-    b.className='quiz-opt';b.textContent=o;
-    b.addEventListener('click',()=>answer(i,b,item,optsEl));
-    optsEl.appendChild(b);
-  });
-  document.getElementById('quiz-next').addEventListener('click',()=>{qi++;renderQ();});
+/* أسئلة متوقعة من الفصول التي لا تغطيها المذكرة — مصوغة من المادة الرسمية */
+const QUIZ2=[
+  {en:'Threats + Vulnerability = .....',ar:'التهديدات + الثغرة الأمنية = .....',
+   opts:['المخاطر (Risks)','الجرائم','الخدمات السيبرانية','التشفير'],
+   a:0,exp:'معادلة واردة نصاً في الفصل الأول من المادة الرسمية: التهديدات + الثغرة الأمنية = المخاطر.'},
+  {en:'What is a security vulnerability?',ar:'ما المقصود بالثغرة الأمنية؟',
+   opts:['نوع من الفيروسات','أوجه الضعف في أجهزة أو برامج أو خدمة يمكن استغلالها عبر الإنترنت','برنامج حماية','هجوم إلكتروني منظم'],
+   a:1,exp:'<span class="en">Vulnerability</span>: أوجه الضعف الموجودة في أجهزة أو برامج أو خدمة معينة ويمكن استغلالها.'},
+  {en:'EG-CERT (National Computer Emergency Readiness Team) was established in .....',ar:'أُنشئ المركز الوطني للاستعداد لطوارئ الحاسبات والشبكات EG-CERT عام...',
+   opts:['2003','2009','2014','2018'],
+   a:1,exp:'أنشأه الجهاز القومي لتنظيم الاتصالات (NTRA) في أبريل 2009، ويتعامل مع الحوادث السيبرانية ويدعم الجهات الحكومية.'},
+  {en:'The Egyptian Supreme Cybersecurity Council (ESCC) is responsible for .....',ar:'المجلس الأعلى المصري للأمن السيبراني ESCC مسؤول عن...',
+   opts:['إصلاح أجهزة الكمبيوتر','وضع الخطة الاستراتيجية الوطنية للأمن السيبراني','بيع برامج الحماية','إدارة شبكات الجامعات'],
+   a:1,exp:'أنشأه مجلس الوزراء عام 2014 وكُلف بوضع الخطة الاستراتيجية الوطنية للأمن السيبراني.'},
+  {en:'A zero-day attack exploits .....',ar:'هجوم يوم الصفر يستغل...',
+   opts:['ثغرة قديمة معروفة','ثغرة جديدة لم يصدر تصحيح لمعالجتها بعد','كلمة مرور ضعيفة','جهازاً غير متصل بالإنترنت'],
+   a:1,exp:'<span class="en">Zero-day</span>: ثغرة أمنية جديدة لم يصدر بعد تصحيح لمعالجتها — ولهذا سميت «يوم الصفر».'},
+  {en:'Unlike viruses, Trojans do not replicate themselves; they are usually used to create a .....',ar:'أحصنة طروادة لا تنسخ نفسها بعكس الفيروسات، وتُستخدم عادة لإنشاء...',
+   opts:['نافذة إعلانية','باب خلفي (Backdoor)','نسخة احتياطية','شبكة افتراضية'],
+   a:1,exp:'حصان طروادة يختبئ داخل برنامج يبدو مفيداً، وعادةً يُستخدم في إنشاء باب خلفي يمكن للمهاجمين استغلاله.'},
+  {en:'Malware designed to hide from users and antivirus programs while allowing remote control is called .....',ar:'البرمجيات المصممة للتخفي من المستخدم ومكافح الفيروسات مع إتاحة التحكم عن بُعد تسمى...',
+   opts:['برمجيات الفدية','برامج الإعلانات','برمجيات الجذور الخفية (Rootkits)','جدار الحماية'],
+   a:2,exp:'<span class="en">Rootkits</span>: برمجيات متطورة تتخفى من المستخدم النهائي وبرامج المكافحة وتفتح باباً خلفياً للتحكم بالجهاز عن بُعد.'},
+  {en:'Spyware is installed to .....',ar:'تُثبَّت برمجيات التجسس بهدف...',
+   opts:['تسريع الجهاز','جمع معلومات عن المستخدمين وعادات التصفح وإرسالها للمهاجم','حذف الفيروسات','عمل نسخ احتياطي'],
+   a:1,exp:'تجمع معلومات عن المستخدمين والأنظمة وعادات التصفح وترسلها للمهاجم الذي قد يستغلها في الابتزاز أو تنزيل برامج ضارة أخرى.'},
+  {en:'Electronic blackmail is a crime where the attacker demands ..... to stop the attack.',ar:'الابتزاز الإلكتروني جريمة يطلب فيها المهاجم ... مقابل إيقاف الهجوم أو معالجة آثاره.',
+   opts:['اعتذاراً علنياً','مبلغاً مالياً','إعجاباً ومتابعة','معلومات تقنية'],
+   a:1,exp:'وفق المادة الرسمية: «يتم في هذه الجريمة طلب مبلغ مالي من أحد الأفراد مقابل إيقاف الهجوم أو معالجة آثاره وتداركها».'},
+  {en:'Penetration testing is .....',ar:'اختبار الاختراق هو...',
+   opts:['هجوم إجرامي حقيقي','عملية أمنية (محاكاة لهجوم) للكشف عن الثغرات الأمنية في النظام','نوع من الفيروسات','تحديث لنظام التشغيل'],
+   a:1,exp:'عملية أمنية سيبرانية (أو محاكاة لهجوم) تحاول الكشف عن الثغرات الموجودة في النظام وتحديد نقاط الضعف — وهي عمل مخترقي القبعة البيضاء.'},
+  {en:'In an Evil Twin attack, the attacker creates .....',ar:'في هجوم التوأم الشرير ينشئ المهاجم...',
+   opts:['نقطة اتصال وهمية تحمل نفس اسم الشبكة الأصلية وبإشارة أقوى','فيروساً ينسخ نفسه','موقع تسوق حقيقياً','تطبيق ألعاب مجانياً'],
+   a:0,exp:'<span class="en">Evil Twin</span>: نقطة اتصال وهمية بنفس اسم الشبكة الأصلية (SSID) وبإشارة بث أقوى، فيتصل بها الضحايا دون قصد.'},
+  {en:'WPA2 and WPA3 protocols are used to ..... data transferred between the router and wireless devices.',ar:'بروتوكولا WPA2 وWPA3 يُستخدمان لـ... البيانات المنقولة بين الراوتر والأجهزة اللاسلكية.',
+   opts:['حذف','تشفير','ضغط','بيع'],
+   a:1,exp:'الجيلان الثاني والثالث لبروتوكول الوصول المحمي للشبكات اللاسلكية (WPA) يوفران تشفير المعلومات المنقولة بين الراوتر والمعدات اللاسلكية.'},
+  {en:'A VPN encrypts communications at both ends of sending and receiving data.',ar:'الشبكة الخاصة الافتراضية VPN تشفر الاتصالات عند طرفي إرسال واستلام البيانات.',
+   opts:['صح','خطأ'],
+   a:0,exp:'صحيح — ولهذا يُنصح باستخدامها، فهي تشفر الاتصالات وتحجب حركة المرور التي لم يتم تشفيرها بشكل كافٍ.'},
+  {en:'A recently released app with millions of downloads is most likely .....',ar:'تطبيق صدر منذ فترة وجيزة وعدد تنزيلاته مرتفع جداً — غالباً يكون...',
+   opts:['تطبيقاً موثوقاً','تطبيقاً احتيالياً','تحديثاً رسمياً','تطبيقاً حكومياً'],
+   a:1,exp:'وفق المادة الرسمية: البرامج الموثوق بها تحتاج فترة طويلة لتصل لتنزيلات مرتفعة؛ فالتطبيق حديث الإصدار بتنزيلات ضخمة مؤشر احتيال.'},
+  {en:'According to the Traffic Light Protocol (TLP), information marked ..... may not be shared beyond the recipient.',ar:'وفق بروتوكول الإشارة الضوئية TLP، المعلومات الموسومة باللون ... لا تجوز مشاركتها خارج متلقيها.',
+   opts:['الأبيض','الأخضر','الأحمر','البرتقالي'],
+   a:2,exp:'الأحمر = شخصي وسري للمتلقي فقط. (البرتقالي: مشاركة محدودة داخل الجهة، الأخضر: داخل نفس المجتمع دون نشر علني، الأبيض: غير محدودة).'},
+  {en:'The TLP color that allows unlimited sharing is .....',ar:'اللون الذي يسمح بمشاركة غير محدودة في بروتوكول TLP هو...',
+   opts:['الأحمر','الأبيض','البرتقالي','الأخضر'],
+   a:1,exp:'الأبيض = مشاركة غير محدودة مع الجميع عبر قنوات الاتصال العامة (مع احترام حقوق التأليف والنشر).'},
+  {en:'Scareware scam websites trick you by using .....',ar:'مواقع التخويف المخادعة Scareware تخدعك باستخدام...',
+   opts:['تنبيهات أمان زائفة (نوافذ منبثقة تخبرك أن جهازك مصاب)','عروض توظيف حقيقية','أخبار رياضية','خرائط تفاعلية'],
+   a:0,exp:'تستخدم نوافذ تنبيهات أمان زائفة تُشعرك بالخوف فتُسرع بتنزيل ملف تظنه علاجاً وهو في الحقيقة برنامج ضار.'},
+  {en:'The Egyptian Anti-Cyber and Information Technology Crimes Law is Law No. .....',ar:'قانون مكافحة جرائم تقنية المعلومات المصري هو القانون رقم...',
+   opts:['151 لسنة 2020','175 لسنة 2018','12 لسنة 1996','126 لسنة 2008'],
+   a:1,exp:'قانون 175 لسنة 2018 (45 مادة في 4 أبواب) — أول تشريع مصري شامل لمكافحة جرائم الفضاء الإلكتروني.'},
+  {en:'The Egyptian Personal Data Protection Law is Law No. .....',ar:'قانون حماية البيانات الشخصية المصري هو القانون رقم...',
+   opts:['175 لسنة 2018','151 لسنة 2020','57 لسنة 2014','10 لسنة 2003'],
+   a:1,exp:'قانون 151 لسنة 2020 (49 مادة) — ويَعتبر بيانات الأطفال في جميع الأحوال «بيانات شخصية حساسة».'},
+  {en:'Creating a fake online identity to build a relationship with the victim and gain their trust is called .....',ar:'انتحال هوية وهمية عبر الإنترنت لبناء علاقة مع الضحية وكسب ثقته يسمى...',
+   opts:['التصيد Trolling','الاصطياد الإلكتروني Catfishing','الإهانة المباشرة Flaming','النبذ Exclusion'],
+   a:1,exp:'<span class="en">Catfishing</span>: تزوير الهوية بملف تعريف مزيف والتظاهر بأنه شخص آخر لكسب ثقة الضحية والحصول على معلوماته ثم الإساءة له.'},
+  {en:'Egypt\'s hotline for reporting online risks against children is .....',ar:'الخط الساخن المصري للإبلاغ عن مخاطر الأطفال على الإنترنت هو...',
+   opts:['15000','16000','17000','122'],
+   a:1,exp:'أطلقه المجلس القومي للطفولة والأمومة (NCCM) لحماية الأطفال — للإبلاغ عن التنمر والتحرش الإلكتروني والمحتوى غير اللائق.'},
+  {en:'Paying the ransom always guarantees that attackers will decrypt your data.',ar:'دفع الفدية يضمن دائماً أن المهاجمين سيفكّون تشفير بياناتك.',
+   opts:['صح','خطأ'],
+   a:1,exp:'خطأ — نص المادة الرسمية: «قد يقوم المهاجمون بفك البيانات بعد حصولهم على مبلغ الفدية لكنهم عادةً لا يفعلون ذلك». وانتبه لكلمة المصيدة <span class="en">always</span>.'}
+];
+
+function initQuiz(boxId,DATA){
+  let qi=0,score=0,answered=false;
+  const quizBox=document.getElementById(boxId);
+  function renderQ(){
+    if(qi>=DATA.length){showResult();return;}
+    const item=DATA[qi];answered=false;
+    quizBox.innerHTML=`
+      <div class="quiz-progress">
+        <span>السؤال ${qi+1} من ${DATA.length}</span>
+        <span style="color:var(--accent)">نتيجتك: ${score}</span>
+      </div>
+      <div class="quiz-bar"><i style="width:${qi/DATA.length*100}%"></i></div>
+      <div class="quiz-q"><span class="en">${item.en}</span></div>
+      <div class="quiz-q-ar">${item.ar}</div>
+      <div class="quiz-opts"></div>
+      <div class="quiz-feedback" aria-live="polite"></div>
+      <button class="quiz-next" disabled>${qi===DATA.length-1?'عرض النتيجة 🏁':'السؤال التالي ←'}</button>`;
+    const optsEl=quizBox.querySelector('.quiz-opts');
+    item.opts.forEach((o,i)=>{
+      const b=document.createElement('button');
+      b.className='quiz-opt';b.textContent=o;
+      b.addEventListener('click',()=>answer(i,b,item,optsEl));
+      optsEl.appendChild(b);
+    });
+    quizBox.querySelector('.quiz-next').addEventListener('click',()=>{qi++;renderQ();});
+  }
+  function answer(i,btn,item,optsEl){
+    if(answered)return;answered=true;
+    const fbEl=quizBox.querySelector('.quiz-feedback');
+    [...optsEl.children].forEach((b,j)=>{
+      b.disabled=true;
+      if(j===item.a)b.classList.add('correct');
+    });
+    if(i===item.a){score++;fbEl.className='quiz-feedback show ok';fbEl.innerHTML='✅ <b>إجابة صحيحة!</b> '+item.exp;}
+    else{btn.classList.add('wrong');fbEl.className='quiz-feedback show no';fbEl.innerHTML='❌ <b>ليست الإجابة الصحيحة.</b> '+item.exp;}
+    quizBox.querySelector('.quiz-progress span:last-child').textContent='نتيجتك: '+score;
+    quizBox.querySelector('.quiz-next').disabled=false;
+  }
+  function showResult(){
+    const pct=Math.round(score/DATA.length*100);
+    let msg,icon;
+    if(pct===100){icon='🏆';msg='ممتاز! أنت جاهز تماماً — درجة كاملة!';}
+    else if(pct>=70){icon='🎉';msg='نتيجة رائعة! لديك فهم قوي لأساسيات الأمن السيبراني.';}
+    else if(pct>=40){icon='📖';msg='بداية جيدة — راجع الأقسام بالأعلى وأعد المحاولة.';}
+    else{icon='💪';msg='لا بأس! اقرأ الدليل مرة أخرى وستتحسن نتيجتك كثيراً.';}
+    quizBox.innerHTML=`
+      <div class="quiz-result">
+        <div style="font-size:56px">${icon}</div>
+        <div class="score">${score} / ${DATA.length}</div>
+        <p>${msg}</p>
+        <button class="quiz-next">إعادة الاختبار 🔄</button>
+      </div>`;
+    quizBox.querySelector('.quiz-next').addEventListener('click',()=>{qi=0;score=0;renderQ();});
+  }
+  renderQ();
 }
-function answer(i,btn,item,optsEl){
-  if(answered)return;answered=true;
-  const fbEl=document.getElementById('quiz-feedback');
-  [...optsEl.children].forEach((b,j)=>{
-    b.disabled=true;
-    if(j===item.a)b.classList.add('correct');
-  });
-  if(i===item.a){score++;fbEl.className='quiz-feedback show ok';fbEl.innerHTML='✅ <b>إجابة صحيحة!</b> '+item.exp;}
-  else{btn.classList.add('wrong');fbEl.className='quiz-feedback show no';fbEl.innerHTML='❌ <b>ليست الإجابة الصحيحة.</b> '+item.exp;}
-  quizBox.querySelector('.quiz-progress span:last-child').textContent='نتيجتك: '+score;
-  document.getElementById('quiz-next').disabled=false;
-}
-function showResult(){
-  const pct=Math.round(score/QUIZ.length*100);
-  let msg,icon;
-  if(pct===100){icon='🏆';msg='ممتاز! أنت جاهز تماماً — درجة كاملة!';}
-  else if(pct>=70){icon='🎉';msg='نتيجة رائعة! لديك فهم قوي لأساسيات الأمن السيبراني.';}
-  else if(pct>=40){icon='📖';msg='بداية جيدة — راجع الأقسام بالأعلى (خاصة مصيدة الكلمات) وأعد المحاولة.';}
-  else{icon='💪';msg='لا بأس! اقرأ الدليل مرة أخرى وستتحسن نتيجتك كثيراً.';}
-  quizBox.innerHTML=`
-    <div class="quiz-result">
-      <div style="font-size:56px">${icon}</div>
-      <div class="score">${score} / ${QUIZ.length}</div>
-      <p>${msg}</p>
-      <button class="quiz-next" id="quiz-again">إعادة الاختبار 🔄</button>
-    </div>`;
-  document.getElementById('quiz-again').addEventListener('click',()=>{qi=0;score=0;renderQ();});
-}
-renderQ();
+initQuiz('quiz-box',QUIZ);
+initQuiz('quiz2-box',QUIZ2);
 
 /* ===== Glossary ===== */
 const CATS={all:'الكل',basic:'مفاهيم أساسية',mal:'برمجيات ضارة',att:'هجمات',def:'وسائل حماية'};
