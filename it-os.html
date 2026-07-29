@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>تكنولوجيا المعلومات ونظم التشغيل ببساطة — دليل تفاعلي</title>
 <meta name="description" content="دليل تفاعلي مبسّط لقسم تكنولوجيا المعلومات ونظم التشغيل من دورة التحول الرقمي: مكونات الحاسب، الذاكرة، نظم التشغيل، الاختصارات، واختبارات تفاعلية.">
-<meta name="theme-color" content="#0f172a">
+<meta name="theme-color" content="#000000">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -431,9 +431,9 @@
 
 <nav class="tabbar" aria-label="تنقل سريع">
   <a href="#hw" class="active"><span class="ico">📖</span>الشرح</a>
+  <a href="#glossary"><span class="ico">📇</span>القاموس</a>
   <a href="#official"><span class="ico">🏛️</span>المنهج</a>
   <a href="#traps"><span class="ico">🧩</span>الأسئلة</a>
-  <a href="#glossary"><span class="ico">📇</span>القاموس</a>
 </nav>
 
 <script src="assets/app.js"></script>
@@ -644,6 +644,7 @@ App.renderGlossary({
 /* ===== الأكورديون والتنقل ===== */
 App.initAccordions();
 App.initNav({hw:'#hw',mem:'#hw',os:'#hw',sw:'#hw',types:'#hw',keys:'#hw',glossary:'#glossary',official:'#official',traps:'#traps',quiz:'#traps',predicted:'#traps'});
+App.initShell('it-os.html');
 </script>
 </body>
 </html>

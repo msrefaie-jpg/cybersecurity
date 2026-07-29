@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>معالج النصوص (وورد) ببساطة — دليل تفاعلي</title>
 <meta name="description" content="دليل تفاعلي مبسّط لقسم معالج النصوص (وورد) من دورة التحول الرقمي: خريطة التبويبات، الاختصارات، الحواشي والتعليقات، واختبارات تفاعلية.">
-<meta name="theme-color" content="#0f172a">
+<meta name="theme-color" content="#000000">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -283,9 +283,9 @@
 
 <nav class="tabbar" aria-label="تنقل سريع">
   <a href="#ui" class="active"><span class="ico">📖</span>الشرح</a>
+  <a href="#glossary"><span class="ico">📇</span>القاموس</a>
   <a href="#official"><span class="ico">🏛️</span>المنهج</a>
   <a href="#traps"><span class="ico">🧩</span>الأسئلة</a>
-  <a href="#glossary"><span class="ico">📇</span>القاموس</a>
 </nav>
 
 <script src="assets/app.js"></script>
@@ -497,6 +497,7 @@ App.renderGlossary({
 
 App.initAccordions();
 App.initNav({ui:'#ui',tabsmap:'#ui',notes:'#ui',keys:'#ui',glossary:'#glossary',official:'#official',traps:'#traps',quiz:'#traps',predicted:'#traps'});
+App.initShell('word.html');
 </script>
 </body>
 </html>
