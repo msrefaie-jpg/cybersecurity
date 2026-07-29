@@ -24,6 +24,8 @@
 
 **افتح الدليل من هنا:** https://msrefaie-jpg.github.io/cybersecurity/
 
+🌐 **نسخة إنجليزية كاملة** متاحة على https://msrefaie-jpg.github.io/cybersecurity/en/ — وزر تبديل اللغة (EN / ع) موجود في الشريط العلوي لكل صفحة.
+
 > ملاحظة: يتطلب الرابط أعلاه تفعيل GitHub Pages من إعدادات المستودع (Settings → Pages → Branch: main). حتى ذلك الحين يمكن تحميل ملف `index.html` وفتحه مباشرة في أي متصفح — فهو يعمل بدون إنترنت.
 
 ## 📱 يعمل كتطبيق جوال

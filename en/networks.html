@@ -25,12 +25,12 @@
     <span class="shield">🌐</span>
     <h1>Networks <span>Made Simple</span></h1>
     <p class="sub">An interactive guide to the Networks section: IP and MAC addresses, protocols, connecting devices and the star topology, and cables and ports.</p>
-    <span class="badge" style="background:rgba(255,214,10,.12);color:var(--warn);border-color:rgba(255,214,10,.3)">⏳ From the memo — not yet verified against the official material (will be refined once it arrives)</span>
+    <span class="badge">Extracted from the memo and verified against the official material (BIT 07 — Introduction to Networks, Edition 3 / 2024)</span>
     <div class="stats">
       <div class="stat"><b>28</b><span>memo questions</span></div>
-      <div class="stat"><b>24</b><span>key terms</span></div>
-      <div class="stat"><b>10</b><span>word traps</span></div>
-      <div class="stat"><b>14</b><span>quiz questions</span></div>
+      <div class="stat"><b>31</b><span>key terms</span></div>
+      <div class="stat"><b>22</b><span>predicted questions</span></div>
+      <div class="stat"><b>88</b><span>pages of official material</span></div>
     </div>
   </div>
 </header>
@@ -43,8 +43,10 @@
     <a href="#cables">Cables &amp; Ports</a>
     <a href="#types">Connection Types</a>
     <a href="#glossary">Glossary</a>
+    <a href="#official">From the Official Curriculum</a>
     <a href="#traps">Word Traps</a>
     <a href="#quiz">Memo Questions</a>
+    <a href="#predicted">Predicted Questions</a>
   </div>
 </nav>
 
@@ -72,32 +74,32 @@
       <div class="card">
         <span class="icon">🔢</span>
         <h3>IP Address</h3>
-        <p>It consists of <strong style="color:var(--accent)">4 Octets</strong>, and each octet can hold <strong style="color:var(--accent)">256 values</strong> (0–255). The device's address must be in the <strong style="color:var(--text)">same Subnet</strong> as the local network.</p>
+        <p>It consists of <strong style="color:var(--accent)">4 fields (Octets)</strong>, each from 0 to 255 ✅ p.44 — that is, 256 values per octet. The device's address must be in the <strong style="color:var(--text)">same Subnet</strong> ✅ p.45–46: the network number is like the street name, and the host number like the house number.</p>
       </div>
       <div class="card">
         <span class="icon">🪪</span>
         <h3>MAC Address</h3>
-        <p>The address used to connect to an <strong style="color:var(--accent)">Ethernet</strong> network — the fixed physical address of the network card.</p>
+        <p>The address used on the local <strong style="color:var(--accent)">Ethernet</strong> network ✅ p.44 — it consists of <strong>12 characters</strong> with a dot between each pair, while the Internet uses the IP address.</p>
       </div>
       <div class="card">
         <span class="icon">🔄</span>
         <h3>DHCP — A Changing Address</h3>
-        <p>The DHCP protocol gives the client device an IP address <strong style="color:var(--accent)">dynamically (changing)</strong> — not a Static one (a trap!).</p>
+        <p>Assignment is either manual (static) or automatic via a <strong style="color:var(--accent)">DHCP server</strong> ✅ p.44 — its four messages: Discovery ← Offer ← Request ← Acknowledge (p.67).</p>
       </div>
       <div class="card">
         <span class="icon">✅</span>
         <h3>TCP or UDP?</h3>
-        <p><strong style="color:var(--accent)">TCP</strong> is responsible for accuracy and ensuring data arrives correctly — attributing that to UDP is a recurring trap! UDP is faster but offers no guarantee.</p>
+        <p><strong style="color:var(--accent)">TCP stands out for accuracy</strong> (delivery confirmation, flow control, and error detection) while <strong style="color:var(--accent)">UDP stands out for speed</strong> without confirmation ✅ p.64–65 — attributing accuracy to UDP is a recurring trap!</p>
       </div>
       <div class="card">
         <span class="icon">🧅</span>
-        <h3>Network Layers</h3>
-        <p>The <strong style="color:var(--text)">network access</strong> layer defines the physical communication methods with the local network ✓. The IP protocol belongs to the <strong style="color:var(--accent)">Internet layer</strong> — while the link layer's protocol is <strong style="color:var(--text)">Ethernet</strong> (a trap!).</p>
+        <h3>The Four TCP/IP Model Layers</h3>
+        <p>Application (HTTP/FTP/SMTP) ← Transport (TCP/UDP) ← Internet (<strong style="color:var(--accent)">IP and Routers</strong>) ← Link/Network Access (<strong style="color:var(--text)">Ethernet</strong> up to 1 Gbps, and switches) ✅ p.64–65 — and the access layer defines the physical communication methods with the local network ✅.</p>
       </div>
       <div class="card">
         <span class="icon">🛠️</span>
         <h3>Tools &amp; Systems</h3>
-        <p><strong style="color:var(--text)">Wireshark</strong> helps in managing and maintaining the network · <strong style="color:var(--text)">Linux</strong> is an open-source system widely used for servers and networks · the Network File System <span class="en">NFS</span> was developed by <strong style="color:var(--accent)">Sun Microsystems</strong>.</p>
+        <p><strong style="color:var(--text)">Wireshark</strong> monitors and analyzes data traffic in real time ✅ p.42 · <strong style="color:var(--text)">Linux</strong> is free, open-source, and widely used for servers and networks ✅ p.40 · <span class="en">NFS</span> was developed by <strong style="color:var(--accent)">Sun Microsystems in 1984</strong> ✅ p.53 — Microsoft's counterpart is SMB.</p>
       </div>
     </div>
   </div>
@@ -113,12 +115,12 @@
       <div class="card">
         <span class="icon">⭐</span>
         <h3>The Heart of the Star</h3>
-        <p>The central focal point of the star structure is the <strong style="color:var(--accent)">Switch</strong>. A concentrator is used to form the star topology — and the answer may accept <strong style="color:var(--text)">Hub, Switch, or Router</strong> depending on the available options.</p>
+        <p>The memo's answer: the <strong style="color:var(--accent)">Switch</strong>. ⚠️ The material's text (p.19): the central point is "usually a device such as a <strong style="color:var(--text)">hub, switch, or router</strong>" — so stay flexible depending on the question's options. And the star topology is <strong>the most used</strong> of the three structures.</p>
       </div>
       <div class="card">
         <span class="icon">📉</span>
         <h3>Hub or Switch?</h3>
-        <p>The Hub is <strong style="color:var(--accent)">less</strong> commonly used than the Switch — because the hub broadcasts to all devices, while the switch sends only to the intended device. The phrase "more commonly" is a trap!</p>
+        <p>The Hub retransmits on <strong style="color:var(--bad)">all ports</strong>, causing collisions, while the Switch forwards <strong style="color:var(--accent)">only to the intended port</strong>, is faster, and sends and receives simultaneously ✅ p.36 — so the hub is less used (the phrase "more commonly" is a trap!).</p>
       </div>
       <div class="card">
         <span class="icon">🎴</span>
@@ -154,12 +156,12 @@
       <div class="card">
         <span class="icon">🧵</span>
         <h3>Coaxial Cable</h3>
-        <p>It consists of <strong style="color:var(--accent)">4 parts</strong> to reduce signal interference — not five (a trap!).</p>
+        <p>It consists of <strong style="color:var(--accent)">4 parts</strong> ✅ p.32: a copper core, insulation, a braided metallic outer conductor, and a plastic jacket — not five (a trap!). It was used in the old days at 10 Mbps.</p>
       </div>
       <div class="card">
         <span class="icon">🔀</span>
         <h3>Crossover Cable</h3>
-        <p>The crossover cable is used to connect <strong style="color:var(--accent)">similar</strong> devices (of the same type): computer to computer, switch to switch.</p>
+        <p>The crossover connects two <strong style="color:var(--accent)">similar</strong> devices (computer to computer) ✅ p.32 — while the <strong style="color:var(--text)">Straight-through</strong> cable is for two different devices (computer to switch).</p>
       </div>
       <div class="card">
         <span class="icon">📡</span>
@@ -180,22 +182,22 @@
       <div class="card">
         <span class="icon">🏢</span>
         <h3>Leased Lines</h3>
-        <p><span class="en">Leased Lines</span> are the best option <strong style="color:var(--accent)">for large companies, institutions, and universities</strong> that need high speed and reliability — not for individuals (a trap!).</p>
+        <p><span class="en">Leased Lines</span> are <strong style="color:var(--accent)">for large companies</strong> ✅ p.49: higher security, high speed, and high cost, with dedicated protocols <strong>PPP and HDLC</strong> — not for individuals (a trap!).</p>
       </div>
       <div class="card">
         <span class="icon">📞</span>
         <h3>DSL Line</h3>
-        <p>With DSL, the Internet speed remains constant <strong style="color:var(--accent)">for the customer</strong> ✓ — while the phrase "constant by the customer" is wrong; the consistency is guaranteed by <strong style="color:var(--text)">the service provider</strong> (a preposition trap!).</p>
+        <p>The memo's answer: the speed remains constant <strong style="color:var(--accent)">for the customer</strong> ✓ ("by the customer" is a preposition trap). ⚠️ The material (p.48) explains: speeds up to 100 Mbps <strong>decrease with distance from the exchange</strong> — its types are ADSL (most common at home), SDSL (symmetric), and VDSL (very high speed).</p>
       </div>
       <div class="card">
         <span class="icon">☁️</span>
         <h3>The Windows Cloud</h3>
-        <p>The Windows platform is considered a type of <strong style="color:var(--accent)">Public</strong> cloud.</p>
+        <p><strong>Windows Azure</strong> is among the examples of <strong style="color:var(--accent)">Public</strong> clouds ✅ p.24 — alongside Google AppEngine and Amazon EC2. Public clouds are economical but less secure than private ones.</p>
       </div>
       <div class="card">
         <span class="icon">🛒</span>
         <h3>Amazon AWS</h3>
-        <p>One of the most famous online <strong style="color:var(--accent)">infrastructure (IaaS)</strong> providers — describing it as a "Software provider" is wrong (a trap!).</p>
+        <p>Among the examples of <strong style="color:var(--accent)">infrastructure (IaaS)</strong> providers ✅ p.25 (with Cisco Metapod and Google Compute Engine) — describing it as a "Software provider" is wrong (a trap!).</p>
       </div>
     </div>
   </div>
@@ -211,6 +213,75 @@
   </div>
 </section>
 
+<div class="part-banner official-src">
+  <div class="container">
+    <span class="part-tag">Extra Explanations</span>
+    <h2>From the Official Curriculum</h2>
+    <p>Topics the memo doesn't cover — added from the official training material (88 pages, Edition 3 / 2024).</p>
+  </div>
+</div>
+
+<!-- ===================== Official extras ===================== -->
+<section id="official">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">06.</span> What the Memo Doesn't Cover</h2>
+    <p class="sec-lead">The official material is far broader than the memo's 28 questions — here is its essence:</p>
+
+    <div class="grid cols-2">
+      <div class="card">
+        <span class="icon">🎓</span>
+        <h3>Module Position &amp; Geographic Classification</h3>
+        <p>Introduction to Networks = <strong style="color:var(--text)">BIT 07</strong> (elective). Geographically, networks come in <strong style="color:var(--accent)">5 types</strong> (p.14–16): PAN personal · LAN local · CAN campus (a group of LANs) · MAN a whole city (like the New Administrative Capital) · WAN wide-area, via telecom companies and satellites.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🚌</span>
+        <h3>The Three Topologies (p.18–19)</h3>
+        <p><strong>Bus</strong>: collisions on simultaneous transmission, and cutting the cable stops the whole network · <strong>Ring</strong>: one direction, with every device acting as a signal repeater · <strong>Star</strong>: <strong style="color:var(--accent)">the most used</strong> — disconnecting one device doesn't affect the rest, and faults are easy to detect.</p>
+      </div>
+      <div class="card">
+        <span class="icon">📶</span>
+        <h3>Wi-Fi by the Numbers (p.20–21, p.60–61)</h3>
+        <p>Short for <strong>Wireless Fidelity</strong>, its standards are IEEE 802.11, on the <strong style="color:var(--accent)">2.4 and 5 GHz</strong> bands · 802.11ac up to 1 Gbps · Wi-Fi 4=n, 5=ac, 6=ax · 5 GHz is faster with less interference, while 2.4 GHz handles obstacles better.</p>
+      </div>
+      <div class="card">
+        <span class="icon">📡</span>
+        <h3>Cellular, NFC &amp; RFID (p.22–23)</h3>
+        <p>5G is <strong style="color:var(--accent)">10 times</strong> faster than 4G (10 Gbps theoretically) · NFC: range <strong style="color:var(--accent)">not exceeding 4 cm</strong> at 474 Kbps — which is why it's financially safe · RFID: a Tag (passive or active) + a Reader — e-passports and goods tracking.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🧵</span>
+        <h3>Cable Categories (p.31–32)</h3>
+        <p>Twisted-pair has 8 wires with an <strong>RJ45</strong> connector, in shielded STP and unshielded UTP types · Categories: Cat5 (100 Mbps) ← Cat5e (1000) ← Cat6A (10 Gbps) ← <strong style="color:var(--accent)">Cat8 (25–40 Gbps)</strong> · FTTH: OLT ← splitter (64 or 128 clients) ← ONU.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🔢</span>
+        <h3>Address Classes (p.45–46)</h3>
+        <p>Class A mask 255.0.0.0 · B 255.255.0.0 · C 255.255.255.0 · A host number of all zeros = <strong style="color:var(--accent)">the network address</strong>, and all ones = <strong style="color:var(--accent)">the Broadcast address</strong> · the default gateway is found with the <span class="en">ipconfig</span> command.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🌐</span>
+        <h3>The Internet's Birth &amp; Connection Methods (p.47–50)</h3>
+        <p>It began in <strong style="color:var(--accent)">1969</strong> as <strong>ARPANET</strong> with <strong>4 computers</strong> supporting U.S. military research · Dial-up doesn't exceed 56 Kbps and occupies the phone line · Mobile generations: 1G voice only ← 2G digital + SMS ← 3G Internet ← 4G high speeds ← 5G + the Internet of Things.</p>
+      </div>
+      <div class="card">
+        <span class="icon">📮</span>
+        <h3>The Final Session's Protocols (p.66–68)</h3>
+        <p><strong>DNS</strong>: translates easy-to-remember domain names into IP addresses · <strong>DHCP</strong>: Discovery ← Offer ← Request ← Acknowledge · <strong>IMAP</strong>: accessing email messages and storing them for offline work — used by Outlook and Thunderbird · <strong>SMTP</strong>: sending mail.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🛡️</span>
+        <h3>Network Security Tools (p.69–71)</h3>
+        <p><strong>Firewall</strong> monitors traffic and allows/blocks by rules · <strong>IPS</strong> blocks attacks by comparing them to previous ones in real time · <strong>NAC</strong> identifies every user and device · <strong>DLP</strong> prevents data from leaking outside the organization · <strong>VPN</strong> is a private encrypted virtual channel · and intrusion is <strong style="color:var(--bad)">the easiest attack to carry out</strong>.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🔐</span>
+        <h3>Securing the Home Router (p.74–78)</h3>
+        <p>Log in via <span class="en">192.168.0.1</span> or <span class="en">192.168.1.1</span> · the recommended encryption is <strong style="color:var(--accent)">WPA2-PSK</strong> · hide the network by disabling <span class="en">SSID Broadcast</span> · and the <strong style="color:var(--bad)">WPS feature must be disabled</strong> to protect the router from intrusion.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <div class="part-banner memo-src">
   <div class="container">
     <span class="part-tag">Part Two · Questions</span>
@@ -222,7 +293,7 @@
 <!-- ===================== 6. Traps ===================== -->
 <section id="traps">
   <div class="container">
-    <h2 class="sec-title"><span class="num">06.</span> Word Traps — Wrong Protocol, Wrong Number</h2>
+    <h2 class="sec-title"><span class="num">07.</span> Word Traps — Wrong Protocol, Wrong Number</h2>
     <p class="sec-lead">Tap any statement to reveal the verdict:</p>
     <div id="traps-list"></div>
   </div>
@@ -231,19 +302,33 @@
 <!-- ===================== 7. Memo quiz ===================== -->
 <section id="quiz">
   <div class="container">
-    <h2 class="sec-title"><span class="num">07.</span> Memo Questions — Test Yourself 🎯</h2>
-    <p class="sec-lead">14 questions from the memo in their original English wording, with explanations.</p>
+    <h2 class="sec-title"><span class="num">08.</span> Memo Questions — Test Yourself 🎯</h2>
+    <p class="sec-lead">14 questions from the memo in their original English wording, with explanations based on the official material.</p>
     <div class="quiz-box" id="quiz-box"></div>
+  </div>
+</section>
 
-    <div class="analogy" style="margin-top:24px">
-      ⏳ <strong>Coming to this section:</strong> verification against the official material + "From the Official Curriculum" cards + predicted questions — to be added as soon as the official material for the Networks section arrives (approved range: pp. 21–86).
-    </div>
+<div class="part-banner official-src">
+  <div class="container">
+    <span class="part-tag">Extra Questions</span>
+    <h2>Predicted Questions from the Official Curriculum</h2>
+    <p>22 practice questions on the topics the memo doesn't cover.</p>
+  </div>
+</div>
+
+<!-- ===================== Predicted quiz ===================== -->
+<section id="predicted">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">09.</span> Predicted Questions 🔮</h2>
+    <p class="sec-lead">⚠️ Practice questions written from the official material's content — not copied from actual exams.</p>
+    <div class="quiz-box" id="predicted-box"></div>
   </div>
 </section>
 
 <nav class="tabbar" aria-label="Quick navigation">
   <a href="#addr" class="active"><span class="ico">📖</span>Guide</a>
   <a href="#glossary"><span class="ico">📇</span>Glossary</a>
+  <a href="#official"><span class="ico">🏛️</span>Official</a>
   <a href="#traps"><span class="ico">🧩</span>Quiz</a>
 </nav>
 
@@ -270,7 +355,7 @@ App.renderTraps('traps-list',[
  {q:'The coaxial cable consists of <span class="mark">five</span> parts to reduce signal interference.',ar:'',ok:false,
   a:'False — it consists of <strong>four</strong> parts.'},
  {q:'When using DSL, the internet speed remains constant <span class="mark">by</span> customer.',ar:'',ok:false,
-  a:'False — constant <strong>FOR the customer</strong>, and the consistency is guaranteed by the service provider. A very subtle preposition trap!'}
+  a:'False — constant <strong>FOR the customer</strong>, and the consistency is guaranteed by the service provider. A very subtle preposition trap! (⚠️ The material, p.48, notes the actual speed decreases with distance from the exchange.)'}
 ]);
 
 /* ===== Memo questions ===== */
@@ -319,11 +404,59 @@ App.initQuiz('quiz-box',[
   exp:'True ✓ — and remember: IP is in the Internet layer, and Ethernet is in the link layer.'}
 ]);
 
+/* ===== Predicted questions ===== */
+App.initQuiz('predicted-box',[
+ {en:'Networks classified geographically are ..... types.',ar:'',
+  opts:['3','4','5','6'],a:2,exp:'Five: PAN, LAN, CAN, MAN, and WAN (p.14–16).'},
+ {en:'A group of LANs within a school or university campus forms a ..... network.',ar:'',
+  opts:['MAN','CAN','WAN','PAN'],a:1,exp:'CAN — the campus area network (p.15). A whole city is a MAN.'},
+ {en:'In the Bus topology, cutting any part of the cable .....',ar:'',
+  opts:['affects one device','stops the whole network','has no effect','speeds it up'],a:1,exp:'It stops the entire network — and with many devices it slows down due to collisions (p.19).'},
+ {en:'In the Ring topology, each device acts as a .....',ar:'',
+  opts:['server','signal repeater','firewall','router'],a:1,exp:'A signal repeater: it strengthens the signal and passes it along in one direction (p.19).'},
+ {en:'The most used LAN topology is .....',ar:'',
+  opts:['Bus','Ring','Star','Mesh'],a:2,exp:'The Star — disconnecting any device doesn\'t affect the rest (p.19).'},
+ {en:'Wi-Fi is an abbreviation of .....',ar:'',
+  opts:['Wireless Fidelity','Wide Fiber','Wireless Field','Web Finder'],a:0,exp:'Wireless Fidelity — a Wi-Fi Alliance trademark, with IEEE 802.11 standards (p.20).'},
+ {en:'Wi-Fi operates on the frequencies .....',ar:'',
+  opts:['1.2 and 3 GHz','2.4 and 5 GHz','3 and 6 GHz','900 MHz only'],a:1,exp:'2.4 and 5 GHz — the latter is faster with less interference, the former handles obstacles better (p.20, p.61).'},
+ {en:'A Bluetooth main device can connect to a maximum of ..... devices.',ar:'',
+  opts:['5','7','10','3'],a:1,exp:'A maximum of 7 devices, with the ability to swap roles (p.21).'},
+ {en:'5G is up to ..... times faster than 4G.',ar:'',
+  opts:['2','5','10','100'],a:2,exp:'10 times — with a theoretical peak of 10 Gbps and latency under 10 ms (p.22).'},
+ {en:'NFC range does not exceed ..... which makes it safe for payments.',ar:'',
+  opts:['4 cm','4 m','40 cm','1 m'],a:0,exp:'4 centimeters, at a maximum of 474 Kbps (p.22).'},
+ {en:'RFID consists of two parts: .....',ar:'',
+  opts:['tag and reader','antenna and battery','chip and screen','card and cable'],a:0,exp:'A Tag (passive without a battery, or active with a power source) and a Reader (p.23).'},
+ {en:'The twisted-pair cable connector is ..... with ..... pins.',ar:'',
+  opts:['RJ11 / 6','RJ45 / 8','USB / 4','DE-15 / 15'],a:1,exp:'RJ45 with eight pins — the cable has 8 copper wires twisted in pairs (p.31).'},
+ {en:'The UTP category supporting 25–40 Gbps is .....',ar:'',
+  opts:['Cat5e','Cat6','Cat7','Cat8'],a:3,exp:'Cat8 — while Cat5 goes up to 100 Mbps and Cat6A up to 10 Gbps (p.32).'},
+ {en:'In FTTH, the optical splitter divides the signal to ..... clients.',ar:'',
+  opts:['16 or 32','64 or 128','200 or 400','8 or 16'],a:1,exp:'64 or 128 — the chain: OLT ← Splitter ← ONU (p.33).'},
+ {en:'The subnet mask of a Class C address is .....',ar:'',
+  opts:['255.0.0.0','255.255.0.0','255.255.255.0','255.255.255.255'],a:2,exp:'255.255.255.0 — Class A is 255.0.0.0 and Class B is 255.255.0.0 (p.45).'},
+ {en:'A host number of all ones (e.g. 10.255.255.255) is the ..... address.',ar:'',
+  opts:['network','broadcast','gateway','loopback'],a:1,exp:'The Broadcast address — while all zeros is the network address (p.45).'},
+ {en:'The Internet started in 1969 as ..... with ..... computers.',ar:'',
+  opts:['ARPANET / 4','NSFNET / 10','MILNET / 2','ETHERNET / 8'],a:0,exp:'ARPANET, with 4 computers supporting U.S. military research (p.47).'},
+ {en:'Dial-up connection speed does not exceed .....',ar:'',
+  opts:['128 Kbps','56 Kbps','1 Mbps','512 Kbps'],a:1,exp:'56 Kbps — and the phone cannot be used during the connection (p.48).'},
+ {en:'The DSL type with symmetric speeds, suited for companies, is .....',ar:'',
+  opts:['ADSL','SDSL','VDSL','UDSL'],a:1,exp:'SDSL — ADSL is the most common at home (faster download), and VDSL is very high speed for streaming (p.48–49).'},
+ {en:'The protocol that translates domain names into IP addresses is .....',ar:'',
+  opts:['DHCP','DNS','IMAP','FTP'],a:1,exp:'DNS — the database of domains and their addresses (p.67–68).'},
+ {en:'..... prevents employees from sending confidential information outside the organization.',ar:'',
+  opts:['IPS','NAC','DLP','VPN'],a:2,exp:'Data Loss Prevention — even unsafe printing (p.71). NAC, meanwhile, identifies users and devices.'},
+ {en:'The recommended Wi-Fi router encryption is ..... and the ..... feature must be disabled.',ar:'',
+  opts:['WEP / SSID','WPA2-PSK / WPS','WPA / DHCP','TKIP / NAT'],a:1,exp:'WPA2-PSK is best for protection, and disabling WPS protects the router from intrusion (p.75, p.78).'}
+]);
+
 /* ===== Glossary ===== */
 App.renderGlossary({
   gridId:'flip-grid',filtersId:'filters',
   cats:{all:'All',addr:'Addresses & Protocols',dev:'Devices',cab:'Cables & Ports',net:'Connectivity & Cloud'},
-  officialSet:new Set([]),
+  officialSet:new Set(['Topologies','RJ45','FTTH','DNS','Firewall / IPS','VPN','WPA2-PSK']),
   terms:[
    {c:'addr',ar:'IP Address',en:'IP Address',d:'The device\'s logical address: 4 octets, each holding 256 values — and it must be in the same Subnet.',e:'Four octets; each holds 256 values.'},
    {c:'addr',ar:'MAC Address',en:'MAC Address',d:'The fixed physical address — used to connect to an Ethernet network.',e:'Used to connect to an Ethernet network.'},
@@ -348,12 +481,19 @@ App.renderGlossary({
    {c:'net',ar:'Leased Lines',en:'Leased Lines',d:'A dedicated connection for large companies, institutions, and universities — high speed and reliability.',e:'For large companies, institutions, universities.'},
    {c:'net',ar:'Digital Subscriber Line',en:'DSL',d:'Internet over the phone line — the speed is constant for the customer, guaranteed by the service provider.',e:'Constant speed for the customer.'},
    {c:'net',ar:'Network Analyzer',en:'Wireshark',d:'A tool that helps in managing and maintaining the network.',e:'Helps manage and maintain the network.'},
-   {c:'net',ar:'Network File System',en:'NFS',d:'Developed by Sun Microsystems.',e:'Developed by Sun Microsystems.'}
+   {c:'net',ar:'Network File System',en:'NFS',d:'Developed by Sun Microsystems in 1984 — Microsoft\'s counterpart is SMB.',e:'Sun Microsystems, 1984; Microsoft\'s counterpart is SMB.'},
+   {c:'dev',ar:'Network Topologies',en:'Topologies',d:'Bus is linear with collisions · Ring is circular and one-directional · Star is the most used.',e:'Bus, Ring, and Star (the most used).'},
+   {c:'cab',ar:'Network Connector',en:'RJ45',d:'The twisted-pair cable connector with eight pins — the cable is shielded STP or unshielded UTP.',e:'8-pin twisted-pair connector.'},
+   {c:'cab',ar:'Fiber to the Home',en:'FTTH',d:'OLT at the exchange ← a splitter serving 64 or 128 clients ← ONU at the customer.',e:'OLT → splitter (64/128) → ONU.'},
+   {c:'addr',ar:'Domain Name System',en:'DNS',d:'Translates easy-to-remember domain names into IP addresses.',e:'Translates domain names into IP addresses.'},
+   {c:'net',ar:'Firewall & IPS',en:'Firewall / IPS',d:'The firewall monitors traffic by rules, and IPS blocks attacks by comparing them to previous ones in real time.',e:'Traffic rules + real-time intrusion prevention.'},
+   {c:'net',ar:'Virtual Private Network',en:'VPN',d:'A private virtual communication channel over a public network with high-grade encryption.',e:'Private encrypted channel over a public network.'},
+   {c:'net',ar:'Router Encryption',en:'WPA2-PSK',d:'The recommended router encryption scheme — along with disabling WPS and hiding the SSID for greater safety.',e:'Recommended router encryption; disable WPS.'}
   ]
 });
 
 App.initAccordions();
-App.initNav({addr:'#addr',devices:'#addr',cables:'#addr',types:'#addr',glossary:'#glossary',traps:'#traps',quiz:'#traps'});
+App.initNav({addr:'#addr',devices:'#addr',cables:'#addr',types:'#addr',glossary:'#glossary',official:'#official',traps:'#traps',quiz:'#traps',predicted:'#traps'});
 App.LANG='en';
 App.initShell('networks.html');
 </script>
