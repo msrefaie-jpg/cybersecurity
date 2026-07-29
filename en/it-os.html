@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Information Technology & Operating Systems, Simply — An Interactive Guide</title>
+<meta name="description" content="A simplified interactive guide to the IT and operating systems section of the digital transformation course: computer components, memory, operating systems, shortcuts, and interactive quizzes.">
+<meta name="theme-color" content="#000000">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Digital Transformation">
+<link rel="manifest" href="../manifest.webmanifest">
+<link rel="icon" href="../icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../icon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/app.css">
+</head>
+<body>
+
+<header class="hero">
+  <div class="container">
+    <span class="shield">💻</span>
+    <h1>Information Technology &amp; Operating Systems <span>Simply</span></h1>
+    <p class="sub">An interactive guide explaining computer components, memory, and operating systems — no technical background needed, with the original English wording for exam preparation.</p>
+    <span class="badge">Extracted from the memo and verified against the official material (BIT 01 — Version 3 / 2024)</span>
+    <div class="stats">
+      <div class="stat"><b>42</b><span>memo questions</span></div>
+      <div class="stat"><b>27</b><span>key terms</span></div>
+      <div class="stat"><b>22</b><span>predicted questions</span></div>
+      <div class="stat"><b>123</b><span>pages in the official material</span></div>
+    </div>
+  </div>
+</header>
+
+<nav class="tabs" aria-label="Guide sections">
+  <div class="inner">
+    <a class="home-link" href="./">🏠 Home</a>
+    <a href="#hw" class="active">Computer Components</a>
+    <a href="#mem">Memory &amp; Storage</a>
+    <a href="#os">Operating Systems</a>
+    <a href="#sw">Software</a>
+    <a href="#types">Computer Types</a>
+    <a href="#keys">Shortcuts</a>
+    <a href="#glossary">Glossary</a>
+    <a href="#official">From the Official Curriculum</a>
+    <a href="#traps">Word Traps</a>
+    <a href="#quiz">Memo Questions</a>
+    <a href="#predicted">Predicted Questions</a>
+  </div>
+</nav>
+
+<div class="part-banner memo-src">
+  <div class="container">
+    <span class="part-tag">Part One · Interactive Explanations</span>
+    <h2>Memo Explanations</h2>
+    <p>A simplified explanation with everyday analogies for everything in the memo's IT and operating systems section.</p>
+  </div>
+</div>
+
+<!-- ===================== 1. Hardware ===================== -->
+<section id="hw">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">01.</span> Computer Components — What's Inside the Box?</h2>
+    <p class="sec-lead">
+      A computer consists of two kinds of components: <strong style="color:var(--text)">physical components</strong> <span class="en">Hardware</span> that can be seen and touched,
+      and <strong style="color:var(--text)">software components</strong> <span class="en">Software</span> that cannot be seen or touched, though we see the effect of their work.
+    </p>
+
+    <div class="analogy">
+      🏢 <strong>Everyday analogy:</strong>
+      A computer is like a company: the <strong>system unit</strong> is the company building, the <strong>CPU</strong> is the manager who executes decisions, and inside the manager's office are two departments: the <strong>arithmetic and logic unit</strong> (the accountant doing the calculations) and the <strong>control unit</strong> (the head of operations directing everyone — which is why it's described as "the brain of the computer").
+    </div>
+
+    <div class="grid cols-2">
+      <div class="card">
+        <span class="icon">📦</span>
+        <h3>System Unit <span class="en">System Unit</span></h3>
+        <p>The metal box that contains almost all of the computer's basic components. Careful: it is not the "power unit" — that's a component inside it that only supplies electricity.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🧠</span>
+        <h3>Processor <span class="en">CPU</span></h3>
+        <p>"The brain of the computer" that executes all operations. Its speed is measured in megahertz (MHz), and its best-known makers are Intel and AMD. At its heart sits the arithmetic and logic unit (ALU).</p>
+      </div>
+      <div class="card">
+        <span class="icon">🎛️</span>
+        <h3>Control Unit <span class="en">Control Unit</span></h3>
+        <p>Considered <strong style="color:var(--accent)">the brain of the computer</strong> — it directs the flow of data between units. The memo's trick question: "The memory unit is the brain of the computer" ❌ Correct: the control unit.</p>
+      </div>
+      <div class="card">
+        <span class="icon">➕</span>
+        <h3>Arithmetic &amp; Logic Unit <span class="en">ALU</span></h3>
+        <p>Performs arithmetic operations (addition, subtraction...) and logical operations (comparisons), and is located inside the central processing unit (CPU).</p>
+      </div>
+      <div class="card">
+        <span class="icon">⌨️</span>
+        <h3>Input &amp; Output Units</h3>
+        <p>Input: keyboard, mouse, scanner, microphone. Output: monitor, printer, speakers. And the function keys F1–F12 <strong style="color:var(--warn)">do different things in different programs</strong>.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🔌</span>
+        <h3>Motherboard &amp; Power Supply</h3>
+        <p>The motherboard connects all components together, and the <span class="en">Power Supply</span> feeds the device with electricity — it is not the system unit.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 2. Memory & Storage ===================== -->
+<section id="mem">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">02.</span> Memory &amp; Storage — Where Does Your Data Live?</h2>
+    <p class="sec-lead"><strong style="color:var(--text)">Click each memory type to understand its role:</strong></p>
+
+    <div class="cia-wrap">
+      <button class="cia-btn" data-mem="ram">
+        <span class="icon">⚡</span>
+        <h3>Random Access</h3>
+        <span class="en">RAM</span>
+      </button>
+      <button class="cia-btn" data-mem="rom">
+        <span class="icon">🔒</span>
+        <h3>Read Only</h3>
+        <span class="en">ROM</span>
+      </button>
+      <button class="cia-btn" data-mem="cache">
+        <span class="icon">🚀</span>
+        <h3>Cache</h3>
+        <span class="en">Cache</span>
+      </button>
+    </div>
+    <div class="cia-detail" id="mem-panel" aria-live="polite"></div>
+
+    <div class="analogy" style="margin-top:24px">
+      🍳 <strong>Kitchen analogy:</strong> <strong>RAM</strong> is the prep counter — everything you're working on right now sits on it, and when the kitchen closes (power off) it is cleared completely. <strong>ROM</strong> is the kitchen's operating manual mounted on the wall — it never changes and never disappears. <strong>The hard disk</strong> is the pantry — everything stays stored there even if the kitchen closes for a year.
+    </div>
+
+    <div class="grid cols-2">
+      <div class="card">
+        <span class="icon">💽</span>
+        <h3>Hard Disk <span class="en">HDD</span></h3>
+        <p>The computer's <strong style="color:var(--accent)">main</strong> secondary storage device: a metal disk covered with a magnetic layer onto which data is recorded by a read/write head as it spins.</p>
+      </div>
+      <div class="card">
+        <span class="icon">⚡</span>
+        <h3>Solid-State Drive <span class="en">SSD</span></h3>
+        <p>Stores data on flash memory (like a USB stick): no moving parts, faster, lower power consumption, and shock-resistant.</p>
+      </div>
+      <div class="card">
+        <span class="icon">📏</span>
+        <h3>Data Measurement Units</h3>
+        <p>The bit (0 or 1) is the smallest unit → byte = 8 bits → kilobyte = 1024 bytes → mega → giga → tera... each unit = 1024 of the previous one.</p>
+      </div>
+      <div class="card">
+        <span class="icon">💿</span>
+        <h3>Other Media</h3>
+        <p>CDs come in three types (read-only / write-once / rewritable), DVDs hold 7.4–17 GB, and USB flash drives go up to 2 TB.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 3. Operating systems ===================== -->
+<section id="os">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">03.</span> Operating Systems — The Device's Manager</h2>
+    <p class="sec-lead">
+      The operating system is the computer's backbone and the link between the user and the machine.
+      <strong style="color:var(--text)">A computer can run without application software, but it can never run without an operating system</strong> — memorize this; it's a question that often appears reversed!
+    </p>
+
+    <div class="cia-wrap" style="grid-template-columns:repeat(auto-fit,minmax(200px,1fr))">
+      <button class="cia-btn" data-ui="gui">
+        <span class="icon">🖱️</span>
+        <h3>Graphical Interface</h3>
+        <span class="en">GUI</span>
+      </button>
+      <button class="cia-btn" data-ui="cli">
+        <span class="icon">⌨️</span>
+        <h3>Command Interface</h3>
+        <span class="en">CLI</span>
+      </button>
+    </div>
+    <div class="cia-detail" id="ui-panel" aria-live="polite"></div>
+
+    <div class="grid cols-2" style="margin-top:24px">
+      <div class="card">
+        <span class="icon">🪟</span>
+        <h3>Windows</h3>
+        <p>First release in <strong style="color:var(--accent)">1985</strong>, announced by Bill Gates. Windows 10 (2015): Cortana + the Edge browser + the graphical Start menu. Windows 11: runs Android apps and games directly. Used by 95% of personal computer users.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🐧</span>
+        <h3>Linux</h3>
+        <p>A completely free, open-source system enjoying <strong style="color:var(--accent)">a high degree of freedom to modify, operate, distribute, and develop</strong> — don't attribute this feature to Windows in the exam!</p>
+      </div>
+      <div class="card">
+        <span class="icon">🤖</span>
+        <h3>Android</h3>
+        <p>An open-source system based on Linux, developed by <strong style="color:var(--accent)">Google and the Open Handset Alliance (OHA)</strong> — not Windows.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🍎</span>
+        <h3>Mac OS</h3>
+        <p>The first operating system to use a graphical user interface (GUI), and the memo's example of a <strong style="color:var(--accent)">multitasking system</strong> (along with Windows and Linux). MS-DOS is the example of a single-tasking system.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 4. Software ===================== -->
+<section id="sw">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">04.</span> Software &amp; Applications</h2>
+    <p class="sec-lead">Computer software is divided into <strong style="color:var(--text)">two main types</strong>: operating systems and application software.</p>
+
+    <div class="grid cols-2">
+      <div class="card">
+        <span class="icon">🏢</span>
+        <h3>The Microsoft Office Suite</h3>
+        <p>Word, Excel, PowerPoint, Access, Outlook, Teams, OneDrive... The company's founder is <strong style="color:var(--accent)">Bill Gates</strong>. And Google Drive is <strong style="color:var(--bad)">not</strong> a Microsoft app — it's the famous exception question.</p>
+      </div>
+      <div class="card">
+        <span class="icon">☁️</span>
+        <h3>OneDrive</h3>
+        <p>Microsoft's cloud storage service — it gives the user only <strong style="color:var(--accent)">5 GB free</strong> (not 1 TB!) with paid upgrade options.</p>
+      </div>
+      <div class="card">
+        <span class="icon">👨‍💻</span>
+        <h3>Programming <span class="en">Programming</span></h3>
+        <p>The process by which you achieve an idea or solve a problem by <strong style="color:var(--accent)">dividing the idea or problem into successive, repeatable steps</strong> — like a cooking recipe written step by step.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🦠</span>
+        <h3>Malware <span class="en">Malware</span></h3>
+        <p>Any program whose tasks — all or one of them — cause harm to the system: spying, sabotage, or draining resources (CPU, memory, network...).</p>
+      </div>
+      <div class="card">
+        <span class="icon">⏱️</span>
+        <h3>Timer &amp; Calendar</h3>
+        <p>Per the memo: to measure the duration of a task use <span class="en">Timer</span>, and to plan events use <span class="en">Calendar</span>. <strong style="color:var(--warn)">⚠️ Note:</strong> these two answers are not stated verbatim in the official material (Calendar appears only in the list of accessory programs) — memorize them as exam answers from the memo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 5. Computer types ===================== -->
+<section id="types">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">05.</span> Computer Types</h2>
+    <p class="sec-lead">Computers are classified by the nature of the data they process — and here the deliberate mix-up questions abound:</p>
+
+    <div class="grid cols-3">
+      <div class="card">
+        <span class="icon">🌡️</span>
+        <h3>Analog <span class="en">Analog</span></h3>
+        <p>Captures real-world data (temperature, pressure) — <strong style="color:var(--bad)">it does not process digital data</strong> and does not use binary numbers.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🔢</span>
+        <h3>Digital <span class="en">Digital</span></h3>
+        <p>Works on digital data presented as <strong style="color:var(--accent)">binary numbers (0 and 1)</strong> — that's your personal computer and your phone.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🩺</span>
+        <h3>Hybrid <span class="en">Hybrid</span></h3>
+        <p><strong style="color:var(--accent)">A combination of analog and digital</strong> — used in medicine (ECG) and fuel pumps. The memo tries to trick you by attributing this definition to the analog type!</p>
+      </div>
+    </div>
+
+    <div class="analogy">
+      📏 <strong>And by size too (from the official curriculum):</strong> the <span class="en">Supercomputer</span> for massive research → the <span class="en">Mainframe</span> for banks → the <span class="en">Mini</span> (serves 5–300 users) → the <span class="en">Workstation</span> for engineering design → the <span class="en">Micro/PC</span>, which is your personal device.
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 6. Shortcuts ===================== -->
+<section id="keys">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">06.</span> Keyboard Shortcuts ⌨️</h2>
+    <p class="sec-lead">The most frequently tested topic — memorize these shortcuts (all from the memo and the official material):</p>
+
+    <div class="grid cols-3">
+      <div class="card key-card"><kbd>F2</kbd><h3>Rename</h3><p>The selected file or folder</p></div>
+      <div class="card key-card"><kbd>Ctrl + C</kbd><h3>Copy</h3><p>Also <span class="en">Ctrl + Insert</span> — the memo's accepted answer</p></div>
+      <div class="card key-card"><kbd>Ctrl + X</kbd><h3>Cut</h3><p>Move the item instead of copying it</p></div>
+      <div class="card key-card"><kbd>Ctrl + V</kbd><h3>Paste</h3><p>Also <span class="en">Shift + Insert</span></p></div>
+      <div class="card key-card"><kbd>Shift + Delete</kbd><h3>Permanent delete</h3><p>Skipping the Recycle Bin!</p></div>
+      <div class="card key-card"><kbd>Win + E</kbd><h3>File Explorer</h3><p><span class="en">File Explorer</span></p></div>
+      <div class="card key-card"><kbd>Ctrl + Shift + Esc</kbd><h3>Task Manager</h3><p><span class="en">Task Manager</span></p></div>
+      <div class="card key-card"><kbd>Win + R → winver</kbd><h3>Check the Windows version</h3><p>The Run window</p></div>
+      <div class="card key-card"><kbd>Win + L</kbd><h3>Lock the device</h3><p>When leaving your desk</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 7. Glossary ===================== -->
+<section id="glossary">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">07.</span> Glossary of Terms</h2>
+    <p class="sec-lead">Click any card to flip it — every card is tagged with its source: the memo or the official curriculum.</p>
+    <div class="filters" id="filters"></div>
+    <div class="flip-grid" id="flip-grid"></div>
+  </div>
+</section>
+
+<div class="part-banner official-src">
+  <div class="container">
+    <span class="part-tag">Extra Explanations</span>
+    <h2>From the Official Curriculum</h2>
+    <p>Topics the memo doesn't cover — added from the official training material (Supreme Council of Universities).</p>
+  </div>
+</div>
+
+<!-- ===================== 8. Official extras ===================== -->
+<section id="official">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">08.</span> What the Memo Doesn't Cover</h2>
+    <p class="sec-lead">The memo's questions focus on components and operating systems, while the official material (123 pages) covers more — new questions may come from it:</p>
+
+    <div class="grid cols-2">
+      <div class="card">
+        <span class="icon">🎓</span>
+        <h3>The FDTC certificate structure</h3>
+        <p>10 training programs coded BIT 01 – BIT 10 (this section is BIT 01); passing requires 7 programs: <strong style="color:var(--text)">5 mandatory + 2 elective</strong>, and each program lasts two days. The exam is available in Arabic or English.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🧬</span>
+        <h3>BIOS &amp; booting</h3>
+        <p><span class="en">Basic Input Output System</span>: a program stored in ROM responsible for the basics of the computer's operation and its initial startup — which is why ROM is "useful in the initial operation".</p>
+      </div>
+      <div class="card">
+        <span class="icon">🔢</span>
+        <h3>The full chain of measurement units</h3>
+        <p>Bit → byte (8 bits) → KB → MB → GB → TB → PB → EB → ZB → YB, each unit = 1024 of the previous one.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🔌</span>
+        <h3>USB versions</h3>
+        <p>1.1 (1998) → 2.0 (2000, at 480Mb) → 3.0 (2008) → 3.1 (2015) → 3.2 (2018) → 4.0 (2019, at 40Gb).</p>
+      </div>
+      <div class="card">
+        <span class="icon">🕰️</span>
+        <h3>Milestones in Windows history</h3>
+        <p>2.0 (1987): first versions of Word and Excel · 95: first 32-bit standard and the Start menu · ME and Vista: both labeled failures · 10 (2015) · 11 (officially announced 2022): Snap Layouts and built-in Teams.</p>
+      </div>
+      <div class="card">
+        <span class="icon">⚙️</span>
+        <h3>The operating system's six functions</h3>
+        <p>Hardware management, main memory management, processor management, file management, providing the user interface, and enabling programs to run.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🖥️</span>
+        <h3>Windows 11 minimum requirements</h3>
+        <p>A 1GHz dual-core 64-bit processor, 4GB RAM, 64GB storage, a TPM 2.0 security chip, and UEFI with Secure Boot — an English table in the material that's a strong exam candidate.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🛡️</span>
+        <h3>Windows security &amp; sign-in</h3>
+        <p>Windows Security colors: green (healthy) / yellow (recommendation) / red (immediate warning). And Windows Hello: sign-in by face or fingerprint, a picture password, and dynamic lock that locks the device when your phone moves away. A strong password: at least 8 characters.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🌐</span>
+        <h3>The internet &amp; modern technologies</h3>
+        <p>The internet began in <strong style="color:var(--text)">1969</strong> as ARPANET to support American military research. The material also defines: artificial intelligence and its three applications, cloud computing, the Internet of Things (IoT), and the difference between virtual reality (VR) and augmented reality (AR).</p>
+      </div>
+      <div class="card">
+        <span class="icon">🇪🇬</span>
+        <h3>Egyptian platforms</h3>
+        <p>The Digital Egypt platform digital.gov.eg for government services, and the Egyptian Knowledge Bank ekb.eg — free for all Egyptians of all ages.</p>
+      </div>
+      <div class="card">
+        <span class="icon">📄</span>
+        <h3>Files &amp; extensions</h3>
+        <p>A file name can't exceed 255 characters, and most extensions are 3 letters: docx Word, xlsx Excel, pptx PowerPoint, mp3 audio, mp4 video, jpg images, zip/rar compressed.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🗓️</span>
+        <h3>Microsoft Office through history</h3>
+        <p>Announced by Bill Gates on August 1, 1988; the first release came in 1990 (only Word, Excel, and PowerPoint), and today it's available in 35 languages. Access is a database management system (DBMS).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="part-banner memo-src">
+  <div class="container">
+    <span class="part-tag">Part Two · Questions</span>
+    <h2>Memo Questions</h2>
+    <p>Word traps plus an interactive quiz built from the memo's actual questions (42 questions).</p>
+  </div>
+</div>
+
+<!-- ===================== 9. Word traps ===================== -->
+<section id="traps">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">09.</span> Word Traps — Deliberate Mix-Up Questions</h2>
+    <p class="sec-lead">In this section the trap doesn't rely on the word "always" but on <strong style="color:var(--text)">swapping one term for another</strong>. Click any statement to reveal the verdict — the trap word is <span class="mark">highlighted</span>.</p>
+    <div id="traps-list"></div>
+  </div>
+</section>
+
+<!-- ===================== 10. Memo quiz ===================== -->
+<section id="quiz">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">10.</span> Memo Questions — Test Yourself 🎯</h2>
+    <p class="sec-lead">14 questions from the memo in their original English wording, with explanations referenced to the official material's pages.</p>
+    <div class="quiz-box" id="quiz-box"></div>
+  </div>
+</section>
+
+<div class="part-banner official-src">
+  <div class="container">
+    <span class="part-tag">Extra Questions</span>
+    <h2>Predicted Questions from the Official Curriculum</h2>
+    <p>22 practice questions from the topics the memo doesn't cover.</p>
+  </div>
+</div>
+
+<!-- ===================== 11. Predicted quiz ===================== -->
+<section id="predicted">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">11.</span> Predicted Questions 🔮</h2>
+    <p class="sec-lead">⚠️ Practice questions written from the official material's content — not copied from actual exams.</p>
+    <div class="quiz-box" id="quiz2-box"></div>
+  </div>
+</section>
+
+<nav class="tabbar" aria-label="Quick navigation">
+  <a href="#hw" class="active"><span class="ico">📖</span>Guide</a>
+  <a href="#glossary"><span class="ico">📇</span>Glossary</a>
+  <a href="#official"><span class="ico">🏛️</span>Official</a>
+  <a href="#traps"><span class="ico">🧩</span>Quiz</a>
+</nav>
+
+<script src="../assets/app.js"></script>
+<script>
+/* ===== Interactive memory panels ===== */
+const MEM={
+  ram:{icon:'⚡',ar:'Random Access Memory',lat:'RAM — Random Access Memory',
+    def:'The temporary memory the device is working with right now. As soon as the computer is turned off or power is cut, it loses all its contents — which is why it is called "volatile" memory.',
+    ex:'<strong>Exam fact:</strong> The larger this memory, the faster the computer. It is the answer to "What is volatile memory?"'},
+  rom:{icon:'🔒',ar:'Read Only Memory',lat:'ROM — Read Only Memory',
+    def:'An electronic memory containing permanent, non-volatile information that is not lost even when power is cut, useful in the device\'s initial startup.',
+    ex:'<strong>From the official curriculum:</strong> The BIOS program responsible for the basics of the computer\'s operation is stored in it.'},
+  cache:{icon:'🚀',ar:'Cache Memory',lat:'Cache Memory',
+    def:'A memory dedicated to the processor chip, smaller than RAM and much faster — the processor uses it to store the most frequently used data.',
+    ex:'<strong>From the official curriculum:</strong> Access to it is not open to applications — it belongs exclusively to the processor itself.'}
+};
+const memPanel=document.getElementById('mem-panel');
+function showMem(k){
+  const t=MEM[k];
+  memPanel.innerHTML=`<h3>${t.icon} ${t.ar}</h3><span class="lat">${t.lat}</span><p>${t.def}</p><p style="margin-top:12px">${t.ex}</p>`;
+  document.querySelectorAll('[data-mem]').forEach(b=>b.classList.toggle('active',b.dataset.mem===k));
+}
+document.querySelectorAll('[data-mem]').forEach(b=>b.addEventListener('click',()=>showMem(b.dataset.mem)));
+showMem('ram');
+
+/* ===== GUI vs CLI ===== */
+const UI={
+  gui:{icon:'🖱️',ar:'Graphical User Interface',lat:'GUI — Graphical User Interface',
+    def:'Relies on menus, windows, icons, and the mouse — like the Windows interface you know. Mac OS was the first operating system to use it.',
+    ex:'<strong>Analogy:</strong> A restaurant where you pick your order from an illustrated menu by pointing.'},
+  cli:{icon:'⌨️',ar:'Command-Line Interface',lat:'CLI — Command-Line Interface',
+    def:'Relies on typing commands as text with the keyboard — like the old MS-DOS system, which never uses the mouse at all.',
+    ex:`<strong>What it looks like:</strong><div class="term-demo"><span class="muted">C:\\&gt;</span> copy report.docx D:\\backup\\<br><span class="muted">1 file(s) copied.</span></div>`}
+};
+const uiPanel=document.getElementById('ui-panel');
+function showUI(k){
+  const t=UI[k];
+  uiPanel.innerHTML=`<h3>${t.icon} ${t.ar}</h3><span class="lat">${t.lat}</span><p>${t.def}</p><p style="margin-top:12px">${t.ex}</p>`;
+  document.querySelectorAll('[data-ui]').forEach(b=>b.classList.toggle('active',b.dataset.ui===k));
+}
+document.querySelectorAll('[data-ui]').forEach(b=>b.addEventListener('click',()=>showUI(b.dataset.ui)));
+showUI('gui');
+
+/* ===== Word traps ===== */
+App.renderTraps('traps-list',[
+ {q:'The user interface that relies on writing commands is referred to as <span class="mark">GUI</span>.',
+  ar:'',ok:false,
+  a:'<b>False.</b> Typing commands = <span class="en">CLI</span>; the GUI is the graphical interface with menus and windows. (official material p.23)'},
+ {q:'A computer can operate <span class="mark">without an operating system</span> but cannot operate without application software.',
+  ar:'',ok:false,
+  a:'<b>False — the statement is reversed.</b> The official material (p.44) states: "A computer does not work without an operating system... and a computer can work without" application software.'},
+ {q:'One Drive offers <span class="mark">1TB</span> of free storage space per user.',
+  ar:'',ok:false,
+  a:'<b>False.</b> The free space is only <span class="en">5GB</span> (official material p.92), and upgrading is paid.'},
+ {q:'Permanent memory is an electronic chip that stores information <span class="mark">temporarily</span>.',
+  ar:'',ok:false,
+  a:'<b>False.</b> Permanent memory (ROM) holds permanent information not lost when power is cut; the temporary one is RAM. (official material p.14-15)'},
+ {q:'<span class="mark">Windows</span> system enjoys a high degree of freedom to modify, operate, distribute and develop its parts.',
+  ar:'',ok:false,
+  a:'<b>False.</b> That is a property of the free, open-source <span class="en">Linux</span>. (official material p.24 and p.51)'},
+ {q:'<span class="mark">Analog</span> computers are a combination of an analog and digital computers.',
+  ar:'',ok:false,
+  a:'<b>False.</b> The combination is the <span class="en">Hybrid</span> computer (official material p.30). Analog computers only capture real-world data.'},
+ {q:'The <span class="mark">memory unit</span> is considered the brain of a computer.',
+  ar:'',ok:false,
+  a:'<b>False.</b> It is the <span class="en">Control Unit</span> that is "considered the brain of the computer" (official material p.10).'},
+ {q:'Once the computer is turned off, <span class="mark">ROM</span> loses all its contents.',
+  ar:'',ok:false,
+  a:'<b>False.</b> The one that loses its contents is the "volatile" RAM; ROM\'s information is "permanent and non-volatile even when power is cut" (official material p.14-15).'},
+ {q:'All functions keys do <span class="mark">same functions</span> in all programs.',
+  ar:'',ok:false,
+  a:'<b>False.</b> The official material (p.16) states: "The functions of these keys differ from one program to another."'},
+ {q:'Metal part that contains most of computer parts is <span class="mark">Power unit</span>.',
+  ar:'',ok:false,
+  a:'<b>False.</b> It is the <span class="en">System Unit</span> (official material p.8); the power unit is just a component inside it.'}
+]);
+
+/* ===== Memo questions ===== */
+App.initQuiz('quiz-box',[
+ {en:'Who is the founder of Microsoft Corporation?',ar:'',
+  opts:['Steve Jobs','Bill Gates','Mark Zuckerberg','Elon Musk'],a:1,
+  exp:'Bill Gates — the official material (p.53) states: "Microsoft founder Bill Gates announced the first Windows system... 1985."'},
+ {en:'An electronic memory that contains information useful in the initial operation of the device.',ar:'',
+  opts:['RAM','ROM','Cache','HDD'],a:1,
+  exp:'ROM — "this information is useful in the initial operation of the device" (official material p.14), and the BIOS is stored in it.'},
+ {en:'The ……… system is an example of a multitasking program.',ar:'',
+  opts:['MS-DOS','Mac OS','BIOS','CLI'],a:1,
+  exp:'The official material (p.22) lists the multitasking examples: "Windows, Linux, Mac OS" — while MS-DOS is the single-tasking example.'},
+ {en:'All these software applications are provided by Microsoft except …',ar:'',
+  opts:['Word','OneDrive','Google Drive','Excel'],a:2,
+  exp:'Google Drive is from Google — the list of Microsoft programs in the official material (p.42) does not include it.'},
+ {en:'… types of hard disks store data on flash memory.',ar:'',
+  opts:['HDD','CD-ROM','SSD','DVD'],a:2,
+  exp:'SSD — "these types store data on flash memory" (official material p.20).'},
+ {en:'A metal box that contains almost all of the basic computer components …',ar:'',
+  opts:['Power unit','System unit','CPU','Motherboard'],a:1,
+  exp:'The system unit — "the metal box that contains almost all of the computer\'s basic components" (official material p.8).'},
+ {en:'………. is a volatile memory.',ar:'',
+  opts:['ROM','RAM','SSD','BIOS'],a:1,
+  exp:'RAM — "as soon as the computer is turned off it loses all its contents, which is why it is called volatile memory" (official material p.14).'},
+ {en:'The process by which you can achieve a specific idea or solve a problem by dividing it into successive steps …',ar:'',
+  opts:['Encryption','Programming','Backup','Indexing'],a:1,
+  exp:'Programming — the definition is verbatim from the official material (p.45).'},
+ {en:'Microsoft released its first version of the Windows operating system in …',ar:'',
+  opts:['1975','1985','1995','2000'],a:1,
+  exp:'1985 — "Windows (1.0) in 1985" (official material p.24 and p.53). The first standalone system was 95.'},
+ {en:'Hard disk covered with a magnetic layer …',ar:'',
+  opts:['SSD','HDD','USB Flash','Cache'],a:1,
+  exp:'HDD — "a metal disk covered with a magnetic layer, with data recorded by a read/write head" (official material p.19).'},
+ {en:'The name of the file or folder is changed using a key …',ar:'',
+  opts:['F1','F2','F5','F12'],a:1,
+  exp:'F2 — (official material p.64 and the shortcuts table p.115: Rename the selected item).'},
+ {en:'To copy files and folders …',ar:'',
+  opts:['CTRL + X','CTRL + INSERT','SHIFT + DELETE','ALT + F4'],a:1,
+  exp:'The memo\'s accepted answer is CTRL+INSERT — and the official material (p.64): "Copy, or Ctrl+C, or pressing the CTRL+Insert keys."'},
+ {en:'To count the duration of performing a task, use …',ar:'',
+  opts:['Calendar','Timer','Clock','Calculator'],a:1,
+  exp:'Timer — the memo\'s answer. ⚠️ Not stated verbatim in the official material; memorize it as an exam answer.'},
+ {en:'The application used for planning events …',ar:'',
+  opts:['Paint','Calendar','WordPad','Sticky Notes'],a:1,
+  exp:'Calendar — the memo\'s answer. ⚠️ The official material mentions it only in the accessory programs list (p.86) without this definition.'}
+]);
+
+/* ===== Predicted questions ===== */
+App.initQuiz('quiz2-box',[
+ {en:'How many bits are in one Byte?',ar:'',
+  opts:['4','8','16','1024'],a:1,exp:'A byte = 8 bits, and a kilobyte = 1024 bytes (official material p.12-13).'},
+ {en:'The processor speed is measured in .....',ar:'',
+  opts:['Gigabyte','MegaHertz (MHz)','Watt','Pixel'],a:1,exp:'Megahertz (MHz) — the unit of frequency (official material p.10).'},
+ {en:'The BIOS program is stored in .....',ar:'',
+  opts:['RAM','ROM','Cache','HDD'],a:1,exp:'BIOS is stored in ROM and is responsible for the basics of the computer\'s operation (official material p.15).'},
+ {en:'The memory that is smaller and much faster than RAM, dedicated to the CPU chip is .....',ar:'',
+  opts:['ROM','Cache','SSD','Flash'],a:1,exp:'Cache memory — and access to it is not open to applications (official material p.14).'},
+ {en:'The CD type that can be rewritten multiple times is .....',ar:'',
+  opts:['CD-ROM','CD-R','CD-RW','DVD-ROM'],a:2,exp:'CD-RW is rewritable; CD-R is write-once; CD-ROM is read-only (official material p.20).'},
+ {en:'An example of a single-tasking operating system is .....',ar:'',
+  opts:['Windows','Linux','MS-DOS','Mac OS'],a:2,exp:'MS-DOS is the single-tasking example (official material p.22); produced by IBM, it works only by typing commands.'},
+ {en:'The first operating system to use a graphical user interface (GUI) was .....',ar:'',
+  opts:['Windows','Mac OS','Linux','Android'],a:1,exp:'Mac OS "is considered the first operating system to use a graphical user interface (GUI)" (official material p.25).'},
+ {en:'Windows 95 introduced for the first time .....',ar:'',
+  opts:['The Edge browser','The 32-bit standard and the Start menu','The Cortana assistant','Android apps'],a:1,exp:'Windows 95: first adoption of the 32-bit standard and the addition of the Start menu (official material p.55).'},
+ {en:'The basic functions of an operating system are ..... functions.',ar:'',
+  opts:['3','4','6','9'],a:2,exp:'Six functions: managing hardware, memory, processor, files, the user interface, and enabling programs (official material p.61).'},
+ {en:'Linux operating system was designed in .....',ar:'',
+  opts:['1985','1991','1995','2001'],a:1,exp:'Linux was designed in 1991; open-source and free (official material p.51).'},
+ {en:'About ..... of personal computer users use Windows.',ar:'',
+  opts:['50%','75%','95%','25%'],a:2,exp:'95% of personal computer users use Windows (official material p.62).'},
+ {en:'Snap Layouts and integrating Microsoft Teams into the taskbar are features of .....',ar:'',
+  opts:['Windows 7','Windows 10','Windows 11','Windows XP'],a:2,exp:'Features of Windows 11, officially announced in 2022 (official material p.60-61).'},
+ {en:'The file name must not exceed ..... characters.',ar:'',
+  opts:['64','128','255','512'],a:2,exp:'255 characters, and most extensions are three letters (official material p.66).'},
+ {en:'Windows logo key + E opens .....',ar:'',
+  opts:['Settings','File Explorer','Task Manager','The browser'],a:1,exp:'Win+E opens File Explorer (official material p.65). Settings is Win+I.'},
+ {en:'To know your Windows version, open Run and type .....',ar:'',
+  opts:['version','winver','sysinfo','about'],a:1,exp:'Win+R then type winver (official material p.67).'},
+ {en:'Among Windows 11 minimum requirements: a security chip called .....',ar:'',
+  opts:['TPM 2.0','GPU 4.0','USB 3.0','DDR 5'],a:0,exp:'TPM 2.0 with UEFI and Secure Boot, plus a 1GHz processor and 4GB RAM (official material table p.68).'},
+ {en:'To open Task Manager directly, press .....',ar:'',
+  opts:['Ctrl+Shift+Esc','Ctrl+C','Win+L','F5'],a:0,exp:'Ctrl+Shift+Esc — it shows CPU, memory, disk, and network performance (official material p.66).'},
+ {en:'In Windows Security, the red icon means .....',ar:'',
+  opts:['Everything is healthy','A safety recommendation','A warning requiring immediate attention','An update is available'],a:2,exp:'Green = healthy, yellow = recommendation, red = immediate warning (official material p.89-90).'},
+ {en:'A strong password must not be less than ..... characters.',ar:'',
+  opts:['4','6','8','12'],a:2,exp:'At least 8 characters with a mix of numbers, letters, and special symbols (official material p.94).'},
+ {en:'The Internet started in 1969 in the USA under the name .....',ar:'',
+  opts:['ARPANET','Ethernet','Intranet','WWW'],a:0,exp:'ARPANET, to support military research — the internet is called "the network of networks" (official material p.96).'},
+ {en:'Microsoft Office was first announced by Bill Gates in .....',ar:'',
+  opts:['1985','1988','1990','1995'],a:1,exp:'Announced on August 1, 1988; the first release came in 1990 with only three programs (official material p.97).'},
+ {en:'Microsoft Access is a .....',ar:'',
+  opts:['Word processor','Database management system (DBMS)','Web browser','Presentation program'],a:1,exp:'Access = a database management system (DBMS) (official material p.99).'}
+]);
+
+/* ===== Glossary ===== */
+App.renderGlossary({
+  gridId:'flip-grid',filtersId:'filters',
+  cats:{all:'All',hw:'Hardware',mem:'Memory & Storage',os:'Operating Systems',sw:'Software'},
+  officialSet:new Set(['Motherboard','Cache','BIOS','Algorithm','Bit & Byte','Publisher']),
+  terms:[
+   {c:'hw',ar:'Physical Components',en:'Hardware',d:'The computer components that can be seen and touched, unlike software whose effect we only observe.',e:'Physical components that can be seen and touched.'},
+   {c:'hw',ar:'System Unit',en:'System Unit',d:'The metal box that contains almost all of the computer\'s basic components.',e:'A metal box that contains almost all basic computer components.'},
+   {c:'hw',ar:'Processor',en:'CPU',d:'The computer\'s brain executing all operations; its speed is in megahertz, and its best-known makers are Intel and AMD.',e:'Central Processing Unit — the brain executing all operations.'},
+   {c:'hw',ar:'Arithmetic & Logic Unit',en:'ALU',d:'Performs arithmetic and logical operations, and sits at the heart of the central processing unit.',e:'Arithmetic & Logic Unit — located inside the CPU.'},
+   {c:'hw',ar:'Control Unit',en:'Control Unit',d:'Considered the brain of the computer — it directs the flow of data between the units.',e:'Considered the brain of the computer.'},
+   {c:'hw',ar:'Motherboard',en:'Motherboard',d:'The main board connecting all the computer\'s components together.',e:'The main board connecting all computer components.'},
+   {c:'mem',ar:'Random Access Memory',en:'RAM',d:'The temporary "volatile" memory: it loses its contents when power is cut, and the more of it, the faster the computer.',e:'Volatile memory; loses contents when power is off.'},
+   {c:'mem',ar:'Read Only Memory',en:'ROM',d:'Permanent information not lost when power is cut, useful in the device\'s initial startup.',e:'Permanent memory useful in the initial operation of the device.'},
+   {c:'mem',ar:'Cache Memory',en:'Cache',d:'Dedicated to the processor chip; smaller and much faster than RAM, and not available to applications.',e:'CPU-dedicated memory, smaller and much faster than RAM.'},
+   {c:'mem',ar:'Magnetic Hard Disk',en:'HDD',d:'A metal disk covered with a magnetic layer; the main secondary storage device.',e:'Metal disk covered with a magnetic layer; main secondary storage.'},
+   {c:'mem',ar:'Solid-State Drive',en:'SSD',d:'Stores data on flash memory: faster, no moving parts, and shock-resistant.',e:'Stores data on flash memory; faster with no moving parts.'},
+   {c:'mem',ar:'Bit & Byte',en:'Bit & Byte',d:'The bit is the smallest unit (0 or 1); a byte = 8 bits, and a kilobyte = 1024 bytes.',e:'Bit is the smallest unit; 1 Byte = 8 bits; 1 KB = 1024 Bytes.'},
+   {c:'os',ar:'Operating System',en:'Operating System',d:'The computer\'s backbone and the link between the user and the machine — the computer can\'t run without it.',e:'The backbone linking user and machine; a computer cannot run without it.'},
+   {c:'os',ar:'Graphical User Interface',en:'GUI',d:'Relies on menus, windows, and icons — Mac OS was the first to use it.',e:'Graphical User Interface with menus, windows and icons.'},
+   {c:'os',ar:'Command-Line Interface',en:'CLI',d:'Relies on typing commands as text with the keyboard — like MS-DOS.',e:'Command-Line Interface relying on typed commands.'},
+   {c:'os',ar:'Multitasking',en:'Multitasking',d:'Running more than one program at once: Windows, Linux, and Mac are examples; MS-DOS is single-tasking.',e:'Running multiple programs; Windows, Linux and Mac OS are examples.'},
+   {c:'os',ar:'Windows',en:'Windows',d:'First release 1985; Windows 10: Cortana, Edge, and the Start menu; Windows 11: Android apps directly.',e:'First release 1985; Win11 runs Android apps directly.'},
+   {c:'os',ar:'Linux',en:'Linux',d:'Free and open-source with a high degree of freedom to modify, operate, distribute, and develop.',e:'Open-source with high freedom to modify, operate and distribute.'},
+   {c:'os',ar:'Android',en:'Android',d:'An open-source system based on Linux, developed by Google and the Open Handset Alliance (OHA).',e:'Open-source Linux-based OS by Google and the OHA.'},
+   {c:'os',ar:'Mac OS',en:'Mac OS',d:'The first operating system to use a graphical interface, and the memo\'s example of multitasking.',e:'First OS to use a GUI; a multitasking example.'},
+   {c:'os',ar:'Basic Input Output System',en:'BIOS',d:'A program stored in ROM responsible for the basics of the computer\'s operation and its initial startup.',e:'Basic Input Output System stored in ROM.'},
+   {c:'sw',ar:'Software',en:'Software',d:'Divided into two main types: operating systems and application software.',e:'Divided into two types: operating systems and applications.'},
+   {c:'sw',ar:'Programming',en:'Programming',d:'Achieving an idea or solving a problem by dividing it into successive, repeatable steps.',e:'Solving a problem by dividing it into successive steps.'},
+   {c:'sw',ar:'Algorithm',en:'Algorithm',d:'Defined, ordered steps to solve a problem — the foundation of every program.',e:'Ordered, defined steps to solve a problem.'},
+   {c:'sw',ar:'Malware',en:'Malware',d:'Any program whose tasks — all or one of them — cause harm to the system: spying, sabotage, or draining resources.',e:'Any program whose tasks (all or one) cause damage to the system.'},
+   {c:'sw',ar:'OneDrive',en:'OneDrive',d:'Microsoft\'s cloud storage service — 5 GB free per user.',e:'Microsoft cloud storage — 5GB free per user.'},
+   {c:'sw',ar:'Desktop Publisher',en:'Publisher',d:'Microsoft\'s desktop publishing program: greeting cards, invitations, and catalogs.',e:'Microsoft desktop publishing app for cards and catalogs.'}
+  ]
+});
+
+/* ===== Accordions and navigation ===== */
+App.initAccordions();
+App.initNav({hw:'#hw',mem:'#hw',os:'#hw',sw:'#hw',types:'#hw',keys:'#hw',glossary:'#glossary',official:'#official',traps:'#traps',quiz:'#traps',predicted:'#traps'});
+App.LANG='en';
+App.initShell('it-os.html');
+</script>
+</body>
+</html>

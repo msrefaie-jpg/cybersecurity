@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Networks Made Simple — Interactive Guide</title>
+<meta name="description" content="A simplified interactive guide to the Networks section of the Digital Transformation course: addresses and protocols, connecting devices, cables and ports, and interactive quizzes.">
+<meta name="theme-color" content="#000000">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Digital Transformation">
+<link rel="manifest" href="../manifest.webmanifest">
+<link rel="icon" href="../icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../icon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/app.css">
+</head>
+<body>
+
+<header class="hero">
+  <div class="container">
+    <span class="shield">🌐</span>
+    <h1>Networks <span>Made Simple</span></h1>
+    <p class="sub">An interactive guide to the Networks section: IP and MAC addresses, protocols, connecting devices and the star topology, and cables and ports.</p>
+    <span class="badge" style="background:rgba(255,214,10,.12);color:var(--warn);border-color:rgba(255,214,10,.3)">⏳ From the memo — not yet verified against the official material (will be refined once it arrives)</span>
+    <div class="stats">
+      <div class="stat"><b>28</b><span>memo questions</span></div>
+      <div class="stat"><b>24</b><span>key terms</span></div>
+      <div class="stat"><b>10</b><span>word traps</span></div>
+      <div class="stat"><b>14</b><span>quiz questions</span></div>
+    </div>
+  </div>
+</header>
+
+<nav class="tabs" aria-label="Guide sections">
+  <div class="inner">
+    <a class="home-link" href="./">🏠 Home</a>
+    <a href="#addr" class="active">Addresses &amp; Protocols</a>
+    <a href="#devices">Connecting Devices</a>
+    <a href="#cables">Cables &amp; Ports</a>
+    <a href="#types">Connection Types</a>
+    <a href="#glossary">Glossary</a>
+    <a href="#traps">Word Traps</a>
+    <a href="#quiz">Memo Questions</a>
+  </div>
+</nav>
+
+<div class="part-banner memo-src">
+  <div class="container">
+    <span class="part-tag">Part One · Interactive Explanations</span>
+    <h2>Memo Explanations</h2>
+    <p>A simplified explanation of everything in the Networks section of the memo (28 questions).</p>
+  </div>
+</div>
+
+<!-- ===================== 1. Addresses & protocols ===================== -->
+<section id="addr">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">01.</span> Addresses and Protocols — Every Device's Identity</h2>
+    <p class="sec-lead">
+      Every device on the network has two addresses: <strong style="color:var(--text)">IP</strong>, its changeable logical address, and <strong style="color:var(--text)">MAC</strong>, its fixed physical address engraved in the network card.
+    </p>
+
+    <div class="analogy">
+      🏠 <strong>Analogy:</strong> An IP address is like your home address (it changes when you move to a new house), while a MAC address is like your national ID number (fixed wherever you go). The TCP mail carrier knocks and confirms the parcel arrived intact, while UDP tosses the parcel over the fence and walks away — faster, but with no guarantee.
+    </div>
+
+    <div class="grid cols-2">
+      <div class="card">
+        <span class="icon">🔢</span>
+        <h3>IP Address</h3>
+        <p>It consists of <strong style="color:var(--accent)">4 Octets</strong>, and each octet can hold <strong style="color:var(--accent)">256 values</strong> (0–255). The device's address must be in the <strong style="color:var(--text)">same Subnet</strong> as the local network.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🪪</span>
+        <h3>MAC Address</h3>
+        <p>The address used to connect to an <strong style="color:var(--accent)">Ethernet</strong> network — the fixed physical address of the network card.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🔄</span>
+        <h3>DHCP — A Changing Address</h3>
+        <p>The DHCP protocol gives the client device an IP address <strong style="color:var(--accent)">dynamically (changing)</strong> — not a Static one (a trap!).</p>
+      </div>
+      <div class="card">
+        <span class="icon">✅</span>
+        <h3>TCP or UDP?</h3>
+        <p><strong style="color:var(--accent)">TCP</strong> is responsible for accuracy and ensuring data arrives correctly — attributing that to UDP is a recurring trap! UDP is faster but offers no guarantee.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🧅</span>
+        <h3>Network Layers</h3>
+        <p>The <strong style="color:var(--text)">network access</strong> layer defines the physical communication methods with the local network ✓. The IP protocol belongs to the <strong style="color:var(--accent)">Internet layer</strong> — while the link layer's protocol is <strong style="color:var(--text)">Ethernet</strong> (a trap!).</p>
+      </div>
+      <div class="card">
+        <span class="icon">🛠️</span>
+        <h3>Tools &amp; Systems</h3>
+        <p><strong style="color:var(--text)">Wireshark</strong> helps in managing and maintaining the network · <strong style="color:var(--text)">Linux</strong> is an open-source system widely used for servers and networks · the Network File System <span class="en">NFS</span> was developed by <strong style="color:var(--accent)">Sun Microsystems</strong>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 2. Devices & star ===================== -->
+<section id="devices">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">02.</span> Connecting Devices and the Star Topology</h2>
+    <p class="sec-lead">The <span class="en">Star</span> topology is the most famous network structure: every device connects to one central point:</p>
+
+    <div class="grid cols-2">
+      <div class="card">
+        <span class="icon">⭐</span>
+        <h3>The Heart of the Star</h3>
+        <p>The central focal point of the star structure is the <strong style="color:var(--accent)">Switch</strong>. A concentrator is used to form the star topology — and the answer may accept <strong style="color:var(--text)">Hub, Switch, or Router</strong> depending on the available options.</p>
+      </div>
+      <div class="card">
+        <span class="icon">📉</span>
+        <h3>Hub or Switch?</h3>
+        <p>The Hub is <strong style="color:var(--accent)">less</strong> commonly used than the Switch — because the hub broadcasts to all devices, while the switch sends only to the intended device. The phrase "more commonly" is a trap!</p>
+      </div>
+      <div class="card">
+        <span class="icon">🎴</span>
+        <h3>Network Card <span class="en">NIC</span></h3>
+        <p>The Network Interface Card is what <strong style="color:var(--accent)">translates digital data into electrical signals</strong> — attributing this to "connecting devices" in general is wrong (a trap!).</p>
+      </div>
+      <div class="card">
+        <span class="icon">🖧</span>
+        <h3>The Two Operating Models</h3>
+        <p><strong style="color:var(--text)">Client-Server</strong> networks are the ones that require a server device with special specifications to provide the service — while in <strong style="color:var(--text)">Peer-to-Peer</strong> networks the devices are equal, with no central server (a classic mix-up trap!).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 3. Cables & ports ===================== -->
+<section id="cables">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">03.</span> Cables and Ports</h2>
+    <p class="sec-lead">This part's questions are small details to memorize as they are:</p>
+
+    <div class="grid cols-2">
+      <div class="card">
+        <span class="icon">📺</span>
+        <h3>HDMI Port</h3>
+        <p>Used as a port to connect <strong style="color:var(--accent)">high-definition</strong> TVs.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🖥️</span>
+        <h3>VGA Port</h3>
+        <p>An old port — its image quality is <strong style="color:var(--bad)">lower</strong>, so the phrase "used in high-resolution displays" is wrong (a trap!).</p>
+      </div>
+      <div class="card">
+        <span class="icon">🧵</span>
+        <h3>Coaxial Cable</h3>
+        <p>It consists of <strong style="color:var(--accent)">4 parts</strong> to reduce signal interference — not five (a trap!).</p>
+      </div>
+      <div class="card">
+        <span class="icon">🔀</span>
+        <h3>Crossover Cable</h3>
+        <p>The crossover cable is used to connect <strong style="color:var(--accent)">similar</strong> devices (of the same type): computer to computer, switch to switch.</p>
+      </div>
+      <div class="card">
+        <span class="icon">📡</span>
+        <h3>Wireless Communications</h3>
+        <p><span class="en">Wireless Communications</span> transmit data over <strong style="color:var(--accent)">electromagnetic waves</strong>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 4. Connection types ===================== -->
+<section id="types">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">04.</span> Internet Connection Types and the Cloud</h2>
+    <p class="sec-lead">Who are leased lines for? Is DSL speed constant? And which cloud is the Windows platform?</p>
+
+    <div class="grid cols-2">
+      <div class="card">
+        <span class="icon">🏢</span>
+        <h3>Leased Lines</h3>
+        <p><span class="en">Leased Lines</span> are the best option <strong style="color:var(--accent)">for large companies, institutions, and universities</strong> that need high speed and reliability — not for individuals (a trap!).</p>
+      </div>
+      <div class="card">
+        <span class="icon">📞</span>
+        <h3>DSL Line</h3>
+        <p>With DSL, the Internet speed remains constant <strong style="color:var(--accent)">for the customer</strong> ✓ — while the phrase "constant by the customer" is wrong; the consistency is guaranteed by <strong style="color:var(--text)">the service provider</strong> (a preposition trap!).</p>
+      </div>
+      <div class="card">
+        <span class="icon">☁️</span>
+        <h3>The Windows Cloud</h3>
+        <p>The Windows platform is considered a type of <strong style="color:var(--accent)">Public</strong> cloud.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🛒</span>
+        <h3>Amazon AWS</h3>
+        <p>One of the most famous online <strong style="color:var(--accent)">infrastructure (IaaS)</strong> providers — describing it as a "Software provider" is wrong (a trap!).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 5. Glossary ===================== -->
+<section id="glossary">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">05.</span> Glossary of Terms — Cards You Flip With a Finger</h2>
+    <p class="sec-lead">Tap any card to flip it:</p>
+    <div class="filters" id="filters"></div>
+    <div class="flip-grid" id="flip-grid"></div>
+  </div>
+</section>
+
+<div class="part-banner memo-src">
+  <div class="container">
+    <span class="part-tag">Part Two · Questions</span>
+    <h2>Memo Questions</h2>
+    <p>Word traps first, then an interactive quiz in the exam's English wording.</p>
+  </div>
+</div>
+
+<!-- ===================== 6. Traps ===================== -->
+<section id="traps">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">06.</span> Word Traps — Wrong Protocol, Wrong Number</h2>
+    <p class="sec-lead">Tap any statement to reveal the verdict:</p>
+    <div id="traps-list"></div>
+  </div>
+</section>
+
+<!-- ===================== 7. Memo quiz ===================== -->
+<section id="quiz">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">07.</span> Memo Questions — Test Yourself 🎯</h2>
+    <p class="sec-lead">14 questions from the memo in their original English wording, with explanations.</p>
+    <div class="quiz-box" id="quiz-box"></div>
+
+    <div class="analogy" style="margin-top:24px">
+      ⏳ <strong>Coming to this section:</strong> verification against the official material + "From the Official Curriculum" cards + predicted questions — to be added as soon as the official material for the Networks section arrives (approved range: pp. 21–86).
+    </div>
+  </div>
+</section>
+
+<nav class="tabbar" aria-label="Quick navigation">
+  <a href="#addr" class="active"><span class="ico">📖</span>Guide</a>
+  <a href="#glossary"><span class="ico">📇</span>Glossary</a>
+  <a href="#traps"><span class="ico">🧩</span>Quiz</a>
+</nav>
+
+<script src="../assets/app.js"></script>
+<script>
+/* ===== Word traps ===== */
+App.renderTraps('traps-list',[
+ {q:'The DHCP protocol uses a <span class="mark">static</span> IP address for the client device.',ar:'',ok:false,
+  a:'False — DHCP assigns a changing <strong>Dynamic</strong> address; that is the very essence of what it does.'},
+ {q:'<span class="mark">VGA</span> port used in displays with high-resolution image quality.',ar:'',ok:false,
+  a:'False — VGA is an old port with <strong>lower</strong> image quality. The high-definition port is HDMI.'},
+ {q:'Leased lines are the best option for <span class="mark">individuals</span> who require speed and high reliability.',ar:'',ok:false,
+  a:'False — they are best <strong>for large companies, institutions, and universities</strong>; their cost doesn\'t suit individuals.'},
+ {q:'<span class="mark">UDP</span> protocol is responsible for accuracy and ensuring that data arrives correctly.',ar:'',ok:false,
+  a:'False — that is <strong>TCP</strong>. UDP is faster but does not guarantee delivery.'},
+ {q:'Peer-to-peer networks require a <span class="mark">server device with special specifications</span>.',ar:'',ok:false,
+  a:'False — that describes <strong>Client-Server</strong> networks. Peer-to-peer devices are equals with no central server.'},
+ {q:'<span class="mark">Connecting devices</span> are used to translate digital data into electrical signals.',ar:'',ok:false,
+  a:'False — that translation is specifically the job of the <strong>Network Interface Card (NIC)</strong>.'},
+ {q:'The hub is <span class="mark">more</span> commonly used than the switch.',ar:'',ok:false,
+  a:'False — the hub is <strong>less</strong> common: it broadcasts to everyone indiscriminately, while the switch sends only to the intended device.'},
+ {q:'The IP protocol is a <span class="mark">link layer</span> protocol.',ar:'',ok:false,
+  a:'False — IP is an <strong>Internet layer</strong> protocol. The link layer\'s protocol is <strong>Ethernet</strong>.'},
+ {q:'The coaxial cable consists of <span class="mark">five</span> parts to reduce signal interference.',ar:'',ok:false,
+  a:'False — it consists of <strong>four</strong> parts.'},
+ {q:'When using DSL, the internet speed remains constant <span class="mark">by</span> customer.',ar:'',ok:false,
+  a:'False — constant <strong>FOR the customer</strong>, and the consistency is guaranteed by the service provider. A very subtle preposition trap!'}
+]);
+
+/* ===== Memo questions ===== */
+App.initQuiz('quiz-box',[
+ {en:'Used as a port to connect high-definition TVs.',ar:'',
+  opts:['VGA','HDMI','USB','Ethernet'],a:1,
+  exp:'HDMI — VGA is an old, lower-quality port.'},
+ {en:'Each octet of an IP address can hold ..... values.',ar:'',
+  opts:['128','512','256','1024'],a:2,
+  exp:'256 values (from 0 to 255).'},
+ {en:'The IP address consists of .....',ar:'',
+  opts:['Two octets','Four octets','Six octets','Eight octets'],a:1,
+  exp:'Four octets — like 192.168.1.1.'},
+ {en:'What is the used address to connect to an Ethernet network?',ar:'',
+  opts:['IP address','MAC address','URL','Port number'],a:1,
+  exp:'The MAC address — the network card\'s fixed physical address.'},
+ {en:'The central focal point of the star structure is the .....',ar:'',
+  opts:['Router','Modem','Switch','Firewall'],a:2,
+  exp:'The Switch — and in "concentrator to form the star topology" questions, Hub, Switch, or Router may be accepted depending on the options.'},
+ {en:'Open-source operating system widely used for servers and networks.',ar:'',
+  opts:['Windows','macOS','Linux','DOS'],a:2,
+  exp:'Linux.'},
+ {en:'..... is used to transmit data over electromagnetic waves.',ar:'',
+  opts:['Coaxial cables','Wireless Communications','Fiber optics','Crossover cables'],a:1,
+  exp:'Wireless Communications.'},
+ {en:'..... helps in managing and maintaining the network.',ar:'',
+  opts:['Photoshop','Wireshark','WordPad','Paint'],a:1,
+  exp:'Wireshark — the famous network traffic analysis tool.'},
+ {en:'The company ..... developed the Network File System (NFS).',ar:'',
+  opts:['Microsoft','IBM','Sun Microsystems','Cisco'],a:2,
+  exp:'Sun Microsystems.'},
+ {en:'Windows platform is considered a type of ..... cloud.',ar:'',
+  opts:['private','public','hybrid','community'],a:1,
+  exp:'Public.'},
+ {en:'Amazon AWS is considered one of the most famous online ..... providers.',ar:'',
+  opts:['software','infrastructure (IaaS)','games','antivirus'],a:1,
+  exp:'Infrastructure (IaaS) — describing it as a "software" provider is marked wrong in the memo.'},
+ {en:'The IP address of the device must be in the same ..... as the local network.',ar:'',
+  opts:['country','subnet','router','cable'],a:1,
+  exp:'The Subnet ✓.'},
+ {en:'Crossover cable is used to connect ..... devices.',ar:'',
+  opts:['different','similar (same type)','wireless','damaged'],a:1,
+  exp:'Similar devices of the same type — computer to computer directly, for example.'},
+ {en:'The network access layer defines the physical communication methods with the local network.',ar:'',
+  opts:['True ✓','False ✗'],a:0,
+  exp:'True ✓ — and remember: IP is in the Internet layer, and Ethernet is in the link layer.'}
+]);
+
+/* ===== Glossary ===== */
+App.renderGlossary({
+  gridId:'flip-grid',filtersId:'filters',
+  cats:{all:'All',addr:'Addresses & Protocols',dev:'Devices',cab:'Cables & Ports',net:'Connectivity & Cloud'},
+  officialSet:new Set([]),
+  terms:[
+   {c:'addr',ar:'IP Address',en:'IP Address',d:'The device\'s logical address: 4 octets, each holding 256 values — and it must be in the same Subnet.',e:'Four octets; each holds 256 values.'},
+   {c:'addr',ar:'MAC Address',en:'MAC Address',d:'The fixed physical address — used to connect to an Ethernet network.',e:'Used to connect to an Ethernet network.'},
+   {c:'addr',ar:'Subnet',en:'Subnet',d:'A logical division of the network — the device\'s address must match its local network\'s subnet.',e:'Device IP must be in the same subnet.'},
+   {c:'addr',ar:'Dynamic Addressing Protocol',en:'DHCP',d:'Automatically assigns devices dynamic (changing) IP addresses.',e:'Assigns dynamic IP addresses.'},
+   {c:'addr',ar:'The Guarantee Protocol',en:'TCP',d:'Responsible for accuracy and ensuring data arrives correctly.',e:'Responsible for accuracy and correct delivery.'},
+   {c:'addr',ar:'The Fast Protocol',en:'UDP',d:'Faster than TCP but does not guarantee data delivery.',e:'Faster but no delivery guarantee.'},
+   {c:'addr',ar:'Internet Layer',en:'Internet Layer',d:'The layer where the IP protocol operates.',e:'Where the IP protocol operates.'},
+   {c:'addr',ar:'Link Layer',en:'Link Layer',d:'Its protocol is Ethernet — while the access layer defines the physical communication methods.',e:'Ethernet is its protocol.'},
+   {c:'dev',ar:'Switch',en:'Switch',d:'The heart of the star topology — sends data only to the intended device; more common than the hub.',e:'Star topology center; targeted delivery.'},
+   {c:'dev',ar:'Hub',en:'Hub',d:'Broadcasts data to every device — less used than the switch.',e:'Broadcasts to all; less used than switch.'},
+   {c:'dev',ar:'Router',en:'Router',d:'Connects networks to one another — accepted among "star topology concentrator" answers.',e:'Connects networks together.'},
+   {c:'dev',ar:'Network Card',en:'NIC',d:'The Network Interface Card: translates digital data into electrical signals.',e:'Translates digital data into electrical signals.'},
+   {c:'dev',ar:'Client-Server',en:'Client-Server',d:'A network requiring a special-spec server that serves the other devices.',e:'Needs a special-spec server device.'},
+   {c:'dev',ar:'Peer-to-Peer',en:'Peer-to-Peer',d:'Equal devices sharing resources with no central server.',e:'Equal devices, no central server.'},
+   {c:'dev',ar:'Star Topology',en:'Star Topology',d:'Every device connects to a central connection point forming the star structure.',e:'All devices connect to a central point.'},
+   {c:'cab',ar:'High-Definition Port',en:'HDMI',d:'The port for connecting high-definition TVs.',e:'Connects high-definition TVs.'},
+   {c:'cab',ar:'Legacy Port',en:'VGA',d:'Lower image quality — not for high-resolution displays.',e:'Lower image quality.'},
+   {c:'cab',ar:'Coaxial Cable',en:'Coaxial Cable',d:'Consists of 4 parts to reduce signal interference.',e:'Four parts to reduce interference.'},
+   {c:'cab',ar:'Crossover Cable',en:'Crossover Cable',d:'Directly connects similar devices of the same type.',e:'Connects similar (same-type) devices.'},
+   {c:'cab',ar:'Wireless',en:'Wireless',d:'Transmitting data over electromagnetic waves.',e:'Data over electromagnetic waves.'},
+   {c:'net',ar:'Leased Lines',en:'Leased Lines',d:'A dedicated connection for large companies, institutions, and universities — high speed and reliability.',e:'For large companies, institutions, universities.'},
+   {c:'net',ar:'Digital Subscriber Line',en:'DSL',d:'Internet over the phone line — the speed is constant for the customer, guaranteed by the service provider.',e:'Constant speed for the customer.'},
+   {c:'net',ar:'Network Analyzer',en:'Wireshark',d:'A tool that helps in managing and maintaining the network.',e:'Helps manage and maintain the network.'},
+   {c:'net',ar:'Network File System',en:'NFS',d:'Developed by Sun Microsystems.',e:'Developed by Sun Microsystems.'}
+  ]
+});
+
+App.initAccordions();
+App.initNav({addr:'#addr',devices:'#addr',cables:'#addr',types:'#addr',glossary:'#glossary',traps:'#traps',quiz:'#traps'});
+App.LANG='en';
+App.initShell('networks.html');
+</script>
+</body>
+</html>
