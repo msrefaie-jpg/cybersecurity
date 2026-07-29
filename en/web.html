@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Internet Search Made Simple — Interactive Guide</title>
+<meta name="description" content="A simplified interactive guide to the Internet Search section of the Digital Transformation course: search engines, the Egyptian Knowledge Bank, journal metrics, and interactive quizzes.">
+<meta name="theme-color" content="#000000">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Digital Transformation">
+<link rel="manifest" href="../manifest.webmanifest">
+<link rel="icon" href="../icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../icon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/app.css">
+</head>
+<body>
+
+<header class="hero">
+  <div class="container">
+    <span class="shield">🔎</span>
+    <h1>Internet Search <span>Made Simple</span></h1>
+    <p class="sub">An interactive guide to the Internet Search section: Google search tricks, the Egyptian Knowledge Bank, scientific databases, and journal metrics.</p>
+    <span class="badge">Extracted from the memo and verified against the official material (BIT 06 — Internet Search, Edition 3 / 2024)</span>
+    <div class="stats">
+      <div class="stat"><b>29</b><span>memo questions</span></div>
+      <div class="stat"><b>32</b><span>key terms</span></div>
+      <div class="stat"><b>22</b><span>predicted questions</span></div>
+      <div class="stat"><b>110</b><span>pages of official material</span></div>
+    </div>
+  </div>
+</header>
+
+<nav class="tabs" aria-label="Guide sections">
+  <div class="inner">
+    <a class="home-link" href="./">🏠 Home</a>
+    <a href="#engines" class="active">Google Search Tricks</a>
+    <a href="#ekb">Knowledge Bank &amp; Databases</a>
+    <a href="#metrics">Journal Metrics</a>
+    <a href="#glossary">Glossary</a>
+    <a href="#official">From the Official Curriculum</a>
+    <a href="#traps">Word Traps</a>
+    <a href="#quiz">Memo Questions</a>
+    <a href="#predicted">Predicted Questions</a>
+  </div>
+</nav>
+
+<div class="part-banner memo-src">
+  <div class="container">
+    <span class="part-tag">Part One · Interactive Explanations</span>
+    <h2>Memo Explanations</h2>
+    <p>A simplified explanation of everything in the Internet Search section of the memo (29 questions).</p>
+  </div>
+</div>
+
+<!-- ===================== 1. Google search ===================== -->
+<section id="engines">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">01.</span> Google Search Tricks — Search Like a Pro</h2>
+    <p class="sec-lead">
+      The words you type in the search field are called <strong style="color:var(--text)">Search Terms</strong>, and the search engine does not scan the whole network in real time — it searches its pre-stored <strong style="color:var(--text)">Indexes</strong> (beware the "comprehensively scans the network" trap!).
+    </p>
+
+    <div class="analogy">
+      📚 <strong>Analogy:</strong> A search engine is a librarian who has prepared a huge catalog of every book in advance — when you ask, they don't run between the shelves; they open their ready-made catalog. That's why results appear in fractions of a second.
+    </div>
+
+    <div class="grid cols-2">
+      <div class="card">
+        <span class="icon">🎯</span>
+        <h3>Narrowing and Expanding Results</h3>
+        <p>Advanced search is used to <strong style="color:var(--accent)">Narrow</strong> your results according to specific criteria ✅ p.37 · The <span class="en">OR</span> operator <strong style="color:var(--accent)">expands</strong> the search ✅ p.28 · A hyphen <span class="en">(-)</span> before a word <strong style="color:var(--accent)">reduces</strong> results by excluding it ✅ p.26 (the material's example: Mustang -cars).</p>
+      </div>
+      <div class="card">
+        <span class="icon">🔗</span>
+        <h3>The <span class="en">link:</span> Syntax</h3>
+        <p>To know who cited a Washington Post article on their site: <span class="en" style="color:var(--accent)">Link: washingtonpost.com</span> ✅ principle at p.27 — the material's own example: <span class="en">link: nytimes.com</span> "to find all the sites that link to it".</p>
+      </div>
+      <div class="card">
+        <span class="icon">👯</span>
+        <h3>The <span class="en">related:</span> Syntax</h3>
+        <p>To find a website similar to eBay: <span class="en" style="color:var(--accent)">related: eBay.com</span> ✅ principle at p.28 — the material's example: <span class="en">related:amazon.com</span> (results: Barnes &amp; Noble and Target).</p>
+      </div>
+      <div class="card">
+        <span class="icon">🔒</span>
+        <h3>Secure Shopping</h3>
+        <p>Sensitive activities (banking and shopping) require <strong style="color:var(--accent)">HTTPS</strong> ✅ p.20 — it uses SSL/TLS encryption on port <strong>443</strong> instead of HTTP's port 80. And the technical "gateway" to a web server's resources is the <strong style="color:var(--text)">Port</strong> ✅ p.22 (literally!).</p>
+      </div>
+      <div class="card">
+        <span class="icon">🌐</span>
+        <h3>Saving for the Web</h3>
+        <p>A document is saved for viewing on the web with the <strong style="color:var(--accent)">html</strong> extension — "HMT" in the question is a spelling trap! ⚠️ The memo's answer; not stated verbatim in the material (the web server stores HTML documents — p.19).</p>
+      </div>
+      <div class="card">
+        <span class="icon">☁️</span>
+        <h3>OneDrive in the Browser</h3>
+        <p>OneDrive can be used as a cloud drive from the <strong style="color:var(--text)">App Launcher</strong> icon ⚠️ the memo's answer — the material shows OneDrive via office.com (p.49–50) without the words "App Launcher".</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 2. EKB & databases ===================== -->
+<section id="ekb">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">02.</span> The Egyptian Knowledge Bank and Scientific Databases</h2>
+    <p class="sec-lead">The Egyptian Knowledge Bank <span class="en">EKB</span> is a free gateway to the world's largest scientific databases — memorize "who gets you to what":</p>
+
+    <div class="grid cols-2">
+      <div class="card">
+        <span class="icon">🏦</span>
+        <h3>The Knowledge Bank <span class="en">EKB</span></h3>
+        <p>It offers online workshops ✅ p.68 (every Monday and Thursday at 9 pm), and from its <strong style="color:var(--accent)">Sources</strong> menu the user reaches <strong style="color:var(--text)">Clarivate</strong> ✅ p.83. Launched in <strong>2014</strong> by presidential initiative, with <strong>4 portals</strong>: readers, researchers, students, and kids (ages 6–14).</p>
+      </div>
+      <div class="card">
+        <span class="icon">🧭</span>
+        <h3>The Famous Access Chain</h3>
+        <p><strong style="color:var(--text)">Scopus</strong> sources are reached through the <strong style="color:var(--accent)">ELSEVIER</strong> database ✅ p.71–73 (Sources ← All Sources ← ELSEVIER ← Scopus Database) · and <strong style="color:var(--accent)">EndNote Online</strong> is among <strong style="color:var(--text)">Clarivate</strong>'s products ✅ p.84 (⚠️ the word "free" is not stated).</p>
+      </div>
+      <div class="card">
+        <span class="icon">👤</span>
+        <h3>Merging Author Accounts</h3>
+        <p>The <strong style="color:var(--accent)">Scopus</strong> database lets you merge more than one account of the same author ✅ p.78–80: search for the author ← <span class="en">Request to merge authors</span> ← confirm the profile ← review the articles — and the account is free via the Knowledge Bank with the same EKB email.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🔣</span>
+        <h3>ProQuest and Boolean Operators</h3>
+        <p>Boolean operations <strong style="color:var(--accent)">CAN</strong> be used within ProQuest ✅ p.96 — the phrase "cannot" is wrong (a trap!). ProQuest provides full texts of dissertations since 1997 and more than 2 million theses, with translation into 18 languages.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🕌</span>
+        <h3>Arabic Sources</h3>
+        <p>The <strong style="color:var(--text)">Dar Al-Mandumah</strong> index (a Saudi company, 2004) contains subsections ✅ p.101–103: EduSearch, HumanIndex, AraBase, EcoLink, and university theses · and the Arabic Citation Index (ACI) accepts searches <strong style="color:var(--accent)">in Arabic and English</strong> ✅ p.92 and 94 — not Arabic only (a trap!).</p>
+      </div>
+      <div class="card">
+        <span class="icon">🤝</span>
+        <h3>The Ejada Platform <span class="en">Ejada</span></h3>
+        <p>The product of cooperation between the <strong style="color:var(--text)">Al-Alfi Foundation for Human and Social Development</strong> and the <strong style="color:var(--text)">Ministry of Higher Education and Scientific Research and the Supreme Council of Universities</strong> ✅ p.108 — training courses to develop youth skills (ejada.edu.eg).</p>
+      </div>
+      <div class="card">
+        <span class="icon">📷</span>
+        <h3>Unsplash Photos</h3>
+        <p>All photos posted on Unsplash are free to copy, modify, and distribute — <strong style="color:var(--accent)">even for commercial purposes</strong> ✅ p.108 (literally) — part of Open Educational Resources (OER).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 3. Journal metrics ===================== -->
+<section id="metrics">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">03.</span> Journal Metrics — IF, SJR, and SCImago</h2>
+    <p class="sec-lead">How do we know a scientific journal is "reputable"? By its impact metrics — the most confusing part of this section:</p>
+
+    <div class="grid cols-2">
+      <div class="card">
+        <span class="icon">⭐</span>
+        <h3>Impact Factor <span class="en">Impact Factor</span></h3>
+        <p>It is based on the number of <strong style="color:var(--accent)">Citations</strong> ("articles coming from the journal" — literally in the material, p.86) within a year — <strong style="color:var(--bad)">not</strong> the number of searches (a trap!). It is "a powerful tool if you want to <strong style="color:var(--accent)">compare journals in the same subject category</strong>" ✅ p.86.</p>
+      </div>
+      <div class="card">
+        <span class="icon">📊</span>
+        <h3><span class="en">SCImago</span> and SJR</h3>
+        <p>SCImago is a portal built on the <strong style="color:var(--accent)">Scopus (Elsevier)</strong> database ✅ p.104 — it displays a journal's annual metrics and Quartiles ✅ p.106. And <span class="en">SJR</span> is the indicator of <strong style="color:var(--text)">journals' scientific influence</strong> ✅ (the material's glossary, p.109) — derived from Google's PageRank algorithm, with data since 1996.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🌍</span>
+        <h3><span class="en">WOS</span> — Web of Science</h3>
+        <p>Its advanced search narrows the scope "to specific criteria" ✅ p.85, and clicking a journal's name displays its <strong style="color:var(--accent)">impact factor</strong> ✅ p.86–87 — the material's example: JIF = 3.034 (2021) for IET Renewable Power Generation.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🗂️</span>
+        <h3>Ranking and Filtering</h3>
+        <p>In SJR: Journal Rankings ← field and category ← filters for subject, country, type, <strong style="color:var(--accent)">and year</strong> ✅ p.105 — so classifying by year is available, and the phrase "difficult to classify them by year" is wrong.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 4. Glossary ===================== -->
+<section id="glossary">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">04.</span> Glossary of Terms — Cards You Flip With a Finger</h2>
+    <p class="sec-lead">Tap any card to flip it:</p>
+    <div class="filters" id="filters"></div>
+    <div class="flip-grid" id="flip-grid"></div>
+  </div>
+</section>
+
+<div class="part-banner official-src">
+  <div class="container">
+    <span class="part-tag">Extra Explanations</span>
+    <h2>From the Official Curriculum</h2>
+    <p>Topics the memo doesn't cover — added from the official training material (110 pages, Edition 3 / 2024).</p>
+  </div>
+</div>
+
+<!-- ===================== Official extras ===================== -->
+<section id="official">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">05.</span> What the Memo Doesn't Cover</h2>
+    <p class="sec-lead">The official material adds a whole world of researcher tools:</p>
+
+    <div class="grid cols-2">
+      <div class="card">
+        <span class="icon">🎓</span>
+        <h3>Where This Module Sits in the Certificate</h3>
+        <p>Internet Search is program <strong style="color:var(--text)">BIT 06</strong> (elective) — a two-day course with four sessions. The number of web pages reached <strong>1.13 billion</strong> in January 2023 according to Netcraft.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🕷️</span>
+        <h3>How Does a Search Engine Work? (p.17)</h3>
+        <p>Three stages: <strong style="color:var(--accent)">Crawling</strong> (the crawler moves through links — a page with no links to it may never be discovered) ← <strong>storing data</strong> in an index ← <strong>Ranking</strong>. The 7 best-known engines: Google, Bing, Yahoo, Yandex, Baidu, DuckDuckGo, ASK.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🧩</span>
+        <h3>The Five Parts of a URL (p.21–22)</h3>
+        <p><strong>Scheme</strong> (the protocol) · <strong>Authority</strong> (domain + port) · <strong>Path</strong> · <strong>Parameters</strong> (key/value pairs joined with &amp;) · <strong>Anchor</strong> after the # — and the four protocols: HTTP, HTTPS, FTP (file transfer over TCP/IP), and SMTP (email).</p>
+      </div>
+      <div class="card">
+        <span class="icon">✨</span>
+        <h3>More Search Tricks (p.25–31)</h3>
+        <p><span class="en">site:</span> to search within a site · <span class="en">filetype:</span> for a file type · the asterisk <span class="en">*</span> as a placeholder (great for song lyrics!) · two dots <span class="en">..</span> for a number range · quotation marks drop results from 1.05 billion to 133 thousand in the material's example · and Boolean operators are named in honor of the mathematician <strong style="color:var(--accent)">George Boole</strong>.</p>
+      </div>
+      <div class="card">
+        <span class="icon">⚖️</span>
+        <h3>Evaluating Source Credibility (p.38)</h3>
+        <p>11 criteria, chiefly the author's credentials and content freshness · domain meanings: .gov government, .edu education, .mil military, .org organization · and <strong style="color:var(--bad)">social media sites are not suitable as references</strong> for researchers.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🎓</span>
+        <h3>Google Scholar (p.41–48)</h3>
+        <p>Requires a <strong style="color:var(--accent)">Gmail</strong> account · ranks documents by full-text weight, publication venue, author, and citation count · "Search in libraries" leads to <strong>Worldcat.org</strong> · citation formats: MLA, APA, Chicago, Harvard, and Vancouver.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🔬</span>
+        <h3>Research Gate &amp; EULC</h3>
+        <p>RG is the largest academic social network (more than <strong>20 million members</strong> — per Nature), and its <strong style="color:var(--accent)">RG Score</strong> measures scientific reputation · the Egyptian Universities Libraries Consortium (EULC) provides more than <strong>70,000</strong> journals and e-books.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🧮</span>
+        <h3>Calculating JIF — the Material's Example (p.89–90)</h3>
+        <p>The 2021 impact factor = 2021 citations of the previous two years' publications (2,242) ÷ citable items (739) = <strong style="color:var(--accent)">3.034</strong> · and the JCR report classifies journals into quartiles Q1–Q4 per subject category.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🕌</span>
+        <h3>The Arabic Citation Index — ACI (p.91–94)</h3>
+        <p>Funded by the Egyptian government via the Knowledge Bank · "the first regional citation index in Arabic", in partnership with Web of Science · linked to more than <strong>1.7 billion references</strong>, some going back to 1864 · coverage from 2015 to the present.</p>
+      </div>
+      <div class="card">
+        <span class="icon">📚</span>
+        <h3>Open Educational Resources — OER (p.107–108)</h3>
+        <p>UNESCO's definition: openly licensed materials that allow reuse at no cost · platforms: MIT OCW (full MIT curricula), BCcampus, Pressbooks (5,101 books), the Cleveland Museum of Art (30,000+ artworks), and Unsplash — plus Egypt's own Ejada platform.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="part-banner memo-src">
+  <div class="container">
+    <span class="part-tag">Part Two · Questions</span>
+    <h2>Memo Questions</h2>
+    <p>Word traps first, then an interactive quiz in the exam's English wording.</p>
+  </div>
+</div>
+
+<!-- ===================== 5. Traps ===================== -->
+<section id="traps">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">06.</span> Word Traps — One Word Flips the Verdict</h2>
+    <p class="sec-lead">Tap any statement to reveal the verdict:</p>
+    <div id="traps-list"></div>
+  </div>
+</section>
+
+<!-- ===================== 6. Memo quiz ===================== -->
+<section id="quiz">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">07.</span> Memo Questions — Test Yourself 🎯</h2>
+    <p class="sec-lead">14 questions from the memo in their original English wording, with explanations based on the official material.</p>
+    <div class="quiz-box" id="quiz-box"></div>
+  </div>
+</section>
+
+<div class="part-banner official-src">
+  <div class="container">
+    <span class="part-tag">Extra Questions</span>
+    <h2>Predicted Questions from the Official Curriculum</h2>
+    <p>22 practice questions on the topics the memo doesn't cover.</p>
+  </div>
+</div>
+
+<!-- ===================== Predicted quiz ===================== -->
+<section id="predicted">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">08.</span> Predicted Questions 🔮</h2>
+    <p class="sec-lead">⚠️ Practice questions written from the official material's content — not copied from actual exams.</p>
+    <div class="quiz-box" id="predicted-box"></div>
+  </div>
+</section>
+
+<nav class="tabbar" aria-label="Quick navigation">
+  <a href="#engines" class="active"><span class="ico">📖</span>Guide</a>
+  <a href="#glossary"><span class="ico">📇</span>Glossary</a>
+  <a href="#official"><span class="ico">🏛️</span>Official</a>
+  <a href="#traps"><span class="ico">🧩</span>Quiz</a>
+</nav>
+
+<script src="../assets/app.js"></script>
+<script>
+/* ===== Word traps ===== */
+App.renderTraps('traps-list',[
+ {q:'Secure shopping websites start with the website domain <span class="mark">HTTP</span>.',ar:'',ok:false,
+  a:'False — secure sites start with <strong>HTTPS</strong>: the S means Secure (an encrypted connection).'},
+ {q:'The journal\'s impact factor is based on the number of times articles are <span class="mark">searched for</span>.',ar:'',ok:false,
+  a:'False — it is based on <strong>Citations</strong> (articles coming from the journal) within the year, not the number of searches.'},
+ {q:'The search engine <span class="mark">comprehensively scans the network</span> to obtain results.',ar:'',ok:false,
+  a:'False — it searches its pre-stored <strong>Indexes</strong>, not the whole network at search time.'},
+ {q:'Boolean operations <span class="mark">cannot</span> be used when searching within a ProQuest database.',ar:'',ok:false,
+  a:'False — AND, OR, and NOT <strong>can</strong> be used within ProQuest, like in every other scientific database.'},
+ {q:'The document can be saved for viewing on the web with the <span class="mark">HMT</span> extension.',ar:'',ok:false,
+  a:'A deliberate spelling error — the correct extension is <strong>html</strong> (⚠️ the memo\'s answer; the web server stores HTML documents per the material, p.19).'},
+ {q:'The Arabic Index for reference citations enables you to write search terms in Arabic <span class="mark">only</span>.',ar:'',ok:false,
+  a:'False — it accepts <strong>both Arabic and English</strong>. The word "only" is the trap.'},
+ {q:'The <span class="mark">Scopus database</span> is a powerful tool if you want to compare journals in the same subject category.',ar:'',ok:false,
+  a:'False — the material\'s text (p.86): "the <strong>Impact Factor</strong> is a powerful tool if you want to compare journals in the same subject category" — not the Scopus database itself.'},
+ {q:'SJR enables you to filter journals by topic, but it is <span class="mark">difficult to classify them by year</span>.',ar:'',ok:false,
+  a:'False — SJR\'s filters explicitly include <strong>year</strong> (p.105), so classifying by year is available and easy.'},
+ {q:'Using a hyphen (-) when searching on Google leads to reducing the search results.',ar:'',ok:true,
+  a:'True ✓ — a hyphen before a word excludes it from the results, so their number drops.'},
+ {q:'The Egyptian Knowledge Bank (EKB) offers a range of online workshops.',ar:'',ok:true,
+  a:'True ✓ — one of the Knowledge Bank\'s free services.'}
+]);
+
+/* ===== Memo questions ===== */
+App.initQuiz('quiz-box',[
+ {en:'Using Google, to know who cited a Washington Post article on their site, the correct search structure is .....',ar:'',
+  opts:['related: washingtonpost.com','Link: washingtonpost.com','cite: washingtonpost.com','site: washingtonpost.com'],a:1,
+  exp:'Link: shows the sites that place a link (citation) to the requested site.'},
+ {en:'Using Google, to find a website similar to eBay, the correct syntax is .....',ar:'',
+  opts:['Link: eBay.com','similar: eBay.com','related: eBay.com','like: eBay.com'],a:2,
+  exp:'related: shows sites similar to the one mentioned.'},
+ {en:'The words you type in a search field to get your results are called .....',ar:'',
+  opts:['Keywords list','Search terms','Queries table','Tags'],a:1,
+  exp:'Search Terms.'},
+ {en:'The Database ..... enables you to merge more than one account of the same author.',ar:'',
+  opts:['ProQuest','SCImago','Scopus','EKB'],a:2,
+  exp:'Scopus — its sources are reached through the ELSEVIER database.'},
+ {en:'Use advanced search to ..... your results.',ar:'',
+  opts:['Expand','Narrow','Delete','Copy'],a:1,
+  exp:'Narrow according to specific criteria — expanding is done with the OR operator.'},
+ {en:'Use ..... to expand your search.',ar:'',
+  opts:['AND','NOT','OR','hyphen (-)'],a:2,
+  exp:'OR combines results of either word, expanding the scope. The hyphen (-) and NOT narrow it.'},
+ {en:'..... refers to the technical "gateway" used to access resources on a web server.',ar:'',
+  opts:['Domain','Port','Index','Browser'],a:1,
+  exp:'The Port.'},
+ {en:'The data source in SCImago is .....',ar:'',
+  opts:['WOS','ProQuest','Scopus','EKB'],a:2,
+  exp:'Scopus — and SCImago displays its journal metrics by year.'},
+ {en:'The indicator measuring journals\' scientific influence, explaining the status of journals from which citations come, is .....',ar:'',
+  opts:['Impact Factor','h-index','SCImago Journal Rank','CiteScore'],a:2,
+  exp:'SJR — SCImago Journal Rank.'},
+ {en:'The ..... platform is the product of cooperation between the Al-Alfi Foundation and the Ministry of Higher Education.',ar:'',
+  opts:['Ejada','Edmodo','EKB','Coursera'],a:0,
+  exp:'Ejada.'},
+ {en:'The website ..... allows you to use EndNote Online for free.',ar:'',
+  opts:['Scopus','Clarivate','ELSEVIER','SCImago'],a:1,
+  exp:'Clarivate — reached from the Sources menu of the Egyptian Knowledge Bank.'},
+ {en:'You can use OneDrive as a cloud drive within tab .....',ar:'',
+  opts:['App launcher icon','Settings menu','File tab','Insert tab'],a:0,
+  exp:'The App Launcher icon.'},
+ {en:'When you click on the journal name in WOS, ..... is displayed.',ar:'',
+  opts:['the article count only','the impact factor of the journal','the publisher address','nothing'],a:1,
+  exp:'The impact factor of the journal ✓.'},
+ {en:'All photos posted on Unsplash are free to copy, modify and distribute, including for commercial purposes.',ar:'',
+  opts:['True ✓','False ✗'],a:0,
+  exp:'True ✓ — that is Unsplash\'s stated policy.'}
+]);
+
+/* ===== Predicted questions ===== */
+App.initQuiz('predicted-box',[
+ {en:'The search engine works in ..... main stages.',ar:'',
+  opts:['Two','Three','Four','Five'],a:1,exp:'Three: Crawling ← storing data ← Ranking (p.17).'},
+ {en:'The program that moves through web links collecting pages is called .....',ar:'',
+  opts:['Ranker','Web Crawler','Indexer','Browser'],a:1,exp:'The Web Crawler — a page with no links to it may never be discovered (p.17).'},
+ {en:'The most popular search engine according to the material is .....',ar:'',
+  opts:['Bing','Yahoo','Google','Baidu'],a:2,exp:'The order: Google, then Bing, Yahoo, Yandex, Baidu, DuckDuckGo, and ASK (p.18).'},
+ {en:'HTTPS works on port ..... while HTTP works on port .....',ar:'',
+  opts:['80 / 443','443 / 80','21 / 25','8080 / 80'],a:1,exp:'443 for secure and 80 for regular — and the port is usually omitted from the address (p.20, p.22).'},
+ {en:'The ..... protocol is used to transfer files, and ..... to send email between servers.',ar:'',
+  opts:['SMTP / FTP','FTP / SMTP','HTTP / FTP','SSL / SMTP'],a:1,exp:'FTP for file transfer over TCP/IP, and SMTP for email (p.21).'},
+ {en:'In a URL, the optional component after the # symbol is called .....',ar:'',
+  opts:['Path','Parameter','Anchor','Scheme'],a:2,exp:'The Anchor — it points to a specific location within the page (p.22).'},
+ {en:'To search for a specific file type on Google, use .....',ar:'',
+  opts:['site:','filetype:','related:','link:'],a:1,exp:'filetype: — such as PDF or PowerPoint (p.31).'},
+ {en:'To search within a specific website, use .....',ar:'',
+  opts:['in:','domain:','site:','web:'],a:2,exp:'site: — the material\'s example: Lotfi Zadeh site: berkeley.edu (p.26–27).'},
+ {en:'The asterisk (*) in a Google search acts as .....',ar:'',
+  opts:['a spell checker','a placeholder filled automatically','a NOT operator','a page counter'],a:1,exp:'A placeholder the engine fills in — useful for song lyrics (p.27).'},
+ {en:'Boolean operators are named after the mathematician .....',ar:'',
+  opts:['George Boole','Alan Turing','John Nash','Blaise Pascal'],a:0,exp:'George Boole — AND narrows, OR expands, NOT excludes (p.35).'},
+ {en:'The ..... domain indicates a governmental website.',ar:'',
+  opts:['.org','.gov','.net','.mil'],a:1,exp:'.gov government · .mil military · .edu education · .org organization (p.38).'},
+ {en:'Social media sites (Facebook, Twitter, Telegram) as references for researchers are .....',ar:'',
+  opts:['preferred','not suitable','mandatory','peer-reviewed'],a:1,exp:'Not suitable as references — the material\'s text (p.38).'},
+ {en:'Creating a Google Scholar account requires .....',ar:'',
+  opts:['a university ID','a Gmail account','a paid subscription','an ORCID'],a:1,exp:'A Gmail account (p.42) — it ranks documents by full text, publication venue, author, and citations.'},
+ {en:'"Search in libraries" in Google Scholar leads to .....',ar:'',
+  opts:['Worldcat.org','Amazon','JSTOR only','EKB'],a:0,exp:'Worldcat.org, to find the book in the nearest library (p.45).'},
+ {en:'Research Gate has more than ..... members.',ar:'',
+  opts:['5 million','10 million','20 million','50 million'],a:2,exp:'20 million members — the largest academic social network per a Nature study (p.51).'},
+ {en:'The Egyptian Knowledge Bank was launched in .....',ar:'',
+  opts:['2012','2014','2016','2019'],a:1,exp:'2014, during National Science Day, by presidential initiative — with 4 portals (p.62).'},
+ {en:'The EKB Kids portal serves children aged .....',ar:'',
+  opts:['3–10','6–14','8–16','5–12'],a:1,exp:'Ages 6–14, with the account managed via a guardian (p.63).'},
+ {en:'EKB free editing service is granted once for a paper of fewer than ..... words.',ar:'',
+  opts:['3000','6000','10000','1500'],a:1,exp:'6,000 words — copy and language editing, once, for free (p.69).'},
+ {en:'JIF 2021 in the material example = 2,242 citations ÷ 739 citable items = .....',ar:'',
+  opts:['2.694','3.034','3.809','0.63'],a:1,exp:'3.034 — while 3.809 is the five-year factor, and 2.694 excludes self-citations (p.89–90).'},
+ {en:'JCR classifies journals within each category into .....',ar:'',
+  opts:['grades A–F','quartiles Q1–Q4','stars 1–5','tiers I–III'],a:1,exp:'Quartiles from Q1 (highest) to Q4 per subject category (p.87, p.90).'},
+ {en:'The Arabic Citation Index coverage starts from .....',ar:'',
+  opts:['2010','2015','2018','2005'],a:1,exp:'2015 to the present — it is "the first regional index in Arabic", linked to more than 1.7 billion references (p.91).'},
+ {en:'According to UNESCO, OER are materials that .....',ar:'',
+  opts:['are always paid','allow reuse and redistribution at no cost','are for teachers only','expire yearly'],a:1,exp:'Openly licensed to allow access, reuse, and redistribution at no cost — including MIT OCW and Unsplash (p.107–108).'}
+]);
+
+/* ===== Glossary ===== */
+App.renderGlossary({
+  gridId:'flip-grid',filtersId:'filters',
+  cats:{all:'All',search:'Search Tricks',db:'Databases',metric:'Metrics'},
+  officialSet:new Set(['Web Crawler','URL','FTP / SMTP','Google Scholar','Research Gate','EULC','JCR','OER']),
+  terms:[
+   {c:'search',ar:'Search Terms',en:'Search Terms',d:'The words you type in a search field to get your results.',e:'The words you type in a search field.'},
+   {c:'search',ar:'Indexes',en:'Indexes',d:'The search engine\'s pre-stored lists — the engine searches these, not the whole web.',e:'Search engines search their indexes, not the whole web.'},
+   {c:'search',ar:'Advanced Search',en:'Advanced Search',d:'Narrows your results according to specific criteria.',e:'Narrows results according to specific criteria.'},
+   {c:'search',ar:'The Expanding Operator',en:'OR',d:'Expands the search by accepting any of the words.',e:'Expands your search.'},
+   {c:'search',ar:'Hyphen',en:'Hyphen (-)',d:'Before a word, it excludes it, so the search results shrink.',e:'Excludes a word, reducing results.'},
+   {c:'search',ar:'Who Cited Me?',en:'Link:',d:'Google syntax showing sites that link to a given site: Link: washingtonpost.com.',e:'Shows sites linking to a given site.'},
+   {c:'search',ar:'Similar Sites',en:'related:',d:'Google syntax to find similar websites: related: eBay.com.',e:'Finds similar websites.'},
+   {c:'search',ar:'Secure Browsing',en:'HTTPS',d:'How secure shop addresses start — the S means an encrypted connection.',e:'Secure shopping sites start with HTTPS.'},
+   {c:'search',ar:'Port',en:'Port',d:'The technical "gateway" to a web server\'s resources.',e:'The technical gateway to web server resources.'},
+   {c:'search',ar:'Web Page Extension',en:'html',d:'The extension a document is saved with for viewing on the web.',e:'Extension for saving documents for the web.'},
+   {c:'search',ar:'App Launcher',en:'App Launcher',d:'Its icon lets you use OneDrive as a cloud drive.',e:'Access OneDrive as a cloud drive.'},
+   {c:'db',ar:'Egyptian Knowledge Bank',en:'EKB',d:'A free gateway to global databases; offers online workshops, and its Sources menu leads to Clarivate.',e:'Egyptian Knowledge Bank; online workshops; Sources → Clarivate.'},
+   {c:'db',ar:'Clarivate',en:'Clarivate',d:'Provides EndNote Online for free and hosts Web of Science.',e:'Free EndNote Online; hosts WOS.'},
+   {c:'db',ar:'Scopus',en:'Scopus',d:'A database that lets you merge more than one account of the same author — its sources are reached via ELSEVIER.',e:'Merges author accounts; accessed via ELSEVIER.'},
+   {c:'db',ar:'ELSEVIER',en:'ELSEVIER',d:'The global publisher through whose database Scopus sources are accessed.',e:'Scopus sources are accessed through it.'},
+   {c:'db',ar:'ProQuest',en:'ProQuest',d:'A scientific database supporting Boolean AND/OR/NOT search operations.',e:'Supports Boolean search operations.'},
+   {c:'db',ar:'Dar Al-Mandumah',en:'Dar Al-Mandumah',d:'An Arabic index containing a set of subsections.',e:'Arabic index with subsections.'},
+   {c:'db',ar:'Arabic Citation Index',en:'Arabic Citation Index',d:'The Arabic reference citation index — accepts searches in Arabic and English.',e:'Accepts Arabic and English search terms.'},
+   {c:'db',ar:'Ejada Platform',en:'Ejada',d:'A cooperation between the Al-Alfi Foundation for Human and Social Development and the Ministry of Higher Education.',e:'Al-Alfi Foundation + Ministry of Higher Education.'},
+   {c:'db',ar:'Unsplash',en:'Unsplash',d:'Free photos to copy, modify, and distribute — even for commercial purposes.',e:'Free photos, even commercially.'},
+   {c:'metric',ar:'Impact Factor',en:'Impact Factor',d:'The number of citations of a journal\'s articles within a year — the tool for comparing journals in the same subject.',e:'Citations per year; compares journals in a field.'},
+   {c:'metric',ar:'SCImago',en:'SCImago',d:'Displays SCOPUS journal metrics by year — its data source is Scopus.',e:'Displays SCOPUS metrics by year.'},
+   {c:'metric',ar:'SJR Indicator',en:'SCImago Journal Rank',d:'Measures scientific influence and shows the status of the journals citations come from.',e:'Measures influence via citing journals\' status.'},
+   {c:'metric',ar:'Web of Science',en:'WOS',d:'Web of Science: advanced search narrows results, and clicking a journal\'s name shows its impact factor.',e:'Advanced search narrows; journal name shows IF.'},
+   {c:'search',ar:'Web Crawler',en:'Web Crawler',d:'Moves through web links collecting pages to build the engine\'s index.',e:'Follows links to build the search index.'},
+   {c:'search',ar:'Uniform Resource Locator',en:'URL',d:'Its five parts: Scheme, Authority (domain+port), Path, Parameters, and the Anchor after #.',e:'Scheme, Authority, Path, Parameters, Anchor.'},
+   {c:'search',ar:'Transfer & Mail Protocols',en:'FTP / SMTP',d:'FTP for file transfer over TCP/IP, and SMTP for sending email between servers.',e:'File transfer / email sending protocols.'},
+   {c:'db',ar:'Google Scholar',en:'Google Scholar',d:'Requires Gmail — indexes the academic web and shows citation counts and APA/MLA and other formats.',e:'Needs Gmail; academic indexing and citations.'},
+   {c:'db',ar:'Research Gate',en:'Research Gate',d:'The largest academic social network (20+ million members) — its indicator is the RG Score.',e:'Largest academic social network; RG Score.'},
+   {c:'db',ar:'Universities Libraries Consortium',en:'EULC',d:'A portal providing more than 70,000 journals, abstracts, and e-books.',e:'70,000+ journals and e-books.'},
+   {c:'metric',ar:'Journal Citation Reports',en:'JCR',d:'The tool for finding a journal or journal groups by shared subject or publisher — and it ranks them into quartiles Q1–Q4.',e:'Journal Citation Reports; Q1–Q4 quartiles.'},
+   {c:'metric',ar:'Open Educational Resources',en:'OER',d:'Openly licensed materials allowing reuse at no cost (UNESCO\'s definition) — including MIT OCW, Unsplash, and Ejada.',e:'Open-licensed reusable materials (UNESCO).'}
+  ]
+});
+
+App.initAccordions();
+App.initNav({engines:'#engines',ekb:'#engines',metrics:'#engines',glossary:'#glossary',official:'#official',traps:'#traps',quiz:'#traps',predicted:'#traps'});
+App.LANG='en';
+App.initShell('web.html');
+</script>
+</body>
+</html>

@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mobile Apps Made Simple — Interactive Guide</title>
+<meta name="description" content="A simplified interactive guide to the Mobile Applications section of the Digital Transformation course: operating systems, app types, Google apps, security, and interactive quizzes.">
+<meta name="theme-color" content="#000000">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Digital Transformation">
+<link rel="manifest" href="../manifest.webmanifest">
+<link rel="icon" href="../icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../icon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/app.css">
+</head>
+<body>
+
+<header class="hero">
+  <div class="container">
+    <span class="shield">📱</span>
+    <h1>Mobile Apps <span>Made Simple</span></h1>
+    <p class="sub">An interactive guide to the mobile apps section: operating systems, app types, Google and social apps, and security on your phone.</p>
+    <span class="badge">Extracted from the memo and verified against the official material (BIT 08 — Mobile Applications, Edition 3 / 2024)</span>
+    <div class="stats">
+      <div class="stat"><b>54</b><span>memo questions</span></div>
+      <div class="stat"><b>31</b><span>key terms</span></div>
+      <div class="stat"><b>22</b><span>predicted questions</span></div>
+      <div class="stat"><b>124</b><span>pages of official material</span></div>
+    </div>
+  </div>
+</header>
+
+<nav class="tabs" aria-label="Guide sections">
+  <div class="inner">
+    <a class="home-link" href="./">🏠 Home</a>
+    <a href="#os" class="active">Operating Systems</a>
+    <a href="#types">App Types</a>
+    <a href="#google">Google Apps</a>
+    <a href="#social">Social &amp; Media</a>
+    <a href="#sec">Connectivity &amp; Security</a>
+    <a href="#glossary">Glossary</a>
+    <a href="#official">From the Official Curriculum</a>
+    <a href="#traps">Word Traps</a>
+    <a href="#quiz">Memo Questions</a>
+    <a href="#predicted">Predicted Questions</a>
+  </div>
+</nav>
+
+<div class="part-banner memo-src">
+  <div class="container">
+    <span class="part-tag">Part One · Interactive Explanations</span>
+    <h2>Memo Explanations</h2>
+    <p>A simplified explanation of everything in the mobile apps section of the memo (54 questions).</p>
+  </div>
+</div>
+
+<!-- ===================== 1. OS ===================== -->
+<section id="os">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">01.</span> Phone Operating Systems — Who Makes What?</h2>
+    <p class="sec-lead">A recurring question pattern: "OS X was developed by company..." — memorize the pairs:</p>
+
+    <div class="grid cols-3">
+      <div class="card key-card"><kbd>iOS</kbd><h3>Apple 🍎</h3><p>Exclusive to the iPhone ✅ p.13 · Store: App Store</p></div>
+      <div class="card key-card"><kbd>Harmony</kbd><h3>Huawei</h3><p>Developed entirely by Huawei ✅ p.13 · Store: App Gallery</p></div>
+      <div class="card key-card"><kbd>Android</kbd><h3>Google</h3><p>Free, open-source, Linux-based ✅ p.13 · Store: Google Play (the memo adds the OHA alliance — not in the official material ⚠️)</p></div>
+    </div>
+
+    <div class="analogy">
+      🏭 <strong>Two confirmed exam facts:</strong> Three major companies manufacture their phones <strong>in Egypt</strong>: Samsung (Beni Suef), Infinix (Assiut), and Vivo (10th of Ramadan City) — <strong style="color:var(--bad)">not Huawei</strong> ✅ p.11–12. And Tablets have screens from <strong style="color:var(--accent)">7 to 12 inches</strong> ✅ p.3.
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 2. App types ===================== -->
+<section id="types">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">02.</span> App Types and No-Code Building Platforms</h2>
+    <p class="sec-lead">Four types that keep appearing in questions, plus three no-code building platforms:</p>
+
+    <div class="grid cols-2">
+      <div class="card">
+        <span class="icon">📲</span>
+        <h3>Native <span class="en">Native Apps</span></h3>
+        <p>Apps <strong style="color:var(--accent)">programmed for a particular operating system</strong> (iOS or Android only) — highest performance, most expensive to develop.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🌐</span>
+        <h3>Cross-Platform <span class="en">Cross-Platform</span></h3>
+        <p>Use <strong style="color:var(--accent)">one global language such as JavaScript</strong> and run on every system.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🚗</span>
+        <h3>Hybrid <span class="en">Hybrid</span></h3>
+        <p>A mix of native and web, displayed inside a WebView — the official material's examples: <strong style="color:var(--accent)">Evernote and UBER</strong> ✅ p.28. Drawback: very limited access to phone hardware.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🔗</span>
+        <h3>Progressive Web Apps <span class="en">PWA</span></h3>
+        <p>Their advantage is providing <strong style="color:var(--accent)">a website shortcut within the phone</strong> — they run from the browser like an app (the very app in your hands is a live example!).</p>
+      </div>
+    </div>
+
+    <div class="analogy">
+      🛠️ <strong>No-code building platforms (the material lists 10 — memorize what makes each stand out):</strong>
+      <strong>Apps-builder</strong>: has published more than <strong>500,000 apps</strong> ✅ p.25 (published apps — not "templates" as some phrasings suggest ⚠️) ·
+      <strong>Good Barber</strong>: control every detail "without a single line of code" ✅ p.25 ·
+      <strong>MobinCube</strong>: a powerful editor for relatively complex apps ✅ p.26 ·
+      Also from the curriculum: <strong>AppMakr</strong> (the 20-minute build challenge), <strong>App Machine</strong> (the easiest), and <strong>Shoutem</strong> (founded 2011, from $49/month).
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 3. Google apps ===================== -->
+<section id="google">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">03.</span> Google Apps — Workspace (formerly G Suite)</h2>
+    <p class="sec-lead">The app family that appears most often in questions. The material (p.48): Workspace was "formerly known as Google Apps and later G Suite" — memorize the memo's answer for the exam (G Suite) and understand the current name:</p>
+
+    <div class="grid cols-2">
+      <div class="card">
+        <span class="icon">🈯</span>
+        <h3>Translate <span class="en">Translate</span></h3>
+        <p>Instant translation mode is activated by tapping the <strong style="color:var(--accent)">Conversation</strong> icon and then speaking into the microphone.</p>
+      </div>
+      <div class="card">
+        <span class="icon">👁️</span>
+        <h3>Google Lens <span class="en">Lens</span></h3>
+        <p>Photograph any product to learn <strong style="color:var(--accent)">its price and where it is sold</strong> — search with the camera instead of typing.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🗺️</span>
+        <h3>Maps <span class="en">Maps</span></h3>
+        <p>You can <strong style="color:var(--accent)">change the day or hour of travel</strong> to find the best route before leaving — and updating the app is recommended for new features.</p>
+      </div>
+      <div class="card">
+        <span class="icon">📝</span>
+        <h3>Keep <span class="en">Keep</span></h3>
+        <p>Google's <strong style="color:var(--accent)">note-taking</strong> app — a direct answer to a memo question.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🎥</span>
+        <h3>Meet <span class="en">Meet</span></h3>
+        <p>Free meetings with up to <strong style="color:var(--accent)">100 participants</strong> for 60 minutes ✅ p.70 — paid plans reach 500 participants and streaming to 100,000 viewers.</p>
+      </div>
+      <div class="card">
+        <span class="icon">📅</span>
+        <h3>Calendar <span class="en">Calendar</span></h3>
+        <p>For creating events and scheduling appointments effectively ✅ p.49 — with a maximum of <strong style="color:var(--accent)">5 reminders per event</strong> (email or notification), and it syncs with Outlook and Apple Calendar.</p>
+      </div>
+      <div class="card">
+        <span class="icon">📍</span>
+        <h3>Find My Phone <span class="en">Find My Phone</span></h3>
+        <p>Activated automatically as soon as a <strong style="color:var(--accent)">Google account</strong> is added to your phone ✅ p.44 — conditions for locating: signed in + location on + data or Wi-Fi connection + visible on Google Play.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🛡️</span>
+        <h3>Protection <span class="en">Google Play Protect</span></h3>
+        <p>Google's security tool <strong style="color:var(--accent)">for scanning apps</strong> before and after installation — it stops and removes harmful apps and sends privacy alerts ✅ p.18.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 4. Social & media ===================== -->
+<section id="social">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">04.</span> Social and Media-Editing Apps</h2>
+    <p class="sec-lead">Numbers and facts that keep coming up in the exam:</p>
+
+    <div class="grid cols-2">
+      <div class="card">
+        <span class="icon">✈️</span>
+        <h3>Telegram</h3>
+        <p>One-to-one messages or groups of up to <strong style="color:var(--accent)">200,000 members</strong> ✅ p.94 — file size limit <strong>2 GB</strong>, and secret chats use the MTProto protocol. ⚠️ Don't confuse this with "200 million monthly active users" (March 2018).</p>
+      </div>
+      <div class="card">
+        <span class="icon">🎤</span>
+        <h3>TikTok &amp; Snapchat</h3>
+        <p>The TikTok feature of filming next to another video is called <strong style="color:var(--accent)">Duet</strong> (the memo wrongly says "Deep Duo"). Snapchat: recording, broadcasting, and sharing video messages <strong>for a specific period of time</strong>.</p>
+      </div>
+      <div class="card">
+        <span class="icon">👥</span>
+        <h3>Facebook</h3>
+        <p>Its three founders per the material: Mark Zuckerberg, Chris Hughes, and <strong style="color:var(--accent)">Dustin Moskovitz</strong> ✅ p.82 (no mention of Saverin). It expanded to include anyone aged <strong style="color:var(--accent)">13 years</strong> or older ✅ p.82.</p>
+      </div>
+      <div class="card">
+        <span class="icon">▶️</span>
+        <h3>YouTube &amp; WhatsApp</h3>
+        <p>YouTube used to rely on <strong style="color:var(--accent)">Adobe Flash</strong> and now uses HTML5 ✅ p.88. WhatsApp is a <strong style="color:var(--bad)">centralized</strong> messaging service ✅ p.76 (the phrase "decentralized" is wrong) — with end-to-end encryption via the Signal protocol since April 2016.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🎨</span>
+        <h3>Photo &amp; Video Editing Family</h3>
+        <p><strong style="color:var(--accent)">Canva, Filmora, Lightroom, and Snapseed</strong> — all belong to photo and video editing apps (the memo keeps trying to trick you by attributing them to meeting or social apps!).</p>
+      </div>
+      <div class="card">
+        <span class="icon">📧</span>
+        <h3>BlueMail &amp; Microsoft 365</h3>
+        <p>BlueMail is a secure email app, <strong>free on both stores</strong>. Signing in with your academic university email unlocks the paid Microsoft 365 features <strong style="color:var(--accent)">for free</strong>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 5. Connectivity & security ===================== -->
+<section id="sec">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">05.</span> Connectivity and Security on Your Phone</h2>
+
+    <div class="grid cols-2">
+      <div class="card">
+        <span class="icon">📶</span>
+        <h3>Wi-Fi, Mobile Data &amp; GPS</h3>
+        <p><strong>Wi-Fi</strong> connects your phone to the local network and the Internet (communication between two local devices = Wi-Fi, not mobile data). <strong>GPS does not rely on Internet data</strong> — it works via satellites. And the phone does not connect to the router via Bluetooth!</p>
+      </div>
+      <div class="card">
+        <span class="icon">🔐</span>
+        <h3>Payment Security</h3>
+        <p><strong>OTP</strong>: a passcode valid for a few minutes to secure banking transactions. The <strong>CVV</strong> on the back of the card must be seen by no one but the owner. <strong>Two-factor authentication (2FA)</strong>: two keys to log in. Secure websites start with <strong style="color:var(--accent)">HTTPS</strong>. And the e-wallet: linking cards after passcode verification.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🔋</span>
+        <h3>Battery &amp; Memory</h3>
+        <p>To lock an Android phone or erase its data: battery charge must be at least <strong style="color:var(--accent)">50%</strong>. <strong>RAM</strong> controls how many apps run concurrently. Apps auto-starting at system boot <strong>affect system memory</strong>. Pre-installed system apps can be <strong>disabled</strong>, not deleted.</p>
+      </div>
+      <div class="card">
+        <span class="icon">💳</span>
+        <h3>MicroSD &amp; QR</h3>
+        <p><strong>MicroSD</strong> is external storage memory — <strong style="color:var(--bad)">not a way to protect the screen</strong> (a famous trap). And a <strong>QR Code</strong> is a developed version, or <strong style="color:var(--accent)">second version</strong>, of the Barcode.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 6. Glossary ===================== -->
+<section id="glossary">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">06.</span> Glossary of Terms</h2>
+    <p class="sec-lead">Tap any card to flip it.</p>
+    <div class="filters" id="filters"></div>
+    <div class="flip-grid" id="flip-grid"></div>
+  </div>
+</section>
+
+<div class="part-banner official-src">
+  <div class="container">
+    <span class="part-tag">Extra Explanations</span>
+    <h2>From the Official Curriculum</h2>
+    <p>Topics the memo doesn't cover — added from the official training material (124 pages, Edition 3 / 2024).</p>
+  </div>
+</div>
+
+<!-- ===================== Official extras ===================== -->
+<section id="official">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">07.</span> What the Memo Doesn't Cover</h2>
+    <p class="sec-lead">The official material is full of numbers and dates that haven't reached the memo yet:</p>
+
+    <div class="grid cols-2">
+      <div class="card">
+        <span class="icon">🎓</span>
+        <h3>Where This Module Sits in the Certificate</h3>
+        <p>Mobile Applications is program <strong style="color:var(--text)">BIT 08</strong> (elective) — the certificate requires <strong style="color:var(--accent)">5 mandatory + 2 elective programs</strong> out of 10, each program lasting two days.</p>
+      </div>
+      <div class="card">
+        <span class="icon">📜</span>
+        <h3>Smartphone Timeline (p.6)</h3>
+        <p><strong>1992</strong> first smartphone, IBM Simon · <strong>1996</strong> Nokia 9000 · <strong>2000</strong> Sharp J-SH04, first built-in camera · <strong>2003</strong> BlackBerry Quark · <strong>2007</strong> Apple's first touch phone · <strong>2008</strong> HTC Dream, first Android · <strong>2010</strong> Galaxy S series.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🧠</span>
+        <h3>Phone Components — Numbers to Memorize (p.7–9)</h3>
+        <p>RAM: preferably <strong style="color:var(--accent)">8 GB</strong>, no less than 4 · Storage: at least <strong style="color:var(--accent)">128 GB</strong> (up to 512 on flagships) · Screen up to 6.9 inches (OLED/LED/AMOLED) · Battery in mAh · Camera: OIS optical stabilization, HDR, auto focus · Spec reference: gsmarena.com.</p>
+      </div>
+      <div class="card">
+        <span class="icon">📡</span>
+        <h3>Connectivity Technologies (p.10)</h3>
+        <p><strong>NFC</strong>: data transfer by touch within a range not exceeding <strong style="color:var(--accent)">5 centimeters</strong> — the basis of contactless payment · <strong>Bluetooth</strong>: first pairing with a code, then automatic · <strong>Hotspot</strong>: sharing your phone's Internet with other devices.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🔐</span>
+        <h3>Sensors &amp; Security (p.9, p.17–19)</h3>
+        <p>The <strong>Proximity</strong> sensor turns the screen off near the ear · ambient light sensor · fingerprint · Security tips: turn Bluetooth off completely rather than just making it "invisible", do a factory reset before selling the phone, and back up via Google Drive.</p>
+      </div>
+      <div class="card">
+        <span class="icon">📍</span>
+        <h3>"Find My Device" in Detail (p.44–45)</h3>
+        <p>To lock the device or erase its data: battery charge <strong style="color:var(--accent)">at least 50%</strong> · "Play sound" makes it ring for <strong>5 minutes</strong> at full volume even if silenced · erasing data is final but <strong style="color:var(--bad)">may not delete the SD card</strong>, and the service stops afterwards.</p>
+      </div>
+      <div class="card">
+        <span class="icon">💬</span>
+        <h3>Social Media Numbers</h3>
+        <p>Twitter: <strong>280 characters</strong>, founded 2006, Musk's $44 billion acquisition (2022) · Instagram: <strong>10 photos</strong> max per post, 60-second video with longer via IGTV, Stories last 24 hours · Snapchat: Stanford students, a screenshot <strong>notifies the sender</strong>, and the username cannot be changed · TikTok: "Douyin" from ByteDance, live broadcasting requires <strong>1,000 followers and age 16+</strong>, gifts 18+.</p>
+      </div>
+      <div class="card">
+        <span class="icon">💳</span>
+        <h3>Digital Wallets (p.112–115)</h3>
+        <p>They keep data <strong>in encrypted form</strong> using the <strong style="color:var(--accent)">SSL</strong> protocol · Egypt's best wallets 2023: Phone Cash (NBE), Cairo Cash, Smart Wallet (CIB), E-Wallet (QNB), Vodafone Cash · 4 creation steps ending with linking the cards.</p>
+      </div>
+      <div class="card">
+        <span class="icon">☁️</span>
+        <h3>Google Drive &amp; Co-Editing (p.57–63)</h3>
+        <p>15 GB free, upgrades via <strong>Google One</strong> (100 GB up to 30 TB) · <strong style="color:var(--accent)">Egyptian academic email: unlimited storage</strong> · A file cannot be edited on more than <strong>100 devices/tabs</strong> at once · Google Maps: up to <strong>9 stops</strong> per trip.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🎦</span>
+        <h3>Meet's Competitors (p.70–71)</h3>
+        <p><strong>Zoom</strong>: free up to 100 participants but <strong style="color:var(--bad)">only 40 minutes</strong> for more than two people · <strong>Free Conference Call</strong>: up to <strong>1,000 people</strong> · <strong>Webex</strong> by Cisco · <strong>Teams</strong> integrates with OneDrive and SharePoint.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="part-banner memo-src">
+  <div class="container">
+    <span class="part-tag">Part Two · Questions</span>
+    <h2>Memo Questions</h2>
+    <p>Word traps and a quiz drawn from the actual memo questions (54 questions).</p>
+  </div>
+</div>
+
+<!-- ===================== 7. Traps ===================== -->
+<section id="traps">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">08.</span> Word Traps</h2>
+    <p class="sec-lead">Tap any statement to reveal the verdict — the trap word is <span class="mark">highlighted</span>:</p>
+    <div id="traps-list"></div>
+  </div>
+</section>
+
+<!-- ===================== 8. Memo quiz ===================== -->
+<section id="quiz">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">09.</span> Memo Questions — Test Yourself 🎯</h2>
+    <p class="sec-lead">16 questions from the memo in their original wording, with explanations based on the official material.</p>
+    <div class="quiz-box" id="quiz-box"></div>
+  </div>
+</section>
+
+<div class="part-banner official-src">
+  <div class="container">
+    <span class="part-tag">Extra Questions</span>
+    <h2>Predicted Questions from the Official Curriculum</h2>
+    <p>22 practice questions on the topics the memo doesn't cover.</p>
+  </div>
+</div>
+
+<!-- ===================== Predicted quiz ===================== -->
+<section id="predicted">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">10.</span> Predicted Questions 🔮</h2>
+    <p class="sec-lead">⚠️ Practice questions written from the official material's content — not copied from actual exams.</p>
+    <div class="quiz-box" id="predicted-box"></div>
+  </div>
+</section>
+
+<nav class="tabbar" aria-label="Quick navigation">
+  <a href="#os" class="active"><span class="ico">📖</span>Guide</a>
+  <a href="#glossary"><span class="ico">📇</span>Glossary</a>
+  <a href="#official"><span class="ico">🏛️</span>Official</a>
+  <a href="#traps"><span class="ico">🧩</span>Quiz</a>
+</nav>
+
+<script src="../assets/app.js"></script>
+<script>
+App.renderTraps('traps-list',[
+ {q:'Huawei is currently launching smartphones <span class="mark">made in Egypt</span> market.',
+  ar:'',ok:false,
+  a:'<b>False.</b> The companies manufacturing in Egypt per the memo are Samsung, Infinix, and Vivo — not Huawei.'},
+ {q:'<span class="mark">Mobile Data</span> is used to communicate between two devices over a local network.',
+  ar:'',ok:false,
+  a:'<b>False.</b> The local network is Wi-Fi\'s job; mobile data is for communication over the cellular network.'},
+ {q:'In TikTok, shooting a video next to another video is called <span class="mark">Deep Duo</span>.',
+  ar:'',ok:false,
+  a:'<b>False.</b> Its correct name is <span class="en">Duet</span>.'},
+ {q:'The phone and Wi-Fi router are connected via <span class="mark">Bluetooth</span>.',
+  ar:'',ok:false,
+  a:'<b>False.</b> The connection to the router happens over the Wi-Fi network itself.'},
+ {q:'The <span class="mark">Startup Manager</span> controls the permission apps settings.',
+  ar:'',ok:false,
+  a:'<b>False.</b> The Startup Manager controls apps auto-starting — not permissions.'},
+ {q:'You can <span class="mark">delete</span> some of the system applications already installed on your Android.',
+  ar:'',ok:false,
+  a:'<b>False.</b> System apps can be stopped (disabled) — not deleted.'},
+ {q:'MicroSD external memory is a way to <span class="mark">protect the phone screen</span>.',
+  ar:'',ok:false,
+  a:'<b>False.</b> MicroSD is for extra storage — it has nothing to do with protecting the screen from scratches.'},
+ {q:'The "Lightroom" app belongs to <span class="mark">virtual meeting</span> apps.',
+  ar:'',ok:false,
+  a:'<b>False.</b> Lightroom (like Snapseed, Canva, and Filmora) is a photo and video editing app.'},
+ {q:'GPS relies on <span class="mark">Internet data</span>.',
+  ar:'',ok:false,
+  a:'<b>False.</b> GPS works via satellites and needs no Internet connection.'},
+ {q:'Secure shopping websites start with the domain <span class="mark">HTTP</span>.',
+  ar:'',ok:false,
+  a:'<b>False.</b> Secure sites start with HTTPS — the S means encrypted (remember the cybersecurity lesson!).'},
+ {q:'It is recommended the screen turns off after <span class="mark">30 minutes</span> of non-use.',
+  ar:'',ok:false,
+  a:'<b>False.</b> To preserve the battery: after just a few seconds, or immediately — not half an hour!'},
+ {q:'WhatsApp is a <span class="mark">decentralized</span> messaging service.',
+  ar:'',ok:false,
+  a:'<b>False.</b> WhatsApp is a centralized service — its servers are centralized at the company.'}
+]);
+
+App.initQuiz('quiz-box',[
+ {en:'iOS operating system developed by …',ar:'',
+  opts:['Google','Apple','Huawei','Samsung'],a:1,exp:'iOS is by Apple, for iPhones and iPads.'},
+ {en:'Harmony operating system developed by …',ar:'',
+  opts:['Apple','Xiaomi','Huawei','Google'],a:2,exp:'Harmony OS is by Huawei.'},
+ {en:'Canva App belongs to the … Apps.',ar:'',
+  opts:['Meetings','Photo & Video Editing','Translation','Games'],a:1,exp:'Canva, Filmora, Lightroom, and Snapseed are all photo and video editing apps.'},
+ {en:'… are programmed applications for a particular operating system.',ar:'',
+  opts:['Hybrid Apps','Native Apps','PWA','Cross-Platform'],a:1,exp:'Native apps are programmed for one specific OS.'},
+ {en:'To lock an Android mobile or erase its data, battery charge should not be less than …',ar:'',
+  opts:['20%','30%','50%','80%'],a:2,exp:'50% — so the device doesn\'t shut down mid-operation.'},
+ {en:'… is a note-taking app developed by Google.',ar:'',
+  opts:['Keep','Docs','Tasks','Notes'],a:0,exp:'Google Keep is for note-taking.'},
+ {en:'Google Meet allows free meetings with up to ... participants.',ar:'',
+  opts:['50','100','200','500'],a:1,exp:'100 participants in free meetings.'},
+ {en:'The Google apps are currently known as …',ar:'',
+  opts:['G Suite','G Apps','Google One','Workspace Lite'],a:0,exp:'The memo\'s answer: G Suite.'},
+ {en:'A social app for recording, broadcasting and sharing video messages for a specific period …',ar:'',
+  opts:['Telegram','Snap Chat','LinkedIn','Twitter'],a:1,exp:'Snapchat — messages disappear after a set period.'},
+ {en:'UBER app is considered …',ar:'',
+  opts:['Native App','Hybrid App','PWA','Web App'],a:1,exp:'UBER is the memo\'s example of Hybrid apps.'},
+ {en:'Google security tool for scanning applications is called …',ar:'',
+  opts:['Google Shield','Google Protect','Play Guard','Safe Apps'],a:1,exp:'Google Protect scans apps to avoid harmful behaviors.'},
+ {en:'Facebook community expanded to include anyone of age …',ar:'',
+  opts:['10 years','13 years','16 years','18 years'],a:1,exp:'13 years and older — after university students and then high schools.'},
+ {en:'QR Code is a developed version or ... from the Barcode.',ar:'',
+  opts:['First','Second','Third','Fourth'],a:1,exp:'The second version of the Barcode.'},
+ {en:'Code … is a passcode valid for several minutes to secure banking transactions.',ar:'',
+  opts:['PIN','OTP','CVV','2FA'],a:1,exp:'OTP = One Time Password.'},
+ {en:'To create an event on mobile we use Google ... app.',ar:'',
+  opts:['Keep','Calendar','Tasks','Meet'],a:1,exp:'Calendar — a powerful tool for scheduling appointments and events.'},
+ {en:'Applications using one global language such as JavaScript are …',ar:'',
+  opts:['Native Apps','Cross-Platform Apps','System Apps','Store Apps'],a:1,exp:'Cross-Platform — one codebase for every system.'}
+]);
+
+/* ===== Predicted questions ===== */
+App.initQuiz('predicted-box',[
+ {en:'The first smartphone was released by IBM (Simon) in .....',ar:'',
+  opts:['1990','1992','1996','2000'],a:1,exp:'1992 — followed by the Nokia 9000 in 1996 (material p.6).'},
+ {en:'The first phone with a built-in camera was released by ..... in 2000.',ar:'',
+  opts:['Nokia','Sharp','Apple','Samsung'],a:1,exp:'Sharp J-SH04 (p.6).'},
+ {en:'Apple launched the first touch-screen phone in .....',ar:'',
+  opts:['2005','2007','2008','2010'],a:1,exp:'2007 — the big breakthrough, followed by the HTC Dream, the first Android, in 2008 (p.6).'},
+ {en:'It is preferable that the phone RAM be ..... and not less than .....',ar:'',
+  opts:['4GB / 2GB','8GB / 4GB','16GB / 8GB','2GB / 1GB'],a:1,exp:'8 GB and no less than 4 (p.7). Storage should be at least 128 GB.'},
+ {en:'NFC transfers data within a range not exceeding .....',ar:'',
+  opts:['5 centimeters','5 meters','50 centimeters','1 meter'],a:0,exp:'5 centimeters — the basis of contactless payment (p.10).'},
+ {en:'The proximity sensor .....',ar:'',
+  opts:['turns off the screen when near the ear','measures light','unlocks the phone','saves battery only'],a:0,exp:'It turns the screen off when it nears the ear during a call (p.9).'},
+ {en:'Huawei\'s app store is called .....',ar:'',
+  opts:['Play Store','App Store','App Gallery','Harmony Store'],a:2,exp:'App Gallery — it has attracted nearly 2 billion users (p.14).'},
+ {en:'The ..... platform challenge is to create an app in only 20 minutes.',ar:'',
+  opts:['Shoutem','AppMakr','Appy Pie','Bizness Apps'],a:1,exp:'AppMakr (p.26) — while App Machine is "the easiest".'},
+ {en:'PWA apps are preferred by .....',ar:'',
+  opts:['game developers','website and e-commerce owners','banks only','OS makers'],a:1,exp:'Website and e-commerce owners — and they work offline by storing the needed data (p.28).'},
+ {en:'Location permission options on Android are .....',ar:'',
+  opts:['2','3','4','5'],a:2,exp:'Four: all the time / while in use / ask every time / don\'t allow (p.34).'},
+ {en:'In "Find My Device", playing a sound makes the phone ring for ..... at full volume.',ar:'',
+  opts:['1 minute','5 minutes','10 minutes','30 seconds'],a:1,exp:'5 minutes, even if silenced (p.45). And erasing data may not delete the SD card.'},
+ {en:'Google Keep can extract text from .....',ar:'',
+  opts:['images (OCR)','videos','calls','PDF only'],a:0,exp:'Images via OCR — it supports Arabic in images, but not in voice recordings (p.52–53).'},
+ {en:'Google Translate offline translation works for .....',ar:'',
+  opts:['written texts and images only','voice calls','documents','web pages'],a:0,exp:'Written texts or text in images only, after downloading the language — documents and web pages go through the website, not the app (p.55).'},
+ {en:'Google Calendar allows a maximum of ..... reminders per event.',ar:'',
+  opts:['3','5','7','10'],a:1,exp:'5 reminders (email or notification) — p.49.'},
+ {en:'Google Drive free storage is 15 GB; the Egyptian academic email gets .....',ar:'',
+  opts:['100 GB','1 TB','unlimited storage','30 GB'],a:2,exp:'Unlimited storage free of charge for faculty members and postgraduate students (p.57–58).'},
+ {en:'A Google file cannot be edited simultaneously on more than ..... devices/tabs.',ar:'',
+  opts:['50','100','200','500'],a:1,exp:'100 devices or open tabs (p.63).'},
+ {en:'In Google Maps you can add up to ..... stops per trip.',ar:'',
+  opts:['5','7','9','12'],a:2,exp:'9 stops — public transport is excluded from multiple destinations (p.66).'},
+ {en:'Zoom free version limits meetings of more than two people to .....',ar:'',
+  opts:['30 minutes','40 minutes','60 minutes','90 minutes'],a:1,exp:'40 minutes (p.70) — while free Meet gives 60 minutes for 100 participants.'},
+ {en:'Free Conference Call hosts up to ..... people per meeting.',ar:'',
+  opts:['100','250','500','1000'],a:3,exp:'A thousand people + saving recorded calls (p.71). Webex is by Cisco.'},
+ {en:'WhatsApp end-to-end encryption uses the ..... protocol.',ar:'',
+  opts:['MTProto','Signal','SSL','HTTPS'],a:1,exp:'Signal (completed April 2016) — MTProto is Telegram\'s protocol (p.78–79, p.95).'},
+ {en:'TikTok live broadcasting requires at least ..... followers and age .....',ar:'',
+  opts:['500 / 14','1000 / 16','2000 / 18','100 / 13'],a:1,exp:'1,000 followers and age 16+, and virtual gifts 18+ (p.110).'},
+ {en:'Digital wallets protect data using the ..... protocol.',ar:'',
+  opts:['FTP','SSL','SMTP','DHCP'],a:1,exp:'Secure Socket Layer (SSL) — data is kept in encrypted form (p.112).'}
+]);
+
+App.renderGlossary({
+  gridId:'flip-grid',filtersId:'filters',
+  cats:{all:'All',os:'Operating Systems',types:'App Types',google:'Google Apps',sec:'Connectivity & Security'},
+  officialSet:new Set(['NFC','Hotspot','OIS / HDR','OCR','Proximity Sensor','Factory Reset','SSL']),
+  terms:[
+   {c:'os',ar:'iOS',en:'iOS',d:'Apple\'s operating system for iPhones and iPads.',e:'Apple mobile operating system.'},
+   {c:'os',ar:'Harmony',en:'Harmony OS',d:'The operating system developed by Huawei.',e:'Developed by Huawei.'},
+   {c:'os',ar:'Android',en:'Android',d:'Open-source system by Google and the Open Handset Alliance (OHA).',e:'Open-source OS by Google and the OHA.'},
+   {c:'os',ar:'Tablets',en:'Tablets',d:'Equipped with screens from 7 to 12 inches.',e:'Screens from 7 up to 12 inches.'},
+   {c:'types',ar:'Native Apps',en:'Native Apps',d:'Programmed for one particular operating system.',e:'Programmed for a particular OS.'},
+   {c:'types',ar:'Cross-Platform',en:'Cross-Platform',d:'Use one global language such as JavaScript.',e:'One global language such as JavaScript.'},
+   {c:'types',ar:'Hybrid Apps',en:'Hybrid Apps',d:'A mix of native and web — UBER is the example.',e:'UBER is the classic example.'},
+   {c:'types',ar:'Progressive Web Apps',en:'PWA',d:'Provide a website shortcut within the phone.',e:'Provide a website shortcut within the mobile.'},
+   {c:'types',ar:'App Builders',en:'App Builders',d:'Apps-builder (500K apps), Good Barber (no code), MobinCube (powerful visual editor).',e:'No-code app building platforms.'},
+   {c:'google',ar:'Google Lens',en:'Google Lens',d:'Photograph a product to learn its price and where it is sold.',e:'Photograph goods to know price and stores.'},
+   {c:'google',ar:'Keep',en:'Google Keep',d:'Google\'s note-taking app.',e:'Note-taking app by Google.'},
+   {c:'google',ar:'Meet',en:'Google Meet',d:'Free meetings with up to 100 participants.',e:'Free meetings up to 100 participants.'},
+   {c:'google',ar:'Calendar',en:'Google Calendar',d:'Create events and schedule appointments effectively.',e:'Create events and schedule appointments.'},
+   {c:'google',ar:'Find My Phone',en:'Find My Phone',d:'Activated automatically when a Google account is added to the phone.',e:'Auto-activated when a Google account is added.'},
+   {c:'google',ar:'Google Protect',en:'Google Protect',d:'A security tool that scans apps for harmful behaviors.',e:'Scans apps to avoid harmful behaviors.'},
+   {c:'google',ar:'G Suite',en:'G Suite',d:'The current name of the Google apps suite (the memo\'s answer).',e:'Current name of the Google apps.'},
+   {c:'sec',ar:'Wi-Fi',en:'Wi-Fi',d:'Connects the phone to the local network and links it to the Internet.',e:'Connects the phone to local network and Internet.'},
+   {c:'sec',ar:'GPS',en:'GPS',d:'Works via satellites — does not rely on Internet data.',e:'Satellite-based; needs no Internet data.'},
+   {c:'sec',ar:'One-Time Password',en:'OTP',d:'A code valid for minutes to secure banking transactions and purchases.',e:'Valid for minutes to secure transactions.'},
+   {c:'sec',ar:'Two-Factor Authentication',en:'2FA',d:'A login method using two keys to your account.',e:'Two keys to log in your account.'},
+   {c:'sec',ar:'Card Verification Value',en:'CVV',d:'On the back of the bank card — no one but the owner should see it.',e:'On the card back; owner-only.'},
+   {c:'sec',ar:'QR Code',en:'QR Code',d:'A developed (second) version of the Barcode.',e:'A second version of the Barcode.'},
+   {c:'sec',ar:'External Memory',en:'MicroSD',d:'For expanding storage — not for protecting the screen!',e:'Storage expansion, not screen protection.'},
+   {c:'sec',ar:'Random Access Memory',en:'RAM',d:'Controls how many apps run concurrently — preferably 8 GB, no less than 4.',e:'Controls how many apps run concurrently.'},
+   {c:'sec',ar:'Near Field Communication',en:'NFC',d:'Data transfer by touching two devices within ≤5 cm — the basis of contactless cards.',e:'Data transfer within 5 cm; contactless payments.'},
+   {c:'sec',ar:'Hotspot',en:'Hotspot',d:'Sharing your phone\'s Internet with other devices.',e:'Share your phone internet with other devices.'},
+   {c:'sec',ar:'Camera Technologies',en:'OIS / HDR',d:'Optical image stabilization + high dynamic range — along with Auto Focus.',e:'Optical stabilization + high dynamic range.'},
+   {c:'sec',ar:'Optical Character Recognition',en:'OCR',d:'Extracting text from images — used by Google Keep and Lens.',e:'Extract text from images (Keep, Lens).'},
+   {c:'sec',ar:'Proximity Sensor',en:'Proximity Sensor',d:'Turns the screen off when nearing the ear during a call.',e:'Turns screen off near the ear.'},
+   {c:'sec',ar:'Factory Reset',en:'Factory Reset',d:'A mandatory step before selling or donating your phone.',e:'Do it before selling your phone.'},
+   {c:'sec',ar:'Secure Sockets Layer',en:'SSL',d:'The protocol for secure financial transactions — digital wallets use it to keep your data encrypted.',e:'Secures digital wallet transactions.'}
+  ]
+});
+
+App.initNav({os:'#os',types:'#os',google:'#os',social:'#os',sec:'#os',glossary:'#glossary',official:'#official',traps:'#traps',quiz:'#traps',predicted:'#traps'});
+App.LANG='en';
+App.initShell('mobile.html');
+</script>
+</body>
+</html>
