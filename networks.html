@@ -25,12 +25,12 @@
     <span class="shield">🌐</span>
     <h1>الشبكات <span>ببساطة</span></h1>
     <p class="sub">دليل تفاعلي لقسم الشبكات: عناوين IP وMAC، البروتوكولات، أجهزة الربط والبنية النجمية، والكابلات والمنافذ.</p>
-    <span class="badge" style="background:rgba(255,214,10,.12);color:var(--warn);border-color:rgba(255,214,10,.3)">⏳ من المذكرة — لم يُطابَق بعد مع المادة الرسمية (سيُنقَّح فور توفرها)</span>
+    <span class="badge">مُستخلص من المذكرة ومُطابَق مع المادة الرسمية (BIT 07 — مقدمة في الشبكات، الإصدار 3 / 2024)</span>
     <div class="stats">
       <div class="stat"><b>28</b><span>سؤالاً في المذكرة</span></div>
-      <div class="stat"><b>24</b><span>مصطلحاً أساسياً</span></div>
-      <div class="stat"><b>10</b><span>مصائد كلمات</span></div>
-      <div class="stat"><b>14</b><span>سؤال اختبار</span></div>
+      <div class="stat"><b>31</b><span>مصطلحاً أساسياً</span></div>
+      <div class="stat"><b>22</b><span>سؤالاً متوقعاً</span></div>
+      <div class="stat"><b>88</b><span>صفحة بالمادة الرسمية</span></div>
     </div>
   </div>
 </header>
@@ -43,8 +43,10 @@
     <a href="#cables">الكابلات والمنافذ</a>
     <a href="#types">أنواع الاتصال</a>
     <a href="#glossary">القاموس</a>
+    <a href="#official">من المنهج الرسمي</a>
     <a href="#traps">مصيدة الكلمات</a>
     <a href="#quiz">أسئلة المذكرة</a>
+    <a href="#predicted">أسئلة متوقعة</a>
   </div>
 </nav>
 
@@ -72,32 +74,32 @@
       <div class="card">
         <span class="icon">🔢</span>
         <h3>عنوان IP</h3>
-        <p>يتكون من <strong style="color:var(--accent)">4 ثمانيات Octets</strong>، وكل ثمانية تحمل <strong style="color:var(--accent)">256 قيمة</strong> (0–255). ويجب أن يكون عنوان الجهاز في <strong style="color:var(--text)">نفس الشبكة الفرعية Subnet</strong> للشبكة المحلية.</p>
+        <p>يتكون من <strong style="color:var(--accent)">4 خانات (ثمانيات Octets)</strong> كل منها من 0 إلى 255 ✅ م44 — أي 256 قيمة لكل خانة. ويجب أن يكون عنوان الجهاز في <strong style="color:var(--text)">نفس الشبكة الفرعية Subnet</strong> ✅ م45–46، فرقم الشبكة كاسم الشارع ورقم الجهاز كرقم المنزل.</p>
       </div>
       <div class="card">
         <span class="icon">🪪</span>
         <h3>عنوان MAC</h3>
-        <p>العنوان المستخدم للاتصال بشبكة <strong style="color:var(--accent)">Ethernet</strong> — عنوان فيزيائي ثابت لكرت الشبكة.</p>
+        <p>العنوان المستخدم في الشبكة المحلية <strong style="color:var(--accent)">Ethernet</strong> ✅ م44 — يتكون من <strong>12 حرفاً</strong> بين كل حرفين نقطة، أما الإنترنت فبعنوان IP.</p>
       </div>
       <div class="card">
         <span class="icon">🔄</span>
         <h3>DHCP — عنوان متغيّر</h3>
-        <p>بروتوكول DHCP يمنح جهاز العميل عنوان IP <strong style="color:var(--accent)">ديناميكياً (متغيّراً)</strong> — لا ثابتاً Static (مصيدة!).</p>
+        <p>الإسناد إما يدوي (ثابت) أو تلقائي عبر <strong style="color:var(--accent)">خادم DHCP</strong> ✅ م44 — رسائله الأربع: Discovery ← Offer ← Request ← Acknowledge ‏(م67).</p>
       </div>
       <div class="card">
         <span class="icon">✅</span>
         <h3>TCP أم UDP؟</h3>
-        <p><strong style="color:var(--accent)">TCP</strong> هو المسؤول عن الدقة وضمان وصول البيانات بشكل صحيح — نسبة ذلك لـ UDP مصيدة متكررة! UDP أسرع لكن بلا ضمان.</p>
+        <p><strong style="color:var(--accent)">TCP يتميز بالدقة</strong> (تأكيد الوصول والتحكم في التدفق واكتشاف الأخطاء) بينما <strong style="color:var(--accent)">UDP يتميز بالسرعة</strong> دون تأكيد ✅ م64–65 — نسبة الدقة لـUDP مصيدة متكررة!</p>
       </div>
       <div class="card">
         <span class="icon">🧅</span>
-        <h3>طبقات الشبكة</h3>
-        <p>طبقة <strong style="color:var(--text)">الوصول إلى الشبكة</strong> تحدد طرق الاتصال الفيزيائية بالشبكة المحلية ✓. وبروتوكول IP بروتوكول <strong style="color:var(--accent)">طبقة الإنترنت</strong> — أما طبقة الربط فبروتوكولها <strong style="color:var(--text)">Ethernet</strong> (مصيدة!).</p>
+        <h3>طبقات نموذج TCP/IP الأربع</h3>
+        <p>التطبيق (HTTP/FTP/SMTP) ← النقل (TCP/UDP) ← الإنترنت (<strong style="color:var(--accent)">IP والموجهات Routers</strong>) ← الربط/الوصول للشبكة (<strong style="color:var(--text)">Ethernet</strong> حتى 1 جيجابت/ث والمبدلات) ✅ م64–65 — وطبقة الوصول تحدد طرق الاتصال الفيزيائية بالشبكة المحلية ✅.</p>
       </div>
       <div class="card">
         <span class="icon">🛠️</span>
         <h3>أدوات وأنظمة</h3>
-        <p><strong style="color:var(--text)">Wireshark</strong> يساعد في إدارة الشبكة وصيانتها · <strong style="color:var(--text)">Linux</strong> نظام مفتوح المصدر يستخدم على نطاق واسع للخوادم والشبكات · نظام ملفات الشبكة <span class="en">NFS</span> طورته شركة <strong style="color:var(--accent)">Sun Microsystems</strong>.</p>
+        <p><strong style="color:var(--text)">Wireshark</strong> يراقب حركة البيانات ويحللها في الوقت الحقيقي ✅ م42 · <strong style="color:var(--text)">Linux</strong> حر مفتوح المصدر واسع الاستخدام للخوادم والشبكات ✅ م40 · <span class="en">NFS</span> طورته <strong style="color:var(--accent)">Sun Microsystems عام 1984</strong> ✅ م53 — ومقابله عند مايكروسوفت SMB.</p>
       </div>
     </div>
   </div>
@@ -113,12 +115,12 @@
       <div class="card">
         <span class="icon">⭐</span>
         <h3>قلب النجمة</h3>
-        <p>النقطة المحورية المركزية للهيكل النجمي هي <strong style="color:var(--accent)">المبدّل Switch</strong>. ويُستخدم المجمّع لتشكيل البنية النجمية — والإجابة تقبل <strong style="color:var(--text)">الموزع أو المبدل أو الموجه</strong> (Hub / Switch / Router) بحسب الخيارات المتاحة.</p>
+        <p>إجابة المذكرة: <strong style="color:var(--accent)">المبدّل Switch</strong>. ⚠️ نص المادة (م19): النقطة المركزية «في العادة جهاز مثل <strong style="color:var(--text)">الموزع أو المبدل أو الموجه</strong>» — فكن مرناً بحسب خيارات السؤال. والبنية النجمية <strong>الأكثر استخداماً</strong> بين البنيات الثلاث.</p>
       </div>
       <div class="card">
         <span class="icon">📉</span>
         <h3>Hub أم Switch؟</h3>
-        <p>الموزع Hub يُستخدم بشكل <strong style="color:var(--accent)">أقل</strong> شيوعاً من المبدّل Switch — لأن الموزع يبث لكل الأجهزة، والمبدّل يرسل للجهاز المقصود فقط. عبارة «أكثر شيوعاً» مصيدة!</p>
+        <p>الموزع Hub يعيد الإرسال على <strong style="color:var(--bad)">كل المنافذ</strong> فيسبب تصادماً، والمبدّل Switch يمرر <strong style="color:var(--accent)">للمنفذ المقصود فقط</strong> وأسرع ويرسل ويستقبل معاً ✅ م36 — لذا الموزع أقل استخداماً (عبارة «أكثر شيوعاً» مصيدة!).</p>
       </div>
       <div class="card">
         <span class="icon">🎴</span>
@@ -154,12 +156,12 @@
       <div class="card">
         <span class="icon">🧵</span>
         <h3>الكابل المحوري</h3>
-        <p>يتكون من <strong style="color:var(--accent)">4 أجزاء</strong> لتقليل تداخل الإشارة — لا خمسة (مصيدة!).</p>
+        <p>يتكون من <strong style="color:var(--accent)">4 أجزاء</strong> ✅ م32: قلب نحاسي، عازل، موصل خارجي معدني مجدول، غطاء بلاستيكي — لا خمسة (مصيدة!). واستُخدم قديماً بسرعة 10 ميجابت/ث.</p>
       </div>
       <div class="card">
         <span class="icon">🔀</span>
         <h3>كابل Crossover</h3>
-        <p>كابل التوصيل التقاطعي يُستخدم لتوصيل الأجهزة <strong style="color:var(--accent)">المتشابهة</strong> (من نفس النوع): حاسوب بحاسوب، مبدّل بمبدّل.</p>
+        <p>التقاطعي لتوصيل الجهازين <strong style="color:var(--accent)">المتشابهين</strong> (حاسوب بحاسوب) ✅ م32 — أما <strong style="color:var(--text)">Straight المباشر</strong> فللجهازين المختلفين (حاسوب بمبدّل).</p>
       </div>
       <div class="card">
         <span class="icon">📡</span>
@@ -180,22 +182,22 @@
       <div class="card">
         <span class="icon">🏢</span>
         <h3>الخطوط المؤجرة</h3>
-        <p><span class="en">Leased Lines</span> الخيار الأفضل <strong style="color:var(--accent)">للشركات الكبرى والمؤسسات والجامعات</strong> التي تحتاج سرعة وموثوقية عالية — لا للأفراد (مصيدة!).</p>
+        <p><span class="en">Leased Lines</span> <strong style="color:var(--accent)">للشركات الكبيرة</strong> ✅ م49: حماية أعلى وسرعة عالية وتكلفة مرتفعة، ببروتوكولات مخصصة <strong>PPP وHDLC</strong> — لا للأفراد (مصيدة!).</p>
       </div>
       <div class="card">
         <span class="icon">📞</span>
         <h3>خط DSL</h3>
-        <p>عند استخدام DSL تظل سرعة الإنترنت ثابتة <strong style="color:var(--accent)">للعميل For customer</strong> ✓ — أما عبارة «ثابتة بواسطة العميل by customer» فخاطئة، فالثبات يضمنه <strong style="color:var(--text)">مزود الخدمة</strong> (مصيدة حرف جر!).</p>
+        <p>إجابة المذكرة: السرعة ثابتة <strong style="color:var(--accent)">للعميل For customer</strong> ✓ («بواسطة العميل by» مصيدة حرف جر). ⚠️ المادة (م48) تشرح: سرعات حتى 100 ميجابت/ث <strong>تقل بالبعد عن السنترال</strong> — وأنواعه ADSL (الأشيع منزلياً) وSDSL (متماثل) وVDSL (فائق).</p>
       </div>
       <div class="card">
         <span class="icon">☁️</span>
         <h3>سحابة ويندوز</h3>
-        <p>تعتبر منصة ويندوز نوعاً من السحب <strong style="color:var(--accent)">العامة Public</strong>.</p>
+        <p><strong>Windows Azure</strong> ضمن أمثلة السحب <strong style="color:var(--accent)">العامة Public</strong> ✅ م24 — مع Google AppEngine وAmazon EC2. والعامة اقتصادية لكن أمانها أقل من الخاصة.</p>
       </div>
       <div class="card">
         <span class="icon">🛒</span>
         <h3>Amazon AWS</h3>
-        <p>من أشهر مزودي <strong style="color:var(--accent)">البنية التحتية IaaS</strong> عبر الإنترنت — وصفها بـ«مزود برامج Software» خطأ (مصيدة!).</p>
+        <p>ضمن أمثلة مزودي <strong style="color:var(--accent)">البنية التحتية IaaS</strong> ✅ م25 (مع Cisco Metapod وGoogle Compute Engine) — وصفها بـ«مزود برامج Software» خطأ (مصيدة!).</p>
       </div>
     </div>
   </div>
@@ -211,6 +213,75 @@
   </div>
 </section>
 
+<div class="part-banner official-src">
+  <div class="container">
+    <span class="part-tag">شروحات إضافية</span>
+    <h2>من المنهج الرسمي</h2>
+    <p>موضوعات لا تغطيها المذكرة — مضافة من المادة التدريبية الرسمية (88 صفحة، الإصدار 3 / 2024).</p>
+  </div>
+</div>
+
+<!-- ===================== Official extras ===================== -->
+<section id="official">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">06.</span> ما لا تغطيه المذكرة</h2>
+    <p class="sec-lead">المادة الرسمية أوسع بكثير من أسئلة المذكرة الـ28 — هذه خلاصتها:</p>
+
+    <div class="grid cols-2">
+      <div class="card">
+        <span class="icon">🎓</span>
+        <h3>موقع القسم والتصنيف الجغرافي</h3>
+        <p>مقدمة في الشبكات = <strong style="color:var(--text)">BIT 07</strong> (اختياري). والشبكات جغرافياً <strong style="color:var(--accent)">5 أنواع</strong> (م14–16): PAN شخصية · LAN محلية · CAN حرم جامعي (مجموعة LAN) · MAN مدينة كاملة (كالعاصمة الإدارية) · WAN واسعة عبر شركات الاتصالات والأقمار الصناعية.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🚌</span>
+        <h3>البنيات الثلاث (م18–19)</h3>
+        <p><strong>Bus</strong>: تصادم عند الإرسال المتزامن وقطع الكابل يوقف الشبكة كلها · <strong>Ring</strong>: اتجاه واحد وكل جهاز مكرر إشارة · <strong>Star</strong>: <strong style="color:var(--accent)">الأكثر استخداماً</strong> — فصل جهاز لا يؤثر على الباقي وسهولة اكتشاف الأخطاء.</p>
+      </div>
+      <div class="card">
+        <span class="icon">📶</span>
+        <h3>Wi-Fi بالأرقام (م20–21، م60–61)</h3>
+        <p>اختصار <strong>Wireless Fidelity</strong>، معاييرها 802.11 من IEEE، بترددي <strong style="color:var(--accent)">2.4 و5 جيجاهرتز</strong> · 802.11ac حتى 1 جيجابت/ث · Wi-Fi ‏4=n، ‏5=ac، ‏6=ax · و5GHz أسرع وأقل تداخلاً بينما 2.4GHz أفضل مع العوائق.</p>
+      </div>
+      <div class="card">
+        <span class="icon">📡</span>
+        <h3>الخلوية وNFC وRFID (م22–23)</h3>
+        <p>‏5G أسرع <strong style="color:var(--accent)">10 أضعاف</strong> من 4G ‏(10Gbps نظرياً) · NFC: نطاق <strong style="color:var(--accent)">لا يتجاوز 4 سم</strong> وسرعة 474 كيلوبت/ث — لهذا هو آمن مالياً · RFID: علامة Tag (خاملة أو نشطة) + قارئ Reader — جواز السفر الإلكتروني وتتبع البضائع.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🧵</span>
+        <h3>فئات الكابلات (م31–32)</h3>
+        <p>الملفوف 8 أسلاك بموصل <strong>RJ45</strong>، نوعاه STP المحمي وUTP · الفئات: Cat5 ‏(100Mbps) ← Cat5e ‏(1000) ← Cat6A ‏(10Gbps) ← <strong style="color:var(--accent)">Cat8 ‏(25–40Gbps)</strong> · وFTTH: ‏OLT ← مجزئ (64 أو 128 عميلاً) ← ONU.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🔢</span>
+        <h3>فئات العناوين (م45–46)</h3>
+        <p>‏Class A قناعها 255.0.0.0 · ‏B ‏255.255.0.0 · ‏C ‏255.255.255.0 · رقم الجهاز كله أصفار = <strong style="color:var(--accent)">عنوان الشبكة</strong>، وكله آحاد = <strong style="color:var(--accent)">عنوان البث Broadcast</strong> · والبوابة الافتراضية تُعرف بأمر <span class="en">ipconfig</span>.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🌐</span>
+        <h3>نشأة الإنترنت وطرق الاتصال (م47–50)</h3>
+        <p>بدأ <strong style="color:var(--accent)">1969</strong> باسم <strong>ARPANET</strong> من <strong>4 حاسبات</strong> لدعم الأبحاث العسكرية الأمريكية · Dial-up لا يتجاوز 56 كيلوبت/ث ويشغل خط الهاتف · وأجيال المحمول: 1G صوت فقط ← 2G رقمي+رسائل ← 3G إنترنت ← 4G سرعات عالية ← 5G ‏+ إنترنت الأشياء.</p>
+      </div>
+      <div class="card">
+        <span class="icon">📮</span>
+        <h3>بروتوكولات الجلسة الأخيرة (م66–68)</h3>
+        <p><strong>DNS</strong>: يترجم أسماء النطاقات سهلة التذكر إلى عناوين IP · <strong>DHCP</strong>: ‏Discovery ← Offer ← Request ← Acknowledge · <strong>IMAP</strong>: الوصول لرسائل البريد وتخزينها للعمل دون اتصال — تعمل به Outlook وThunderbird · <strong>SMTP</strong>: إرسال البريد.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🛡️</span>
+        <h3>أدوات أمن الشبكات (م69–71)</h3>
+        <p><strong>Firewall</strong> يراقب المرور ويسمح/يحظر بقواعد · <strong>IPS</strong> يحظر الهجمات بمقارنتها بسابقاتها لحظياً · <strong>NAC</strong> يتعرف على كل مستخدم وجهاز · <strong>DLP</strong> يمنع تسريب البيانات خارج المؤسسة · <strong>VPN</strong> قناة افتراضية خاصة مشفرة · والاختراق <strong style="color:var(--bad)">أسهل الهجمات تنفيذاً</strong>.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🔐</span>
+        <h3>تأمين الراوتر المنزلي (م74–78)</h3>
+        <p>الدخول عبر <span class="en">192.168.0.1</span> أو <span class="en">192.168.1.1</span> · التشفير الموصى به <strong style="color:var(--accent)">WPA2-PSK</strong> · إخفاء الشبكة بإلغاء <span class="en">SSID Broadcast</span> · و<strong style="color:var(--bad)">يجب تعطيل خاصية WPS</strong> لحماية الراوتر من الاختراق.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <div class="part-banner memo-src">
   <div class="container">
     <span class="part-tag">الجزء الثاني · الأسئلة</span>
@@ -222,7 +293,7 @@
 <!-- ===================== 6. Traps ===================== -->
 <section id="traps">
   <div class="container">
-    <h2 class="sec-title"><span class="num">06.</span> مصيدة الكلمات — بروتوكول خطأ ورقم خطأ</h2>
+    <h2 class="sec-title"><span class="num">07.</span> مصيدة الكلمات — بروتوكول خطأ ورقم خطأ</h2>
     <p class="sec-lead">اضغط أي عبارة لكشف الحكم:</p>
     <div id="traps-list"></div>
   </div>
@@ -231,19 +302,33 @@
 <!-- ===================== 7. Memo quiz ===================== -->
 <section id="quiz">
   <div class="container">
-    <h2 class="sec-title"><span class="num">07.</span> أسئلة المذكرة — اختبر نفسك 🎯</h2>
-    <p class="sec-lead">14 سؤالاً من المذكرة بصياغتها الإنجليزية الأصلية مع ترجمة وشرح.</p>
+    <h2 class="sec-title"><span class="num">08.</span> أسئلة المذكرة — اختبر نفسك 🎯</h2>
+    <p class="sec-lead">14 سؤالاً من المذكرة بصياغتها الإنجليزية الأصلية مع ترجمة وشرح مستند إلى المادة الرسمية.</p>
     <div class="quiz-box" id="quiz-box"></div>
+  </div>
+</section>
 
-    <div class="analogy" style="margin-top:24px">
-      ⏳ <strong>قادم لهذا القسم:</strong> المطابقة مع المادة الرسمية + بطاقات «من المنهج الرسمي» + الأسئلة المتوقعة — تُضاف فور توفر المادة الرسمية لقسم الشبكات (النطاق المعتمد: ص 21–86).
-    </div>
+<div class="part-banner official-src">
+  <div class="container">
+    <span class="part-tag">أسئلة إضافية</span>
+    <h2>أسئلة متوقعة من المنهج الرسمي</h2>
+    <p>22 سؤالاً تدريبياً من الموضوعات التي لا تغطيها المذكرة.</p>
+  </div>
+</div>
+
+<!-- ===================== Predicted quiz ===================== -->
+<section id="predicted">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">09.</span> أسئلة متوقعة 🔮</h2>
+    <p class="sec-lead">⚠️ أسئلة تدريبية مصوغة من محتوى المادة الرسمية — وليست منقولة من امتحانات فعلية.</p>
+    <div class="quiz-box" id="predicted-box"></div>
   </div>
 </section>
 
 <nav class="tabbar" aria-label="تنقل سريع">
   <a href="#addr" class="active"><span class="ico">📖</span>الشرح</a>
   <a href="#glossary"><span class="ico">📇</span>القاموس</a>
+  <a href="#official"><span class="ico">🏛️</span>المنهج</a>
   <a href="#traps"><span class="ico">🧩</span>الأسئلة</a>
 </nav>
 
@@ -270,7 +355,7 @@ App.renderTraps('traps-list',[
  {q:'The coaxial cable consists of <span class="mark">five</span> parts to reduce signal interference.',ar:'يتكون الكابل المحوري من خمسة أجزاء.',ok:false,
   a:'خطأ — من <strong>أربعة</strong> أجزاء.'},
  {q:'When using DSL, the internet speed remains constant <span class="mark">by</span> customer.',ar:'مع DSL تظل السرعة ثابتة «بواسطة» العميل.',ok:false,
-  a:'خطأ — ثابتة <strong>للعميل For customer</strong>، والثبات يضمنه مزود الخدمة. مصيدة حرف جر دقيقة جداً!'}
+  a:'خطأ — ثابتة <strong>للعميل For customer</strong>، والثبات يضمنه مزود الخدمة. مصيدة حرف جر دقيقة جداً! (⚠️ والمادة م48 تلاحظ أن السرعة الفعلية تقل بالبعد عن السنترال).'}
 ]);
 
 /* ===== أسئلة المذكرة ===== */
@@ -319,11 +404,59 @@ App.initQuiz('quiz-box',[
   exp:'صواب ✓ — وتذكّر: IP في طبقة الإنترنت، وEthernet في طبقة الربط.'}
 ]);
 
+/* ===== أسئلة متوقعة ===== */
+App.initQuiz('predicted-box',[
+ {en:'Networks classified geographically are ..... types.',ar:'تصنف الشبكات جغرافياً إلى ... أنواع.',
+  opts:['3','4','5','6'],a:2,exp:'خمسة: PAN وLAN وCAN وMAN وWAN ‏(م14–16).'},
+ {en:'A group of LANs within a school or university campus forms a ..... network.',ar:'مجموعة شبكات محلية داخل حرم جامعي تشكل شبكة...',
+  opts:['MAN','CAN','WAN','PAN'],a:1,exp:'CAN — شبكة الحرم الجامعي (م15). أما مدينة كاملة فMAN.'},
+ {en:'In the Bus topology, cutting any part of the cable .....',ar:'في بنية الناقل Bus، قطع أي جزء من الكابل...',
+  opts:['affects one device','stops the whole network','has no effect','speeds it up'],a:1,exp:'يوقف الشبكة بأكملها — ومع كثرة الأجهزة تبطؤ لحدوث التصادم (م19).'},
+ {en:'In the Ring topology, each device acts as a .....',ar:'في البنية الحلقية يعمل كل جهاز عمل...',
+  opts:['server','signal repeater','firewall','router'],a:1,exp:'مكرر إشارة: يقوّيها ويمررها في اتجاه واحد (م19).'},
+ {en:'The most used LAN topology is .....',ar:'أكثر بنيات الشبكات المحلية استخداماً...',
+  opts:['Bus','Ring','Star','Mesh'],a:2,exp:'النجمية Star — فصل أي جهاز لا يؤثر على الباقي (م19).'},
+ {en:'Wi-Fi is an abbreviation of .....',ar:'‏Wi-Fi اختصار لـ...',
+  opts:['Wireless Fidelity','Wide Fiber','Wireless Field','Web Finder'],a:0,exp:'Wireless Fidelity — علامة تجارية لرابطة Wi-Fi Alliance، ومعاييرها 802.11 من IEEE ‏(م20).'},
+ {en:'Wi-Fi operates on the frequencies .....',ar:'يعمل الواي فاي على ترددي...',
+  opts:['1.2 and 3 GHz','2.4 and 5 GHz','3 and 6 GHz','900 MHz only'],a:1,exp:'‏2.4 و5 جيجاهرتز — الخامس أسرع وأقل تداخلاً، والثاني أفضل مع العوائق (م20، م61).'},
+ {en:'A Bluetooth main device can connect to a maximum of ..... devices.',ar:'يتصل جهاز البلوتوث الرئيسي بحد أقصى ... أجهزة.',
+  opts:['5','7','10','3'],a:1,exp:'‏7 أجهزة كحد أقصى، مع إمكانية تبديل الأدوار (م21).'},
+ {en:'5G is up to ..... times faster than 4G.',ar:'الجيل الخامس أسرع من الرابع بنحو ... أضعاف.',
+  opts:['2','5','10','100'],a:2,exp:'‏10 أضعاف — بسرعة قصوى نظرية 10 جيجابت/ث وزمن استجابة أقل من 10ms ‏(م22).'},
+ {en:'NFC range does not exceed ..... which makes it safe for payments.',ar:'مدى NFC لا يتجاوز ... مما يجعله آمناً للمدفوعات.',
+  opts:['4 cm','4 m','40 cm','1 m'],a:0,exp:'‏4 سنتيمترات بسرعة قصوى 474 كيلوبت/ث (م22).'},
+ {en:'RFID consists of two parts: .....',ar:'يتكون نظام RFID من جزأين هما...',
+  opts:['tag and reader','antenna and battery','chip and screen','card and cable'],a:0,exp:'علامة Tag (خاملة بلا بطارية أو نشطة بمصدر طاقة) وقارئ Reader ‏(م23).'},
+ {en:'The twisted-pair cable connector is ..... with ..... pins.',ar:'موصل الكابل الملفوف هو ... بعدد ... دبابيس.',
+  opts:['RJ11 / 6','RJ45 / 8','USB / 4','DE-15 / 15'],a:1,exp:'RJ45 بثمانية دبابيس — والكابل 8 أسلاك نحاسية ملفوفة أزواجاً (م31).'},
+ {en:'The UTP category supporting 25–40 Gbps is .....',ar:'فئة الكابلات التي تدعم 25–40 جيجابت/ث هي...',
+  opts:['Cat5e','Cat6','Cat7','Cat8'],a:3,exp:'Cat8 — بينما Cat5 حتى 100 ميجابت وCat6A حتى 10 جيجابت (م32).'},
+ {en:'In FTTH, the optical splitter divides the signal to ..... clients.',ar:'في تقنية الألياف للمنازل يجزئ المقسم الإشارة إلى ... عميلاً.',
+  opts:['16 or 32','64 or 128','200 or 400','8 or 16'],a:1,exp:'‏64 أو 128 — والسلسلة: OLT ← Splitter ← ONU ‏(م33).'},
+ {en:'The subnet mask of a Class C address is .....',ar:'قناع الشبكة لعنوان من الفئة C هو...',
+  opts:['255.0.0.0','255.255.0.0','255.255.255.0','255.255.255.255'],a:2,exp:'‏255.255.255.0 — والفئة A ‏255.0.0.0 والفئة B ‏255.255.0.0 ‏(م45).'},
+ {en:'A host number of all ones (e.g. 10.255.255.255) is the ..... address.',ar:'رقم الجهاز كله آحاد (مثل 10.255.255.255) هو عنوان...',
+  opts:['network','broadcast','gateway','loopback'],a:1,exp:'البث Broadcast — أما كله أصفار فعنوان الشبكة (م45).'},
+ {en:'The Internet started in 1969 as ..... with ..... computers.',ar:'بدأ الإنترنت عام 1969 باسم ... بعدد ... حاسبات.',
+  opts:['ARPANET / 4','NSFNET / 10','MILNET / 2','ETHERNET / 8'],a:0,exp:'ARPANET من 4 حاسبات لدعم الأبحاث العسكرية الأمريكية (م47).'},
+ {en:'Dial-up connection speed does not exceed .....',ar:'سرعة الاتصال الهاتفي Dial-up لا تتجاوز...',
+  opts:['128 Kbps','56 Kbps','1 Mbps','512 Kbps'],a:1,exp:'‏56 كيلوبت/ث — ولا يمكن استخدام الهاتف أثناء الاتصال (م48).'},
+ {en:'The DSL type with symmetric speeds, suited for companies, is .....',ar:'نوع DSL المتماثل السرعات المناسب للشركات هو...',
+  opts:['ADSL','SDSL','VDSL','UDSL'],a:1,exp:'SDSL — أما ADSL فالأشيع منزلياً (تنزيل أسرع)، وVDSL فائق السرعة للبث (م48–49).'},
+ {en:'The protocol that translates domain names into IP addresses is .....',ar:'البروتوكول الذي يترجم أسماء النطاقات إلى عناوين IP هو...',
+  opts:['DHCP','DNS','IMAP','FTP'],a:1,exp:'DNS — قاعدة بيانات النطاقات وعناوينها (م67–68).'},
+ {en:'..... prevents employees from sending confidential information outside the organization.',ar:'... يمنع الموظفين من إرسال المعلومات السرية خارج المؤسسة.',
+  opts:['IPS','NAC','DLP','VPN'],a:2,exp:'‏Data Loss Prevention — حتى الطباعة غير الآمنة (م71). أما NAC فيتعرف على المستخدمين والأجهزة.'},
+ {en:'The recommended Wi-Fi router encryption is ..... and the ..... feature must be disabled.',ar:'تشفير الراوتر الموصى به هو ... مع وجوب تعطيل خاصية...',
+  opts:['WEP / SSID','WPA2-PSK / WPS','WPA / DHCP','TKIP / NAT'],a:1,exp:'WPA2-PSK الأفضل للحماية، وتعطيل WPS يحمي الراوتر من الاختراق (م75، م78).'}
+]);
+
 /* ===== القاموس ===== */
 App.renderGlossary({
   gridId:'flip-grid',filtersId:'filters',
   cats:{all:'الكل',addr:'عناوين وبروتوكولات',dev:'أجهزة',cab:'كابلات ومنافذ',net:'اتصال وسحابة'},
-  officialSet:new Set([]),
+  officialSet:new Set(['Topologies','RJ45','FTTH','DNS','Firewall / IPS','VPN','WPA2-PSK']),
   terms:[
    {c:'addr',ar:'عنوان IP',en:'IP Address',d:'العنوان المنطقي للجهاز: 4 ثمانيات، كل ثمانية 256 قيمة — ويجب أن يكون في نفس الـ Subnet.',e:'Four octets; each holds 256 values.'},
    {c:'addr',ar:'عنوان MAC',en:'MAC Address',d:'العنوان الفيزيائي الثابت — المستخدم للاتصال بشبكة Ethernet.',e:'Used to connect to an Ethernet network.'},
@@ -348,12 +481,19 @@ App.renderGlossary({
    {c:'net',ar:'الخطوط المؤجرة',en:'Leased Lines',d:'اتصال مخصص للشركات الكبرى والمؤسسات والجامعات — سرعة وموثوقية عالية.',e:'For large companies, institutions, universities.'},
    {c:'net',ar:'خط المشترك الرقمي',en:'DSL',d:'إنترنت عبر خط الهاتف — السرعة ثابتة للعميل يضمنها مزود الخدمة.',e:'Constant speed for the customer.'},
    {c:'net',ar:'محلل الشبكة',en:'Wireshark',d:'أداة تساعد في إدارة الشبكة وصيانتها.',e:'Helps manage and maintain the network.'},
-   {c:'net',ar:'نظام ملفات الشبكة',en:'NFS',d:'طورته شركة Sun Microsystems.',e:'Developed by Sun Microsystems.'}
+   {c:'net',ar:'نظام ملفات الشبكة',en:'NFS',d:'طورته شركة Sun Microsystems عام 1984 — ومقابله عند مايكروسوفت SMB.',e:'Sun Microsystems, 1984; Microsoft\'s counterpart is SMB.'},
+   {c:'dev',ar:'بنيات الشبكة',en:'Topologies',d:'Bus خطية بتصادم · Ring حلقية باتجاه واحد · Star نجمية وهي الأكثر استخداماً.',e:'Bus, Ring, and Star (the most used).'},
+   {c:'cab',ar:'موصل الشبكة',en:'RJ45',d:'موصل الكابل الملفوف بثمانية دبابيس — والكابل STP محمي أو UTP غير محمي.',e:'8-pin twisted-pair connector.'},
+   {c:'cab',ar:'الألياف للمنازل',en:'FTTH',d:'‏OLT في السنترال ← مجزئ يخدم 64 أو 128 عميلاً ← ONU عند العميل.',e:'OLT → splitter (64/128) → ONU.'},
+   {c:'addr',ar:'نظام أسماء النطاقات',en:'DNS',d:'يترجم أسماء النطاقات سهلة التذكر إلى عناوين IP.',e:'Translates domain names into IP addresses.'},
+   {c:'net',ar:'جدار وصدّ',en:'Firewall / IPS',d:'الجدار الناري يراقب المرور بقواعد، وIPS يحظر الهجمات بمقارنتها بسابقاتها لحظياً.',e:'Traffic rules + real-time intrusion prevention.'},
+   {c:'net',ar:'الشبكة الافتراضية الخاصة',en:'VPN',d:'قناة اتصال افتراضية خاصة عبر شبكة عامة بتشفير عالي الجودة.',e:'Private encrypted channel over a public network.'},
+   {c:'net',ar:'تشفير الراوتر',en:'WPA2-PSK',d:'نظام التشفير الموصى به للراوتر — مع تعطيل WPS وإخفاء SSID لأمان أعلى.',e:'Recommended router encryption; disable WPS.'}
   ]
 });
 
 App.initAccordions();
-App.initNav({addr:'#addr',devices:'#addr',cables:'#addr',types:'#addr',glossary:'#glossary',traps:'#traps',quiz:'#traps'});
+App.initNav({addr:'#addr',devices:'#addr',cables:'#addr',types:'#addr',glossary:'#glossary',official:'#official',traps:'#traps',quiz:'#traps',predicted:'#traps'});
 App.initShell('networks.html');
 </script>
 </body>

@@ -177,21 +177,38 @@ App.CHAPTERS = [
   { href: 'cloud.html', icon: '☁️', name: 'الحوسبة السحابية', ready: true }
 ];
 
-/* قشرة التطبيق المشتركة: درج الفصول + تذييل الحقوق + تمركز التبويب النشط */
+/* الأسماء الإنجليزية للفصول (النسخة الإنجليزية en/) */
+App.CHAPTERS_EN = [
+  'Home', 'Cybersecurity', 'IT & Operating Systems', 'Word Processing (Word)',
+  'Presentations (PowerPoint)', 'Spreadsheets (Excel)', 'Databases (Access)',
+  'Mobile Applications', 'Web Search', 'Networks', 'Distance Learning', 'Cloud Computing'
+];
+
+/* قشرة التطبيق المشتركة: درج الفصول + تذييل الحقوق + تمركز التبويب النشط
+   App.LANG = 'en' قبل الاستدعاء يجعل القشرة إنجليزية (صفحات en/) */
 App.initShell = function (current) {
+  const en = App.LANG === 'en';
+  const S = en
+    ? { chapters: 'Course Chapters', close: 'Close', soon: 'Soon', tab: 'Chapters',
+        footer: 'A training app on the FDTC digital transformation course content<br>App copyright © Eng. Mohamed Salah',
+        langLabel: 'ع', langTitle: 'النسخة العربية', langHref: (c) => '../' + (c === './' ? '' : c) }
+    : { chapters: 'فصول الدورة', close: 'إغلاق', soon: 'قريباً', tab: 'الفصول',
+        footer: 'تطبيق تدريبي على محتوى دورة التحول الرقمي (FDTC)<br>حقوق التطبيق © م. محمد صلاح',
+        langLabel: 'EN', langTitle: 'English version', langHref: (c) => 'en/' + (c === './' ? '' : c) };
   // 1) درج الفصول
   const overlay = document.createElement('div');
   overlay.className = 'drawer-overlay';
   const drawer = document.createElement('aside');
   drawer.className = 'drawer';
-  drawer.setAttribute('aria-label', 'فصول الدورة');
-  let rows = '<div class="d-head"><h3>📚 فصول الدورة</h3><button class="d-close" aria-label="إغلاق">✕</button></div>';
-  App.CHAPTERS.forEach(ch => {
+  drawer.setAttribute('aria-label', S.chapters);
+  let rows = `<div class="d-head"><h3>📚 ${S.chapters}</h3><button class="d-close" aria-label="${S.close}">✕</button></div>`;
+  App.CHAPTERS.forEach((ch, i) => {
+    const name = en ? (App.CHAPTERS_EN[i] || ch.name) : ch.name;
     if (ch.ready) {
       const cur = ch.href === current ? ' current' : '';
-      rows += `<a href="${ch.href}" class="${cur.trim()}"><span class="d-ico">${ch.icon}</span>${ch.name}<span class="chev">${ch.href === current ? '●' : '‹'}</span></a>`;
+      rows += `<a href="${ch.href}" class="${cur.trim()}"><span class="d-ico">${ch.icon}</span>${name}<span class="chev">${ch.href === current ? '●' : '‹'}</span></a>`;
     } else {
-      rows += `<div class="soon-row"><span class="d-ico">${ch.icon}</span>${ch.name}<span class="soon-tag">قريباً</span></div>`;
+      rows += `<div class="soon-row"><span class="d-ico">${ch.icon}</span>${name}<span class="soon-tag">${S.soon}</span></div>`;
     }
   });
   drawer.innerHTML = rows;
@@ -205,15 +222,22 @@ App.initShell = function (current) {
   drawer.querySelector('.d-close').addEventListener('click', () => toggle(false));
   document.addEventListener('keydown', e => { if (e.key === 'Escape') toggle(false); });
 
-  // زر ☰ في الشريط العلوي
+  // زر ☰ وزر اللغة 🌐 في الشريط العلوي
   const navInner = document.querySelector('nav.tabs .inner');
   if (navInner) {
     const btn = document.createElement('button');
     btn.className = 'drawer-btn';
-    btn.setAttribute('aria-label', 'فصول الدورة');
+    btn.setAttribute('aria-label', S.chapters);
     btn.textContent = '☰';
     btn.addEventListener('click', () => toggle(true));
     navInner.insertBefore(btn, navInner.firstChild);
+    const lb = document.createElement('a');
+    lb.className = 'lang-btn';
+    lb.href = S.langHref(current);
+    lb.title = S.langTitle;
+    lb.textContent = S.langLabel;
+    lb.addEventListener('click', () => { try { localStorage.setItem('lang', en ? 'ar' : 'en'); } catch (e) {} });
+    navInner.insertBefore(lb, btn.nextSibling);
   }
 
   // تبويب «الفصول» في الشريط السفلي
@@ -221,7 +245,7 @@ App.initShell = function (current) {
   if (tabbar) {
     const t = document.createElement('a');
     t.href = '#';
-    t.innerHTML = '<span class="ico">☰</span>الفصول';
+    t.innerHTML = '<span class="ico">☰</span>' + S.tab;
     t.addEventListener('click', e => { e.preventDefault(); toggle(true); });
     tabbar.appendChild(t);
   }
@@ -229,7 +253,7 @@ App.initShell = function (current) {
   // 2) تذييل الحقوق
   const f = document.createElement('footer');
   f.className = 'app-footer';
-  f.innerHTML = 'تطبيق تدريبي على محتوى دورة التحول الرقمي (FDTC)<br>حقوق التطبيق © م. محمد صلاح';
+  f.innerHTML = S.footer;
   document.body.appendChild(f);
 
   // 3) إبقاء التبويب النشط ظاهراً في منتصف الشريط العلوي

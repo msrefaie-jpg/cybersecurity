@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cloud Computing Made Simple — Interactive Guide</title>
+<meta name="description" content="A simplified interactive guide to the cloud computing section of the digital transformation course: SaaS/PaaS/IaaS service models, OneDrive and Google services, and interactive quizzes.">
+<meta name="theme-color" content="#000000">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Digital Transformation">
+<link rel="manifest" href="../manifest.webmanifest">
+<link rel="icon" href="../icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../icon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/app.css">
+</head>
+<body>
+
+<header class="hero">
+  <div class="container">
+    <span class="shield">☁️</span>
+    <h1>Cloud Computing <span>Made Simple</span></h1>
+    <p class="sub">An interactive guide to the cloud computing section: the three service models, OneDrive and Office Online, and Google's cloud services.</p>
+    <span class="badge" style="background:rgba(255,214,10,.12);color:var(--warn);border-color:rgba(255,214,10,.3)">⏳ From the memo — not yet verified against the official material (will be refined once it arrives)</span>
+    <div class="stats">
+      <div class="stat"><b>50</b><span>memo questions</span></div>
+      <div class="stat"><b>24</b><span>key terms</span></div>
+      <div class="stat"><b>12</b><span>word traps</span></div>
+      <div class="stat"><b>14</b><span>quiz questions</span></div>
+    </div>
+  </div>
+</header>
+
+<nav class="tabs" aria-label="Guide sections">
+  <div class="inner">
+    <a class="home-link" href="./">🏠 Home</a>
+    <a href="#model" class="active">Concept &amp; Layers</a>
+    <a href="#saas">Service Models</a>
+    <a href="#ms">Microsoft World</a>
+    <a href="#google">Google World</a>
+    <a href="#glossary">Glossary</a>
+    <a href="#traps">Word Traps</a>
+    <a href="#quiz">Memo Questions</a>
+  </div>
+</nav>
+
+<div class="part-banner memo-src">
+  <div class="container">
+    <span class="part-tag">Part One · Interactive Explanations</span>
+    <h2>Memo Explanations</h2>
+    <p>A simplified explanation of everything in the cloud computing section of the memo (50 questions).</p>
+  </div>
+</div>
+
+<!-- ===================== 1. Concept & layers ===================== -->
+<section id="model">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">01.</span> Concept &amp; Layers — Where Do Your Files Live?</h2>
+    <p class="sec-lead">
+      Cloud computing gives you access to computing resources <strong style="color:var(--text)">solely via the internet</strong> — your files and programs run on remote servers, not on your device.
+    </p>
+
+    <div class="analogy">
+      ⚡ <strong>Analogy:</strong> the cloud is like the power grid — you don't build a power station at home, you subscribe and pay for what you use. Likewise, instead of buying servers and software, you rent them over the internet and pay as you go.
+    </div>
+
+    <div class="grid cols-2">
+      <div class="card">
+        <span class="icon">🧩</span>
+        <h3>Core Components</h3>
+        <p>Cloud computing has <strong style="color:var(--accent)">3 core components</strong>.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🎭</span>
+        <h3>Front End <span class="en">Front End</span></h3>
+        <p>Represents the <strong style="color:var(--accent)">users' layer</strong> — what you see and interact with.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🏗️</span>
+        <h3>Back End <span class="en">Back End</span></h3>
+        <p>Consists of <strong style="color:var(--accent)">6 layers</strong> — the servers, storage, and management the user never sees.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🚀</span>
+        <h3>Digital Transformation</h3>
+        <p>Involves integrating digital technology into <strong style="color:var(--accent)">all aspects of business</strong> ✓ — and the provider famous for its extensive suite of tools to support it: <strong style="color:var(--text)">Microsoft Azure</strong>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 2. Service models ===================== -->
+<section id="saas">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">02.</span> The Three Service Models — Tap Each Model</h2>
+    <p class="sec-lead">The section's most common question: "Which model does company X provide?" — memorize the trio and its examples:</p>
+
+    <div class="cia-wrap" style="grid-template-columns:repeat(auto-fit,minmax(130px,1fr))">
+      <button class="cia-btn" data-tab="saas"><span class="icon">📦</span><h3>Software</h3><span class="en">SaaS</span></button>
+      <button class="cia-btn" data-tab="paas"><span class="icon">🛠️</span><h3>Platforms</h3><span class="en">PaaS</span></button>
+      <button class="cia-btn" data-tab="iaas"><span class="icon">🏗️</span><h3>Infrastructure</h3><span class="en">IaaS</span></button>
+    </div>
+    <div class="cia-detail" id="tab-panel" aria-live="polite"></div>
+
+    <div class="analogy" style="margin-top:18px">
+      🍕 <strong>The pizza analogy:</strong> IaaS = they give you an equipped kitchen and you cook · PaaS = they give you the dough and the oven and you add the toppings · SaaS = a ready pizza delivered to your door. In all three: you never build the kitchen yourself!
+    </div>
+
+    <div class="grid cols-2" style="margin-top:18px">
+      <div class="card">
+        <span class="icon">✅</span>
+        <h3>Cloud or Not?</h3>
+        <p><strong style="color:var(--accent)">Alibaba</strong> is a cloud service ✓ · while <strong style="color:var(--bad)">Cisco</strong> is not a cloud computing service (the "except" question!).</p>
+      </div>
+      <div class="card">
+        <span class="icon">🧠</span>
+        <h3>AI in the Cloud</h3>
+        <p><span class="en">PaaS</span> contains ready-to-use software components for developing new capabilities, including innovative technologies: <strong style="color:var(--accent)">artificial intelligence, chatbots, and the Internet of Things (IoT)</strong>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 3. Microsoft world ===================== -->
+<section id="ms">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">03.</span> The Microsoft World — OneDrive and Office Online</h2>
+    <p class="sec-lead">Numbers to memorize: 5 GB free, 93 days for the Recycle Bin, and Windows 10 — not 7:</p>
+
+    <div class="grid cols-2">
+      <div class="card">
+        <span class="icon">💾</span>
+        <h3>OneDrive — The Numbers</h3>
+        <p>Free storage is <strong style="color:var(--accent)">5 gigabytes</strong> · it comes pre-installed on <strong style="color:var(--accent)">Windows 10</strong> (not 7!) · and with a work or school account, Recycle Bin items are deleted automatically after <strong style="color:var(--accent)">93 days</strong>.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🔄</span>
+        <h3>OneDrive — The Skills</h3>
+        <p>Share files from <strong style="color:var(--text)">File Explorer</strong> ✓ · restore an older version: right-click the file ← <strong style="color:var(--accent)">Version History</strong> · automatic backup of photos, videos, and screenshots from Settings ← <strong style="color:var(--accent)">Manage Backup</strong> (requires an internet connection and available storage space).</p>
+      </div>
+      <div class="card">
+        <span class="icon">📽️</span>
+        <h3>PowerPoint Online</h3>
+        <p>Opens cloud presentations from any device via the browser after <strong style="color:var(--text)">signing in to a Microsoft account</strong> · unified design with <span class="en">Master Slides</span> is available in the <strong style="color:var(--accent)">desktop version only</strong>, not the cloud version ✓ · and printing has improved: full slides, with notes, or handouts of <strong style="color:var(--accent)">3 slides per page</strong> (previously: only one slide per page).</p>
+      </div>
+      <div class="card">
+        <span class="icon">🌀</span>
+        <h3>Sway and Friends</h3>
+        <p><strong style="color:var(--accent)">Sway</strong> is Microsoft's service for creating <strong style="color:var(--text)">online presentations</strong> and interactive reports ("prescription" is a spelling trap!) · <strong style="color:var(--text)">Forms</strong> for polls and data collection · <strong style="color:var(--text)">Quiz</strong> for electronic test forms · and Excel Online lacks the Data tab <strong style="color:var(--bad)">for importing data from databases</strong>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 4. Google world ===================== -->
+<section id="google">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">04.</span> The Google World — Drive, Photos, and Drawings</h2>
+    <p class="sec-lead">15 GB shared — not divided equally:</p>
+
+    <div class="grid cols-2">
+      <div class="card">
+        <span class="icon">🗂️</span>
+        <h3>Google Drive</h3>
+        <p>Storage size is <strong style="color:var(--accent)">15 gigabytes</strong> (not 25!) — and the space is <strong style="color:var(--accent)">shared</strong> between Gmail, Drive, and Photos, not divided equally between them (trap!).</p>
+      </div>
+      <div class="card">
+        <span class="icon">📷</span>
+        <h3>Google Photos</h3>
+        <p>Video sharing ✓ · search for anything inside your photos — type <strong style="color:var(--accent)">bag</strong> to find photos of bags ✓ (searching your photos is done in Photos, not File Explorer!) · add an album: the <strong style="color:var(--accent)">Import</strong> button · and enabling backup saves photos and videos automatically to your account ✓.</p>
+      </div>
+      <div class="card">
+        <span class="icon">👥</span>
+        <h3>Google Contacts</h3>
+        <p>Add an email address to contacts ✓ · export contacts in <strong style="color:var(--accent)">CSV</strong> format · and add a photo to a contact with the <strong style="color:var(--text)">Add photo</strong> button.</p>
+      </div>
+      <div class="card">
+        <span class="icon">✏️</span>
+        <h3>Google Drawings</h3>
+        <p>Drawings are created with <strong style="color:var(--accent)">Google Drawings</strong> (not Drive itself — trap!) · rename: click the <strong style="color:var(--text)">"Untitled drawing"</strong> text area then press Enter ✓ (also from the File menu) · and a drawing can be downloaded as a <strong style="color:var(--accent)">PDF</strong> file ✓.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🎨</span>
+        <h3>Canva in the Cloud</h3>
+        <p>Canva is a cloud service in the field of <strong style="color:var(--accent)">design</strong> ✓ — and the <strong style="color:var(--text)">Projects</strong> button opens the last file you worked on and the list of your stored projects.</p>
+      </div>
+      <div class="card">
+        <span class="icon">📤</span>
+        <h3>Broader Sharing</h3>
+        <p>A Microsoft account unlocks more specialized programs like Sway for interactive reports and presentations ✓ — and a previously saved cloud presentation opens from any device after signing in.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 5. Glossary ===================== -->
+<section id="glossary">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">05.</span> Glossary — Cards You Flip With Your Finger</h2>
+    <p class="sec-lead">Tap any card to flip it:</p>
+    <div class="filters" id="filters"></div>
+    <div class="flip-grid" id="flip-grid"></div>
+  </div>
+</section>
+
+<div class="part-banner memo-src">
+  <div class="container">
+    <span class="part-tag">Part Two · Questions</span>
+    <h2>Memo Questions</h2>
+    <p>Word traps first, then an interactive quiz in the exam's English wording.</p>
+  </div>
+</div>
+
+<!-- ===================== 6. Traps ===================== -->
+<section id="traps">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">06.</span> Word Traps — SaaS or PaaS? Which Number Is It?</h2>
+    <p class="sec-lead">Tap any statement to reveal the verdict:</p>
+    <div id="traps-list"></div>
+  </div>
+</section>
+
+<!-- ===================== 7. Memo quiz ===================== -->
+<section id="quiz">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">07.</span> Memo Questions — Test Yourself 🎯</h2>
+    <p class="sec-lead">14 questions from the memo in their original English wording, with explanations.</p>
+    <div class="quiz-box" id="quiz-box"></div>
+
+    <div class="analogy" style="margin-top:24px">
+      ⏳ <strong>Coming to this section:</strong> verification against the official material + "from the official curriculum" cards + expected questions — to be added as soon as the official material for the cloud computing section arrives.
+    </div>
+  </div>
+</section>
+
+<nav class="tabbar" aria-label="Quick navigation">
+  <a href="#model" class="active"><span class="ico">📖</span>Guide</a>
+  <a href="#glossary"><span class="ico">📇</span>Glossary</a>
+  <a href="#traps"><span class="ico">🧩</span>Quiz</a>
+</nav>
+
+<script src="../assets/app.js"></script>
+<script>
+/* ===== Service models ===== */
+const TABS={
+  saas:{icon:'📦',ar:'Software as a Service',lat:'SaaS — Software as a Service',
+    def:'Ready-made software you use directly in the browser — no installation, no maintenance.',
+    ex:'<strong>Exam examples:</strong> Google Apps · Zendesk (not PaaS!) · Salesforce (not PaaS!). Rule: if you are "using a ready-made program", it is SaaS.'},
+  paas:{icon:'🛠️',ar:'Platform as a Service',lat:'PaaS — Platform as a Service',
+    def:'Ready-made tools for building and managing applications over the web without touching or maintaining the infrastructure — including ready components for AI, chatbots, and the Internet of Things.',
+    ex:'<strong>Exam examples:</strong> Heroku (not SaaS!) — it lets teams set up software projects without being in the same place. Rule: if you are "building an application", it is PaaS.'},
+  iaas:{icon:'🏗️',ar:'Infrastructure as a Service',lat:'IaaS — Infrastructure as a Service',
+    def:'Renting virtual servers, storage, and networks — you manage everything on top of them.',
+    ex:'<strong>Exam examples:</strong> Amazon AWS — one of the best-known online infrastructure providers (calling it a "software" provider is wrong). Rule: if you are "renting hardware", it is IaaS.'}
+};
+const tabPanel=document.getElementById('tab-panel');
+function showTab(k){
+  const t=TABS[k];
+  tabPanel.innerHTML=`<h3>${t.icon} ${t.ar}</h3><span class="lat">${t.lat}</span><p>${t.def}</p><p style="margin-top:12px">${t.ex}</p>`;
+  document.querySelectorAll('[data-tab]').forEach(b=>b.classList.toggle('active',b.dataset.tab===k));
+}
+document.querySelectorAll('[data-tab]').forEach(b=>b.addEventListener('click',()=>showTab(b.dataset.tab)));
+showTab('saas');
+
+/* ===== Word traps ===== */
+App.renderTraps('traps-list',[
+ {q:'Zendesk is a cloud computing program that provides <span class="mark">PaaS</span>.',ar:'',ok:false,
+  a:'Wrong — Zendesk provides <strong>SaaS</strong> (a ready-to-use program).'},
+ {q:'Salesforce is a cloud computing software that provides a <span class="mark">PaaS</span> service.',ar:'',ok:false,
+  a:'Wrong — Salesforce is <strong>SaaS</strong>.'},
+ {q:'The Heroku platform provides its services in the form of <span class="mark">SaaS</span>.',ar:'',ok:false,
+  a:'Wrong — Heroku is <strong>PaaS</strong> (a platform for building software projects). Note the double reversal with Zendesk and Salesforce!'},
+ {q:'Storage size of Google Drive is <span class="mark">25</span> gigabytes.',ar:'',ok:false,
+  a:'Wrong — <strong>15 gigabytes</strong> free.'},
+ {q:'Google storage is <span class="mark">divided equally</span> between Gmail, Google Drive, and Google Photos.',ar:'',ok:false,
+  a:'Wrong — the space is <strong>shared</strong> among them all, not divided equally.'},
+ {q:'OneDrive comes pre-installed on Windows <span class="mark">7</span>.',ar:'',ok:false,
+  a:'Wrong — on <strong>Windows 10</strong>.'},
+ {q:'Sway is a Microsoft service used to create online <span class="mark">prescription</span>.',ar:'',ok:false,
+  a:'A deliberate misspelling — <strong>presentations</strong>, not prescription!'},
+ {q:'You can create a unified design using Master Slides in the <span class="mark">cloud</span> version of PowerPoint.',ar:'',ok:false,
+  a:'Wrong — Master Slides are in the <strong>desktop</strong> version only.'},
+ {q:'You can create a drawing using Google <span class="mark">Drive</span>.',ar:'',ok:false,
+  a:'Wrong — using <strong>Google Drawings</strong> (the drawings app).'},
+ {q:'You can search for anything you want through <span class="mark">File Explorer</span>.',ar:'',ok:false,
+  a:'Wrong — smart search for "anything" (like photos of bags) is done in <strong>Google Photos</strong> or a web browser, not File Explorer.'},
+ {q:'Cloud-based presentation previously made can be opened from any device <span class="mark">by web browser</span> alone.',ar:'',ok:false,
+  a:'Incomplete — you must first <strong>sign in to your Microsoft account</strong>.'},
+ {q:'Previously, PowerPoint Online let you print <span class="mark">many slides</span> per page, including headers and footers.',ar:'',ok:false,
+  a:'Wrong — previously it printed <strong>only one slide</strong> per page; the current improvement is what enabled 3 slides, handouts, and notes.'}
+]);
+
+/* ===== Memo questions ===== */
+App.initQuiz('quiz-box',[
+ {en:'All of the following are cloud computing services except .....',ar:'',
+  opts:['Alibaba','Cisco','AWS','Azure'],a:1,
+  exp:'Cisco is not a cloud service — while Alibaba is ✓.'},
+ {en:'Google Apps is considered .....',ar:'',
+  opts:['IaaS','PaaS','SaaS','DaaS'],a:2,
+  exp:'SaaS — ready-made software you use in the browser.'},
+ {en:'..... has ready-to-use software components including AI, chatbots, IoT and more.',ar:'',
+  opts:['IaaS','PaaS','SaaS','Private cloud'],a:1,
+  exp:'PaaS — Platform as a Service; it is also the answer to "provides access to mobile app development tools over the web without maintaining infrastructure".'},
+ {en:'The cloud backend consists of ..... layers.',ar:'',
+  opts:['3','4','6','8'],a:2,
+  exp:'6 layers — while cloud computing has 3 core components, and the front end is the users\' layer.'},
+ {en:'The ..... represents the cloud layer of users.',ar:'',
+  opts:['Back end','Front end','Middleware','Database'],a:1,
+  exp:'The Front End.'},
+ {en:'Free Microsoft OneDrive storage is .....',ar:'',
+  opts:['5 GB','15 GB','25 GB','50 GB'],a:0,
+  exp:'5 gigabytes — while 15 GB is Google\'s shared storage.'},
+ {en:'With a work or educational account, OneDrive Recycle Bin items are deleted automatically after .....',ar:'',
+  opts:['30 days','60 days','93 days','365 days'],a:2,
+  exp:'93 days.'},
+ {en:'To restore an older version of a file in OneDrive, right-click on the file and choose .....',ar:'',
+  opts:['Undo','Version History','Restore All','Backup'],a:1,
+  exp:'Version History.'},
+ {en:'You can back up photos, videos and screenshots to OneDrive automatically through settings by clicking on .....',ar:'',
+  opts:['Sync now','Manage Backup','Auto Save','Upload'],a:1,
+  exp:'Manage Backup — requires an internet connection and available storage space.'},
+ {en:'We could export contacts on Google as .....',ar:'',
+  opts:['PDF','CSV','TXT','XML'],a:1,
+  exp:'CSV — the comma-separated values format.'},
+ {en:'To add a photo album to the Google Photos service, click on .....',ar:'',
+  opts:['Upload','Import','New','Add'],a:1,
+  exp:'Import.'},
+ {en:'You can search for a bag photo in Google Photos by typing .....',ar:'',
+  opts:['photo','bag','search bag','image'],a:1,
+  exp:'bag — smart search recognizes the content of your photos.'},
+ {en:'Which cloud service provider is known for its extensive suite of tools to support digital transformation?',ar:'',
+  opts:['Heroku','Zendesk','Microsoft Azure','Unsplash'],a:2,
+  exp:'Microsoft Azure.'},
+ {en:'..... button opens the last worked file of Canva.',ar:'',
+  opts:['Home','Projects','Recent','Files'],a:1,
+  exp:'Projects — it also lists your stored projects. And Canva is a cloud service in the field of design ✓.'}
+]);
+
+/* ===== Glossary ===== */
+App.renderGlossary({
+  gridId:'flip-grid',filtersId:'filters',
+  cats:{all:'All',model:'Concept & Models',ms:'Microsoft',gg:'Google'},
+  officialSet:new Set([]),
+  terms:[
+   {c:'model',ar:'Cloud Computing',en:'Cloud Computing',d:'Access to computing resources solely via the internet — 3 core components.',e:'Computing resources solely via the internet.'},
+   {c:'model',ar:'Front End',en:'Front End',d:'The users\' layer of the cloud.',e:'The users\' layer.'},
+   {c:'model',ar:'Back End',en:'Back End',d:'Consists of 6 layers: servers, storage, and management.',e:'Consists of 6 layers.'},
+   {c:'model',ar:'Software as a Service',en:'SaaS',d:'Ready-made software in the browser: Google Apps, Zendesk, Salesforce.',e:'Google Apps, Zendesk, Salesforce.'},
+   {c:'model',ar:'Platform as a Service',en:'PaaS',d:'App-building tools without maintaining infrastructure — with ready components for AI and IoT. Example: Heroku.',e:'Build apps without infrastructure; e.g. Heroku.'},
+   {c:'model',ar:'Infrastructure as a Service',en:'IaaS',d:'Renting virtual servers and storage — example: Amazon AWS.',e:'Virtual servers and storage; e.g. AWS.'},
+   {c:'model',ar:'Public Cloud',en:'Public Cloud',d:'The type the Windows platform belongs to.',e:'Windows platform is a public cloud.'},
+   {c:'model',ar:'Microsoft Azure',en:'Microsoft Azure',d:'A cloud provider known for its extensive suite of digital-transformation tools.',e:'Known for digital-transformation tools.'},
+   {c:'model',ar:'Digital Transformation',en:'Digital Transformation',d:'Integrating digital technology into all aspects of business.',e:'Digital technology across all business aspects.'},
+   {c:'model',ar:'Not a cloud!',en:'Cisco',d:'The answer to the "except" question: all of the following are cloud services except... Cisco.',e:'The classic "except" answer.'},
+   {c:'ms',ar:'OneDrive',en:'OneDrive',d:'5 GB free, pre-installed on Windows 10, and sharing from File Explorer.',e:'5 GB free; pre-installed on Windows 10.'},
+   {c:'ms',ar:'Work-Account Recycle Bin',en:'93 Days',d:'With a work/school account, OneDrive Recycle Bin items are deleted automatically after 93 days.',e:'Auto-deletion after 93 days (work/school).'},
+   {c:'ms',ar:'Version History',en:'Version History',d:'Right-click a file to restore an older version in OneDrive.',e:'Right-click to restore older versions.'},
+   {c:'ms',ar:'Manage Backup',en:'Manage Backup',d:'From OneDrive settings, to back up photos, videos, and screenshots automatically — requires internet and storage space.',e:'Auto-backup of photos and screenshots.'},
+   {c:'ms',ar:'PowerPoint Online',en:'PowerPoint Online',d:'Opens in any browser with a Microsoft login — printing now: full / with notes / 3 slides per page.',e:'Any browser + Microsoft login.'},
+   {c:'ms',ar:'Master Slides',en:'Master Slides',d:'Unified design for the whole presentation — desktop version only, not the cloud version.',e:'Desktop version only.'},
+   {c:'ms',ar:'Sway',en:'Sway',d:'Microsoft\'s service for online presentations and interactive reports.',e:'Online presentations and interactive reports.'},
+   {c:'ms',ar:'Forms / Quiz',en:'Forms / Quiz',d:'Forms for polls and data collection, Quiz for electronic test forms.',e:'Forms for polls; Quiz for e-tests.'},
+   {c:'ms',ar:'Excel Online',en:'Excel Online',d:'Lacks the Data tab used for importing data from databases.',e:'Lacks the Data tab for database imports.'},
+   {c:'gg',ar:'Google Drive',en:'Google Drive',d:'15 gigabytes — shared between Gmail, Drive, and Photos, not divided equally.',e:'15 GB shared, not divided equally.'},
+   {c:'gg',ar:'Google Photos',en:'Google Photos',d:'Smart search inside your photos (type bag), video sharing, and a new album via the Import button.',e:'Smart search; albums via Import.'},
+   {c:'gg',ar:'Google Contacts',en:'Google Contacts',d:'Add an email and a photo (Add photo), and export in CSV format.',e:'Export as CSV.'},
+   {c:'gg',ar:'Google Drawings',en:'Google Drawings',d:'Create a drawing and rename it via "Untitled drawing", then download it as a PDF.',e:'Rename via "Untitled drawing"; download as PDF.'},
+   {c:'gg',ar:'Canva',en:'Canva',d:'A cloud service in the field of design — the Projects button for your last file and stored projects.',e:'Cloud design service; Projects button.'}
+  ]
+});
+
+App.initAccordions();
+App.initNav({model:'#model',saas:'#model',ms:'#model',google:'#model',glossary:'#glossary',traps:'#traps',quiz:'#traps'});
+App.LANG='en';
+App.initShell('cloud.html');
+</script>
+</body>
+</html>

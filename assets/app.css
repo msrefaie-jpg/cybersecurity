@@ -371,3 +371,18 @@
   .intro-card .sig{font-size:16px;font-weight:700;color:var(--accent);margin-bottom:22px}
   .intro-card .disc{font-size:12px;color:var(--muted);margin-bottom:24px;line-height:1.9}
   .intro-card .quiz-next{font-size:17px;padding:14px 36px}
+
+  /* ===== English (LTR) overrides ===== */
+  [dir="ltr"] header.hero{text-align:left}
+  [dir="ltr"] .acc-head,[dir="ltr"] .trap-q,[dir="ltr"] .quiz-opt,[dir="ltr"] .flip{text-align:left}
+  [dir="ltr"] .cia-detail{border-right:0;border-left:4px solid var(--accent)}
+  [dir="ltr"] .quiz-feedback.ok{border-right:0;border-left:3px solid var(--good)}
+  [dir="ltr"] .quiz-feedback.no{border-right:0;border-left:3px solid var(--bad)}
+  [dir="ltr"] .acc-body .tip{border-right:0}
+  [dir="ltr"] .drawer{right:auto;left:0;transform:translateX(-100%)}
+  [dir="ltr"] .drawer.open{transform:translateX(0)}
+  [dir="ltr"] .flip-front .src{left:auto;right:10px}
+  [dir="ltr"] .hub-card .status{left:auto;right:14px}
+  [dir="ltr"] nav.tabs .inner{mask-image:linear-gradient(to right,transparent 0,#000 22px,#000 calc(100% - 22px),transparent 100%);-webkit-mask-image:linear-gradient(to right,transparent 0,#000 22px,#000 calc(100% - 22px),transparent 100%)}
+  .lang-btn{background:none;border:1px solid var(--line);color:var(--text);font-size:13px;font-weight:700;padding:5px 12px;cursor:pointer;border-radius:999px;line-height:1.4;flex:0 0 auto;text-decoration:none;font-family:var(--mono,'IBM Plex Mono',monospace)}
+  .lang-btn:hover{background:var(--card);color:var(--accent)}
