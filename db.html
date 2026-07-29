@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>قواعد البيانات (أكسيس) ببساطة — دليل تفاعلي</title>
+<meta name="description" content="دليل تفاعلي مبسّط لقسم أساسيات قواعد البيانات من دورة التحول الرقمي: الجداول والعلاقات والاستعلامات والنماذج والتقارير، واختبارات تفاعلية.">
+<meta name="theme-color" content="#000000">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="التحول الرقمي">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/app.css">
+</head>
+<body>
+
+<header class="hero">
+  <div class="container">
+    <span class="shield">🗄️</span>
+    <h1>قواعد البيانات (أكسيس) <span>ببساطة</span></h1>
+    <p class="sub">من البيانات الخام إلى المعلومات المفيدة — الجداول والعلاقات والاستعلامات والنماذج والتقارير في دليل واحد يفهمه غير المتخصص.</p>
+    <span class="badge">مُستخلص من المذكرة ومُطابَق مع المادة الرسمية (أساسيات قواعد البيانات، الإصدار 3 / 2024)</span>
+    <div class="stats">
+      <div class="stat"><b>72</b><span>سؤالاً في المذكرة</span></div>
+      <div class="stat"><b>28</b><span>مصطلحاً أساسياً</span></div>
+      <div class="stat"><b>22</b><span>سؤالاً متوقعاً</span></div>
+      <div class="stat"><b>98</b><span>صفحة بالمادة الرسمية</span></div>
+    </div>
+  </div>
+</header>
+
+<nav class="tabs" aria-label="أقسام الدليل">
+  <div class="inner">
+    <a class="home-link" href="./">🏠 الرئيسية</a>
+    <a href="#concepts" class="active">المفاهيم</a>
+    <a href="#tables">الجداول والحقول</a>
+    <a href="#relations">العلاقات</a>
+    <a href="#queries">الاستعلامات</a>
+    <a href="#forms">النماذج والتقارير</a>
+    <a href="#glossary">القاموس</a>
+    <a href="#official">من المنهج الرسمي</a>
+    <a href="#traps">مصيدة الكلمات</a>
+    <a href="#quiz">أسئلة المذكرة</a>
+    <a href="#predicted">أسئلة متوقعة</a>
+  </div>
+</nav>
+
+<div class="part-banner memo-src">
+  <div class="container">
+    <span class="part-tag">الجزء الأول · الشروحات التفاعلية</span>
+    <h2>شروحات المذكرة</h2>
+    <p>شرح مبسّط لكل ما ورد في قسم قواعد البيانات بالمذكرة — مطابَق بنداً بنداً مع المادة الرسمية.</p>
+  </div>
+</div>
+
+<!-- ===================== 1. Concepts ===================== -->
+<section id="concepts">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">01.</span> المفاهيم — من البيانات إلى المعلومات</h2>
+    <p class="sec-lead">
+      <strong style="color:var(--text)">البيانات Data</strong> مادة خام، وحين تُعالَج (بدمج أكثر من حقل معاً مثلاً) تتحول إلى <strong style="color:var(--text)">معلومات Information</strong> — هذه المعادلة تُسأل في كل امتحان.
+    </p>
+
+    <div class="analogy">
+      🗄️ <strong>تشبيه:</strong> قاعدة البيانات خزانة ملفات ذكية: كل <strong>جدول</strong> درج، وكل <strong>سجل</strong> ملف داخل الدرج، وكل <strong>حقل</strong> خانة في الملف. و«أمين الأرشيف» الذي يقرر من يفتح ماذا هو مدير قاعدة البيانات DBA.
+    </div>
+
+    <div class="grid cols-2">
+      <div class="card">
+        <span class="icon">⚙️</span>
+        <h3>نظم إدارة قواعد البيانات</h3>
+        <p><span class="en">DBMS</span> برامج تخزّن البيانات وتحدّثها وتسترجعها — أشهرها: <strong style="color:var(--accent)">Oracle</strong> وSQL Server و<strong style="color:var(--accent)">Access</strong>. ويمكن إجراء عمليات حسابية أو منطقية على القيم العددية المخزنة.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🪟</span>
+        <h3>النافذة الرئيسية</h3>
+        <p>تتكون النافذة الرئيسية لقاعدة البيانات من <strong style="color:var(--accent)">3 أقسام</strong>. ويحتوي Access على قاعدة بيانات افتراضية اسمها <strong style="color:var(--text)">Blank Database</strong>، ولإنشاء قاعدة جاهزة لمتجر: <strong style="color:var(--text)">Templates</strong>.</p>
+      </div>
+      <div class="card">
+        <span class="icon">👨‍💼</span>
+        <h3>مدير قاعدة البيانات <span class="en">DBA</span></h3>
+        <p>المسؤول عن التحكم في <strong style="color:var(--accent)">جميع الأذونات والاستخدامات</strong> لقاعدة البيانات.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🕵️</span>
+        <h3>محلل النظم <span class="en">System Analyst</span></h3>
+        <p>يحلل متطلبات الجهة التي ستستخدم النظام ويحدد كافة البيانات ويطور المواصفات. ⚠️ نسبة هذه المهمة لـ«مبرمج التطبيقات» مصيدة متكررة!</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 2. Tables & fields ===================== -->
+<section id="tables">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">02.</span> الجداول والحقول — أرقام تُحفظ</h2>
+    <p class="sec-lead">أسئلة هذا الجزء أرقام ومواضع: 64 حرفاً، 200 حجماً افتراضياً، حقل واحد للمفتاح:</p>
+
+    <div class="grid cols-2">
+      <div class="card">
+        <span class="icon">🔑</span>
+        <h3>المفتاح الأساسي <span class="en">Primary Key</span></h3>
+        <p>الحقل الذي يميّز السجلات عن غيرها ويتكون من <strong style="color:var(--accent)">حقل واحد فقط</strong>، غير مكرر، ويُفضَّل أن يكون <strong style="color:var(--accent)">رقمياً</strong> — ويمكن استبداله بحقل بديل (مفتاح بديل Alternative Key).</p>
+      </div>
+      <div class="card">
+        <span class="icon">📏</span>
+        <h3>حدود تُحفظ</h3>
+        <p>طول اسم الحقل لا يتجاوز <strong style="color:var(--accent)">64 حرفاً</strong> (لا 67!). والحجم الافتراضي لحقل النص يُضبط إلى 200 من أمر <strong style="color:var(--accent)">خيارات Options</strong> — لا «حساب Account».</p>
+      </div>
+      <div class="card">
+        <span class="icon">✳️</span>
+        <h3>خاصية مطلوب <span class="en">Required</span></h3>
+        <p>عند ضبطها على <strong style="color:var(--text)">Yes</strong> يجب إدخال قيمة في الحقل — لا يمكن ترك السجل فارغاً.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🧱</span>
+        <h3>إنشاء الجداول وتنسيقها</h3>
+        <p>جدول جديد من تبويب <strong style="color:var(--accent)">إنشاء Create</strong> · تنسيق بيانات الجدول من تبويب <strong style="color:var(--accent)">الرئيسية Home</strong> · حفظ القاعدة باسم جديد بأمر <strong style="color:var(--text)">Save As</strong> من تبويب ملف.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 3. Relations ===================== -->
+<section id="relations">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">03.</span> العلاقات — قلب قاعدة البيانات</h2>
+    <p class="sec-lead">لا يوجد جدول وحيد معزول في قاعدة بيانات حقيقية — الجداول تترابط بثلاثة أنواع من العلاقات:</p>
+
+    <div class="grid cols-2">
+      <div class="card">
+        <span class="icon">1️⃣</span>
+        <h3>واحد لواحد <span class="en">1:1</span></h3>
+        <p>سجل واحد يقابل سجلاً واحداً — مثل المواطن ورقمه القومي.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🔢</span>
+        <h3>واحد بمتعدد <span class="en">1:M</span></h3>
+        <p>سجل واحد يقابل عدة سجلات — مثل القسم الواحد وطلابه الكثيرين.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🔀</span>
+        <h3>متعدد بمتعدد <span class="en">M:N</span></h3>
+        <p>مثل الطالب والمواد الدراسية: الطالب يدرس أكثر من مادة، والمادة يدرسها أكثر من طالب — وهذه العلاقة تحتاج <strong style="color:var(--accent)">جدولاً وسيطاً Intermediate Table</strong> (ومنه جدول التوصيل Delivery).</p>
+      </div>
+      <div class="card">
+        <span class="icon">🔗</span>
+        <h3>كيف تُربط الجداول؟</h3>
+        <p>عبر الحقل <strong style="color:var(--accent)">الأجنبي Foreign</strong> في جدول والحقل <strong style="color:var(--accent)">الأساسي Primary</strong> في الآخر بشرط <strong style="color:var(--text)">نفس القيمة</strong> — والحقل المشترك يجب أن يكون من <strong style="color:var(--text)">نفس النوع</strong>، ويتطابق نوع البيانات وحجمها عند الإنشاء. والإنشاء من تبويب <strong style="color:var(--accent)">أدوات قاعدة البيانات Database Tools</strong>.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🛡️</span>
+        <h3>التكامل المرجعي</h3>
+        <p><span class="en">Referential Integrity</span>: اشتراط أن تكون بيانات حقل المفتاح الأساسي في الجدول الأساسي <strong style="color:var(--text)">موجودة</strong> في حقل المفتاح الأجنبي بالجدول الثانوي — حتى لا تظهر سجلات «يتيمة».</p>
+      </div>
+      <div class="card">
+        <span class="icon">🧹</span>
+        <h3>التسوية <span class="en">Normalization</span></h3>
+        <p>قواعد تضمن <strong style="color:var(--accent)">إزالة/ندرة تكرار البيانات</strong> — وليس «دقة البيانات المتكررة» (مصيدة!). درجاتها من 1NF حتى 5NF، والوصول لـ<strong style="color:var(--text)">3NF</strong> كافٍ لمعظم التطبيقات.</p>
+      </div>
+    </div>
+
+    <div class="analogy">
+      🎓 <strong>سؤال الطالب والنتائج:</strong> المذكرة تعدّ عبارة «علاقة الطالب بالنتائج الأكاديمية واحد بمتعدد» خاطئة، وترجّح متعدداً بمتعدد إذا كانت النتائج بيان درجات مجمّعاً — وتقرّ بأنها قناعة شخصية لصاحب المذكرة. احفظ المؤكد: <strong>الطالب والمواد الدراسية = متعدد بمتعدد</strong>.
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 4. Queries ===================== -->
+<section id="queries">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">04.</span> الاستعلامات — أسئلة تُوجَّه للبيانات</h2>
+    <p class="sec-lead">الاستعلام <span class="en">Query</span> هو <strong style="color:var(--text)">سؤال حول البيانات المخزنة في جداولك، أو طلب لتنفيذ إجراء على البيانات</strong>. أنواعه الأربعة تُسأل كثيراً — اضغط كل نوع:</p>
+
+    <div class="cia-wrap" style="grid-template-columns:repeat(auto-fit,minmax(130px,1fr))">
+      <button class="cia-btn" data-tab="select"><span class="icon">🎯</span><h3>تحديد</h3><span class="en">Select</span></button>
+      <button class="cia-btn" data-tab="append"><span class="icon">➕</span><h3>إلحاق</h3><span class="en">Append</span></button>
+      <button class="cia-btn" data-tab="delete"><span class="icon">🗑️</span><h3>حذف</h3><span class="en">Delete</span></button>
+      <button class="cia-btn" data-tab="crosstab"><span class="icon">📊</span><h3>جدولي</h3><span class="en">Crosstab</span></button>
+    </div>
+    <div class="cia-detail" id="tab-panel" aria-live="polite"></div>
+  </div>
+</section>
+
+<!-- ===================== 5. Forms & reports ===================== -->
+<section id="forms">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">05.</span> النماذج والتقارير — واجهة الإدخال وواجهة الطباعة</h2>
+    <p class="sec-lead">النموذج <span class="en">Form</span> بوابة <strong style="color:var(--text)">إدخال</strong> البيانات، والتقرير <span class="en">Report</span> كائن <strong style="color:var(--text)">عرضها وطباعتها</strong>:</p>
+
+    <div class="grid cols-2">
+      <div class="card">
+        <span class="icon">📋</span>
+        <h3>النموذج <span class="en">Form</span></h3>
+        <p>يُستخدم لإدخال البيانات وعرض <strong style="color:var(--accent)">سجل واحد في كل مرة</strong> — لا كل السجلات دفعة واحدة (مصيدة!). وطريقة <strong style="color:var(--text)">Form View</strong> هي التي تعرض البيانات الفعلية.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🧙</span>
+        <h3>معالج النماذج <span class="en">Form Wizard</span></h3>
+        <p>لإنشاء نموذج يضم حقولاً من <strong style="color:var(--accent)">عدة جداول مرتبطة</strong> ببعضها في نفس القاعدة — أما «النموذج المقسوم Split Form» فشيء آخر (مصيدة!). ولا بد أن تظهر قائمة الحقول عند الإنشاء من جدول.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🖼️</span>
+        <h3>خلفية النموذج</h3>
+        <p>الإضافة: تنسيق ← صورة ← اختيار الخلفية المناسبة ← موافق. ولتغيير أبعادها بما يناسب المساحة: ورقة <strong style="color:var(--text)">الخصائص Property Sheet</strong> ثم من قائمة التفاصيل اختر «نموذج».</p>
+      </div>
+      <div class="card">
+        <span class="icon">📄</span>
+        <h3>التقارير <span class="en">Reports</span></h3>
+        <p>كائنات لعرض البيانات وطباعتها. تُنشأ من قائمة <strong style="color:var(--accent)">إنشاء Create أولاً</strong> (لا «التصميم ثم إنشاء»!) · يُطَّلع على التقرير <strong style="color:var(--accent)">بعد تسميته</strong> · يمكن تحديد تخطيطه بنوع «مفصَّل» · وتُعدَّل بياناته قبل الطباعة إذا أُضيفت بيانات جديدة.</p>
+      </div>
+      <div class="card">
+        <span class="icon">📤</span>
+        <h3>الاستيراد والتصدير</h3>
+        <p>كلاهما من تبويب <strong style="color:var(--accent)">البيانات الخارجية External Data</strong>. يمكن التصدير بصيغة نصية وفتحها في وورد، وتعديل التقارير بعد تصديرها TXT بمعالج نصوص — و<strong style="color:var(--text)">خطوات التصدير يمكن حفظها</strong> (مصيدة العكس!).</p>
+      </div>
+      <div class="card">
+        <span class="icon">🧭</span>
+        <h3>جزء التنقل والمعلومات</h3>
+        <p>جزء التنقل مهم لتسهيل طباعة التقرير والحصول على نسخة من بيانات القاعدة. وأمر <strong style="color:var(--text)">معلومات Info</strong> يعرض معلومات القاعدة: عدد الجداول والاستعلامات و<strong style="color:var(--accent)">النماذج</strong> (لا «الخلايا»!). والضغط والإصلاح من تبويب <strong style="color:var(--accent)">أدوات قاعدة البيانات</strong>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 6. Glossary ===================== -->
+<section id="glossary">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">06.</span> قاموس المصطلحات — بطاقات تقلبها بأصبعك</h2>
+    <p class="sec-lead">اضغط أي بطاقة لتقليبها. البطاقات الموسومة «من المنهج» أضيفت من المادة الرسمية:</p>
+    <div class="filters" id="filters"></div>
+    <div class="flip-grid" id="flip-grid"></div>
+  </div>
+</section>
+
+<div class="part-banner official-src">
+  <div class="container">
+    <span class="part-tag">شروحات إضافية</span>
+    <h2>من المنهج الرسمي</h2>
+    <p>موضوعات لا تغطيها المذكرة — مضافة من المادة التدريبية الرسمية (الإصدار 3 / 2024).</p>
+  </div>
+</div>
+
+<!-- ===================== 7. Official extras ===================== -->
+<section id="official">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">07.</span> ما لا تغطيه المذكرة</h2>
+    <p class="sec-lead">المادة الرسمية (98 صفحة) تضيف موضوعات كاملة بلا أسئلة في المذكرة:</p>
+
+    <div class="grid cols-2">
+      <div class="card">
+        <span class="icon">👥</span>
+        <h3>فريق قاعدة البيانات — 8 أدوار</h3>
+        <p>المادة تعدّد <strong style="color:var(--accent)">8 أدوار</strong> في فريق العمل، أبرزها: مدير قاعدة البيانات DBA، محلل النظم، مصمم قاعدة البيانات، مبرمج التطبيقات، والمستخدم النهائي.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🔍</span>
+        <h3>شبكة الاستعلام <span class="en">QBE</span></h3>
+        <p><span class="en">Query By Example</span>: الشبكة السفلية في تصميم الاستعلام حيث تُحدَّد الحقول والمعايير Criteria — «استعلام بالمثال» بدل كتابة أوامر SQL يدوياً.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🔃</span>
+        <h3>فرز معالج التقارير</h3>
+        <p>معالج التقارير يتيح الفرز حسب <strong style="color:var(--accent)">4 حقول كحد أقصى</strong> — تصاعدياً أو تنازلياً.</p>
+      </div>
+      <div class="card">
+        <span class="icon">📗</span>
+        <h3>التصدير المفضّل</h3>
+        <p>المادة تعرض التصدير إلى <strong style="color:var(--accent)">Excel</strong> بوصفه الوجهة الأولى لتبادل بيانات الجداول، إلى جانب صيغ أخرى. ⚠️ التصدير النصي TXT الوارد بالمذكرة لم يُذكر صراحةً بالنسخة الرسمية.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🧩</span>
+        <h3>النموذج المقسوم <span class="en">Split Form</span></h3>
+        <p>ينشئ عرضين متزامنين لنفس البيانات: نموذج + ورقة بيانات — وهو غير «معالج النماذج» الذي يجمع حقولاً من عدة جداول مرتبطة.</p>
+      </div>
+      <div class="card">
+        <span class="icon">📐</span>
+        <h3>درجات التسوية الخمس</h3>
+        <p>من <span class="en">1NF</span> حتى <span class="en">5NF</span> — كل درجة تزيل نوعاً من التكرار، والوصول إلى <strong style="color:var(--accent)">3NF كافٍ لمعظم التطبيقات</strong> العملية.</p>
+      </div>
+      <div class="card">
+        <span class="icon">⚖️</span>
+        <h3>معلومات أم أدوات؟ (تنبيه توفيقي)</h3>
+        <p>الكتاب الرسمي ينسب الضغط والإصلاح والتشفير إلى قائمة <strong style="color:var(--text)">Info بتبويب ملف</strong> أيضاً، بينما المذكرة تعتمد تبويب <strong style="color:var(--text)">أدوات قاعدة البيانات</strong> — وكلاهما وارد بنص المادة ⚠️، فأمر Info يعرض المعلومات ومنه زر الضغط، وتبويب أدوات قاعدة البيانات يضم الأمر نفسه ومعه مجموعة «تحليل».</p>
+      </div>
+      <div class="card">
+        <span class="icon">🎓</span>
+        <h3>تنبيه تناقض داخلي</h3>
+        <p>مثال الطالب/المواد ورد في الكتاب الرسمي بصياغتين متعارضتين في صفحتين متتاليتين (ص59 مقابل ص60) — والقراءة الصحيحة المعتمدة: <strong style="color:var(--accent)">متعدد بمتعدد M:N</strong> عبر جدول وسيط.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="part-banner memo-src">
+  <div class="container">
+    <span class="part-tag">الجزء الثاني · الأسئلة</span>
+    <h2>أسئلة المذكرة</h2>
+    <p>مصائد الكلمات أولاً، ثم اختبار تفاعلي بصياغة الامتحان الإنجليزية.</p>
+  </div>
+</div>
+
+<!-- ===================== 8. Traps ===================== -->
+<section id="traps">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">08.</span> مصيدة الكلمات — الأمر الخطأ والرقم الخطأ</h2>
+    <p class="sec-lead">مصائد هذا القسم: استبدال أمر بأمر مشابه أو رقم بآخر قريب. اضغط أي عبارة لكشف الحكم:</p>
+    <div id="traps-list"></div>
+  </div>
+</section>
+
+<!-- ===================== 9. Memo quiz ===================== -->
+<section id="quiz">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">09.</span> أسئلة المذكرة — اختبر نفسك 🎯</h2>
+    <p class="sec-lead">16 سؤالاً من المذكرة بصياغتها الإنجليزية الأصلية مع ترجمة وشرح مستند إلى المادة الرسمية.</p>
+    <div class="quiz-box" id="quiz-box"></div>
+  </div>
+</section>
+
+<div class="part-banner official-src">
+  <div class="container">
+    <span class="part-tag">أسئلة إضافية</span>
+    <h2>أسئلة متوقعة من المنهج الرسمي</h2>
+    <p>22 سؤالاً تدريبياً من الموضوعات التي لا تغطيها المذكرة.</p>
+  </div>
+</div>
+
+<!-- ===================== 10. Predicted quiz ===================== -->
+<section id="predicted">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">10.</span> أسئلة متوقعة 🔮</h2>
+    <p class="sec-lead">⚠️ أسئلة تدريبية مصوغة من محتوى المادة الرسمية — وليست منقولة من امتحانات فعلية.</p>
+    <div class="quiz-box" id="predicted-box"></div>
+  </div>
+</section>
+
+<nav class="tabbar" aria-label="تنقل سريع">
+  <a href="#concepts" class="active"><span class="ico">📖</span>الشرح</a>
+  <a href="#glossary"><span class="ico">📇</span>القاموس</a>
+  <a href="#official"><span class="ico">🏛️</span>المنهج</a>
+  <a href="#traps"><span class="ico">🧩</span>الأسئلة</a>
+</nav>
+
+<script src="assets/app.js"></script>
+<script>
+/* ===== أنواع الاستعلامات ===== */
+const TABS={
+  select:{icon:'🎯',ar:'استعلام التحديد',lat:'Select Query',
+    def:'يسترجع البيانات <strong>مباشرةً كما هي</strong> من جدول واحد أو أكثر — أكثر الأنواع استخداماً.',
+    ex:'<strong>امتحانياً:</strong> «To retrieve data as it is» → Select Query. ومصيدة الإملاء: العبارة الصحيحة data لا date! (استرجاع «التاريخ» بدل «البيانات» تجعل الجملة خاطئة).'},
+  append:{icon:'➕',ar:'استعلام الإلحاق',lat:'Append Query',
+    def:'<strong>يضيف بيانات</strong> ليتم حفظها في الجدول — يُلحق سجلات جديدة بجدول قائم.',
+    ex:'<strong>امتحانياً:</strong> «Data can be added to be saved in the table through a query called...» → Append Query.'},
+  delete:{icon:'🗑️',ar:'استعلام الحذف',lat:'Delete Query',
+    def:'<strong>يحذف سجلاً أو أكثر</strong> دفعة واحدة وفق شرط.',
+    ex:'<strong>امتحانياً:</strong> حذف سجل طالب أو أكثر، أو إزالة سجلات الطلاب المتخرجين من جدول الطلاب → Delete Query.'},
+  crosstab:{icon:'📊',ar:'الاستعلام الجدولي',lat:'Crosstab Query',
+    def:'<strong>يحسب المجموع أو المتوسط</strong> للبيانات المجمَّعة، ويعيد بناء البيانات لتسهيل التحليل.',
+    ex:'<strong>امتحانياً:</strong> سؤالان بإجابة واحدة: «calculates the sum or average of the collected data» و«to calculate and reconstruct data for easier analysis» → كلاهما Crosstab Query.'}
+};
+const tabPanel=document.getElementById('tab-panel');
+function showTab(k){
+  const t=TABS[k];
+  tabPanel.innerHTML=`<h3>${t.icon} ${t.ar}</h3><span class="lat">${t.lat}</span><p>${t.def}</p><p style="margin-top:12px">${t.ex}</p>`;
+  document.querySelectorAll('[data-tab]').forEach(b=>b.classList.toggle('active',b.dataset.tab===k));
+}
+document.querySelectorAll('[data-tab]').forEach(b=>b.addEventListener('click',()=>showTab(b.dataset.tab)));
+showTab('select');
+
+/* ===== مصيدة الكلمات ===== */
+App.renderTraps('traps-list',[
+ {q:'Through the <span class="mark">Account</span> command, the default size of the text field can be set to 200.',ar:'من أمر «حساب» يُضبط الحجم الافتراضي لحقل النص إلى 200.',ok:false,
+  a:'خطأ — الأمر الصحيح <strong>خيارات Options</strong>. «حساب Account» لإدارة حساب المستخدم لا إعدادات الحقول.'},
+ {q:'The Delivery table must be in a <span class="mark">one to one</span> relationship.',ar:'جدول التوصيل يجب أن يكون في علاقة واحد لواحد.',ok:false,
+  a:'خطأ — جدول التوصيل جدول وسيط، والعلاقة <strong>متعدد بمتعدد Many to Many</strong>.'},
+ {q:'Selection query is used to retrieve <span class="mark">date</span> directly as it is.',ar:'استعلام التحديد يسترجع «التاريخ» مباشرة كما هو.',ok:false,
+  a:'خطأ إملائي مقصود — الصحيح <strong>data البيانات</strong> لا date التاريخ. انتبه لهذه المصيدة الدقيقة!'},
+ {q:'The responsibility of the <span class="mark">application programmer</span> is to analyze the requirements of the entity that will use the system.',ar:'مسؤولية مبرمج التطبيقات تحليل متطلبات الجهة التي ستستخدم النظام.',ok:false,
+  a:'خطأ — هذه مهمة <strong>محلل النظم System Analyst</strong>. المبرمج ينفّذ ما حدده المحلل.'},
+ {q:'The database can be compressed and repaired from the <span class="mark">External Data</span> tab.',ar:'يمكن ضغط قاعدة البيانات وإصلاحها من تبويب البيانات الخارجية.',ok:false,
+  a:'خطأ — من تبويب <strong>أدوات قاعدة البيانات Database Tools</strong> (ومن أمر Info بتبويب ملف). «البيانات الخارجية» للاستيراد والتصدير.'},
+ {q:'Through information command, we can get information about the database from number of tables, queries and the <span class="mark">cells</span> it contains.',ar:'أمر معلومات يعرض عدد الجداول والاستعلامات و«الخلايا».',ok:false,
+  a:'خطأ — يعرض الجداول والاستعلامات و<strong>النماذج Forms</strong>. «الخلايا» مفردة إكسل دُسّت هنا!'},
+ {q:'Linking tables is done through the foreign field in one table and the <span class="mark">alternative</span> field in another table.',ar:'ربط الجداول عبر الحقل الأجنبي في جدول والحقل «البديل» في الآخر.',ok:false,
+  a:'خطأ — الربط بين الحقل الأجنبي والحقل <strong>الأساسي Primary</strong> بشرط نفس القيمة.'},
+ {q:'It is required that the length of the field name does not exceed <span class="mark">67</span> characters.',ar:'يُشترط ألا يتجاوز اسم الحقل 67 حرفاً.',ok:false,
+  a:'خطأ — الحد الأقصى <strong>64 حرفاً</strong> ✅ مؤكد بالمادة الرسمية.'},
+ {q:'The report can be viewed <span class="mark">before</span> naming it.',ar:'يمكن الاطلاع على التقرير قبل تسميته.',ok:false,
+  a:'خطأ — <strong>بعد</strong> تسميته.'},
+ {q:'Normalization rules ensure the <span class="mark">accuracy</span> of repeated data.',ar:'قواعد التسوية تضمن «دقة» البيانات المتكررة.',ok:false,
+  a:'خطأ — تضمن <strong>ندرة/إزالة</strong> التكرار، لا دقته. التسوية أصلاً وُجدت للتخلص من البيانات المكررة.'},
+ {q:'Reports are created through the <span class="mark">Design</span> menu and then Create Report.',ar:'تُنشأ التقارير من قائمة التصميم ثم إنشاء تقرير.',ok:false,
+  a:'خطأ — قائمة <strong>إنشاء Create أولاً</strong>.'},
+ {q:'Export steps <span class="mark">cannot</span> be saved.',ar:'لا يمكن حفظ خطوات التصدير.',ok:false,
+  a:'خطأ — <strong>يمكن</strong> حفظ خطوات التصدير لإعادة استخدامها.'},
+ {q:'<span class="mark">Form</span> is a question about the data stored in a table.',ar:'«النموذج» سؤال حول البيانات المخزنة في الجدول.',ok:false,
+  a:'خطأ — هذا تعريف <strong>الاستعلام Query</strong>. النموذج واجهة إدخال البيانات وعرضها سجلاً سجلاً.'},
+ {q:'The form is used to enter data and display <span class="mark">all records at once</span>.',ar:'النموذج يعرض كافة السجلات دفعة واحدة.',ok:false,
+  a:'خطأ — يعرض <strong>سجلاً واحداً في كل مرة</strong>.'},
+ {q:'The <span class="mark">split form</span> is used to create a form that includes data from several tables linked together.',ar:'«النموذج المقسوم» ينشئ نموذجاً من عدة جداول مرتبطة.',ok:false,
+  a:'خطأ — ذلك <strong>معالج النماذج Form Wizard</strong>. النموذج المقسوم يعرض نفس البيانات بعرضين: نموذج + ورقة بيانات.'},
+ {q:'A single table cannot exist without being connected to another table, otherwise we would not describe this as a database.',ar:'لا يوجد جدول وحيد غير متصل بجدول آخر وإلا لما وصفناه بقاعدة بيانات.',ok:true,
+  a:'صحيح ✓ بإجابة المذكرة — مع ملاحظتها أن قاعدة من جدول واحد ممكنة نظرياً لكنها نادرة عملياً.'}
+]);
+
+/* ===== أسئلة المذكرة ===== */
+App.initQuiz('quiz-box',[
+ {en:'Through the ..... command, the default size of the text field can be set to 200.',ar:'من أمر ... يُضبط الحجم الافتراضي لحقل النص إلى 200.',
+  opts:['Account','Options','Info','Save As'],a:1,
+  exp:'خيارات Options ✅ — المادة تؤكد أن الإعدادات الافتراضية من Options (قيمة 200 تحديداً وردت بالمذكرة).'},
+ {en:'..... is responsible for controlling all the permissions and uses of the database.',ar:'... هو المسؤول عن التحكم في جميع أذونات واستخدامات قاعدة البيانات.',
+  opts:['System Analyst','Application Programmer','DBA','End User'],a:2,
+  exp:'مدير قاعدة البيانات DBA (Database Administrator) ✅.'},
+ {en:'..... identifies user requirements and develops specifications to determine what is required from the databases.',ar:'... يحدد متطلبات المستخدم ويطور المواصفات.',
+  opts:['Analyst','DBA','Programmer','Designer'],a:0,
+  exp:'محلل النظم Analyst ✅ — وليس مبرمج التطبيقات (مصيدة متكررة).'},
+ {en:'You can create a relationship between two tables from .....',ar:'يمكن إنشاء علاقة بين جدولين من...',
+  opts:['Create tab','Database Tools','External Data','Home tab'],a:1,
+  exp:'أدوات قاعدة البيانات Database Tools ✅ — ومنها أيضاً مجموعة «تحليل» والضغط والإصلاح.'},
+ {en:'Database data can be exported to a text file from ..... tab.',ar:'تُصدَّر بيانات القاعدة لملف نصي من تبويب...',
+  opts:['Database Tools','File','External Data','Create'],a:2,
+  exp:'البيانات الخارجية External Data ✅ للاستيراد والتصدير معاً. ⚠️ التصدير النصي تحديداً وارد بالمذكرة ولم يُذكر صراحة بالمادة.'},
+ {en:'Form View displays actual data.',ar:'طريقة عرض النموذج تعرض البيانات الفعلية.',
+  opts:['صواب ✓','خطأ ✗'],a:0,
+  exp:'صواب ✅ — المادة الرسمية نفسها تنص أن Form View هي التي تعرض البيانات الفعلية.'},
+ {en:'Intermediate Table is used in ..... Relationship.',ar:'يُستخدم الجدول الوسيط في علاقة...',
+  opts:['One to One','One to Many','Many to Many','All types'],a:2,
+  exp:'متعدد بمتعدد M:N ✅ — الجدول الوسيط يفكّها إلى علاقتين واحد بمتعدد.'},
+ {en:'The student\'s relationship with academic subjects is a relationship of .....',ar:'علاقة الطالب بالمواد الدراسية علاقة...',
+  opts:['one to one','one to many','many to many','none'],a:2,
+  exp:'متعدد بمتعدد ✅ — الطالب يدرس أكثر من مادة والمادة يدرسها أكثر من طالب. (لاحظ التناقض الداخلي بالكتاب ص59/60 — القراءة المعتمدة M:N).'},
+ {en:'The “Selection query” type is used to retrieve data directly as it is.',ar:'استعلام التحديد يسترجع البيانات مباشرة كما هي.',
+  opts:['صواب ✓','خطأ ✗'],a:0,
+  exp:'صواب ✅ — واحذر النسخة المفخخة بكلمة date بدل data.'},
+ {en:'Data can be added to be saved in the table through a query called .....',ar:'تُضاف بيانات لحفظها في الجدول عبر استعلام يسمى...',
+  opts:['Select Query','Append Query','Delete Query','Crosstab Query'],a:1,
+  exp:'استعلام الإلحاق Append Query ✅.'},
+ {en:'..... calculates the sum or average of the collected data.',ar:'... يحسب مجموع أو متوسط البيانات المجمعة.',
+  opts:['Select Query','Append Query','Crosstab Query','Update Query'],a:2,
+  exp:'الاستعلام الجدولي Crosstab ✅ — وهو نفسه إجابة «إعادة بناء البيانات لتسهيل التحليل».'},
+ {en:'To remove records for graduating students from students table use .....',ar:'لإزالة سجلات الطلاب المتخرجين من جدول الطلاب نستخدم...',
+  opts:['Append Query','Select Query','Delete Query','Crosstab Query'],a:2,
+  exp:'استعلام الحذف Delete Query ✅.'},
+ {en:'It is required that the length of the field name does not exceed .....',ar:'يُشترط ألا يتجاوز طول اسم الحقل...',
+  opts:['67','200','64','255'],a:2,
+  exp:'64 حرفاً ✅ مؤكد بالمادة — و67 هي المصيدة.'},
+ {en:'When the required property is set to YES .....',ar:'عند ضبط خاصية «مطلوب» على نعم...',
+  opts:['a value must be entered','the field is hidden','the field becomes numeric','the record locks'],a:0,
+  exp:'يجب إدخال قيمة ✅.'},
+ {en:'It is preferable that the key column fields be .....',ar:'يُفضَّل أن تكون حقول عمود المفتاح...',
+  opts:['text','numeric','date','image'],a:1,
+  exp:'رقمية ✅ — والمفتاح الأساسي حقل واحد غير مكرر ويمكن استبداله بمفتاح بديل.'},
+ {en:'The result obtained from processing data is .....',ar:'الناتج المتحصل عليه من معالجة البيانات هو...',
+  opts:['Data','Information','A table','A record'],a:1,
+  exp:'المعلومات Information ✅ — معالجة البيانات (كدمج أكثر من حقل معاً) تنتج معلومات.'}
+]);
+
+/* ===== أسئلة متوقعة ===== */
+App.initQuiz('predicted-box',[
+ {en:'A database is .....',ar:'قاعدة البيانات هي...',
+  opts:['a random pile of files','an organized collection of related data','a printing program','a network protocol'],a:1,exp:'مجموعة منظمة من البيانات المترابطة يسهل تخزينها واسترجاعها.'},
+ {en:'Microsoft Access is classified as a .....',ar:'يُصنَّف برنامج أكسيس بوصفه...',
+  opts:['word processor','spreadsheet','DBMS','operating system'],a:2,exp:'نظام إدارة قواعد بيانات DBMS — مثل Oracle وSQL Server.'},
+ {en:'The database team consists of ..... roles.',ar:'يتكون فريق قاعدة البيانات من ... أدوار.',
+  opts:['3','5','8','10'],a:2,exp:'8 أدوار وفق المادة الرسمية — منها DBA ومحلل النظم والمصمم والمبرمج والمستخدم النهائي.'},
+ {en:'QBE stands for .....',ar:'اختصار QBE يعني...',
+  opts:['Query By Example','Quick Base Entry','Query Builder Engine','Quality Based Export'],a:0,exp:'استعلام بالمثال — شبكة تصميم الاستعلام السفلية.'},
+ {en:'The QBE grid is used to .....',ar:'تُستخدم شبكة QBE لـ...',
+  opts:['draw charts','specify fields and criteria for a query','format reports','create relationships'],a:1,exp:'تحديد الحقول والمعايير Criteria دون كتابة SQL يدوياً.'},
+ {en:'The number of relationship types between tables is .....',ar:'عدد أنواع العلاقات بين الجداول...',
+  opts:['2','3','4','5'],a:1,exp:'ثلاثة: واحد لواحد، واحد بمتعدد، متعدد بمتعدد.'},
+ {en:'Normalization degrees range from 1NF to .....',ar:'تتدرج درجات التسوية من 1NF حتى...',
+  opts:['2NF','3NF','5NF','7NF'],a:2,exp:'5NF — والوصول إلى 3NF كافٍ لمعظم التطبيقات.'},
+ {en:'Reaching ..... is sufficient for most practical applications.',ar:'الوصول إلى الدرجة ... كافٍ لمعظم التطبيقات العملية.',
+  opts:['1NF','2NF','3NF','5NF'],a:2,exp:'الدرجة الثالثة 3NF.'},
+ {en:'The Report Wizard allows sorting by up to ..... fields.',ar:'يتيح معالج التقارير الفرز حسب ... حقول كحد أقصى.',
+  opts:['2','4','6','8'],a:1,exp:'4 حقول تصاعدياً أو تنازلياً.'},
+ {en:'A many-to-many relationship is implemented using .....',ar:'تُنفَّذ علاقة متعدد بمتعدد باستخدام...',
+  opts:['one big table','an intermediate (junction) table','two primary keys in one table','a report'],a:1,exp:'جدول وسيط يفكّها إلى علاقتي واحد بمتعدد.'},
+ {en:'Referential Integrity requires that data in the primary key field of the primary table .....',ar:'التكامل المرجعي يشترط أن بيانات حقل المفتاح الأساسي بالجدول الأساسي...',
+  opts:['be deleted','be present in the foreign key field of the secondary table','be text only','be hidden'],a:1,exp:'موجودة في حقل المفتاح الأجنبي بالجدول الثانوي — حتى لا تنشأ سجلات يتيمة.'},
+ {en:'A Select query can retrieve data from .....',ar:'يمكن لاستعلام التحديد استرجاع البيانات من...',
+  opts:['one table only','one or more tables','forms only','reports only'],a:1,exp:'جدول واحد أو أكثر.'},
+ {en:'The Split Form displays .....',ar:'يعرض النموذج المقسوم...',
+  opts:['two synchronized views: form and datasheet','data from unrelated databases','reports','charts'],a:0,exp:'عرضين متزامنين لنفس البيانات: نموذج + ورقة بيانات.'},
+ {en:'To create a database from scratch, choose .....',ar:'لإنشاء قاعدة بيانات من الصفر نختار...',
+  opts:['Templates','Blank Database','Import','Backup'],a:1,exp:'قاعدة بيانات فارغة Blank Database — أما القوالب Templates فللقواعد الجاهزة (كقاعدة متجر).'},
+ {en:'The Save As command is located in the ..... tab.',ar:'يوجد أمر «حفظ باسم» في تبويب...',
+  opts:['Home','Create','File','Database Tools'],a:2,exp:'ملف File — لحفظ القاعدة باسم جديد.'},
+ {en:'The primary key consists of .....',ar:'يتكون المفتاح الأساسي من...',
+  opts:['one field only','two fields','all table fields','a query'],a:0,exp:'حقل واحد فقط، غير مكرر، ويُفضَّل رقمياً.'},
+ {en:'The foreign key is .....',ar:'المفتاح الأجنبي هو...',
+  opts:['a duplicate primary key in the same table','a field linking to the primary key of another table','a password','a report field'],a:1,exp:'حقل في جدول يرتبط بالمفتاح الأساسي لجدول آخر بنفس القيمة والنوع.'},
+ {en:'The common field between two linked tables must have .....',ar:'الحقل المشترك بين جدولين مرتبطين يجب أن يكون...',
+  opts:['different types','the same type and size','text type always','no data'],a:1,exp:'نفس النوع، ويتطابق نوع البيانات وحجمها عند الإنشاء.'},
+ {en:'The Info command (File tab) shows .....',ar:'أمر معلومات بتبويب ملف يعرض...',
+  opts:['only the file name','information about the database: tables, queries and forms','cells count','nothing'],a:1,exp:'معلومات القاعدة: عدد الجداول والاستعلامات والنماذج — ومنه أيضاً الضغط والإصلاح والتشفير وفق الكتاب.'},
+ {en:'The ..... tab contains an Analysis group.',ar:'يحتوي تبويب ... على مجموعة «تحليل».',
+  opts:['Home','Create','Database Tools','External Data'],a:2,exp:'أدوات قاعدة البيانات Database Tools.'},
+ {en:'Exporting table data to ..... is presented as the preferred exchange format.',ar:'يُعرض التصدير إلى ... بوصفه الوجهة المفضلة لتبادل البيانات.',
+  opts:['Excel','PowerPoint','Paint','ZIP'],a:0,exp:'Excel — وفق عرض المادة الرسمية لخيارات التصدير.'},
+ {en:'The Navigation Pane is important for .....',ar:'جزء التنقل مهم لـ...',
+  opts:['facilitating report printing and getting a copy of database data','deleting the database','changing passwords','drawing charts'],a:0,exp:'تسهيل طباعة التقارير والحصول على نسخة من بيانات القاعدة — وفيه تظهر كل كائنات القاعدة.'}
+]);
+
+/* ===== القاموس ===== */
+App.renderGlossary({
+  gridId:'flip-grid',filtersId:'filters',
+  cats:{all:'الكل',concept:'المفاهيم',table:'جداول وحقول',rel:'العلاقات',obj:'استعلامات ونماذج'},
+  officialSet:new Set(['QBE','Split Form','Normalization Degrees']),
+  terms:[
+   {c:'concept',ar:'البيانات',en:'Data',d:'المادة الخام قبل المعالجة: أرقام ونصوص لا تحمل معنى كاملاً بذاتها.',e:'Raw facts before processing.'},
+   {c:'concept',ar:'المعلومات',en:'Information',d:'ناتج معالجة البيانات — كدمج أكثر من حقل معاً في جدول جديد.',e:'The result of processing data.'},
+   {c:'concept',ar:'قاعدة البيانات',en:'Database',d:'مجموعة جداول مترابطة — نادراً ما تقوم على جدول واحد معزول.',e:'Related, connected tables.'},
+   {c:'concept',ar:'نظام إدارة قواعد البيانات',en:'DBMS',d:'برنامج تخزين وتحديث واسترجاع البيانات: Oracle، SQL Server، Access.',e:'Oracle, SQL Server, Access.'},
+   {c:'concept',ar:'مدير قاعدة البيانات',en:'DBA',d:'المتحكم في جميع الأذونات والاستخدامات.',e:'Controls all permissions and uses.'},
+   {c:'concept',ar:'محلل النظم',en:'System Analyst',d:'يحلل متطلبات الجهة ويحدد البيانات ويطور المواصفات.',e:'Analyzes requirements, develops specifications.'},
+   {c:'concept',ar:'النافذة الرئيسية',en:'Main Window',d:'تتكون من 3 أقسام — وAccess يبدأ بقاعدة افتراضية Blank Database.',e:'Consists of 3 sections.'},
+   {c:'table',ar:'الجدول',en:'Table',d:'وحدة تخزين البيانات: صفوف (سجلات) وأعمدة (حقول) — يُنشأ من تبويب إنشاء.',e:'Records and fields; created from the Create tab.'},
+   {c:'table',ar:'الحقل',en:'Field',d:'عمود الجدول — اسمه لا يتجاوز 64 حرفاً، وحجم النص الافتراضي يُضبط من Options.',e:'Name ≤ 64 characters.'},
+   {c:'table',ar:'السجل',en:'Record',d:'صف كامل في الجدول يمثل كياناً واحداً (طالباً مثلاً).',e:'A full row representing one entity.'},
+   {c:'table',ar:'المفتاح الأساسي',en:'Primary Key',d:'حقل واحد غير مكرر يميز كل سجل — يُفضَّل رقمياً.',e:'One non-duplicate field; preferably numeric.'},
+   {c:'table',ar:'المفتاح البديل',en:'Alternative Key',d:'حقل يمكن أن يحل محل المفتاح الأساسي.',e:'Can replace the primary key.'},
+   {c:'table',ar:'المفتاح الأجنبي',en:'Foreign Key',d:'حقل يربط جدوله بالمفتاح الأساسي لجدول آخر — بنفس القيمة والنوع والحجم.',e:'Links to another table\'s primary key.'},
+   {c:'table',ar:'خاصية مطلوب',en:'Required',d:'عند ضبطها على Yes يجب إدخال قيمة في الحقل.',e:'Yes = a value must be entered.'},
+   {c:'rel',ar:'واحد لواحد',en:'One to One',d:'سجل يقابل سجلاً واحداً — كالمواطن ورقمه القومي.',e:'One record ↔ one record.'},
+   {c:'rel',ar:'واحد بمتعدد',en:'One to Many',d:'سجل يقابل عدة سجلات — كالقسم وطلابه.',e:'One record ↔ many records.'},
+   {c:'rel',ar:'متعدد بمتعدد',en:'Many to Many',d:'كالطالب والمواد — تحتاج جدولاً وسيطاً يفكّها لعلاقتي 1:M.',e:'Needs an intermediate table.'},
+   {c:'rel',ar:'الجدول الوسيط',en:'Intermediate Table',d:'جدول الربط في علاقة متعدد بمتعدد (مثل جدول التوصيل Delivery).',e:'Junction table in M:N relationships.'},
+   {c:'rel',ar:'التكامل المرجعي',en:'Referential Integrity',d:'بيانات المفتاح الأساسي بالجدول الأساسي يجب أن توجد بالمفتاح الأجنبي للجدول الثانوي.',e:'Primary-key data must exist in the foreign key field.'},
+   {c:'rel',ar:'التسوية (التطبيع)',en:'Normalization',d:'قواعد إزالة تكرار البيانات — لا «ضمان دقة المكرر»!',e:'Eliminates data duplication.'},
+   {c:'rel',ar:'درجات التسوية',en:'Normalization Degrees',d:'من 1NF حتى 5NF — والوصول لـ3NF كافٍ لمعظم التطبيقات.',e:'1NF to 5NF; 3NF is sufficient.'},
+   {c:'obj',ar:'الاستعلام',en:'Query',d:'سؤال حول البيانات المخزنة بجداولك أو طلب تنفيذ إجراء عليها.',e:'A question about stored data, or an action request.'},
+   {c:'obj',ar:'استعلام التحديد',en:'Select Query',d:'يسترجع البيانات كما هي من جدول أو أكثر.',e:'Retrieves data as it is.'},
+   {c:'obj',ar:'الاستعلام الجدولي',en:'Crosstab Query',d:'يحسب المجموع أو المتوسط ويعيد بناء البيانات لتسهيل التحليل.',e:'Sum/average of grouped data.'},
+   {c:'obj',ar:'شبكة الاستعلام',en:'QBE',d:'Query By Example: شبكة تحديد الحقول والمعايير في تصميم الاستعلام.',e:'Fields and criteria grid in query design.'},
+   {c:'obj',ar:'النموذج',en:'Form',d:'واجهة إدخال البيانات — يعرض سجلاً واحداً في كل مرة، وForm View تعرض البيانات الفعلية.',e:'One record at a time; Form View shows actual data.'},
+   {c:'obj',ar:'النموذج المقسوم',en:'Split Form',d:'عرضان متزامنان لنفس البيانات: نموذج + ورقة بيانات.',e:'Synchronized form + datasheet views.'},
+   {c:'obj',ar:'التقرير',en:'Report',d:'كائن عرض البيانات وطباعتها — يُنشأ من قائمة إنشاء ويُعاين بعد التسمية.',e:'Displays and prints data.'}
+  ]
+});
+
+App.initAccordions();
+App.initNav({concepts:'#concepts',tables:'#concepts',relations:'#concepts',queries:'#concepts',forms:'#concepts',glossary:'#glossary',official:'#official',traps:'#traps',quiz:'#traps',predicted:'#traps'});
+App.initShell('db.html');
+</script>
+</body>
+</html>

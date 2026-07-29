@@ -168,11 +168,13 @@ App.CHAPTERS = [
   { href: 'it-os.html', icon: '💻', name: 'تكنولوجيا المعلومات ونظم التشغيل', ready: true },
   { href: 'word.html', icon: '📝', name: 'معالج النصوص (وورد)', ready: true },
   { href: 'ppt.html', icon: '📽️', name: 'العروض التقديمية (بوربوينت)', ready: true },
-  { icon: '📊', name: 'جداول البيانات (إكسل)' },
-  { icon: '🗄️', name: 'قواعد البيانات (أكسيس)' },
-  { icon: '📱', name: 'تطبيقات الهاتف المحمول' },
-  { icon: '🔎', name: 'البحث على الإنترنت' },
-  { icon: '🌐', name: 'الشبكات' }
+  { href: 'excel.html', icon: '📊', name: 'جداول البيانات (إكسل)', ready: true },
+  { href: 'db.html', icon: '🗄️', name: 'قواعد البيانات (أكسيس)', ready: true },
+  { href: 'mobile.html', icon: '📱', name: 'تطبيقات الهاتف المحمول', ready: true },
+  { href: 'web.html', icon: '🔎', name: 'البحث على الإنترنت', ready: true },
+  { href: 'networks.html', icon: '🌐', name: 'الشبكات', ready: true },
+  { href: 'elearn.html', icon: '🧑‍🏫', name: 'التعليم عن بعد', ready: true },
+  { href: 'cloud.html', icon: '☁️', name: 'الحوسبة السحابية', ready: true }
 ];
 
 /* قشرة التطبيق المشتركة: درج الفصول + تذييل الحقوق + تمركز التبويب النشط */

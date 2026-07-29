@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>تطبيقات الهاتف المحمول ببساطة — دليل تفاعلي</title>
+<meta name="description" content="دليل تفاعلي مبسّط لقسم تطبيقات الهاتف المحمول من دورة التحول الرقمي: نظم التشغيل، أنواع التطبيقات، تطبيقات جوجل، الأمان، واختبارات تفاعلية.">
+<meta name="theme-color" content="#000000">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="التحول الرقمي">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/app.css">
+</head>
+<body>
+
+<header class="hero">
+  <div class="container">
+    <span class="shield">📱</span>
+    <h1>تطبيقات الهاتف المحمول <span>ببساطة</span></h1>
+    <p class="sub">دليل تفاعلي لقسم تطبيقات الموبايل: نظم التشغيل، أنواع التطبيقات، تطبيقات جوجل والتواصل، والأمان على هاتفك.</p>
+    <span class="badge" style="background:rgba(255,214,10,.12);color:var(--warn);border-color:rgba(255,214,10,.3)">⏳ من المذكرة — لم يُطابَق بعد مع المادة الرسمية (سيُنقَّح فور توفرها)</span>
+    <div class="stats">
+      <div class="stat"><b>54</b><span>سؤالاً في المذكرة</span></div>
+      <div class="stat"><b>24</b><span>مصطلحاً أساسياً</span></div>
+      <div class="stat"><b>12</b><span>مصيدة كلمات</span></div>
+      <div class="stat"><b>16</b><span>سؤال اختبار</span></div>
+    </div>
+  </div>
+</header>
+
+<nav class="tabs" aria-label="أقسام الدليل">
+  <div class="inner">
+    <a class="home-link" href="./">🏠 الرئيسية</a>
+    <a href="#os" class="active">نظم التشغيل</a>
+    <a href="#types">أنواع التطبيقات</a>
+    <a href="#google">تطبيقات جوجل</a>
+    <a href="#social">التواصل والوسائط</a>
+    <a href="#sec">الاتصال والأمان</a>
+    <a href="#glossary">القاموس</a>
+    <a href="#traps">مصيدة الكلمات</a>
+    <a href="#quiz">أسئلة المذكرة</a>
+  </div>
+</nav>
+
+<div class="part-banner memo-src">
+  <div class="container">
+    <span class="part-tag">الجزء الأول · الشروحات التفاعلية</span>
+    <h2>شروحات المذكرة</h2>
+    <p>شرح مبسّط لكل ما ورد في قسم تطبيقات الموبايل بالمذكرة (54 سؤالاً).</p>
+  </div>
+</div>
+
+<!-- ===================== 1. OS ===================== -->
+<section id="os">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">01.</span> نظم تشغيل الهواتف — من يصنع ماذا؟</h2>
+    <p class="sec-lead">نمط أسئلة ثابت: «نظام كذا طورته شركة...» — احفظ الأزواج:</p>
+
+    <div class="grid cols-3">
+      <div class="card key-card"><kbd>iOS</kbd><h3>Apple 🍎</h3><p>نظام آيفون وآيباد</p></div>
+      <div class="card key-card"><kbd>Harmony</kbd><h3>Huawei</h3><p>هارموني من هواوي</p></div>
+      <div class="card key-card"><kbd>Android</kbd><h3>Google + OHA</h3><p>مفتوح المصدر على لينكس</p></div>
+    </div>
+
+    <div class="analogy">
+      🏭 <strong>معلومتان امتحانيتان:</strong> الشركات التي تطلق هواتف <strong>مصنّعة في السوق المصري</strong>: سامسونج وإنفينكس وفيفو — <strong style="color:var(--bad)">وليست هواوي</strong> (مصيدة). والأجهزة اللوحية Tablets مزودة بشاشات من <strong style="color:var(--accent)">7 إلى 12 بوصة</strong>.
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 2. App types ===================== -->
+<section id="types">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">02.</span> أنواع التطبيقات ومنصات بنائها</h2>
+    <p class="sec-lead">أربعة أنواع تتكرر في الأسئلة + ثلاث منصات بناء بدون كود:</p>
+
+    <div class="grid cols-2">
+      <div class="card">
+        <span class="icon">📲</span>
+        <h3>الأصلية <span class="en">Native Apps</span></h3>
+        <p>تطبيقات <strong style="color:var(--accent)">مبرمجة لنظام تشغيل معين</strong> (iOS أو Android فقط) — أعلى أداء وأغلى تطويراً.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🌐</span>
+        <h3>عابرة المنصات <span class="en">Cross-Platform</span></h3>
+        <p>تستخدم <strong style="color:var(--accent)">لغة عالمية واحدة مثل JavaScript</strong> وتعمل على كل الأنظمة.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🚗</span>
+        <h3>الهجينة <span class="en">Hybrid</span></h3>
+        <p>مزيج بين الأصلية والويب — ومثال المذكرة الشهير: <strong style="color:var(--accent)">تطبيق أوبر UBER</strong>.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🔗</span>
+        <h3>تطبيقات الويب التقدمية <span class="en">PWA</span></h3>
+        <p>ميزتها توفير <strong style="color:var(--accent)">اختصار لموقع الويب داخل الهاتف</strong> — تعمل من المتصفح كتطبيق (وهذا التطبيق الذي بين يديك مثال حي!).</p>
+      </div>
+    </div>
+
+    <div class="analogy">
+      🛠️ <strong>منصات البناء بدون برمجة:</strong>
+      <strong>Apps-builder</strong>: ساعدت في نشر أكثر من 500 ألف تطبيق ·
+      <strong>Good Barber</strong>: تحكم بكل تفاصيل التطبيق دون استخدام كود واحد ·
+      <strong>MobinCube</strong>: محرر قوي بإمكانيات كبيرة في العرض المرئي.
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 3. Google apps ===================== -->
+<section id="google">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">03.</span> تطبيقات جوجل — تُعرف حالياً بـ G Suite</h2>
+    <p class="sec-lead">أكثر عائلة تطبيقات وروداً في الأسئلة:</p>
+
+    <div class="grid cols-2">
+      <div class="card">
+        <span class="icon">🈯</span>
+        <h3>الترجمة <span class="en">Translate</span></h3>
+        <p>وضع الترجمة الفورية يُفعَّل بالضغط على علامة <strong style="color:var(--accent)">المحادثة Conversation</strong> ثم التحدث في الميكروفون.</p>
+      </div>
+      <div class="card">
+        <span class="icon">👁️</span>
+        <h3>عدسة جوجل <span class="en">Lens</span></h3>
+        <p>صوّر أي سلعة لتعرف <strong style="color:var(--accent)">سعرها وأماكن عرضها</strong> — بحث بالكاميرا بدل الكتابة.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🗺️</span>
+        <h3>الخرائط <span class="en">Maps</span></h3>
+        <p>يمكنك <strong style="color:var(--accent)">تغيير يوم أو ساعة السفر</strong> لإيجاد أفضل طريق قبل المغادرة — ويوصى بتحديث التطبيق للميزات الجديدة.</p>
+      </div>
+      <div class="card">
+        <span class="icon">📝</span>
+        <h3>الملاحظات <span class="en">Keep</span></h3>
+        <p>تطبيق <strong style="color:var(--accent)">تدوين الملاحظات</strong> من جوجل — إجابة مباشرة لسؤال مذكرة.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🎥</span>
+        <h3>الاجتماعات <span class="en">Meet</span></h3>
+        <p>اجتماعات مجانية تضم حتى <strong style="color:var(--accent)">100 مشارك</strong>.</p>
+      </div>
+      <div class="card">
+        <span class="icon">📅</span>
+        <h3>التقويم <span class="en">Calendar</span></h3>
+        <p>لإنشاء حدث على الهاتف وجدولة المواعيد والأحداث بفعالية — «أداة قوية للجدولة».</p>
+      </div>
+      <div class="card">
+        <span class="icon">📍</span>
+        <h3>اعثر على هاتفي <span class="en">Find My Phone</span></h3>
+        <p>يُنشَّط تلقائياً بمجرد إضافة <strong style="color:var(--accent)">حساب Google</strong> لهاتفك — للعثور على الهاتف المفقود (وليس لتحديث تطبيقات المواقع!).</p>
+      </div>
+      <div class="card">
+        <span class="icon">🛡️</span>
+        <h3>الحماية <span class="en">Google Protect</span></h3>
+        <p>أداة أمنية من جوجل <strong style="color:var(--accent)">لفحص التطبيقات</strong> وتجنب السلوكيات الضارة.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 4. Social & media ===================== -->
+<section id="social">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">04.</span> تطبيقات التواصل وتحرير الوسائط</h2>
+    <p class="sec-lead">أرقام وحقائق تتكرر في الامتحان:</p>
+
+    <div class="grid cols-2">
+      <div class="card">
+        <span class="icon">✈️</span>
+        <h3>Telegram</h3>
+        <p>رسائل فردية أو مجموعات يصل عددها إلى <strong style="color:var(--accent)">200 ألف عضو</strong>.</p>
+      </div>
+      <div class="card">
+        <span class="icon">�microphone</span>
+        <h3>TikTok و Snapchat</h3>
+        <p>ميزة التصوير بجوار فيديو آخر في تيك توك اسمها <strong style="color:var(--accent)">Duet</strong> (المذكرة تخطّئ «Deep Duo»). وسناب شات: تسجيل وبث ومشاركة رسائل فيديو <strong>لفترة زمنية محددة</strong>.</p>
+      </div>
+      <div class="card">
+        <span class="icon">👥</span>
+        <h3>Facebook</h3>
+        <p>من مؤسسيه الثلاثة: مارك زوكربيرج وكريس هيوز و<strong style="color:var(--accent)">داستن موسكوفيتز</strong>. توسع مجتمعه ليشمل أي شخص في سن <strong style="color:var(--accent)">13 عاماً</strong> فأكثر.</p>
+      </div>
+      <div class="card">
+        <span class="icon">▶️</span>
+        <h3>YouTube و WhatsApp</h3>
+        <p>يوتيوب كان يستخدم في الماضي تقنية <strong style="color:var(--accent)">Adobe Flash</strong> لعرض المقاطع. وواتساب خدمة مراسلة <strong style="color:var(--bad)">مركزية</strong> (عبارة «لا مركزية» خاطئة).</p>
+      </div>
+      <div class="card">
+        <span class="icon">🎨</span>
+        <h3>عائلة تحرير الصور والفيديو</h3>
+        <p><strong style="color:var(--accent)">Canva وFilmora وLightroom وSnapseed</strong> — كلها تنتمي لتطبيقات تحرير الصور والفيديو (المذكرة تكرر خداعك بنسبتها لتطبيقات الاجتماعات أو التواصل!).</p>
+      </div>
+      <div class="card">
+        <span class="icon">📧</span>
+        <h3>BlueMail و Microsoft 365</h3>
+        <p>BlueMail بريد آمن <strong>مجاني في المتجرين معاً</strong>. وتسجيل الدخول ببريدك الجامعي الأكاديمي يفتح ميزات Microsoft 365 <strong style="color:var(--accent)">المدفوعة مجاناً</strong>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 5. Connectivity & security ===================== -->
+<section id="sec">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">05.</span> الاتصال والأمان على هاتفك</h2>
+
+    <div class="grid cols-2">
+      <div class="card">
+        <span class="icon">📶</span>
+        <h3>Wi-Fi و بيانات المحمول و GPS</h3>
+        <p><strong>Wi-Fi</strong> يصل هاتفك بالشبكة المحلية والإنترنت (الاتصال بين جهازين محلياً = Wi-Fi لا بيانات المحمول). و<strong>GPS لا يعتمد على بيانات الإنترنت</strong> — يعمل بالأقمار الصناعية. والهاتف لا يتصل بالراوتر عبر البلوتوث!</p>
+      </div>
+      <div class="card">
+        <span class="icon">🔐</span>
+        <h3>أمان الدفع</h3>
+        <p><strong>OTP</strong>: رمز مرور صالح لدقائق لتأمين المعاملات البنكية. <strong>CVV</strong> خلف البطاقة لا يطلع عليه أحد غير صاحبها. <strong>المصادقة الثنائية 2FA</strong>: مفتاحان للدخول. والمواقع الآمنة تبدأ بـ <strong style="color:var(--accent)">HTTPS</strong>. والمحفظة الإلكترونية: ربط البطاقات بعد التحقق من رمز الدخول.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🔋</span>
+        <h3>البطارية والذاكرة</h3>
+        <p>لقفل هاتف أندرويد أو مسح بياناته: الشحن لا يقل عن <strong style="color:var(--accent)">50%</strong>. و<strong>RAM</strong> تتحكم في عدد التطبيقات المتزامنة. وتشغيل التطبيقات تلقائياً عند بدء النظام <strong>يؤثر على ذاكرة النظام</strong>. وتطبيقات النظام المثبتة مسبقاً يمكن <strong>إيقافها</strong> لا حذفها.</p>
+      </div>
+      <div class="card">
+        <span class="icon">💳</span>
+        <h3>MicroSD و QR</h3>
+        <p><strong>MicroSD</strong> ذاكرة خارجية للتخزين — <strong style="color:var(--bad)">وليست وسيلة لحماية الشاشة</strong> (مصيدة شهيرة). و<strong>QR Code</strong> نسخة مطورة أو <strong style="color:var(--accent)">إصدار ثانٍ</strong> من الباركود.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 6. Glossary ===================== -->
+<section id="glossary">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">06.</span> قاموس المصطلحات</h2>
+    <p class="sec-lead">اضغط على أي بطاقة لقلبها.</p>
+    <div class="filters" id="filters"></div>
+    <div class="flip-grid" id="flip-grid"></div>
+  </div>
+</section>
+
+<div class="part-banner memo-src">
+  <div class="container">
+    <span class="part-tag">الجزء الثاني · الأسئلة</span>
+    <h2>أسئلة المذكرة</h2>
+    <p>مصيدة الكلمات واختبار من أسئلة المذكرة الفعلية (54 سؤالاً).</p>
+  </div>
+</div>
+
+<!-- ===================== 7. Traps ===================== -->
+<section id="traps">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">07.</span> مصيدة الكلمات</h2>
+    <p class="sec-lead">اضغط أي عبارة لكشف الحكم — كلمة المصيدة <span class="mark">مظللة</span>:</p>
+    <div id="traps-list"></div>
+  </div>
+</section>
+
+<!-- ===================== 8. Memo quiz ===================== -->
+<section id="quiz">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">08.</span> أسئلة المذكرة — اختبر نفسك 🎯</h2>
+    <p class="sec-lead">16 سؤالاً من المذكرة بصياغتها الأصلية مع ترجمة وشرح.</p>
+    <div class="quiz-box" id="quiz-box"></div>
+
+    <div class="analogy" style="margin-top:28px;border-color:rgba(255,214,10,.4)">
+      ⏳ <strong>قادم لهذا القسم:</strong> المطابقة مع المادة الرسمية + بطاقات «من المنهج الرسمي» + الأسئلة المتوقعة — تُضاف فور توفر المادة الرسمية لقسم تطبيقات المحمول (النطاق المعتمد: ص 14–136).
+    </div>
+  </div>
+</section>
+
+<nav class="tabbar" aria-label="تنقل سريع">
+  <a href="#os" class="active"><span class="ico">📖</span>الشرح</a>
+  <a href="#glossary"><span class="ico">📇</span>القاموس</a>
+  <a href="#traps"><span class="ico">🧩</span>الأسئلة</a>
+</nav>
+
+<script src="assets/app.js"></script>
+<script>
+App.renderTraps('traps-list',[
+ {q:'Huawei is currently launching smartphones <span class="mark">made in Egypt</span> market.',
+  ar:'تطلق هواوي حالياً هواتف مصنعة بالسوق المصري.',ok:false,
+  a:'<b>خطأ.</b> الشركات المصنعة بمصر وفق المذكرة: سامسونج وإنفينكس وفيفو — لا هواوي.'},
+ {q:'<span class="mark">Mobile Data</span> is used to communicate between two devices over a local network.',
+  ar:'تستخدم بيانات المحمول للتواصل بين جهازين عبر شبكة محلية.',ok:false,
+  a:'<b>خطأ.</b> الشبكة المحلية اختصاصها Wi-Fi؛ بيانات المحمول للاتصال عبر شبكة الهاتف.'},
+ {q:'In TikTok, shooting a video next to another video is called <span class="mark">Deep Duo</span>.',
+  ar:'ميزة التصوير بجوار فيديو آخر في تيك توك تسمى Deep Duo.',ok:false,
+  a:'<b>خطأ.</b> اسمها الصحيح <span class="en">Duet</span>.'},
+ {q:'The phone and Wi-Fi router are connected via <span class="mark">Bluetooth</span>.',
+  ar:'يتصل الهاتف بجهاز توجيه الواي فاي عبر البلوتوث.',ok:false,
+  a:'<b>خطأ.</b> الاتصال بالراوتر يكون عبر شبكة Wi-Fi نفسها.'},
+ {q:'The <span class="mark">Startup Manager</span> controls the permission apps settings.',
+  ar:'يتحكم مدير بدء التشغيل في إعدادات أذونات التطبيقات.',ok:false,
+  a:'<b>خطأ.</b> مدير بدء التشغيل يتحكم في التشغيل التلقائي للتطبيقات — لا الأذونات.'},
+ {q:'You can <span class="mark">delete</span> some of the system applications already installed on your Android.',
+  ar:'يمكنك حذف بعض تطبيقات النظام المثبتة مسبقاً.',ok:false,
+  a:'<b>خطأ.</b> تطبيقات النظام يمكن إيقافها (تعطيلها) — لا حذفها.'},
+ {q:'MicroSD external memory is a way to <span class="mark">protect the phone screen</span>.',
+  ar:'الذاكرة الخارجية MicroSD وسيلة لحماية شاشة الهاتف.',ok:false,
+  a:'<b>خطأ.</b> MicroSD للتخزين الإضافي — لا علاقة لها بحماية الشاشة من الخدوش.'},
+ {q:'The "Lightroom" app belongs to <span class="mark">virtual meeting</span> apps.',
+  ar:'ينتمي تطبيق Lightroom لتطبيقات الاجتماعات الافتراضية.',ok:false,
+  a:'<b>خطأ.</b> Lightroom (مثل Snapseed وCanva وFilmora) من تطبيقات تحرير الصور والفيديو.'},
+ {q:'GPS relies on <span class="mark">Internet data</span>.',
+  ar:'يعتمد نظام تحديد المواقع GPS على بيانات الإنترنت.',ok:false,
+  a:'<b>خطأ.</b> GPS يعمل بالأقمار الصناعية دون الحاجة لاتصال إنترنت.'},
+ {q:'Secure shopping websites start with the domain <span class="mark">HTTP</span>.',
+  ar:'تبدأ مواقع التسوق الآمنة بالنطاق HTTP.',ok:false,
+  a:'<b>خطأ.</b> الآمنة تبدأ بـ HTTPS — حرف S = مشفّر (تذكر درس الأمن السيبراني!).'},
+ {q:'It is recommended the screen turns off after <span class="mark">30 minutes</span> of non-use.',
+  ar:'يوصى بإيقاف الشاشة تلقائياً بعد 30 دقيقة من عدم الاستخدام.',ok:false,
+  a:'<b>خطأ.</b> للحفاظ على البطارية: بعد ثوانٍ معدودة أو مباشرة — لا نصف ساعة!'},
+ {q:'WhatsApp is a <span class="mark">decentralized</span> messaging service.',
+  ar:'واتساب خدمة مراسلة لا مركزية.',ok:false,
+  a:'<b>خطأ.</b> واتساب خدمة مركزية — خوادمها مركزية لدى الشركة.'}
+]);
+
+App.initQuiz('quiz-box',[
+ {en:'iOS operating system developed by …',ar:'نظام التشغيل iOS طورته...',
+  opts:['Google','Apple','Huawei','Samsung'],a:1,exp:'iOS من Apple لأجهزة آيفون وآيباد.'},
+ {en:'Harmony operating system developed by …',ar:'نظام التشغيل هارموني طورته...',
+  opts:['Apple','Xiaomi','Huawei','Google'],a:2,exp:'Harmony OS من هواوي.'},
+ {en:'Canva App belongs to the … Apps.',ar:'ينتمي تطبيق Canva إلى تطبيقات...',
+  opts:['الاجتماعات','تحرير الصور والفيديو Photo & Video Editing','الترجمة','الألعاب'],a:1,exp:'Canva وFilmora وLightroom وSnapseed كلها تطبيقات تحرير صور وفيديو.'},
+ {en:'… are programmed applications for a particular operating system.',ar:'... تطبيقات مبرمجة لنظام تشغيل معين.',
+  opts:['Hybrid Apps','Native Apps','PWA','Cross-Platform'],a:1,exp:'التطبيقات الأصلية Native مبرمجة لنظام واحد بعينه.'},
+ {en:'To lock an Android mobile or erase its data, battery charge should not be less than …',ar:'لقفل هاتف أندرويد أو مسح بياناته يجب ألا يقل الشحن عن...',
+  opts:['20%','30%','50%','80%'],a:2,exp:'50% — حتى لا ينطفئ الجهاز أثناء العملية.'},
+ {en:'… is a note-taking app developed by Google.',ar:'... تطبيق لتدوين الملاحظات طورته جوجل.',
+  opts:['Keep','Docs','Tasks','Notes'],a:0,exp:'Google Keep لتدوين الملاحظات.'},
+ {en:'Google Meet allows free meetings with up to ... participants.',ar:'يتيح Google Meet اجتماعات مجانية حتى ... مشارك.',
+  opts:['50','100','200','500'],a:1,exp:'100 مشارك في الاجتماعات المجانية.'},
+ {en:'The Google apps are currently known as …',ar:'تُعرف تطبيقات جوجل حالياً باسم...',
+  opts:['G Suite','G Apps','Google One','Workspace Lite'],a:0,exp:'إجابة المذكرة: G Suite.'},
+ {en:'A social app for recording, broadcasting and sharing video messages for a specific period …',ar:'تطبيق تواصل لتسجيل وبث ومشاركة رسائل الفيديو لفترة محددة...',
+  opts:['Telegram','Snap Chat','LinkedIn','Twitter'],a:1,exp:'سناب شات — الرسائل تختفي بعد فترة محددة.'},
+ {en:'UBER app is considered …',ar:'يعتبر تطبيق أوبر...',
+  opts:['Native App','Hybrid App','PWA','Web App'],a:1,exp:'أوبر مثال المذكرة على التطبيقات الهجينة Hybrid.'},
+ {en:'Google security tool for scanning applications is called …',ar:'أداة جوجل الأمنية لفحص التطبيقات تسمى...',
+  opts:['Google Shield','Google Protect','Play Guard','Safe Apps'],a:1,exp:'Google Protect لفحص التطبيقات وتجنب السلوكيات الضارة.'},
+ {en:'Facebook community expanded to include anyone of age …',ar:'توسع مجتمع فيسبوك ليشمل أي شخص في سن...',
+  opts:['10 سنوات','13 عاماً','16 عاماً','18 عاماً'],a:1,exp:'13 عاماً فأكثر — بعد طلاب الجامعات ثم المدارس الثانوية.'},
+ {en:'QR Code is a developed version or ... from the Barcode.',ar:'رمز QR نسخة مطورة أو إصدار ... من الباركود.',
+  opts:['أول','ثانٍ Second','ثالث','رابع'],a:1,exp:'الإصدار الثاني من الباركود.'},
+ {en:'Code … is a passcode valid for several minutes to secure banking transactions.',ar:'شفرة ... رمز مرور صالح لدقائق لتأمين المعاملات البنكية.',
+  opts:['PIN','OTP','CVV','2FA'],a:1,exp:'OTP = One Time Password — كلمة مرور لمرة واحدة.'},
+ {en:'To create an event on mobile we use Google ... app.',ar:'لإنشاء حدث على الهاتف نستخدم تطبيق جوجل...',
+  opts:['Keep','Calendar','Tasks','Meet'],a:1,exp:'التقويم Calendar — أداة قوية لجدولة المواعيد والأحداث.'},
+ {en:'Applications using one global language such as JavaScript are …',ar:'التطبيقات التي تستخدم لغة عالمية واحدة مثل جافا سكريبت...',
+  opts:['Native Apps','Cross-Platform Apps','System Apps','Store Apps'],a:1,exp:'عابرة المنصات Cross-Platform — كود واحد لكل الأنظمة.'}
+]);
+
+App.renderGlossary({
+  gridId:'flip-grid',filtersId:'filters',
+  cats:{all:'الكل',os:'نظم التشغيل',types:'أنواع التطبيقات',google:'تطبيقات جوجل',sec:'اتصال وأمان'},
+  officialSet:new Set(),
+  terms:[
+   {c:'os',ar:'آي أو إس',en:'iOS',d:'نظام تشغيل هواتف آبل (آيفون وآيباد).',e:'Apple mobile operating system.'},
+   {c:'os',ar:'هارموني',en:'Harmony OS',d:'نظام التشغيل الذي طورته هواوي.',e:'Developed by Huawei.'},
+   {c:'os',ar:'أندرويد',en:'Android',d:'نظام مفتوح المصدر من جوجل والتحالف المفتوح OHA.',e:'Open-source OS by Google and the OHA.'},
+   {c:'os',ar:'الأجهزة اللوحية',en:'Tablets',d:'مزودة بشاشات من 7 إلى 12 بوصة.',e:'Screens from 7 up to 12 inches.'},
+   {c:'types',ar:'التطبيقات الأصلية',en:'Native Apps',d:'مبرمجة لنظام تشغيل معين بعينه.',e:'Programmed for a particular OS.'},
+   {c:'types',ar:'عابرة المنصات',en:'Cross-Platform',d:'تستخدم لغة عالمية واحدة مثل JavaScript.',e:'One global language such as JavaScript.'},
+   {c:'types',ar:'الهجينة',en:'Hybrid Apps',d:'مزيج من الأصلية والويب — مثالها أوبر.',e:'UBER is the classic example.'},
+   {c:'types',ar:'تطبيقات الويب التقدمية',en:'PWA',d:'توفر اختصاراً لموقع الويب داخل الهاتف.',e:'Provide a website shortcut within the mobile.'},
+   {c:'types',ar:'منصات البناء',en:'App Builders',d:'Apps-builder (500 ألف تطبيق)، Good Barber (بلا كود)، MobinCube (عرض مرئي قوي).',e:'No-code app building platforms.'},
+   {c:'google',ar:'عدسة جوجل',en:'Google Lens',d:'صوّر سلعة لتعرف سعرها وأماكن عرضها.',e:'Photograph goods to know price and stores.'},
+   {c:'google',ar:'الملاحظات',en:'Google Keep',d:'تطبيق تدوين الملاحظات من جوجل.',e:'Note-taking app by Google.'},
+   {c:'google',ar:'الاجتماعات',en:'Google Meet',d:'اجتماعات مجانية حتى 100 مشارك.',e:'Free meetings up to 100 participants.'},
+   {c:'google',ar:'التقويم',en:'Google Calendar',d:'إنشاء الأحداث وجدولة المواعيد بفعالية.',e:'Create events and schedule appointments.'},
+   {c:'google',ar:'اعثر على هاتفي',en:'Find My Phone',d:'يُنشَّط تلقائياً بإضافة حساب Google للهاتف.',e:'Auto-activated when a Google account is added.'},
+   {c:'google',ar:'حماية جوجل',en:'Google Protect',d:'أداة أمنية لفحص التطبيقات من السلوكيات الضارة.',e:'Scans apps to avoid harmful behaviors.'},
+   {c:'google',ar:'حزمة جوجل',en:'G Suite',d:'الاسم الحالي لمجموعة تطبيقات جوجل (إجابة المذكرة).',e:'Current name of the Google apps.'},
+   {c:'sec',ar:'واي فاي',en:'Wi-Fi',d:'يصل الهاتف بالشبكة المحلية ويربطه بالإنترنت.',e:'Connects the phone to local network and Internet.'},
+   {c:'sec',ar:'تحديد المواقع',en:'GPS',d:'يعمل بالأقمار الصناعية — لا يعتمد على بيانات الإنترنت.',e:'Satellite-based; needs no Internet data.'},
+   {c:'sec',ar:'كلمة مرور لمرة واحدة',en:'OTP',d:'رمز صالح لدقائق لتأمين المعاملات البنكية والمشتريات.',e:'Valid for minutes to secure transactions.'},
+   {c:'sec',ar:'المصادقة الثنائية',en:'2FA',d:'طريقة دخول بمفتاحين لحسابك.',e:'Two keys to log in your account.'},
+   {c:'sec',ar:'رمز التحقق',en:'CVV',d:'خلف البطاقة البنكية — لا يطلع عليه أحد غير صاحبها.',e:'On the card back; owner-only.'},
+   {c:'sec',ar:'رمز الاستجابة السريعة',en:'QR Code',d:'نسخة مطورة (إصدار ثانٍ) من الباركود.',e:'A second version of the Barcode.'},
+   {c:'sec',ar:'الذاكرة الخارجية',en:'MicroSD',d:'لتوسيع التخزين — وليست لحماية الشاشة!',e:'Storage expansion, not screen protection.'},
+   {c:'sec',ar:'ذاكرة الوصول العشوائي',en:'RAM',d:'تتحكم في عدد التطبيقات التي تعمل بشكل متزامن.',e:'Controls how many apps run concurrently.'}
+  ]
+});
+
+App.initNav({os:'#os',types:'#os',google:'#os',social:'#os',sec:'#os',glossary:'#glossary',traps:'#traps',quiz:'#traps'});
+App.initShell('mobile.html');
+</script>
+</body>
+</html>
