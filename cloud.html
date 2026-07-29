@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الحوسبة السحابية ببساطة — دليل تفاعلي</title>
+<meta name="description" content="دليل تفاعلي مبسّط لقسم الحوسبة السحابية من دورة التحول الرقمي: نماذج الخدمة SaaS/PaaS/IaaS، ون درايف وخدمات جوجل، واختبارات تفاعلية.">
+<meta name="theme-color" content="#000000">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="التحول الرقمي">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/app.css">
+</head>
+<body>
+
+<header class="hero">
+  <div class="container">
+    <span class="shield">☁️</span>
+    <h1>الحوسبة السحابية <span>ببساطة</span></h1>
+    <p class="sub">دليل تفاعلي لقسم الحوسبة السحابية: نماذج الخدمة الثلاثة، ون درايف وأوفيس أونلاين، وخدمات جوجل السحابية.</p>
+    <span class="badge" style="background:rgba(255,214,10,.12);color:var(--warn);border-color:rgba(255,214,10,.3)">⏳ من المذكرة — لم يُطابَق بعد مع المادة الرسمية (سيُنقَّح فور توفرها)</span>
+    <div class="stats">
+      <div class="stat"><b>50</b><span>سؤالاً في المذكرة</span></div>
+      <div class="stat"><b>24</b><span>مصطلحاً أساسياً</span></div>
+      <div class="stat"><b>12</b><span>مصيدة كلمات</span></div>
+      <div class="stat"><b>14</b><span>سؤال اختبار</span></div>
+    </div>
+  </div>
+</header>
+
+<nav class="tabs" aria-label="أقسام الدليل">
+  <div class="inner">
+    <a class="home-link" href="./">🏠 الرئيسية</a>
+    <a href="#model" class="active">المفهوم والطبقات</a>
+    <a href="#saas">نماذج الخدمة</a>
+    <a href="#ms">عالم مايكروسوفت</a>
+    <a href="#google">عالم جوجل</a>
+    <a href="#glossary">القاموس</a>
+    <a href="#traps">مصيدة الكلمات</a>
+    <a href="#quiz">أسئلة المذكرة</a>
+  </div>
+</nav>
+
+<div class="part-banner memo-src">
+  <div class="container">
+    <span class="part-tag">الجزء الأول · الشروحات التفاعلية</span>
+    <h2>شروحات المذكرة</h2>
+    <p>شرح مبسّط لكل ما ورد في قسم الحوسبة السحابية بالمذكرة (50 سؤالاً).</p>
+  </div>
+</div>
+
+<!-- ===================== 1. Concept & layers ===================== -->
+<section id="model">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">01.</span> المفهوم والطبقات — أين تعيش ملفاتك؟</h2>
+    <p class="sec-lead">
+      الحوسبة السحابية تتيح الوصول إلى موارد الحوسبة <strong style="color:var(--text)">عبر الإنترنت فقط</strong> — ملفاتك وبرامجك تعمل على خوادم بعيدة لا على جهازك.
+    </p>
+
+    <div class="analogy">
+      ⚡ <strong>تشبيه:</strong> السحابة مثل شبكة الكهرباء — لا تبني محطة توليد في بيتك، بل تشترك وتدفع بقدر استهلاكك. كذلك بدلاً من شراء خوادم وبرامج، تستأجرها عبر الإنترنت وتدفع بقدر ما تستخدم.
+    </div>
+
+    <div class="grid cols-2">
+      <div class="card">
+        <span class="icon">🧩</span>
+        <h3>المكونات الأساسية</h3>
+        <p>تحوي الحوسبة السحابية <strong style="color:var(--accent)">3 مكونات أساسية</strong>.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🎭</span>
+        <h3>الواجهة الأمامية <span class="en">Front End</span></h3>
+        <p>تمثل <strong style="color:var(--accent)">طبقة المستخدمين</strong> — ما تراه وتتعامل معه أنت.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🏗️</span>
+        <h3>الواجهة الخلفية <span class="en">Back End</span></h3>
+        <p>تتكون من <strong style="color:var(--accent)">6 طبقات</strong> — الخوادم والتخزين والإدارة التي لا يراها المستخدم.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🚀</span>
+        <h3>التحول الرقمي</h3>
+        <p>يتضمن دمج التكنولوجيا الرقمية في <strong style="color:var(--accent)">جميع جوانب الأعمال</strong> ✓ — ومزود الخدمة الشهير بأدواته الواسعة لدعمه: <strong style="color:var(--text)">Microsoft Azure</strong>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 2. Service models ===================== -->
+<section id="saas">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">02.</span> نماذج الخدمة الثلاثة — اضغط كل نموذج</h2>
+    <p class="sec-lead">أشهر أسئلة القسم: «الشركة فلان تقدم أي نموذج؟» — احفظ الثلاثي وأمثلته:</p>
+
+    <div class="cia-wrap" style="grid-template-columns:repeat(auto-fit,minmax(130px,1fr))">
+      <button class="cia-btn" data-tab="saas"><span class="icon">📦</span><h3>البرمجيات</h3><span class="en">SaaS</span></button>
+      <button class="cia-btn" data-tab="paas"><span class="icon">🛠️</span><h3>المنصات</h3><span class="en">PaaS</span></button>
+      <button class="cia-btn" data-tab="iaas"><span class="icon">🏗️</span><h3>البنية التحتية</h3><span class="en">IaaS</span></button>
+    </div>
+    <div class="cia-detail" id="tab-panel" aria-live="polite"></div>
+
+    <div class="analogy" style="margin-top:18px">
+      🍕 <strong>تشبيه البيتزا:</strong> IaaS = يعطونك مطبخاً مجهزاً وتطبخ أنت · PaaS = يعطونك العجينة والفرن وتضيف الإضافات · SaaS = بيتزا جاهزة توصلك للباب. وكل ما عليك في الثلاثة: لا تبني المطبخ بنفسك!
+    </div>
+
+    <div class="grid cols-2" style="margin-top:18px">
+      <div class="card">
+        <span class="icon">✅</span>
+        <h3>سحابة أم لا؟</h3>
+        <p><strong style="color:var(--accent)">Alibaba</strong> خدمة سحابية ✓ · أما <strong style="color:var(--bad)">Cisco</strong> فليست من خدمات الحوسبة السحابية (سؤال الاستثناء!).</p>
+      </div>
+      <div class="card">
+        <span class="icon">🧠</span>
+        <h3>الذكاء الاصطناعي في السحابة</h3>
+        <p><span class="en">PaaS</span> تحتوي مكونات برمجية جاهزة لتطوير قدرات جديدة تشمل التقنيات المبتكرة: <strong style="color:var(--accent)">الذكاء الاصطناعي وروبوتات الدردشة وإنترنت الأشياء IoT</strong>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 3. Microsoft world ===================== -->
+<section id="ms">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">03.</span> عالم مايكروسوفت — ون درايف وأوفيس أونلاين</h2>
+    <p class="sec-lead">أرقام تُحفظ: 5 جيجا مجاناً، 93 يوماً لسلة المحذوفات، وويندوز 10 لا 7:</p>
+
+    <div class="grid cols-2">
+      <div class="card">
+        <span class="icon">💾</span>
+        <h3>OneDrive — الأرقام</h3>
+        <p>السعة المجانية <strong style="color:var(--accent)">5 جيجابايت</strong> · يأتي مثبتاً مسبقاً على <strong style="color:var(--accent)">ويندوز 10</strong> (لا 7!) · وبحساب عمل أو مؤسسة تعليمية تُحذف عناصر سلة المحذوفات تلقائياً بعد <strong style="color:var(--accent)">93 يوماً</strong>.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🔄</span>
+        <h3>OneDrive — المهارات</h3>
+        <p>مشاركة الملفات من <strong style="color:var(--text)">مستكشف الملفات File Explorer</strong> ✓ · استعادة إصدار أقدم: زر أيمن على الملف ← <strong style="color:var(--accent)">Version History</strong> · النسخ الاحتياطي التلقائي للصور والفيديو ولقطات الشاشة من الإعدادات ← <strong style="color:var(--accent)">Manage Backup</strong> (ويشترط اتصالاً بالإنترنت ومساحة تخزين).</p>
+      </div>
+      <div class="card">
+        <span class="icon">📽️</span>
+        <h3>PowerPoint Online</h3>
+        <p>يفتح العروض السحابية من أي جهاز عبر المتصفح بعد <strong style="color:var(--text)">تسجيل الدخول لحساب مايكروسوفت</strong> · التصميم الموحّد بالشرائح الرئيسية <span class="en">Master Slides</span> متاح في نسخة <strong style="color:var(--accent)">سطح المكتب فقط</strong> لا السحابية ✓ · والطباعة تحسّنت: شرائح كاملة أو بملاحظات أو نشرات <strong style="color:var(--accent)">3 شرائح بالصفحة</strong> (قديماً: شريحة واحدة فقط بالصفحة).</p>
+      </div>
+      <div class="card">
+        <span class="icon">🌀</span>
+        <h3>Sway وأخواتها</h3>
+        <p><strong style="color:var(--accent)">Sway</strong> خدمة مايكروسوفت لإنشاء <strong style="color:var(--text)">عروض تقديمية عبر الإنترنت</strong> وتقارير تفاعلية («وصفات طبية prescription» مصيدة إملائية!) · <strong style="color:var(--text)">Forms</strong> لاستطلاعات الرأي وجمع البيانات · <strong style="color:var(--text)">Quiz</strong> لنماذج الاختبارات الإلكترونية · وExcel Online يفتقر لتبويب البيانات <strong style="color:var(--bad)">لاستيراد البيانات من قواعد البيانات</strong>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 4. Google world ===================== -->
+<section id="google">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">04.</span> عالم جوجل — درايف وصور ورسومات</h2>
+    <p class="sec-lead">15 جيجا مشتركة — لا مقسومة بالتساوي:</p>
+
+    <div class="grid cols-2">
+      <div class="card">
+        <span class="icon">🗂️</span>
+        <h3>Google Drive</h3>
+        <p>حجم التخزين <strong style="color:var(--accent)">15 جيجابايت</strong> (لا 25!) — والسعة <strong style="color:var(--accent)">مشتركة Shared</strong> بين Gmail وDrive وPhotos، وليست مقسومة بالتساوي بينها (مصيدة!).</p>
+      </div>
+      <div class="card">
+        <span class="icon">📷</span>
+        <h3>Google Photos</h3>
+        <p>مشاركة فيديو ✓ · البحث عن أي شيء داخل صورك — اكتب <strong style="color:var(--accent)">bag</strong> لتجد صور الحقائب ✓ (البحث في صورك من Photos لا من مستكشف الملفات!) · إضافة ألبوم: زر <strong style="color:var(--accent)">Import</strong> · وتفعيل النسخ الاحتياطي يحفظ الصور والفيديو تلقائياً لحسابك ✓.</p>
+      </div>
+      <div class="card">
+        <span class="icon">👥</span>
+        <h3>Google Contacts</h3>
+        <p>إضافة بريد إلكتروني لجهات الاتصال ✓ · تصدير جهات الاتصال بصيغة <strong style="color:var(--accent)">CSV</strong> · وإضافة صورة لجهة اتصال بزر <strong style="color:var(--text)">Add photo</strong>.</p>
+      </div>
+      <div class="card">
+        <span class="icon">✏️</span>
+        <h3>Google Drawings</h3>
+        <p>الرسم يُنشأ عبر <strong style="color:var(--accent)">Google Drawings</strong> (لا Drive نفسه — مصيدة!) · إعادة التسمية: اضغط منطقة النص <strong style="color:var(--text)">«Untitled drawing»</strong> ثم Enter ✓ (ومن قائمة File أيضاً) · ويمكن تنزيل الرسم كملف <strong style="color:var(--accent)">PDF</strong> ✓.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🎨</span>
+        <h3>Canva السحابية</h3>
+        <p>تعد كانفا إحدى الخدمات السحابية في مجال <strong style="color:var(--accent)">التصميم</strong> ✓ — وزر <strong style="color:var(--text)">Projects</strong> يفتح آخر ملف عملت عليه وقائمة مشاريعك المخزنة.</p>
+      </div>
+      <div class="card">
+        <span class="icon">📤</span>
+        <h3>مشاركة أوسع</h3>
+        <p>حساب مايكروسوفت يفتح لك برامج أكثر تخصصاً مثل Sway للتقارير والعروض التفاعلية ✓ — والعرض السحابي المحفوظ سابقاً يُفتح من أي جهاز بعد تسجيل الدخول.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 5. Glossary ===================== -->
+<section id="glossary">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">05.</span> قاموس المصطلحات — بطاقات تقلبها بأصبعك</h2>
+    <p class="sec-lead">اضغط أي بطاقة لتقليبها:</p>
+    <div class="filters" id="filters"></div>
+    <div class="flip-grid" id="flip-grid"></div>
+  </div>
+</section>
+
+<div class="part-banner memo-src">
+  <div class="container">
+    <span class="part-tag">الجزء الثاني · الأسئلة</span>
+    <h2>أسئلة المذكرة</h2>
+    <p>مصائد الكلمات أولاً، ثم اختبار تفاعلي بصياغة الامتحان الإنجليزية.</p>
+  </div>
+</div>
+
+<!-- ===================== 6. Traps ===================== -->
+<section id="traps">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">06.</span> مصيدة الكلمات — SaaS أم PaaS؟ ورقم أم رقم؟</h2>
+    <p class="sec-lead">اضغط أي عبارة لكشف الحكم:</p>
+    <div id="traps-list"></div>
+  </div>
+</section>
+
+<!-- ===================== 7. Memo quiz ===================== -->
+<section id="quiz">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">07.</span> أسئلة المذكرة — اختبر نفسك 🎯</h2>
+    <p class="sec-lead">14 سؤالاً من المذكرة بصياغتها الإنجليزية الأصلية مع ترجمة وشرح.</p>
+    <div class="quiz-box" id="quiz-box"></div>
+
+    <div class="analogy" style="margin-top:24px">
+      ⏳ <strong>قادم لهذا القسم:</strong> المطابقة مع المادة الرسمية + بطاقات «من المنهج الرسمي» + الأسئلة المتوقعة — تُضاف فور توفر المادة الرسمية لقسم الحوسبة السحابية.
+    </div>
+  </div>
+</section>
+
+<nav class="tabbar" aria-label="تنقل سريع">
+  <a href="#model" class="active"><span class="ico">📖</span>الشرح</a>
+  <a href="#glossary"><span class="ico">📇</span>القاموس</a>
+  <a href="#traps"><span class="ico">🧩</span>الأسئلة</a>
+</nav>
+
+<script src="assets/app.js"></script>
+<script>
+/* ===== نماذج الخدمة ===== */
+const TABS={
+  saas:{icon:'📦',ar:'البرمجيات كخدمة',lat:'SaaS — Software as a Service',
+    def:'برامج جاهزة تستخدمها مباشرة عبر المتصفح — لا تثبيت ولا صيانة.',
+    ex:'<strong>أمثلتها الامتحانية:</strong> تطبيقات جوجل Google Apps · Zendesk (وليست PaaS!) · Salesforce (وليست PaaS!). قاعدة: إن كنت «تستخدم برنامجاً جاهزاً» فهي SaaS.'},
+  paas:{icon:'🛠️',ar:'المنصات كخدمة',lat:'PaaS — Platform as a Service',
+    def:'أدوات جاهزة لبناء التطبيقات وإدارتها عبر الويب دون الدخول في البنية التحتية أو صيانتها — وتضم مكونات جاهزة للذكاء الاصطناعي وروبوتات الدردشة وإنترنت الأشياء.',
+    ex:'<strong>أمثلتها الامتحانية:</strong> Heroku (وليست SaaS!) — تتيح لفرق العمل إعداد المشاريع البرمجية دون التواجد في نفس المكان. قاعدة: إن كنت «تبني تطبيقاً» فهي PaaS.'},
+  iaas:{icon:'🏗️',ar:'البنية التحتية كخدمة',lat:'IaaS — Infrastructure as a Service',
+    def:'استئجار خوادم وتخزين وشبكات افتراضية تدير أنت ما فوقها.',
+    ex:'<strong>أمثلتها الامتحانية:</strong> Amazon AWS — من أشهر مزودي البنية التحتية عبر الإنترنت (وصفها بمزود «برامج» خطأ). قاعدة: إن كنت «تستأجر عتاداً» فهي IaaS.'}
+};
+const tabPanel=document.getElementById('tab-panel');
+function showTab(k){
+  const t=TABS[k];
+  tabPanel.innerHTML=`<h3>${t.icon} ${t.ar}</h3><span class="lat">${t.lat}</span><p>${t.def}</p><p style="margin-top:12px">${t.ex}</p>`;
+  document.querySelectorAll('[data-tab]').forEach(b=>b.classList.toggle('active',b.dataset.tab===k));
+}
+document.querySelectorAll('[data-tab]').forEach(b=>b.addEventListener('click',()=>showTab(b.dataset.tab)));
+showTab('saas');
+
+/* ===== مصيدة الكلمات ===== */
+App.renderTraps('traps-list',[
+ {q:'Zendesk is a cloud computing program that provides <span class="mark">PaaS</span>.',ar:'Zendesk يقدم خدمة PaaS.',ok:false,
+  a:'خطأ — Zendesk يقدم <strong>SaaS</strong> (برنامج جاهز للاستخدام).'},
+ {q:'Salesforce is a cloud computing software that provides a <span class="mark">PaaS</span> service.',ar:'Salesforce يقدم خدمة PaaS.',ok:false,
+  a:'خطأ — Salesforce <strong>SaaS</strong>.'},
+ {q:'The Heroku platform provides its services in the form of <span class="mark">SaaS</span>.',ar:'منصة Heroku تقدم خدماتها بصيغة SaaS.',ok:false,
+  a:'خطأ — Heroku <strong>PaaS</strong> (منصة لبناء المشاريع البرمجية). لاحظ العكس المزدوج مع Zendesk وSalesforce!'},
+ {q:'Storage size of Google Drive is <span class="mark">25</span> gigabytes.',ar:'حجم تخزين جوجل درايف 25 جيجابايت.',ok:false,
+  a:'خطأ — <strong>15 جيجابايت</strong> مجاناً.'},
+ {q:'Google storage is <span class="mark">divided equally</span> between Gmail, Google Drive, and Google Photos.',ar:'سعة جوجل مقسومة بالتساوي بين الخدمات الثلاث.',ok:false,
+  a:'خطأ — السعة <strong>مشتركة Shared</strong> بينها جميعاً، لا مقسومة بالتساوي.'},
+ {q:'OneDrive comes pre-installed on Windows <span class="mark">7</span>.',ar:'ون درايف مثبت مسبقاً على ويندوز 7.',ok:false,
+  a:'خطأ — على <strong>ويندوز 10</strong>.'},
+ {q:'Sway is a Microsoft service used to create online <span class="mark">prescription</span>.',ar:'Sway خدمة لإنشاء «وصفات طبية» عبر الإنترنت.',ok:false,
+  a:'خطأ إملائي مقصود — <strong>presentations عروض تقديمية</strong> لا prescription!'},
+ {q:'You can create a unified design using Master Slides in the <span class="mark">cloud</span> version of PowerPoint.',ar:'الشرائح الرئيسية متاحة في نسخة باوربوينت السحابية.',ok:false,
+  a:'خطأ — Master Slides في نسخة <strong>سطح المكتب Desktop</strong> فقط.'},
+ {q:'You can create a drawing using Google <span class="mark">Drive</span>.',ar:'يمكن إنشاء رسم بواسطة جوجل درايف.',ok:false,
+  a:'خطأ — بواسطة <strong>Google Drawings</strong> (تطبيق الرسومات).'},
+ {q:'You can search for anything you want through <span class="mark">File Explorer</span>.',ar:'يمكنك البحث عن أي شيء تريده عبر مستكشف الملفات.',ok:false,
+  a:'خطأ — البحث الذكي عن «أي شيء» (كصور الحقائب) في <strong>صور جوجل</strong> أو متصفح الإنترنت، لا مستكشف الملفات.'},
+ {q:'Cloud-based presentation previously made can be opened from any device <span class="mark">by web browser</span> alone.',ar:'العرض السحابي يُفتح من أي جهاز بالمتصفح فقط.',ok:false,
+  a:'خطأ ناقص — لا بد من <strong>تسجيل الدخول إلى حسابك في مايكروسوفت</strong> أولاً.'},
+ {q:'Previously, PowerPoint Online let you print <span class="mark">many slides</span> per page, including headers and footers.',ar:'قديماً كان باوربوينت أونلاين يطبع عدة شرائح بالصفحة.',ok:false,
+  a:'خطأ — قديماً كان يطبع <strong>شريحة واحدة فقط</strong> بالصفحة؛ التحسين الحالي هو الذي أتاح 3 شرائح ونشرات وملاحظات.'}
+]);
+
+/* ===== أسئلة المذكرة ===== */
+App.initQuiz('quiz-box',[
+ {en:'All of the following are cloud computing services except .....',ar:'كل مما يلي خدمات حوسبة سحابية عدا...',
+  opts:['Alibaba','Cisco','AWS','Azure'],a:1,
+  exp:'Cisco ليست خدمة سحابية — أما Alibaba فسحابة ✓.'},
+ {en:'Google Apps is considered .....',ar:'تعتبر تطبيقات جوجل...',
+  opts:['IaaS','PaaS','SaaS','DaaS'],a:2,
+  exp:'SaaS — برامج جاهزة تستخدمها عبر المتصفح.'},
+ {en:'..... has ready-to-use software components including AI, chatbots, IoT and more.',ar:'... تحتوي مكونات برمجية جاهزة تشمل الذكاء الاصطناعي وروبوتات الدردشة وإنترنت الأشياء.',
+  opts:['IaaS','PaaS','SaaS','Private cloud'],a:1,
+  exp:'PaaS — المنصات كخدمة، وهي أيضاً إجابة «تتيح الوصول لأدوات بناء تطبيقات الجوال عبر الويب دون صيانة البنية التحتية».'},
+ {en:'The cloud backend consists of ..... layers.',ar:'تتكون الواجهة الخلفية للسحابة من ... طبقات.',
+  opts:['3','4','6','8'],a:2,
+  exp:'6 طبقات — أما المكونات الأساسية للحوسبة السحابية فثلاثة، والواجهة الأمامية طبقة المستخدمين.'},
+ {en:'The ..... represents the cloud layer of users.',ar:'... تمثل طبقة المستخدمين في السحابة.',
+  opts:['Back end','Front end','Middleware','Database'],a:1,
+  exp:'الواجهة الأمامية Front End.'},
+ {en:'Free Microsoft OneDrive storage is .....',ar:'السعة التخزينية المجانية لون درايف...',
+  opts:['5 GB','15 GB','25 GB','50 GB'],a:0,
+  exp:'5 جيجابايت — أما 15 جيجا فهي سعة جوجل المشتركة.'},
+ {en:'With a work or educational account, OneDrive Recycle Bin items are deleted automatically after .....',ar:'بحساب عمل أو مؤسسة تعليمية تُحذف عناصر سلة محذوفات ون درايف تلقائياً بعد...',
+  opts:['30 days','60 days','93 days','365 days'],a:2,
+  exp:'93 يوماً.'},
+ {en:'To restore an older version of a file in OneDrive, right-click on the file and choose .....',ar:'لاستعادة إصدار أقدم من ملف في ون درايف: زر أيمن ثم...',
+  opts:['Undo','Version History','Restore All','Backup'],a:1,
+  exp:'Version History — تاريخ الإصدارات.'},
+ {en:'You can back up photos, videos and screenshots to OneDrive automatically through settings by clicking on .....',ar:'النسخ الاحتياطي التلقائي للصور واللقطات في ون درايف من الإعدادات بالضغط على...',
+  opts:['Sync now','Manage Backup','Auto Save','Upload'],a:1,
+  exp:'Manage Backup — ويشترط اتصالاً بالإنترنت ومساحة تخزين متاحة.'},
+ {en:'We could export contacts on Google as .....',ar:'يمكن تصدير جهات اتصال جوجل بصيغة...',
+  opts:['PDF','CSV','TXT','XML'],a:1,
+  exp:'CSV — صيغة الجداول المفصولة بفواصل.'},
+ {en:'To add a photo album to the Google Photos service, click on .....',ar:'لإضافة ألبوم صور في خدمة صور جوجل نضغط...',
+  opts:['Upload','Import','New','Add'],a:1,
+  exp:'Import.'},
+ {en:'You can search for a bag photo in Google Photos by typing .....',ar:'للبحث عن صورة حقيبة في صور جوجل نكتب...',
+  opts:['photo','bag','search bag','image'],a:1,
+  exp:'bag — البحث الذكي يتعرف على محتوى صورك.'},
+ {en:'Which cloud service provider is known for its extensive suite of tools to support digital transformation?',ar:'مزود الخدمة السحابية المعروف بمجموعته الواسعة من أدوات دعم التحول الرقمي؟',
+  opts:['Heroku','Zendesk','Microsoft Azure','Unsplash'],a:2,
+  exp:'Microsoft Azure.'},
+ {en:'..... button opens the last worked file of Canva.',ar:'زر ... يفتح آخر ملف عملت عليه في كانفا.',
+  opts:['Home','Projects','Recent','Files'],a:1,
+  exp:'Projects — ومنه أيضاً قائمة مشاريعك المخزنة. وكانفا خدمة سحابية في مجال التصميم ✓.'}
+]);
+
+/* ===== القاموس ===== */
+App.renderGlossary({
+  gridId:'flip-grid',filtersId:'filters',
+  cats:{all:'الكل',model:'المفهوم والنماذج',ms:'مايكروسوفت',gg:'جوجل'},
+  officialSet:new Set([]),
+  terms:[
+   {c:'model',ar:'الحوسبة السحابية',en:'Cloud Computing',d:'الوصول إلى موارد الحوسبة عبر الإنترنت فقط — 3 مكونات أساسية.',e:'Computing resources solely via the internet.'},
+   {c:'model',ar:'الواجهة الأمامية',en:'Front End',d:'طبقة المستخدمين في السحابة.',e:'The users\' layer.'},
+   {c:'model',ar:'الواجهة الخلفية',en:'Back End',d:'تتكون من 6 طبقات: الخوادم والتخزين والإدارة.',e:'Consists of 6 layers.'},
+   {c:'model',ar:'البرمجيات كخدمة',en:'SaaS',d:'برامج جاهزة عبر المتصفح: Google Apps، Zendesk، Salesforce.',e:'Google Apps, Zendesk, Salesforce.'},
+   {c:'model',ar:'المنصات كخدمة',en:'PaaS',d:'أدوات بناء التطبيقات دون صيانة البنية التحتية — ومكونات جاهزة للذكاء الاصطناعي وIoT. مثالها Heroku.',e:'Build apps without infrastructure; e.g. Heroku.'},
+   {c:'model',ar:'البنية التحتية كخدمة',en:'IaaS',d:'استئجار خوادم وتخزين افتراضي — مثالها Amazon AWS.',e:'Virtual servers and storage; e.g. AWS.'},
+   {c:'model',ar:'السحابة العامة',en:'Public Cloud',d:'النوع الذي تُعد منه منصة ويندوز.',e:'Windows platform is a public cloud.'},
+   {c:'model',ar:'أزور',en:'Microsoft Azure',d:'مزود سحابي معروف بأدواته الواسعة لدعم التحول الرقمي.',e:'Known for digital-transformation tools.'},
+   {c:'model',ar:'التحول الرقمي',en:'Digital Transformation',d:'دمج التكنولوجيا الرقمية في جميع جوانب الأعمال.',e:'Digital technology across all business aspects.'},
+   {c:'model',ar:'ليست سحابة!',en:'Cisco',d:'إجابة سؤال الاستثناء: كل مما يلي خدمات سحابية عدا... Cisco.',e:'The classic "except" answer.'},
+   {c:'ms',ar:'ون درايف',en:'OneDrive',d:'5 جيجا مجاناً، مثبت مسبقاً على ويندوز 10، والمشاركة من مستكشف الملفات.',e:'5 GB free; pre-installed on Windows 10.'},
+   {c:'ms',ar:'سلة محذوفات المؤسسات',en:'93 Days',d:'بحساب عمل/تعليمي تُحذف عناصر سلة ون درايف تلقائياً بعد 93 يوماً.',e:'Auto-deletion after 93 days (work/school).'},
+   {c:'ms',ar:'تاريخ الإصدارات',en:'Version History',d:'زر أيمن على الملف لاستعادة إصدار أقدم في ون درايف.',e:'Right-click to restore older versions.'},
+   {c:'ms',ar:'إدارة النسخ الاحتياطي',en:'Manage Backup',d:'من إعدادات ون درايف لنسخ الصور والفيديو ولقطات الشاشة تلقائياً — بشرط إنترنت ومساحة.',e:'Auto-backup of photos and screenshots.'},
+   {c:'ms',ar:'باوربوينت أونلاين',en:'PowerPoint Online',d:'يفتح من أي متصفح بتسجيل دخول مايكروسوفت — والطباعة الآن: كاملة/ملاحظات/3 شرائح بالصفحة.',e:'Any browser + Microsoft login.'},
+   {c:'ms',ar:'الشرائح الرئيسية',en:'Master Slides',d:'التصميم الموحد للعرض كله — في نسخة سطح المكتب فقط لا السحابية.',e:'Desktop version only.'},
+   {c:'ms',ar:'سواي',en:'Sway',d:'خدمة مايكروسوفت للعروض التقديمية والتقارير التفاعلية عبر الإنترنت.',e:'Online presentations and interactive reports.'},
+   {c:'ms',ar:'نماذج واختبارات',en:'Forms / Quiz',d:'Forms لاستطلاعات الرأي وجمع البيانات، وQuiz لنماذج الاختبارات الإلكترونية.',e:'Forms for polls; Quiz for e-tests.'},
+   {c:'ms',ar:'إكسل أونلاين',en:'Excel Online',d:'يفتقر لتبويب البيانات الخاص باستيراد البيانات من قواعد البيانات.',e:'Lacks the Data tab for database imports.'},
+   {c:'gg',ar:'جوجل درايف',en:'Google Drive',d:'15 جيجابايت — سعة مشتركة بين Gmail وDrive وPhotos، لا مقسومة بالتساوي.',e:'15 GB shared, not divided equally.'},
+   {c:'gg',ar:'صور جوجل',en:'Google Photos',d:'بحث ذكي داخل صورك (اكتب bag)، مشاركة فيديو، وألبوم جديد بزر Import.',e:'Smart search; albums via Import.'},
+   {c:'gg',ar:'جهات اتصال جوجل',en:'Google Contacts',d:'إضافة بريد وصورة (Add photo)، والتصدير بصيغة CSV.',e:'Export as CSV.'},
+   {c:'gg',ar:'رسومات جوجل',en:'Google Drawings',d:'إنشاء الرسم وإعادة تسميته من «Untitled drawing»، والتنزيل كملف PDF.',e:'Rename via "Untitled drawing"; download as PDF.'},
+   {c:'gg',ar:'كانفا',en:'Canva',d:'خدمة سحابية في مجال التصميم — زر Projects لآخر ملف ومشاريعك المخزنة.',e:'Cloud design service; Projects button.'}
+  ]
+});
+
+App.initAccordions();
+App.initNav({model:'#model',saas:'#model',ms:'#model',google:'#model',glossary:'#glossary',traps:'#traps',quiz:'#traps'});
+App.initShell('cloud.html');
+</script>
+</body>
+</html>

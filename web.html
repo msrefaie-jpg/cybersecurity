@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>البحث على الإنترنت ببساطة — دليل تفاعلي</title>
+<meta name="description" content="دليل تفاعلي مبسّط لقسم البحث على الإنترنت من دورة التحول الرقمي: محركات البحث، بنك المعرفة المصري، مقاييس المجلات العلمية، واختبارات تفاعلية.">
+<meta name="theme-color" content="#000000">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="التحول الرقمي">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/app.css">
+</head>
+<body>
+
+<header class="hero">
+  <div class="container">
+    <span class="shield">🔎</span>
+    <h1>البحث على الإنترنت <span>ببساطة</span></h1>
+    <p class="sub">دليل تفاعلي لقسم البحث على الإنترنت: حِيَل بحث جوجل، بنك المعرفة المصري، وقواعد البيانات العلمية ومقاييس المجلات.</p>
+    <span class="badge" style="background:rgba(255,214,10,.12);color:var(--warn);border-color:rgba(255,214,10,.3)">⏳ من المذكرة — لم يُطابَق بعد مع المادة الرسمية (سيُنقَّح فور توفرها)</span>
+    <div class="stats">
+      <div class="stat"><b>29</b><span>سؤالاً في المذكرة</span></div>
+      <div class="stat"><b>24</b><span>مصطلحاً أساسياً</span></div>
+      <div class="stat"><b>10</b><span>مصائد كلمات</span></div>
+      <div class="stat"><b>14</b><span>سؤال اختبار</span></div>
+    </div>
+  </div>
+</header>
+
+<nav class="tabs" aria-label="أقسام الدليل">
+  <div class="inner">
+    <a class="home-link" href="./">🏠 الرئيسية</a>
+    <a href="#engines" class="active">حِيَل بحث جوجل</a>
+    <a href="#ekb">بنك المعرفة والقواعد</a>
+    <a href="#metrics">مقاييس المجلات</a>
+    <a href="#glossary">القاموس</a>
+    <a href="#traps">مصيدة الكلمات</a>
+    <a href="#quiz">أسئلة المذكرة</a>
+  </div>
+</nav>
+
+<div class="part-banner memo-src">
+  <div class="container">
+    <span class="part-tag">الجزء الأول · الشروحات التفاعلية</span>
+    <h2>شروحات المذكرة</h2>
+    <p>شرح مبسّط لكل ما ورد في قسم البحث على الإنترنت بالمذكرة (29 سؤالاً).</p>
+  </div>
+</div>
+
+<!-- ===================== 1. Google search ===================== -->
+<section id="engines">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">01.</span> حِيَل البحث في جوجل — ابحث كالمحترفين</h2>
+    <p class="sec-lead">
+      الكلمات التي تكتبها في حقل البحث اسمها <strong style="color:var(--text)">مصطلحات البحث Search Terms</strong>، ومحرك البحث لا يفحص الشبكة كلها لحظياً — بل يبحث في <strong style="color:var(--text)">فهارسه Indexes</strong> المخزنة مسبقاً (مصيدة «يفحص الشبكة بشكل شامل»!).
+    </p>
+
+    <div class="analogy">
+      📚 <strong>تشبيه:</strong> محرك البحث أمين مكتبة أعدّ فهرساً ضخماً لكل الكتب مسبقاً — حين تسأله لا يركض بين الرفوف، بل يفتح فهرسه الجاهز. لهذا تظهر النتائج في أجزاء من الثانية.
+    </div>
+
+    <div class="grid cols-2">
+      <div class="card">
+        <span class="icon">🎯</span>
+        <h3>تضييق وتوسيع النتائج</h3>
+        <p>البحث المتقدم يُستخدم <strong style="color:var(--accent)">لتضييق Narrow</strong> نتائجك وفق معايير محددة · معامل <span class="en">OR</span> <strong style="color:var(--accent)">يوسّع</strong> نطاق البحث · الشرطة <span class="en">(-)</span> قبل كلمة <strong style="color:var(--accent)">تقلل</strong> النتائج باستبعادها.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🔗</span>
+        <h3>صيغة <span class="en">link:</span></h3>
+        <p>لمعرفة من استشهد بمقال واشنطن بوست على موقعه، الصيغة الصحيحة: <span class="en" style="color:var(--accent)">Link: washingtonpost.com</span>.</p>
+      </div>
+      <div class="card">
+        <span class="icon">👯</span>
+        <h3>صيغة <span class="en">related:</span></h3>
+        <p>لإيجاد موقع شبيه بموقع eBay: <span class="en" style="color:var(--accent)">related: eBay.com</span>.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🔒</span>
+        <h3>التسوق الآمن</h3>
+        <p>مواقع التسوق والمتاجر الإلكترونية الآمنة تبدأ بنطاق <strong style="color:var(--accent)">HTTPS</strong> — لا HTTP (حرف S = Secure). و«البوابة» التقنية للوصول لموارد خادم الويب تسمى <strong style="color:var(--text)">المنفذ Port</strong>.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🌐</span>
+        <h3>الحفظ للويب</h3>
+        <p>يُحفظ المستند للعرض على الويب بامتداد <strong style="color:var(--accent)">html</strong> — «HMT» في السؤال مصيدة إملائية!</p>
+      </div>
+      <div class="card">
+        <span class="icon">☁️</span>
+        <h3>OneDrive في المتصفح</h3>
+        <p>يمكن استخدام OneDrive كمحرك أقراص سحابي من أيقونة <strong style="color:var(--text)">مشغّل التطبيقات App Launcher</strong>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 2. EKB & databases ===================== -->
+<section id="ekb">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">02.</span> بنك المعرفة المصري وقواعد البيانات العلمية</h2>
+    <p class="sec-lead">بنك المعرفة المصري <span class="en">EKB</span> بوابة مجانية لأضخم قواعد البيانات العلمية العالمية — واحفظ «مَن يوصلك إلى ماذا»:</p>
+
+    <div class="grid cols-2">
+      <div class="card">
+        <span class="icon">🏦</span>
+        <h3>بنك المعرفة <span class="en">EKB</span></h3>
+        <p>يقدم مجموعة ورش عمل عبر الإنترنت ✓، ومن قائمة <strong style="color:var(--accent)">المصادر Sources</strong> فيه يصل المستخدم إلى <strong style="color:var(--text)">Clarivate</strong>.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🧭</span>
+        <h3>سلسلة الوصول الشهيرة</h3>
+        <p>مصادر <strong style="color:var(--text)">Scopus</strong> يُوصل إليها عبر قاعدة <strong style="color:var(--accent)">ELSEVIER</strong> · وموقع <strong style="color:var(--accent)">Clarivate</strong> يتيح استخدام <strong style="color:var(--text)">EndNote Online</strong> مجاناً.</p>
+      </div>
+      <div class="card">
+        <span class="icon">👤</span>
+        <h3>دمج حسابات المؤلف</h3>
+        <p>قاعدة البيانات <strong style="color:var(--accent)">Scopus</strong> تمكّنك من دمج أكثر من حساب لنفس المؤلف.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🔣</span>
+        <h3>ProQuest والمعاملات المنطقية</h3>
+        <p><strong style="color:var(--accent)">يمكن</strong> استخدام العمليات المنطقية (AND/OR/NOT) عند البحث داخل ProQuest — عبارة «لا يمكن» خاطئة (مصيدة!).</p>
+      </div>
+      <div class="card">
+        <span class="icon">🕌</span>
+        <h3>المصادر العربية</h3>
+        <p>فهرس <strong style="color:var(--text)">دار المنظومة</strong> يحتوي مجموعة أقسام فرعية ✓ · والكشاف العربي للاستشهادات المرجعية يقبل مصطلحات البحث <strong style="color:var(--accent)">بالعربية والإنجليزية</strong> — لا بالعربية فقط (مصيدة!).</p>
+      </div>
+      <div class="card">
+        <span class="icon">🤝</span>
+        <h3>منصة إجادة <span class="en">Ejada</span></h3>
+        <p>نتاج تعاون <strong style="color:var(--text)">مؤسسة الألفي للتنمية الإنسانية والاجتماعية</strong> مع <strong style="color:var(--text)">وزارة التعليم العالي</strong>.</p>
+      </div>
+      <div class="card">
+        <span class="icon">📷</span>
+        <h3>صور Unsplash</h3>
+        <p>جميع الصور المنشورة على Unsplash قابلة للنسخ والتعديل والتوزيع مجاناً — <strong style="color:var(--accent)">حتى للأغراض التجارية</strong> ✓.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 3. Journal metrics ===================== -->
+<section id="metrics">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">03.</span> مقاييس المجلات العلمية — IF وSJR وSCImago</h2>
+    <p class="sec-lead">كيف نعرف أن مجلة علمية «محترمة»؟ بمقاييس تأثيرها — وهي أكثر مواضع الخلط في هذا القسم:</p>
+
+    <div class="grid cols-2">
+      <div class="card">
+        <span class="icon">⭐</span>
+        <h3>معامل التأثير <span class="en">Impact Factor</span></h3>
+        <p>يعتمد على حساب عدد <strong style="color:var(--accent)">الاستشهادات Citations</strong> (المقالات الواردة من المجلة) خلال سنة — <strong style="color:var(--bad)">وليس</strong> عدد مرات البحث عن المقالات (مصيدة!). وهو الأداة القوية <strong style="color:var(--accent)">لمقارنة المجلات في نفس فئة الموضوع</strong>.</p>
+      </div>
+      <div class="card">
+        <span class="icon">📊</span>
+        <h3><span class="en">SCImago</span> وSJR</h3>
+        <p>SCImago يعرض مقاييس <strong style="color:var(--accent)">SCOPUS</strong> للمجلة وفقاً للسنة ✓ — ومصدر بياناته <strong style="color:var(--accent)">Scopus</strong>. و<span class="en">SJR</span> (SCImago Journal Rank) مؤشر يقيس <strong style="color:var(--text)">التأثير العلمي للمجلات ويوضح حالة المجلات التي تأتي منها الاستشهادات</strong>.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🌍</span>
+        <h3><span class="en">WOS</span> — Web of Science</h3>
+        <p>البحث المتقدم فيه يضيّق نطاق البحث وفقاً لمعايير محددة ✓، وبالضغط على اسم المجلة أو الدورية يظهر <strong style="color:var(--accent)">معامل تأثيرها</strong> ✓.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🗂️</span>
+        <h3>ترتيب وتصفية</h3>
+        <p>SJR يمكّنك من ترتيب مجلات مجالك وتصفيتها بالموضوع <strong style="color:var(--accent)">وبالسنة أيضاً</strong> — فعرض المقاييس وفق السنة وارد صراحة في وصف SCImago.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 4. Glossary ===================== -->
+<section id="glossary">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">04.</span> قاموس المصطلحات — بطاقات تقلبها بأصبعك</h2>
+    <p class="sec-lead">اضغط أي بطاقة لتقليبها:</p>
+    <div class="filters" id="filters"></div>
+    <div class="flip-grid" id="flip-grid"></div>
+  </div>
+</section>
+
+<div class="part-banner memo-src">
+  <div class="container">
+    <span class="part-tag">الجزء الثاني · الأسئلة</span>
+    <h2>أسئلة المذكرة</h2>
+    <p>مصائد الكلمات أولاً، ثم اختبار تفاعلي بصياغة الامتحان الإنجليزية.</p>
+  </div>
+</div>
+
+<!-- ===================== 5. Traps ===================== -->
+<section id="traps">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">05.</span> مصيدة الكلمات — كلمة واحدة تقلب الحكم</h2>
+    <p class="sec-lead">اضغط أي عبارة لكشف الحكم:</p>
+    <div id="traps-list"></div>
+  </div>
+</section>
+
+<!-- ===================== 6. Memo quiz ===================== -->
+<section id="quiz">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">06.</span> أسئلة المذكرة — اختبر نفسك 🎯</h2>
+    <p class="sec-lead">14 سؤالاً من المذكرة بصياغتها الإنجليزية الأصلية مع ترجمة وشرح.</p>
+    <div class="quiz-box" id="quiz-box"></div>
+
+    <div class="analogy" style="margin-top:24px">
+      ⏳ <strong>قادم لهذا القسم:</strong> المطابقة مع المادة الرسمية + بطاقات «من المنهج الرسمي» + الأسئلة المتوقعة — تُضاف فور توفر المادة الرسمية لقسم البحث على الإنترنت (النطاق المعتمد: ص 23–116).
+    </div>
+  </div>
+</section>
+
+<nav class="tabbar" aria-label="تنقل سريع">
+  <a href="#engines" class="active"><span class="ico">📖</span>الشرح</a>
+  <a href="#glossary"><span class="ico">📇</span>القاموس</a>
+  <a href="#traps"><span class="ico">🧩</span>الأسئلة</a>
+</nav>
+
+<script src="assets/app.js"></script>
+<script>
+/* ===== مصيدة الكلمات ===== */
+App.renderTraps('traps-list',[
+ {q:'Secure shopping websites start with the website domain <span class="mark">HTTP</span>.',ar:'مواقع التسوق الآمنة تبدأ بنطاق HTTP.',ok:false,
+  a:'خطأ — الآمنة تبدأ بـ<strong>HTTPS</strong>: حرف S يعني Secure (اتصال مشفّر).'},
+ {q:'The journal\'s impact factor is based on the number of times articles are <span class="mark">searched for</span>.',ar:'معامل التأثير يعتمد على عدد مرات البحث عن المقالات.',ok:false,
+  a:'خطأ — يعتمد على <strong>الاستشهادات Citations</strong> (المقالات الواردة من المجلة) خلال السنة، لا مرات البحث.'},
+ {q:'The search engine <span class="mark">comprehensively scans the network</span> to obtain results.',ar:'محرك البحث يفحص الشبكة بشكل شامل للحصول على النتائج.',ok:false,
+  a:'خطأ — يبحث في <strong>الفهارس Indexes</strong> المخزنة مسبقاً، وليس الشبكة كلها لحظة البحث.'},
+ {q:'Boolean operations <span class="mark">cannot</span> be used when searching within a ProQuest database.',ar:'لا يمكن استخدام العمليات المنطقية داخل ProQuest.',ok:false,
+  a:'خطأ — <strong>يمكن</strong> استخدام AND وOR وNOT داخل ProQuest كسائر قواعد البيانات العلمية.'},
+ {q:'The document can be saved for viewing on the web with the <span class="mark">HMT</span> extension.',ar:'يُحفظ المستند للعرض على الويب بامتداد HMT.',ok:false,
+  a:'خطأ إملائي مقصود — الامتداد الصحيح <strong>html</strong>.'},
+ {q:'The Arabic Index for reference citations enables you to write search terms in Arabic <span class="mark">only</span>.',ar:'الكشاف العربي يقبل مصطلحات البحث بالعربية فقط.',ok:false,
+  a:'خطأ — يقبل <strong>العربية والإنجليزية</strong> معاً. كلمة «فقط only» هي المصيدة.'},
+ {q:'The <span class="mark">Scopus database</span> is a powerful tool if you want to compare journals in the same subject category.',ar:'قاعدة Scopus أداة قوية لمقارنة المجلات في نفس فئة الموضوع.',ok:false,
+  a:'خطأ — أداة المقارنة هي <strong>معامل التأثير IF</strong> للمجلة، لا قاعدة Scopus ذاتها.'},
+ {q:'SJR enables you to filter journals by topic, but it is <span class="mark">difficult to classify them by year</span>.',ar:'يصعب في SJR تصنيف المجلات حسب السنة.',ok:false,
+  a:'خطأ — SCImago يعرض المقاييس <strong>وفقاً للسنة</strong> صراحةً، فالتصنيف بالسنة متاح وسهل.'},
+ {q:'Using a hyphen (-) when searching on Google leads to reducing the search results.',ar:'استخدام الشرطة (-) في بحث جوجل يقلل نتائج البحث.',ok:true,
+  a:'صحيح ✓ — الشرطة قبل كلمة تستبعدها من النتائج فيقل عددها.'},
+ {q:'The Egyptian Knowledge Bank (EKB) offers a range of online workshops.',ar:'يقدم بنك المعرفة المصري مجموعة ورش عمل عبر الإنترنت.',ok:true,
+  a:'صحيح ✓ — من خدمات بنك المعرفة المجانية.'}
+]);
+
+/* ===== أسئلة المذكرة ===== */
+App.initQuiz('quiz-box',[
+ {en:'Using Google, to know who cited a Washington Post article on their site, the correct search structure is .....',ar:'لمعرفة من استشهد بمقال واشنطن بوست على موقعه، الصيغة الصحيحة...',
+  opts:['related: washingtonpost.com','Link: washingtonpost.com','cite: washingtonpost.com','site: washingtonpost.com'],a:1,
+  exp:'Link: تعرض المواقع التي تضع رابطاً (استشهاداً) للموقع المطلوب.'},
+ {en:'Using Google, to find a website similar to eBay, the correct syntax is .....',ar:'لإيجاد موقع شبيه بـ eBay، الصيغة الصحيحة...',
+  opts:['Link: eBay.com','similar: eBay.com','related: eBay.com','like: eBay.com'],a:2,
+  exp:'related: تعرض المواقع المشابهة للموقع المذكور.'},
+ {en:'The words you type in a search field to get your results are called .....',ar:'الكلمات التي تكتبها في حقل البحث تسمى...',
+  opts:['Keywords list','Search terms','Queries table','Tags'],a:1,
+  exp:'مصطلحات البحث Search Terms.'},
+ {en:'The Database ..... enables you to merge more than one account of the same author.',ar:'قاعدة البيانات ... تمكّنك من دمج أكثر من حساب لنفس المؤلف.',
+  opts:['ProQuest','SCImago','Scopus','EKB'],a:2,
+  exp:'Scopus — وتُوصَل مصادرها عبر قاعدة ELSEVIER.'},
+ {en:'Use advanced search to ..... your results.',ar:'استخدم البحث المتقدم لـ... نتائجك.',
+  opts:['Expand','Narrow','Delete','Copy'],a:1,
+  exp:'تضييق Narrow وفق معايير محددة — أما التوسيع فبمعامل OR.'},
+ {en:'Use ..... to expand your search.',ar:'استخدم ... لتوسيع نطاق البحث.',
+  opts:['AND','NOT','OR','hyphen (-)'],a:2,
+  exp:'OR يجمع نتائج أيٍّ من الكلمتين فيوسّع النطاق. الشرطة (-) والـ NOT يضيّقان.'},
+ {en:'..... refers to the technical "gateway" used to access resources on a web server.',ar:'... يشير إلى «البوابة» التقنية للوصول إلى موارد خادم الويب.',
+  opts:['Domain','Port','Index','Browser'],a:1,
+  exp:'المنفذ Port.'},
+ {en:'The data source in SCImago is .....',ar:'مصدر البيانات في SCImago هو...',
+  opts:['WOS','ProQuest','Scopus','EKB'],a:2,
+  exp:'Scopus — وSCImago يعرض مقاييسه للمجلات وفق السنة.'},
+ {en:'The indicator measuring journals\' scientific influence, explaining the status of journals from which citations come, is .....',ar:'المؤشر الذي يقيس التأثير العلمي للمجلات ويوضح حالة المجلات التي تأتي منها الاستشهادات...',
+  opts:['Impact Factor','h-index','SCImago Journal Rank','CiteScore'],a:2,
+  exp:'SJR — SCImago Journal Rank.'},
+ {en:'The ..... platform is the product of cooperation between the Al-Alfi Foundation and the Ministry of Higher Education.',ar:'منصة ... نتاج تعاون مؤسسة الألفي ووزارة التعليم العالي.',
+  opts:['Ejada','Edmodo','EKB','Coursera'],a:0,
+  exp:'إجادة Ejada.'},
+ {en:'The website ..... allows you to use EndNote Online for free.',ar:'موقع ... يتيح استخدام EndNote Online مجاناً.',
+  opts:['Scopus','Clarivate','ELSEVIER','SCImago'],a:1,
+  exp:'Clarivate — ويصل إليه المستخدم من قائمة المصادر ببنك المعرفة المصري.'},
+ {en:'You can use OneDrive as a cloud drive within tab .....',ar:'يمكن استخدام OneDrive كمحرك أقراص سحابي من...',
+  opts:['App launcher icon','Settings menu','File tab','Insert tab'],a:0,
+  exp:'أيقونة مشغّل التطبيقات App Launcher.'},
+ {en:'When you click on the journal name in WOS, ..... is displayed.',ar:'عند الضغط على اسم المجلة في WOS يظهر...',
+  opts:['the article count only','the impact factor of the journal','the publisher address','nothing'],a:1,
+  exp:'معامل تأثير المجلة أو الدورية ✓.'},
+ {en:'All photos posted on Unsplash are free to copy, modify and distribute, including for commercial purposes.',ar:'جميع صور Unsplash قابلة للنسخ والتعديل والتوزيع مجاناً حتى تجارياً.',
+  opts:['صواب ✓','خطأ ✗'],a:0,
+  exp:'صواب ✓ — هذه سياسة Unsplash المعلنة.'}
+]);
+
+/* ===== القاموس ===== */
+App.renderGlossary({
+  gridId:'flip-grid',filtersId:'filters',
+  cats:{all:'الكل',search:'حِيَل البحث',db:'قواعد البيانات',metric:'المقاييس'},
+  officialSet:new Set([]),
+  terms:[
+   {c:'search',ar:'مصطلحات البحث',en:'Search Terms',d:'الكلمات التي تكتبها في حقل البحث للحصول على نتائجك.',e:'The words you type in a search field.'},
+   {c:'search',ar:'الفهارس',en:'Indexes',d:'قوائم محرك البحث المخزنة مسبقاً — فيها يبحث المحرك، لا في الشبكة كلها.',e:'Search engines search their indexes, not the whole web.'},
+   {c:'search',ar:'البحث المتقدم',en:'Advanced Search',d:'يضيّق Narrow نتائجك وفق معايير محددة.',e:'Narrows results according to specific criteria.'},
+   {c:'search',ar:'معامل التوسيع',en:'OR',d:'يوسّع نطاق البحث بقبول أيٍّ من الكلمات.',e:'Expands your search.'},
+   {c:'search',ar:'الشرطة',en:'Hyphen (-)',d:'قبل كلمةٍ تستبعدها فتقل نتائج البحث.',e:'Excludes a word, reducing results.'},
+   {c:'search',ar:'من استشهد بي؟',en:'Link:',d:'صيغة جوجل لعرض المواقع التي تشير لموقع معين: Link: washingtonpost.com.',e:'Shows sites linking to a given site.'},
+   {c:'search',ar:'مواقع شبيهة',en:'related:',d:'صيغة جوجل لإيجاد مواقع مشابهة: related: eBay.com.',e:'Finds similar websites.'},
+   {c:'search',ar:'التصفح الآمن',en:'HTTPS',d:'بداية عناوين المتاجر الآمنة — حرف S يعني اتصالاً مشفّراً.',e:'Secure shopping sites start with HTTPS.'},
+   {c:'search',ar:'المنفذ',en:'Port',d:'«البوابة» التقنية للوصول إلى موارد خادم الويب.',e:'The technical gateway to web server resources.'},
+   {c:'search',ar:'امتداد صفحات الويب',en:'html',d:'الامتداد الذي يُحفظ به المستند للعرض على الويب.',e:'Extension for saving documents for the web.'},
+   {c:'search',ar:'مشغّل التطبيقات',en:'App Launcher',d:'أيقونته تتيح استخدام OneDrive كمحرك أقراص سحابي.',e:'Access OneDrive as a cloud drive.'},
+   {c:'db',ar:'بنك المعرفة المصري',en:'EKB',d:'بوابة مجانية لقواعد البيانات العالمية، يقدم ورش عمل عبر الإنترنت، ومن قائمة مصادره يُوصل إلى Clarivate.',e:'Egyptian Knowledge Bank; online workshops; Sources → Clarivate.'},
+   {c:'db',ar:'كلاريفيت',en:'Clarivate',d:'يتيح استخدام EndNote Online مجاناً، ويضم Web of Science.',e:'Free EndNote Online; hosts WOS.'},
+   {c:'db',ar:'سكوبس',en:'Scopus',d:'قاعدة بيانات تتيح دمج أكثر من حساب لنفس المؤلف — مصادرها عبر ELSEVIER.',e:'Merges author accounts; accessed via ELSEVIER.'},
+   {c:'db',ar:'إلسفير',en:'ELSEVIER',d:'الناشر العالمي الذي تُوصل مصادر Scopus من خلال قاعدته.',e:'Scopus sources are accessed through it.'},
+   {c:'db',ar:'بروكويست',en:'ProQuest',d:'قاعدة بيانات علمية تدعم العمليات المنطقية AND/OR/NOT في البحث.',e:'Supports Boolean search operations.'},
+   {c:'db',ar:'دار المنظومة',en:'Dar Al-Mandumah',d:'فهرس عربي يحتوي مجموعة أقسام فرعية.',e:'Arabic index with subsections.'},
+   {c:'db',ar:'الكشاف العربي',en:'Arabic Citation Index',d:'كشاف الاستشهادات المرجعية العربي — يقبل البحث بالعربية والإنجليزية.',e:'Accepts Arabic and English search terms.'},
+   {c:'db',ar:'منصة إجادة',en:'Ejada',d:'تعاون مؤسسة الألفي للتنمية الإنسانية والاجتماعية مع وزارة التعليم العالي.',e:'Al-Alfi Foundation + Ministry of Higher Education.'},
+   {c:'db',ar:'أنسبلاش',en:'Unsplash',d:'صور مجانية للنسخ والتعديل والتوزيع حتى للأغراض التجارية.',e:'Free photos, even commercially.'},
+   {c:'metric',ar:'معامل التأثير',en:'Impact Factor',d:'عدد الاستشهادات بمقالات المجلة خلال سنة — أداة مقارنة المجلات في نفس الموضوع.',e:'Citations per year; compares journals in a field.'},
+   {c:'metric',ar:'سايمجو',en:'SCImago',d:'يعرض مقاييس SCOPUS للمجلات وفقاً للسنة — مصدر بياناته Scopus.',e:'Displays SCOPUS metrics by year.'},
+   {c:'metric',ar:'مؤشر SJR',en:'SCImago Journal Rank',d:'يقيس التأثير العلمي ويوضح حالة المجلات التي تأتي منها الاستشهادات.',e:'Measures influence via citing journals\' status.'},
+   {c:'metric',ar:'شبكة العلوم',en:'WOS',d:'Web of Science: بحث متقدم يضيّق النتائج، والضغط على اسم المجلة يعرض معامل تأثيرها.',e:'Advanced search narrows; journal name shows IF.'}
+  ]
+});
+
+App.initAccordions();
+App.initNav({engines:'#engines',ekb:'#engines',metrics:'#engines',glossary:'#glossary',traps:'#traps',quiz:'#traps'});
+App.initShell('web.html');
+</script>
+</body>
+</html>

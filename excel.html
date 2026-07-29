@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>جداول البيانات (إكسل) ببساطة — دليل تفاعلي</title>
+<meta name="description" content="دليل تفاعلي مبسّط لقسم جداول البيانات (إكسل) من دورة التحول الرقمي: المراجع والدوال، خريطة التبويبات، الأخطاء، واختبارات تفاعلية.">
+<meta name="theme-color" content="#000000">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="التحول الرقمي">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/app.css">
+</head>
+<body>
+
+<header class="hero">
+  <div class="container">
+    <span class="shield">📊</span>
+    <h1>جداول البيانات (إكسل) <span>ببساطة</span></h1>
+    <p class="sub">دليل تفاعلي لأكثر أقسام الدورة أسئلةً — المراجع والدوال والتبويبات والأخطاء، بشرح يفهمه غير المتخصص.</p>
+    <span class="badge">مُستخلص من المذكرة ومُطابَق مع المادة الرسمية (BIT 04 — جداول البيانات إكسيل، الإصدار 3 / 2024)</span>
+    <div class="stats">
+      <div class="stat"><b>68</b><span>سؤالاً في المذكرة</span></div>
+      <div class="stat"><b>27</b><span>مصطلحاً أساسياً</span></div>
+      <div class="stat"><b>22</b><span>سؤالاً متوقعاً</span></div>
+      <div class="stat"><b>144</b><span>صفحة بالمادة الرسمية</span></div>
+    </div>
+  </div>
+</header>
+
+<nav class="tabs" aria-label="أقسام الدليل">
+  <div class="inner">
+    <a class="home-link" href="./">🏠 الرئيسية</a>
+    <a href="#basics" class="active">الأساسيات والمراجع</a>
+    <a href="#tabsmap">خريطة التبويبات</a>
+    <a href="#funcs">الدوال</a>
+    <a href="#charts">المخططات والطباعة</a>
+    <a href="#errors">الأخطاء والحماية</a>
+    <a href="#glossary">القاموس</a>
+    <a href="#official">من المنهج الرسمي</a>
+    <a href="#traps">مصيدة الكلمات</a>
+    <a href="#quiz">أسئلة المذكرة</a>
+    <a href="#predicted">أسئلة متوقعة</a>
+  </div>
+</nav>
+
+<div class="part-banner memo-src">
+  <div class="container">
+    <span class="part-tag">الجزء الأول · الشروحات التفاعلية</span>
+    <h2>شروحات المذكرة</h2>
+    <p>شرح مبسّط لكل ما ورد في قسم جداول البيانات بالمذكرة — مطابَق بنداً بنداً مع المادة الرسمية.</p>
+  </div>
+</div>
+
+<!-- ===================== 1. Basics & references ===================== -->
+<section id="basics">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">01.</span> الأساسيات والمراجع — لغة إكسل</h2>
+    <p class="sec-lead">
+      المصنف <span class="en">Workbook</span> هو الملف كله، وبداخله أوراق عمل <span class="en">Worksheets</span>، وكل ورقة شبكة ضخمة من الخلايا: <strong style="color:var(--text)">16,384 عموداً × 1,048,576 صفاً</strong>.
+    </p>
+
+    <div class="analogy">
+      📒 <strong>تشبيه:</strong> المصنف دفترٌ كامل، وكل ورقة عمل صفحة مسطّرة فيه، وكل خلية مربّع في تلك الصفحة له عنوان مكوَّن من حرف العمود ورقم الصف (مثل B3). حين تكتب في معادلتك «عنوان المربع» بدلاً من قيمته، تتحدّث النتيجة تلقائياً كلما تغيّر محتواه — وهذه أهم فكرة في إكسل كله.
+    </div>
+
+    <div class="grid cols-2">
+      <div class="card">
+        <span class="icon">🎯</span>
+        <h3>المرجع النسبي والمطلق</h3>
+        <p>نوعا المراجع: <strong style="color:var(--accent)">نسبي</strong> يتغيّر مع النسخ، و<strong style="color:var(--accent)">مطلق</strong> يثبت بعلامة <span class="en">$</span> (مثل <span class="en">$A$1</span>). وللتبديل السريع بينهما أثناء التحرير: مفتاح <span class="en">F4</span>. ⚠️ «مرجع نسبي ومرجع مئوي» عبارة خاطئة متكررة!</p>
+      </div>
+      <div class="card">
+        <span class="icon">🔢</span>
+        <h3>عدّ خلايا المدى</h3>
+        <p>المدى <span class="en">L11:N15</span> = 3 أعمدة (L,M,N) × 5 صفوف (11–15) = <strong style="color:var(--accent)">15 خلية</strong>. اضرب عدد الأعمدة في عدد الصفوف دائماً.</p>
+      </div>
+      <div class="card">
+        <span class="icon">📋</span>
+        <h3>اللصق الخاص <span class="en">Transpose</span></h3>
+        <p>تحويل القيم من الوضع الأفقي إلى الرأسي (أو العكس) عبر <strong style="color:var(--text)">لصق خاص Paste Special</strong> — من تبويب <strong style="color:var(--accent)">الرئيسية Home</strong>.</p>
+      </div>
+      <div class="card">
+        <span class="icon">✅</span>
+        <h3>التحقق من صحة البيانات</h3>
+        <p>التحكم في محتوى الخلية عبر <strong style="color:var(--text)">Data Validation</strong> من مجموعة «أدوات البيانات» بتبويب البيانات — وبه تُنشأ <strong style="color:var(--accent)">القائمة المنسدلة</strong> (بشرط وجود مدى خلايا يتضمن الخيارات).</p>
+      </div>
+      <div class="card">
+        <span class="icon">🧊</span>
+        <h3>التجميد <span class="en">Freezing</span></h3>
+        <p>إبقاء منطقة من ورقة العمل <strong style="color:var(--text)">مرئية أثناء التمرير</strong> إلى بقية الأعمدة والصفوف — مثالي لتثبيت صف العناوين.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🔀</span>
+        <h3>فرز أم تصفية؟</h3>
+        <p><strong style="color:var(--accent)">الفرز Sort</strong> = ترتيب تصاعدي/تنازلي. <strong style="color:var(--accent)">التصفية Filter</strong> = إخفاء مؤقت للصفوف غير المطابقة للشرط وإظهار المطابقة. الخلط بينهما مصيدة متكررة!</p>
+      </div>
+      <div class="card">
+        <span class="icon">⌨️</span>
+        <h3>تحديدات سريعة</h3>
+        <p>تحديد صف داخل نطاق: <kbd style="font-size:11px">Ctrl+Shift+سهم</kbd> · تحديد نطاق حتى آخر البيانات: <kbd style="font-size:11px">Ctrl+Shift+End</kbd> · إدراج صف جديد: زر الماوس الأيمن على اسم الصف ثم «إدراج».</p>
+      </div>
+      <div class="card">
+        <span class="icon">🪄</span>
+        <h3>التعبئة التلقائية</h3>
+        <p>لتعبئة أرقام بنمط متسلسل ندخل <strong style="color:var(--accent)">قيمتين</strong> (وليس قيمة واحدة) ليفهم إكسل الفارق بينهما، ثم نسحب مقبض التعبئة.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 2. Tabs map ===================== -->
+<section id="tabsmap">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">02.</span> خريطة التبويبات — أين أجد كل أمر؟</h2>
+    <p class="sec-lead"><strong style="color:var(--text)">اضغط على أي تبويب</strong> لترى أوامره الامتحانية — نصف مصائد هذا القسم «تبويب صحيح لأمر خطأ»:</p>
+
+    <div class="cia-wrap" style="grid-template-columns:repeat(auto-fit,minmax(120px,1fr))">
+      <button class="cia-btn" data-tab="home"><span class="icon">🏠</span><h3>الرئيسية</h3><span class="en">Home</span></button>
+      <button class="cia-btn" data-tab="insert"><span class="icon">➕</span><h3>إدراج</h3><span class="en">Insert</span></button>
+      <button class="cia-btn" data-tab="playout"><span class="icon">📐</span><h3>تخطيط الصفحة</h3><span class="en">Page Layout</span></button>
+      <button class="cia-btn" data-tab="formulas"><span class="icon">🧮</span><h3>الصيغ</h3><span class="en">Formulas</span></button>
+      <button class="cia-btn" data-tab="data"><span class="icon">🗃️</span><h3>البيانات</h3><span class="en">Data</span></button>
+      <button class="cia-btn" data-tab="review"><span class="icon">✅</span><h3>مراجعة</h3><span class="en">Review</span></button>
+      <button class="cia-btn" data-tab="view"><span class="icon">👁️</span><h3>عرض</h3><span class="en">View</span></button>
+    </div>
+    <div class="cia-detail" id="tab-panel" aria-live="polite"></div>
+  </div>
+</section>
+
+<!-- ===================== 3. Functions ===================== -->
+<section id="funcs">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">03.</span> الدوال — عائلات تُحفظ لا تُبعثر</h2>
+    <p class="sec-lead">سؤال الامتحان المفضل: «الدالة فلان تنتمي لعائلة...». احفظ العائلة قبل حفظ الدالة:</p>
+
+    <div class="grid cols-2">
+      <div class="card">
+        <span class="icon">🔤</span>
+        <h3>الدوال النصية <span class="en">Text</span></h3>
+        <p><span class="en">PROPER</span> تحوّل أول حرف من كل كلمة إلى كبير · <span class="en">LOWER</span> تحوّل كل الأحرف الكبيرة إلى صغيرة. ⚠️ «PROPER رياضية» مصيدة متكررة — هي <strong style="color:var(--accent)">نصية</strong>.</p>
+      </div>
+      <div class="card">
+        <span class="icon">➗</span>
+        <h3>الدوال الرياضية <span class="en">Math</span></h3>
+        <p><span class="en">ROUND</span> للتقريب · <span class="en">RANDBETWEEN</span> تُرجع عدداً صحيحاً عشوائياً جديداً <strong style="color:var(--text)">كلما أُعيد حساب الورقة</strong> · <span class="en">SUMIF</span> للجمع بشرط — ويمكن استبعاد جزئها الثالث إذا كان نطاق الشرط هو نفسه نطاق الجمع.</p>
+      </div>
+      <div class="card">
+        <span class="icon">📈</span>
+        <h3>دوال العدّ الإحصائية</h3>
+        <p><span class="en">COUNT</span> تعدّ الخلايا <strong style="color:var(--accent)">الرقمية فقط</strong> · <span class="en">COUNTA</span> تعدّ الرقمية والنصية معاً · <span class="en">COUNTIF(F3:F6,"passed")</span> تعدّ بشرط — وانتبه: الخيار بلا علامتي تنصيص « " " » إجابة خاطئة مدسوسة!</p>
+      </div>
+      <div class="card">
+        <span class="icon">🔎</span>
+        <h3>دوال البحث <span class="en">Lookup</span></h3>
+        <p><span class="en">VLOOKUP</span> تبحث عن قيمة ثم تُرجع <strong style="color:var(--accent)">بياناتها</strong> من عمود معين · <span class="en">MATCH</span> تبحث عن قيمة ثم تُرجع <strong style="color:var(--accent)">ترتيبها</strong> في العمود. (بيانات → VLOOKUP، ترتيب → MATCH).</p>
+      </div>
+      <div class="card">
+        <span class="icon">📅</span>
+        <h3>دوال التاريخ والوقت</h3>
+        <p><span class="en">NOW</span> تُرجع الرقم التسلسلي للتاريخ <strong style="color:var(--text)">والوقت</strong> الحاليين · <span class="en">TODAY</span> تُرجع التاريخ فقط. وكلتاهما من عائلة <strong style="color:var(--accent)">Date &amp; Time</strong> — وليست «الدوال العامة»!</p>
+      </div>
+      <div class="card">
+        <span class="icon">🧮</span>
+        <h3>SUBTOTAL والأقواس</h3>
+        <p>عند استخدام المجموع الفرعي <span class="en">SUBTOTAL</span> تظهر على يمين الورقة <strong style="color:var(--accent)">3 مستويات</strong>. والعمليات المحاطة بأقواس هي <strong style="color:var(--accent)">أول</strong> ما يحسبه إكسل في المعادلة — وليست الأخيرة.</p>
+      </div>
+    </div>
+
+    <div class="analogy">
+      🧠 <strong>خدعة الحفظ:</strong> V في VLOOKUP = Value «هات القيمة والبيانات»، وMATCH = «طابِق وقل لي مكانه». وNOW = «الآن» أي اللحظة كاملة بتاريخها ووقتها، أما TODAY = «اليوم» فالتاريخ فقط.
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 4. Charts & printing ===================== -->
+<section id="charts">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">04.</span> المخططات والطباعة</h2>
+    <p class="sec-lead">إكسل يحوّل أرقام الجداول إلى مخطط بياني لتسهيل تفسير البيانات والوصول السريع للنتائج:</p>
+
+    <div class="grid cols-2">
+      <div class="card">
+        <span class="icon">📊</span>
+        <h3>نقل المخطط</h3>
+        <p>لنقل المخطط إلى ورقة جديدة أو ملف آخر: أمر <strong style="color:var(--text)">«نقل المخطط» Move Chart</strong> من تبويب <strong style="color:var(--accent)">التصميم Design</strong>. أما <strong>الصور</strong> فليس لها «نقل» — بل نسخ أو قص ولصق (مصيدة!).</p>
+      </div>
+      <div class="card">
+        <span class="icon">🏷️</span>
+        <h3>عنوان المخطط</h3>
+        <p>يجب أن يكون للمخطط عنوان يوضح محتواه الإجمالي، وموضعه المعتاد <strong style="color:var(--accent)">أعلى المخطط</strong> — وليس أسفله (مصيدة!).</p>
+      </div>
+      <div class="card">
+        <span class="icon">🖨️</span>
+        <h3>عناوين الطباعة <span class="en">Print Titles</span></h3>
+        <p>لتكرار صفوف بعينها أعلى كل صفحة مطبوعة: <strong style="color:var(--text)">Print Titles → Rows to repeat at top</strong> من تبويب تخطيط الصفحة.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🖼️</span>
+        <h3>خلفية الورقة</h3>
+        <p>يمكن استخدام صورة كخلفية لورقة العمل <strong style="color:var(--accent)">لأغراض العرض فقط — ولا تُطبع</strong>. ولطباعة خطوط الشبكة فعلاً: خيار Print من «خطوط الشبكة» بتبويب تخطيط الصفحة.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🔗</span>
+        <h3>الربط بين الأوراق</h3>
+        <p>يمكن ربط ورقتي عمل وإظهار النتائج في ورقة ثالثة، وإجراء العمليات الحسابية عبر <strong style="color:var(--text)">أكثر من ثلاث أوراق</strong> — فإكسل يتيح دمج أكثر من ورقة والحساب عبرها.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🪟</span>
+        <h3>تبديل النوافذ</h3>
+        <p>التنقل بين المصنفات المفتوحة: <strong style="color:var(--text)">Switch Windows</strong> من تبويب <strong style="color:var(--accent)">عرض View</strong> — وليس «تخطيط الصفحة» (مصيدة!). ومنه أيضاً التكبير/التصغير Zoom.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 5. Errors & protection ===================== -->
+<section id="errors">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">05.</span> الأخطاء والحماية</h2>
+    <p class="sec-lead">حرفا # في بداية الخلية = إكسل يشكو. احفظ سبب كل شكوى:</p>
+
+    <div class="grid cols-2">
+      <div class="card">
+        <span class="icon">❓</span>
+        <h3><span class="en">#NAME?</span></h3>
+        <p>يظهر عندما <strong style="color:var(--accent)">تحتاج المعادلة إلى تصحيح</strong> — غالباً اسم دالة مكتوب خطأ.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🔢</span>
+        <h3><span class="en">#NUM!</span></h3>
+        <p>يظهر عندما تحتوي الصيغة أو الدالة على <strong style="color:var(--accent)">قيمة رقمية غير صالحة</strong>.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🟩</span>
+        <h3>المثلث الأخضر</h3>
+        <p>إجابة المذكرة: يظهر بجانب الخلية إذا كانت <strong style="color:var(--text)">بتنسيق نص وتحتوي أرقاماً</strong> (علم أو مثلث: اسمان لنفس العلامة). ⚠️ لم يرد نصاً بالمادة الرسمية — الوارد فيها أن المثلث <strong style="color:var(--bad)">الأحمر</strong> يعني وجود تعليق.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🔐</span>
+        <h3>الحماية بطريقتين</h3>
+        <p>ورقة العمل تُحمى <strong style="color:var(--accent)">بطريقتين</strong>، ويمكن منع المستخدم من إنشاء تخطيط أو ماكرو أو نقل/نسخ الأوراق أو أي تعديل. لكن ما لا تمنعه حماية الورقة بكلمة مرور: <strong style="color:var(--bad)">فتح غير المصرح لهم للورقة</strong>!</p>
+      </div>
+      <div class="card">
+        <span class="icon">🔒</span>
+        <h3>قفل الخلايا وإخفاء الصيغ</h3>
+        <p>لن يُفعَّل قفل الخلية أو إخفاء الصيغ <strong style="color:var(--accent)">حتى تتم حماية المصنف أو ورقة العمل</strong> — القفل وحده بلا حماية لا يفعل شيئاً.</p>
+      </div>
+      <div class="card">
+        <span class="icon">💬</span>
+        <h3>التعليقات</h3>
+        <p>إدراج تعليق في خلية والتنقل بين التعليقات المختلفة: من تبويب <strong style="color:var(--accent)">مراجعة Review</strong> — وليس «عرض» (مصيدة!).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 6. Glossary ===================== -->
+<section id="glossary">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">06.</span> قاموس المصطلحات — بطاقات تقلبها بأصبعك</h2>
+    <p class="sec-lead">اضغط أي بطاقة لتقليبها. البطاقات الموسومة «من المنهج» وردت في قاموس المادة الرسمية نفسها:</p>
+    <div class="filters" id="filters"></div>
+    <div class="flip-grid" id="flip-grid"></div>
+  </div>
+</section>
+
+<div class="part-banner official-src">
+  <div class="container">
+    <span class="part-tag">شروحات إضافية</span>
+    <h2>من المنهج الرسمي</h2>
+    <p>موضوعات لا تغطيها المذكرة — مضافة من المادة التدريبية الرسمية (الإصدار 3 / 2024).</p>
+  </div>
+</div>
+
+<!-- ===================== 7. Official extras ===================== -->
+<section id="official">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">07.</span> ما لا تغطيه المذكرة</h2>
+    <p class="sec-lead">المادة الرسمية (144 صفحة) تضيف موضوعات كاملة بلا أسئلة في المذكرة:</p>
+
+    <div class="grid cols-2">
+      <div class="card">
+        <span class="icon">🎓</span>
+        <h3>موقع القسم في الشهادة</h3>
+        <p>جداول البيانات هو البرنامج <strong style="color:var(--text)">BIT 04</strong> من برامج FDTC، والمقرر مبني على <strong style="color:var(--text)">Excel</strong> بواجهة من: شريط عنوان، شريط وصول سريع، الشريط Ribbon، شريط الصيغة، وشريط المعلومات.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🚨</span>
+        <h3>جدول الأخطاء الكامل</h3>
+        <p>المادة تسرد الأخطاء جميعها: <span class="en">#DIV/0!</span> قسمة على صفر · <span class="en">#N/A</span> قيمة غير متوفرة · <span class="en">#NAME?</span> اسم غير معروف · <span class="en">#NULL!</span> تقاطع غير صحيح · <span class="en">#NUM!</span> رقم غير صالح · <span class="en">#REF!</span> مرجع خلية محذوف · <span class="en">#VALUE!</span> نوع وسيطة خاطئ.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🧩</span>
+        <h3>دوال منطقية متقدمة</h3>
+        <p><span class="en">IFS</span> تختبر حتى <strong style="color:var(--accent)">127 شرطاً</strong> · <span class="en">ISERROR</span> تفحص هل القيمة خطأ · <span class="en">IFNA</span> تعالج خطأ #N/A بقيمة بديلة.</p>
+      </div>
+      <div class="card">
+        <span class="icon">📉</span>
+        <h3>التحليل الإحصائي</h3>
+        <p><span class="en">CORREL</span> تحسب معامل الارتباط بين مجموعتي بيانات. وللتحليل المتقدم: الوظائف الإضافية <strong style="color:var(--text)">Analysis ToolPak وSolver</strong> تُفعَّلان من Options → Add-ins.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🧷</span>
+        <h3>الدمج <span class="en">Consolidate</span></h3>
+        <p>لتجميع بيانات <strong style="color:var(--accent)">أكثر من 3 أوراق عمل</strong> في ورقة واحدة: أمر «دمج Consolidate» من تبويب <strong style="color:var(--text)">البيانات Data</strong>.</p>
+      </div>
+      <div class="card">
+        <span class="icon">📁</span>
+        <h3>xlsx أم xls؟</h3>
+        <p>الامتداد الحديث <span class="en">.xlsx</span> أصغر حجماً بنحو <strong style="color:var(--accent)">3 مرات</strong> من امتداد <span class="en">.xls</span> القديم (إصدارات 97–2003).</p>
+      </div>
+      <div class="card">
+        <span class="icon">⌨️</span>
+        <h3>اختصارات من المادة</h3>
+        <p><kbd style="font-size:11px">Ctrl+T</kbd> إنشاء جدول · <kbd style="font-size:11px">Alt+Enter</kbd> سطر جديد داخل الخلية · <kbd style="font-size:11px">Ctrl+;</kbd> إدراج تاريخ اليوم · <kbd style="font-size:11px">Ctrl+F4</kbd> إغلاق المصنف بينما <kbd style="font-size:11px">Alt+F4</kbd> إغلاق إكسل كله.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🧮</span>
+        <h3>SUBTOTAL — التفصيلة الإضافية</h3>
+        <p>المستويات 3 عند استبدال المجاميع الحالية — وتصبح <strong style="color:var(--accent)">4 مستويات</strong> إذا ألغيت خيار «استبدال المجاميع الفرعية الحالية».</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="part-banner memo-src">
+  <div class="container">
+    <span class="part-tag">الجزء الثاني · الأسئلة</span>
+    <h2>أسئلة المذكرة</h2>
+    <p>مصائد الكلمات أولاً، ثم اختبار تفاعلي بصياغة الامتحان الإنجليزية.</p>
+  </div>
+</div>
+
+<!-- ===================== 8. Traps ===================== -->
+<section id="traps">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">08.</span> مصيدة الكلمات — التبويب الخطأ والعائلة الخطأ</h2>
+    <p class="sec-lead">مصائد هذا القسم: نسب الدالة لعائلة غير عائلتها أو الأمر لتبويب غير تبويبه. اضغط أي عبارة لكشف الحكم:</p>
+    <div id="traps-list"></div>
+  </div>
+</section>
+
+<!-- ===================== 9. Memo quiz ===================== -->
+<section id="quiz">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">09.</span> أسئلة المذكرة — اختبر نفسك 🎯</h2>
+    <p class="sec-lead">16 سؤالاً من المذكرة بصياغتها الإنجليزية الأصلية مع ترجمة وشرح مستند إلى المادة الرسمية.</p>
+    <div class="quiz-box" id="quiz-box"></div>
+  </div>
+</section>
+
+<div class="part-banner official-src">
+  <div class="container">
+    <span class="part-tag">أسئلة إضافية</span>
+    <h2>أسئلة متوقعة من المنهج الرسمي</h2>
+    <p>22 سؤالاً تدريبياً من الموضوعات التي لا تغطيها المذكرة.</p>
+  </div>
+</div>
+
+<!-- ===================== 10. Predicted quiz ===================== -->
+<section id="predicted">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">10.</span> أسئلة متوقعة 🔮</h2>
+    <p class="sec-lead">⚠️ أسئلة تدريبية مصوغة من محتوى المادة الرسمية — وليست منقولة من امتحانات فعلية.</p>
+    <div class="quiz-box" id="predicted-box"></div>
+  </div>
+</section>
+
+<nav class="tabbar" aria-label="تنقل سريع">
+  <a href="#basics" class="active"><span class="ico">📖</span>الشرح</a>
+  <a href="#glossary"><span class="ico">📇</span>القاموس</a>
+  <a href="#official"><span class="ico">🏛️</span>المنهج</a>
+  <a href="#traps"><span class="ico">🧩</span>الأسئلة</a>
+</nav>
+
+<script src="assets/app.js"></script>
+<script>
+/* ===== خريطة التبويبات ===== */
+const TABS={
+  home:{icon:'🏠',ar:'الصفحة الرئيسية',lat:'Home',
+    def:'<strong>تبويب التنسيق والتحرير:</strong> الحافظة (نسخ/قص/لصق ولصق خاص)، الخط، المحاذاة، الأنماط، التحرير.',
+    ex:'<strong>امتحانياً:</strong> تعديل تنسيق محتوى الخلية من هنا · التنسيق الشرطي Conditional Formatting من مجموعة «أنماط Styles» (وليس من إدراج!) · تغيير القيم من أفقي لرأسي عبر لصق خاص Transpose · البحث داخل الورقة عن صيغة أو قيمة من مجموعة التحرير.'},
+  insert:{icon:'➕',ar:'إدراج',lat:'Insert',
+    def:'<strong>تبويب الإضافة:</strong> الجداول، الرسومات التوضيحية، المخططات Charts، الرؤوس والتذييلات، الرموز.',
+    ex:'<strong>امتحانياً:</strong> المخططات البيانية تُدرج من هنا لتحويل أرقام الجدول إلى رسم يسهّل تفسير البيانات — لكن تذكّر: نقل المخطط بعد إنشائه من تبويب «التصميم»، والتنسيق الشرطي ليس من هنا أبداً.'},
+  playout:{icon:'📐',ar:'تخطيط الصفحة',lat:'Page Layout',
+    def:'<strong>تبويب إعداد الطباعة:</strong> الهوامش، الاتجاه، الحجم، ناحية الطباعة، الخلفية، عناوين الطباعة، خيارات الأوراق.',
+    ex:'<strong>امتحانياً:</strong> خطوط الشبكة <u>عند الطباعة</u> من هنا (خيار Print) · تكرار صفوف أعلى كل صفحة مطبوعة: Print Titles → Rows to repeat at top · خلفية الورقة Background من هنا (للعرض فقط ولا تُطبع).'},
+  formulas:{icon:'🧮',ar:'الصيغ',lat:'Formulas',
+    def:'<strong>تبويب الدوال:</strong> مكتبة الدوال بعائلاتها، الأسماء المعرَّفة Defined Names، تدقيق الصيغ.',
+    ex:'<strong>امتحانياً:</strong> تسمية المدى Define Name من مجموعة «الأسماء المعرَّفة» هنا — المذكرة نسبتها لتبويب البيانات والمادة الرسمية تؤكد أنها في <u>الصيغ Formulas</u> ✅ (صُحّحت). وعائلات الدوال: نصية/رياضية/منطقية/أساسية.'},
+  data:{icon:'🗃️',ar:'البيانات',lat:'Data',
+    def:'<strong>تبويب معالجة البيانات:</strong> الفرز والتصفية، أدوات البيانات، المخطط التفصيلي، الدمج.',
+    ex:'<strong>امتحانياً:</strong> التحقق من صحة البيانات Data Validation من «أدوات البيانات» (وبه القائمة المنسدلة) · المجموع الفرعي Subtotal من «المخطط التفصيلي» · دمج Consolidate لأكثر من 3 أوراق من هنا · الفرز تصاعدي/تنازلي والتصفية لإخفاء الصفوف مؤقتاً.'},
+  review:{icon:'✅',ar:'مراجعة',lat:'Review',
+    def:'<strong>تبويب التدقيق:</strong> التدقيق الإملائي، التعليقات، الحماية.',
+    ex:'<strong>امتحانياً:</strong> إدراج تعليق في خلية من هنا (وليس من «عرض»!) · التنقل بين التعليقات المختلفة بأزرار السابق/التالي هنا · حماية الورقة والمصنف من مجموعة «حماية».'},
+  view:{icon:'👁️',ar:'عرض',lat:'View',
+    def:'<strong>تبويب العرض:</strong> طرق العرض، إظهار Show، تكبير/تصغير Zoom، النافذة Window.',
+    ex:'<strong>امتحانياً:</strong> إظهار/إخفاء خطوط الشبكة <u>على الشاشة</u> من مجموعة «إظهار» · تكبير وتصغير المصنف من هنا (وليس من مراجعة!) · تبديل النوافذ المفتوحة Switch Windows من مجموعة «نافذة» (وليس من تخطيط الصفحة!) · تجميد الأجزاء Freeze Panes.'}
+};
+const tabPanel=document.getElementById('tab-panel');
+function showTab(k){
+  const t=TABS[k];
+  tabPanel.innerHTML=`<h3>${t.icon} تبويب ${t.ar}</h3><span class="lat">${t.lat}</span><p>${t.def}</p><p style="margin-top:12px">${t.ex}</p>`;
+  document.querySelectorAll('[data-tab]').forEach(b=>b.classList.toggle('active',b.dataset.tab===k));
+}
+document.querySelectorAll('[data-tab]').forEach(b=>b.addEventListener('click',()=>showTab(b.dataset.tab)));
+showTab('home');
+
+/* ===== مصيدة الكلمات ===== */
+App.renderTraps('traps-list',[
+ {q:'Proper function belongs to <span class="mark">Mathematical</span> function.',ar:'دالة Proper تنتمي للدوال الرياضية.',ok:false,
+  a:'خطأ — PROPER دالة <strong>نصية Text</strong>: تحوّل أول حرف من كل كلمة إلى حرف كبير. (ROUND هي الرياضية).'},
+ {q:'Conditional format can be applied through the <span class="mark">Insert</span> tab.',ar:'يُطبَّق التنسيق الشرطي من تبويب إدراج.',ok:false,
+  a:'خطأ — التنسيق الشرطي من مجموعة <strong>أنماط Styles</strong> بتبويب <strong>الرئيسية Home</strong>.'},
+ {q:'The NOW functions belong to the <span class="mark">general</span> functions.',ar:'دالة NOW تنتمي للدوال العامة.',ok:false,
+  a:'خطأ — NOW من عائلة <strong>التاريخ والوقت Date &amp; Time</strong>، وتُرجع الرقم التسلسلي للتاريخ والوقت الحاليين.'},
+ {q:'Zooming the workbook in and out is done from the <span class="mark">Review</span> tab.',ar:'تكبير وتصغير المصنف من تبويب مراجعة.',ok:false,
+  a:'خطأ — التكبير/التصغير Zoom من تبويب <strong>عرض View</strong>. تبويب مراجعة للتدقيق والتعليقات والحماية.'},
+ {q:'Open windows can be switched through the <span class="mark">Page Layout</span> tab.',ar:'تبديل النوافذ المفتوحة من تبويب تخطيط الصفحة.',ok:false,
+  a:'خطأ — تبديل النوافذ Switch Windows من مجموعة «نافذة» بتبويب <strong>عرض View</strong>.'},
+ {q:'You can insert a comment in a cell using <span class="mark">view</span> tab.',ar:'يمكن إدراج تعليق في خلية من تبويب عرض.',ok:false,
+  a:'خطأ — التعليقات إدراجاً وتنقلاً من تبويب <strong>مراجعة Review</strong>.'},
+ {q:'Filtering is used to <span class="mark">arrange</span> values in ascending or descending order.',ar:'تُستخدم التصفية لترتيب القيم تصاعدياً أو تنازلياً.',ok:false,
+  a:'خطأ — الترتيب وظيفة <strong>الفرز Sort</strong>. التصفية Filter تُخفي مؤقتاً الصفوف غير المطابقة للشرط وتُظهر المطابقة.'},
+ {q:'There are 2 types of references, relative reference and <span class="mark">percentage</span> reference.',ar:'نوعا المراجع: نسبي ومئوي.',ok:false,
+  a:'خطأ — النوعان: نسبي Relative و<strong>مطلق Absolute</strong> (بعلامة $ وبالتبديل بمفتاح F4). لا وجود لمرجع «مئوي».'},
+ {q:'The chart title is usually located at the <span class="mark">bottom</span> of the chart.',ar:'عنوان المخطط يقع عادة أسفل المخطط.',ok:false,
+  a:'خطأ — موضع العنوان المعتاد <strong>أعلى Top</strong> المخطط.'},
+ {q:'When auto-filling numbers, we only enter <span class="mark">one</span> value.',ar:'عند التعبئة التلقائية للأرقام ندخل قيمة واحدة فقط.',ok:false,
+  a:'خطأ — ندخل <strong>قيمتين</strong> ليتعرف إكسل على نمط التسلسل ثم نسحب مقبض التعبئة.'},
+ {q:'Operations enclosed in brackets are the <span class="mark">last</span> calculations performed by Excel.',ar:'العمليات المحاطة بأقواس هي آخر ما يحسبه إكسل في المعادلة.',ok:false,
+  a:'خطأ — الأقواس تُحسب <strong>أولاً First</strong> قبل بقية العمليات.'},
+ {q:'To transfer an image from one worksheet to another <span class="mark">by moving</span>.',ar:'تُنقل الصورة من ورقة لأخرى بأمر النقل.',ok:false,
+  a:'خطأ — أمر «النقل Move» للمخططات Charts (من تبويب التصميم). الصور تُنسخ أو تُقص وتُلصق.'},
+ {q:'You <span class="mark">cannot</span> control a cell value using data validation option.',ar:'لا يمكنك التحكم في قيمة الخلية عبر خيار التحقق من الصحة.',ok:false,
+  a:'خطأ — التحقق من صحة البيانات Data Validation وُجد تحديداً <strong>للتحكم في محتوى الخلية</strong>، ومنه تُنشأ القوائم المنسدلة.'},
+ {q:'Cell locking will not be activated until the workbook or the worksheet is protected.',ar:'لن يُفعَّل قفل الخلايا حتى تتم حماية المصنف أو ورقة العمل.',ok:true,
+  a:'صحيح ✓ — القفل وإخفاء الصيغ لا يعملان إلا بعد تفعيل الحماية. عبارة سليمة بلا مصيدة.'}
+]);
+
+/* ===== أسئلة المذكرة ===== */
+App.initQuiz('quiz-box',[
+ {en:'You can also name the range from the ..... tab, in the Defined Names group, choose Define Name.',ar:'تسمية المدى تتم من تبويب... مجموعة الأسماء المعرَّفة...',
+  opts:['Data','Formulas','Insert','View'],a:1,
+  exp:'الصيغ Formulas ✅ — نص المذكرة نسبها لتبويب Data لكن المادة الرسمية تؤكد مجموعة «الأسماء المعرَّفة» في تبويب الصيغ (والمذكرة نفسها أثبتت التصحيح).'},
+ {en:'The NOW function returns the serial number for the current date.',ar:'دالة NOW تُرجع الرقم التسلسلي للتاريخ الحالي.',
+  opts:['صواب ✓','خطأ ✗'],a:0,
+  exp:'صواب في المذكرة — والأدق وفق المادة أنها تُرجع التاريخ <strong>والوقت</strong> معاً (Date and Time كما لاحظت المذكرة ذاتها). أما التاريخ فقط فدالة TODAY.'},
+ {en:'To calculate the number of passed students in a range, you use ...',ar:'لحساب عدد الطلبة الناجحين في مدى معين نستخدم...',
+  opts:['COUNTIF(F3:F6, "passed")','COUNTIF(F3:F6, passed)','COUNT(F3:F6)','SUMIF(F3:F6)'],a:0,
+  exp:'COUNTIF بشرط "passed" — وانتبه: سيظهر في الخيارات نفس الإجابة لكن بدون علامتي تنصيص « " " » وهي خاطئة، فكن حذراً (تحذير المذكرة نصاً).'},
+ {en:'To select range of cells in the worksheet, choose ...',ar:'لتحديد نطاق من الخلايا في ورقة العمل نختار...',
+  opts:['Ctrl+Shift+End','Ctrl+A','Alt+Enter','F4'],a:0,
+  exp:'Ctrl+Shift+End يحدد من الخلية الحالية حتى آخر خلية مستخدمة. ولتحديد صف داخل نطاق: Ctrl+Shift+سهم.'},
+ {en:'When using SUBTOTAL function, we will notice on the right side there are ... levels.',ar:'عند استخدام دالة المجموع الفرعي نلاحظ على الجانب وجود ... مستويات.',
+  opts:['Two','Three','Four','Five'],a:1,
+  exp:'ثلاثة مستويات ✅ (المادة تضيف: تصبح 4 إذا لم تستبدل المجاميع الفرعية الحالية).'},
+ {en:'To move the chart to a new sheet or another file, choose "move chart" from the ... tab.',ar:'لنقل المخطط إلى ورقة جديدة أو ملف آخر نختار «نقل المخطط» من تبويب...',
+  opts:['Insert','Home','Design','View'],a:2,
+  exp:'التصميم Design ✅ — يظهر التبويب عند تحديد المخطط، ومنه خيارات Move Chart.'},
+ {en:'The function ........ searches for a value written in a cell, then recalls its data in a specific column.',ar:'الدالة ... تبحث عن قيمة مكتوبة في خلية ثم تُرجع بياناتها في عمود معين.',
+  opts:['MATCH','VLOOKUP','COUNTIF','INDEX'],a:1,
+  exp:'VLOOKUP ✅ (المادة م131) — تُرجع البيانات. أما إذا طلب السؤال «ترتيبها Order» فالإجابة MATCH.'},
+ {en:'The function ........ searches for a value written in a cell, then recalls its order in a specific column.',ar:'الدالة ... تبحث عن قيمة ثم تُرجع ترتيبها في عمود معين.',
+  opts:['VLOOKUP','SUBTOTAL','MATCH','LOOKUP'],a:2,
+  exp:'MATCH ✅ — كلمة «order/ترتيب» مفتاح التمييز عن VLOOKUP التي تُرجع «data/بيانات».'},
+ {en:'We show or hide gridlines when printing from the ... tab.',ar:'نُظهر أو نخفي خطوط الشبكة عند الطباعة من تبويب...',
+  opts:['View','Page Layout','Home','Data'],a:1,
+  exp:'مع كلمة «عند الطباعة» → تخطيط الصفحة Page Layout ✅. أما إظهارها/إخفاؤها على الشاشة فمن تبويب عرض View — كلا الإجابتين صحيحة حسب صياغة السؤال (تنبيه المذكرة).'},
+ {en:'The error.... appears when the equation needs to be corrected.',ar:'الخطأ ... يظهر عندما تحتاج المعادلة إلى تصحيح.',
+  opts:['#NUM!','#REF!','#NAME?','#DIV/0!'],a:2,
+  exp:'#NAME? ✅ — غالباً بسبب اسم دالة مكتوب خطأ. أما #NUM! فقيمة رقمية غير صالحة.'},
+ {en:'The error #NUM! appears when the formula or function contains ...',ar:'يظهر الخطأ #NUM! عندما تحتوي الصيغة أو الدالة على...',
+  opts:['invalid numerical values','a misspelled name','a deleted reference','text instead of numbers'],a:0,
+  exp:'قيم رقمية غير صالحة ✅.'},
+ {en:'You can set some rows to be repeated at the top while printing via ...',ar:'يمكن ضبط تكرار صفوف أعلى الصفحة أثناء الطباعة بواسطة...',
+  opts:['Freeze Panes','Print Titles','Page Break','Headers'],a:1,
+  exp:'عناوين الطباعة Print Titles ✅ (خيار Rows to repeat at top) من تبويب تخطيط الصفحة — لا تخلط مع تجميد الأجزاء الذي يعمل على الشاشة فقط.'},
+ {en:'To search within the worksheet for a specific formula or value use ... tab.',ar:'للبحث داخل ورقة العمل عن صيغة أو قيمة معينة نستخدم تبويب...',
+  opts:['Home','Data','Formulas','Review'],a:0,
+  exp:'الرئيسية Home — أمر البحث Find من مجموعة التحرير.'},
+ {en:'The conditional formatting is located in the group …',ar:'يوجد التنسيق الشرطي في مجموعة...',
+  opts:['Insert','Editing','Styles','Format'],a:2,
+  exp:'أنماط Styles من تبويب الرئيسية ✅ — وتذكّر تعريفه: تطبيق تنسيق تلقائي كاللون بناءً على قيمة الخلية وفق شرط محدد لتمييزها عن بقية البيانات.'},
+ {en:'Worksheet is protected in … ways.',ar:'تُحمى ورقة العمل بـ... طريقة.',
+  opts:['Two','Three','Four','One'],a:0,
+  exp:'طريقتين ✅. وتذكّر معها: القفل لا يُفعَّل حتى تتم الحماية.'},
+ {en:'In Excel what can\'t be secured against password protecting a sheet?',ar:'ما الذي لا تمنعه حماية الورقة بكلمة مرور؟',
+  opts:['Deleting rows','Unauthorized users can open the sheet','Editing cells','Creating a macro'],a:1,
+  exp:'فتح غير المصرح لهم للورقة ✅ — حماية الورقة تمنع التعديل (تخطيط، ماكرو، نقل، نسخ، حذف، إضافة) لكنها لا تمنع فتح الملف ورؤيته.'}
+]);
+
+/* ===== أسئلة متوقعة ===== */
+App.initQuiz('predicted-box',[
+ {en:'The number of columns in an Excel worksheet is .....',ar:'عدد الأعمدة في ورقة عمل إكسل...',
+  opts:['1,048,576','16,384','65,536','256'],a:1,exp:'16,384 عموداً (من A حتى XFD) — أما الصفوف فعددها 1,048,576.'},
+ {en:'The number of rows in an Excel worksheet is .....',ar:'عدد الصفوف في ورقة عمل إكسل...',
+  opts:['16,384','65,536','1,048,576','1,000,000'],a:2,exp:'1,048,576 صفاً.'},
+ {en:'Compared to xls, the xlsx file format is approximately .....',ar:'مقارنة بامتداد xls، فإن ملف xlsx تقريباً...',
+  opts:['3 times smaller','3 times larger','the same size','uncompressed'],a:0,exp:'أصغر بنحو 3 مرات — لأن xlsx مبني على ضغط XML، بينما xls تنسيق إصدارات 97–2003 القديم.'},
+ {en:'The IFS function can test up to ..... conditions.',ar:'دالة IFS تختبر حتى ... شرطاً.',
+  opts:['7','64','127','255'],a:2,exp:'127 شرطاً — بديل أسهل من تداخل عدة دوال IF.'},
+ {en:'The ..... function returns a specified value if the formula results in #N/A error.',ar:'الدالة ... تُرجع قيمة بديلة إذا نتج عن الصيغة خطأ #N/A.',
+  opts:['ISERROR','IFNA','IFERROR','NA'],a:1,exp:'IFNA مخصصة لخطأ #N/A تحديداً.'},
+ {en:'The ..... function checks whether a value is an error and returns TRUE or FALSE.',ar:'الدالة ... تفحص هل القيمة خطأ وتُرجع صواب/خطأ.',
+  opts:['IFNA','MATCH','ISERROR','CHECK'],a:2,exp:'ISERROR تُرجع TRUE لأي نوع خطأ.'},
+ {en:'The ..... function calculates the correlation coefficient between two data sets.',ar:'الدالة ... تحسب معامل الارتباط بين مجموعتي بيانات.',
+  opts:['CORREL','COUNT','AVERAGE','TREND'],a:0,exp:'CORREL من الدوال الإحصائية بالمادة الرسمية.'},
+ {en:'Analysis ToolPak and Solver are enabled from .....',ar:'تُفعَّل الوظيفتان الإضافيتان Analysis ToolPak وSolver من...',
+  opts:['Insert tab','Options → Add-ins','Data tab directly','Review tab'],a:1,exp:'من File → Options → Add-ins ثم Go — وبعد التفعيل تظهران في تبويب البيانات.'},
+ {en:'To merge data from more than 3 worksheets into one, use the ..... command.',ar:'لتجميع بيانات أكثر من 3 أوراق في ورقة واحدة نستخدم أمر...',
+  opts:['Consolidate','Merge Cells','Combine','Link'],a:0,exp:'دمج Consolidate من تبويب البيانات Data.'},
+ {en:'The Consolidate command is found on the ..... tab.',ar:'يوجد أمر الدمج Consolidate في تبويب...',
+  opts:['Home','Insert','Data','Formulas'],a:2,exp:'البيانات Data.'},
+ {en:'The shortcut Ctrl+T is used to .....',ar:'يُستخدم الاختصار Ctrl+T لـ...',
+  opts:['create a table','close the workbook','insert the time','add a new sheet'],a:0,exp:'إنشاء جدول Table من البيانات المحددة.'},
+ {en:'To start a new line inside the same cell, press .....',ar:'لبدء سطر جديد داخل نفس الخلية نضغط...',
+  opts:['Enter','Alt+Enter','Shift+Enter','Ctrl+Enter'],a:1,exp:'Alt+Enter — أما Enter وحده فينتقل للخلية التالية.'},
+ {en:'The shortcut Ctrl+F4 is used to close the ....., while Alt+F4 closes .....',ar:'اختصار Ctrl+F4 يغلق... بينما Alt+F4 يغلق...',
+  opts:['Excel / the workbook','the workbook / Excel','a sheet / a workbook','nothing / Excel'],a:1,exp:'Ctrl+F4 يغلق المصنف الحالي فقط، وAlt+F4 يغلق برنامج إكسل كله.'},
+ {en:'The shortcut Ctrl+; inserts .....',ar:'الاختصار ;+Ctrl يُدرج...',
+  opts:['the current time','the current date','a comment','a function'],a:1,exp:'تاريخ اليوم الحالي في الخلية.'},
+ {en:'The TODAY function returns .....',ar:'دالة TODAY تُرجع...',
+  opts:['date and time','the current time only','the current date only','a random date'],a:2,exp:'التاريخ الحالي فقط بلا وقت — بعكس NOW التي تُرجع التاريخ والوقت معاً.'},
+ {en:'The #REF! error appears when .....',ar:'يظهر الخطأ #REF! عندما...',
+  opts:['a cell reference is not valid (e.g. deleted)','a name is misspelled','dividing by zero','a value is unavailable'],a:0,exp:'مرجع الخلية غير صالح — كأن تحذف خلايا كانت تشير إليها المعادلة.'},
+ {en:'The #DIV/0! error appears when .....',ar:'يظهر الخطأ !DIV/0# عندما...',
+  opts:['a number is too large','a formula divides by zero or an empty cell','text is used in a formula','a reference is deleted'],a:1,exp:'القسمة على صفر أو على خلية فارغة.'},
+ {en:'The #VALUE! error appears when .....',ar:'يظهر الخطأ !VALUE# عندما...',
+  opts:['the wrong type of argument is used (e.g. text instead of number)','the formula name is wrong','the cell is locked','a range is renamed'],a:0,exp:'نوع الوسيطة خاطئ — مثل إجراء عملية حسابية على نص.'},
+ {en:'When "Replace current subtotals" is unchecked, SUBTOTAL shows ..... levels.',ar:'إذا ألغيت خيار «استبدال المجاميع الفرعية الحالية» تظهر ... مستويات.',
+  opts:['Three','Four','Five','Two'],a:1,exp:'أربعة مستويات — بدل الثلاثة الافتراضية عند الاستبدال.'},
+ {en:'While editing a formula, pressing F4 on a cell reference .....',ar:'أثناء تحرير صيغة، الضغط على F4 فوق مرجع خلية...',
+  opts:['deletes it','toggles between relative and absolute reference','copies it','names the range'],a:1,exp:'يبدّل بين المرجع النسبي والمطلق بإضافة علامات $ تلقائياً.'},
+ {en:'A red triangle in the corner of a cell indicates .....',ar:'المثلث الأحمر في زاوية الخلية يشير إلى...',
+  opts:['an error','a comment in the cell','a locked cell','an invalid number'],a:1,exp:'وجود تعليق Comment بالخلية — وهذه هي إشارة المثلث المذكورة نصاً في المادة الرسمية.'},
+ {en:'The Quick Access Toolbar is used to .....',ar:'يُستخدم شريط الوصول السريع لـ...',
+  opts:['display the sheet name','keep frequently used commands always visible','show formulas','switch windows'],a:1,exp:'إبقاء الأوامر المتكررة (حفظ، تراجع، إعادة) ظاهرة دائماً فوق الشريط — وهو من مكونات الواجهة المذكورة في قاموس المادة.'}
+]);
+
+/* ===== القاموس ===== */
+App.renderGlossary({
+  gridId:'flip-grid',filtersId:'filters',
+  cats:{all:'الكل',base:'الأساسيات',fx:'الدوال',fmt:'تنسيق وعرض',data:'بيانات وطباعة'},
+  officialSet:new Set(['Workbook','Range','Quick Access Toolbar','Gridline','Filtering','Conditional Formatting','Subtotal','Table Style','Drop-Down Menu','Absolute Value','Worksheet']),
+  terms:[
+   {c:'base',ar:'المصنف',en:'Workbook',d:'ملف إكسل كاملاً بكل ما فيه من أوراق عمل.',e:'The whole Excel file containing worksheets.'},
+   {c:'base',ar:'ورقة العمل',en:'Worksheet',d:'شبكة من 16,384 عموداً × 1,048,576 صفاً داخل المصنف.',e:'A grid of 16,384 columns × 1,048,576 rows.'},
+   {c:'base',ar:'المدى (نطاق الخلايا)',en:'Range',d:'مجموعة خلايا متجاورة مثل L11:N15 (= 15 خلية: 3 أعمدة × 5 صفوف).',e:'A block of cells, e.g. L11:N15 = 15 cells.'},
+   {c:'base',ar:'المرجع النسبي',en:'Relative Reference',d:'يتغيّر تلقائياً عند نسخ المعادلة لخلايا أخرى.',e:'Adjusts automatically when the formula is copied.'},
+   {c:'base',ar:'المرجع المطلق',en:'Absolute Value',d:'يثبت على خلية محددة بعلامة $ (مثل $A$1) — وللتبديل: F4.',e:'Fixed with $ signs; toggle with F4.'},
+   {c:'base',ar:'شريط الوصول السريع',en:'Quick Access Toolbar',d:'أعلى النافذة: أوامر الحفظ والتراجع والإعادة ظاهرة دائماً.',e:'Save, Undo and Redo always visible.'},
+   {c:'base',ar:'شريط الصيغة',en:'Formula Bar',d:'يعرض محتوى الخلية الحقيقي (القيمة أو المعادلة) ومنه يُحرَّر.',e:'Shows and edits the real cell content.'},
+   {c:'fx',ar:'دالة البحث عن البيانات',en:'VLOOKUP',d:'تبحث عن قيمة في خلية ثم تُرجع بياناتها من عمود معين.',e:'Finds a value, returns its data from a column.'},
+   {c:'fx',ar:'دالة الترتيب',en:'MATCH',d:'تبحث عن قيمة ثم تُرجع ترتيبها (موضعها) في العمود.',e:'Finds a value, returns its position.'},
+   {c:'fx',ar:'المجموع الفرعي',en:'Subtotal',d:'يجمع البيانات في مجموعات، ويعرض 3 مستويات على يمين الورقة (4 بلا استبدال).',e:'Groups data; 3 outline levels appear.'},
+   {c:'fx',ar:'الجمع الشرطي',en:'SUMIF',d:'تجمع الخلايا المطابقة لشرط — ويُستبعد جزؤها الثالث إذا تطابق نطاقا الشرط والجمع.',e:'Sums cells matching a condition.'},
+   {c:'fx',ar:'العدّ الشرطي',en:'COUNTIF',d:'تعدّ الخلايا المطابقة لشرط، مثل COUNTIF(F3:F6,"passed") لعدّ الناجحين.',e:'Counts cells matching a condition.'},
+   {c:'fx',ar:'العدّ',en:'COUNT / COUNTA',d:'COUNT للخلايا الرقمية فقط، وCOUNTA للرقمية والنصية معاً.',e:'COUNT: numeric only; COUNTA: numeric and text.'},
+   {c:'fx',ar:'تكبير أول الحروف',en:'PROPER',d:'دالة نصية تحوّل أول حرف من كل كلمة إلى حرف كبير.',e:'Text function: capitalizes each word\'s first letter.'},
+   {c:'fx',ar:'تصغير الحروف',en:'LOWER',d:'دالة نصية تحوّل كافة الأحرف الكبيرة إلى صغيرة.',e:'Text function: converts uppercase to lowercase.'},
+   {c:'fx',ar:'عدد عشوائي',en:'RANDBETWEEN',d:'دالة رياضية تُرجع عدداً صحيحاً عشوائياً جديداً كلما أُعيد حساب الورقة.',e:'Returns a new random integer on each recalculation.'},
+   {c:'fx',ar:'الآن / اليوم',en:'NOW / TODAY',d:'NOW: التاريخ والوقت الحاليان · TODAY: التاريخ فقط — كلتاهما من عائلة التاريخ والوقت.',e:'NOW: date & time; TODAY: date only.'},
+   {c:'fmt',ar:'التنسيق الشرطي',en:'Conditional Formatting',d:'تنسيق تلقائي (كاللون) بناءً على قيمة الخلية وفق شرط محدد — مجموعة أنماط بتبويب الرئيسية.',e:'Automatic formatting based on a condition; Styles group, Home tab.'},
+   {c:'fmt',ar:'التجميد',en:'Freezing',d:'إبقاء منطقة من الورقة مرئية أثناء التمرير لبقية الأعمدة والصفوف.',e:'Keeps an area visible while scrolling.'},
+   {c:'fmt',ar:'اللصق الخاص',en:'Paste Special',d:'ومنه Transpose: تحويل القيم من أفقي إلى رأسي والعكس — تبويب الرئيسية.',e:'Includes Transpose: horizontal ↔ vertical.'},
+   {c:'fmt',ar:'نمط الجدول',en:'Table Style',d:'تنسيقات جاهزة للجداول — وCtrl+T ينشئ جدولاً من البيانات المحددة.',e:'Ready table formats; Ctrl+T creates a table.'},
+   {c:'fmt',ar:'دمج الخلايا',en:'Merge / Unmerge',d:'دمج عدة خلايا في خلية واحدة وإلغاء الدمج — من تبويب الرئيسية.',e:'Combine several cells into one.'},
+   {c:'data',ar:'التصفية',en:'Filtering',d:'إخفاء مؤقت للصفوف التي لا تطابق الشرط وإظهار المطابقة — ليست ترتيباً!',e:'Temporarily hides non-matching rows — not sorting!'},
+   {c:'data',ar:'الفرز',en:'Sorting',d:'ترتيب القيم تصاعدياً أو تنازلياً — من تبويب البيانات.',e:'Ascending or descending order.'},
+   {c:'data',ar:'التحقق من صحة البيانات',en:'Data Validation',d:'التحكم في محتوى الخلية — من أدوات البيانات، وبه تُنشأ القائمة المنسدلة.',e:'Controls cell content; creates drop-down lists.'},
+   {c:'data',ar:'القائمة المنسدلة',en:'Drop-Down Menu',d:'قائمة خيارات داخل خلية — تتطلب مدى خلايا يتضمن الخيارات.',e:'In-cell options list; needs a source range.'},
+   {c:'data',ar:'خطوط الشبكة',en:'Gridline',d:'إظهارها على الشاشة من تبويب عرض، وطباعتها من تبويب تخطيط الصفحة.',e:'Show: View tab · Print: Page Layout tab.'}
+  ]
+});
+
+App.initAccordions();
+App.initNav({basics:'#basics',tabsmap:'#basics',funcs:'#basics',charts:'#basics',errors:'#basics',glossary:'#glossary',official:'#official',traps:'#traps',quiz:'#traps',predicted:'#traps'});
+App.initShell('excel.html');
+</script>
+</body>
+</html>
