@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spreadsheets (Excel), Simply — Interactive Guide</title>
+<meta name="description" content="A simplified interactive guide to the Spreadsheets (Excel) section of the digital transformation course: references and functions, the ribbon-tab map, errors, and interactive quizzes.">
+<meta name="theme-color" content="#000000">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="FDTC Guide">
+<link rel="manifest" href="../manifest.webmanifest">
+<link rel="icon" href="../icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../icon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/app.css">
+</head>
+<body>
+
+<header class="hero">
+  <div class="container">
+    <span class="shield">📊</span>
+    <h1>Spreadsheets (Excel) <span>Simply</span></h1>
+    <p class="sub">An interactive guide to the most question-heavy section of the course — references, functions, tabs and errors, explained for non-specialists.</p>
+    <span class="badge">Extracted from the memo and verified against the official material (BIT 04 — Excel Spreadsheets, Edition 3 / 2024)</span>
+    <div class="stats">
+      <div class="stat"><b>68</b><span>memo questions</span></div>
+      <div class="stat"><b>27</b><span>key terms</span></div>
+      <div class="stat"><b>22</b><span>predicted questions</span></div>
+      <div class="stat"><b>144</b><span>pages of official material</span></div>
+    </div>
+  </div>
+</header>
+
+<nav class="tabs" aria-label="Guide sections">
+  <div class="inner">
+    <a class="home-link" href="./">🏠 Home</a>
+    <a href="#basics" class="active">Basics &amp; References</a>
+    <a href="#tabsmap">Tab Map</a>
+    <a href="#funcs">Functions</a>
+    <a href="#charts">Charts &amp; Printing</a>
+    <a href="#errors">Errors &amp; Protection</a>
+    <a href="#glossary">Glossary</a>
+    <a href="#official">From the Official Curriculum</a>
+    <a href="#traps">Word Traps</a>
+    <a href="#quiz">Memo Questions</a>
+    <a href="#predicted">Predicted Questions</a>
+  </div>
+</nav>
+
+<div class="part-banner memo-src">
+  <div class="container">
+    <span class="part-tag">Part One · Interactive Explanations</span>
+    <h2>Memo Explanations</h2>
+    <p>A simplified explanation of everything covered in the memo's Spreadsheets section — matched item by item against the official material.</p>
+  </div>
+</div>
+
+<!-- ===================== 1. Basics & references ===================== -->
+<section id="basics">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">01.</span> Basics &amp; References — The Language of Excel</h2>
+    <p class="sec-lead">
+      The <span class="en">Workbook</span> is the whole file, containing <span class="en">Worksheets</span>, and each sheet is a huge grid of cells: <strong style="color:var(--text)">16,384 columns × 1,048,576 rows</strong>.
+    </p>
+
+    <div class="analogy">
+      📒 <strong>Analogy:</strong> the workbook is a whole notebook, each worksheet a ruled page in it, and each cell a box on that page with an address made of the column letter and row number (like B3). When your formula uses the "box's address" instead of its value, the result updates automatically whenever its contents change — the single most important idea in all of Excel.
+    </div>
+
+    <div class="grid cols-2">
+      <div class="card">
+        <span class="icon">🎯</span>
+        <h3>Relative and Absolute References</h3>
+        <p>The two reference types: <strong style="color:var(--accent)">relative</strong>, which changes when copied, and <strong style="color:var(--accent)">absolute</strong>, which is fixed with a <span class="en">$</span> sign (like <span class="en">$A$1</span>). To toggle between them while editing: the <span class="en">F4</span> key. ⚠️ "Relative reference and percentage reference" is a recurring wrong statement!</p>
+      </div>
+      <div class="card">
+        <span class="icon">🔢</span>
+        <h3>Counting Cells in a Range</h3>
+        <p>The range <span class="en">L11:N15</span> = 3 columns (L,M,N) × 5 rows (11–15) = <strong style="color:var(--accent)">15 cells</strong>. Always multiply the number of columns by the number of rows.</p>
+      </div>
+      <div class="card">
+        <span class="icon">📋</span>
+        <h3>Paste Special <span class="en">Transpose</span></h3>
+        <p>Turning values from horizontal to vertical (or vice versa) via <strong style="color:var(--text)">Paste Special</strong> — on the <strong style="color:var(--accent)">Home</strong> tab.</p>
+      </div>
+      <div class="card">
+        <span class="icon">✅</span>
+        <h3>Data Validation</h3>
+        <p>Controlling a cell's content via <strong style="color:var(--text)">Data Validation</strong> in the "Data Tools" group on the Data tab — it's also how the <strong style="color:var(--accent)">drop-down list</strong> is created (provided a cell range containing the options exists).</p>
+      </div>
+      <div class="card">
+        <span class="icon">🧊</span>
+        <h3><span class="en">Freezing</span></h3>
+        <p>Keeping an area of the worksheet <strong style="color:var(--text)">visible while scrolling</strong> through the rest of the columns and rows — perfect for pinning the header row.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🔀</span>
+        <h3>Sort or Filter?</h3>
+        <p><strong style="color:var(--accent)">Sort</strong> = arranging in ascending/descending order. <strong style="color:var(--accent)">Filter</strong> = temporarily hiding rows that don't match the condition and showing those that do. Mixing them up is a recurring trap!</p>
+      </div>
+      <div class="card">
+        <span class="icon">⌨️</span>
+        <h3>Quick Selections</h3>
+        <p>Select a row within a range: <kbd style="font-size:11px">Ctrl+Shift+Arrow</kbd> · Select a range up to the last data: <kbd style="font-size:11px">Ctrl+Shift+End</kbd> · Insert a new row: right-click the row header, then "Insert".</p>
+      </div>
+      <div class="card">
+        <span class="icon">🪄</span>
+        <h3>AutoFill</h3>
+        <p>To fill numbers in a sequential pattern, enter <strong style="color:var(--accent)">two values</strong> (not one) so Excel understands the step between them, then drag the fill handle.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 2. Tabs map ===================== -->
+<section id="tabsmap">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">02.</span> Tab Map — Where Do I Find Each Command?</h2>
+    <p class="sec-lead"><strong style="color:var(--text)">Click any tab</strong> to see its exam-relevant commands — half of this section's traps are "right tab, wrong command":</p>
+
+    <div class="cia-wrap" style="grid-template-columns:repeat(auto-fit,minmax(120px,1fr))">
+      <button class="cia-btn" data-tab="home"><span class="icon">🏠</span><h3>Home</h3><span class="en">Home</span></button>
+      <button class="cia-btn" data-tab="insert"><span class="icon">➕</span><h3>Insert</h3><span class="en">Insert</span></button>
+      <button class="cia-btn" data-tab="playout"><span class="icon">📐</span><h3>Page Layout</h3><span class="en">Page Layout</span></button>
+      <button class="cia-btn" data-tab="formulas"><span class="icon">🧮</span><h3>Formulas</h3><span class="en">Formulas</span></button>
+      <button class="cia-btn" data-tab="data"><span class="icon">🗃️</span><h3>Data</h3><span class="en">Data</span></button>
+      <button class="cia-btn" data-tab="review"><span class="icon">✅</span><h3>Review</h3><span class="en">Review</span></button>
+      <button class="cia-btn" data-tab="view"><span class="icon">👁️</span><h3>View</h3><span class="en">View</span></button>
+    </div>
+    <div class="cia-detail" id="tab-panel" aria-live="polite"></div>
+  </div>
+</section>
+
+<!-- ===================== 3. Functions ===================== -->
+<section id="funcs">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">03.</span> Functions — Memorize by Family, Not Scattered</h2>
+    <p class="sec-lead">The exam's favorite question: "Function X belongs to the … family". Memorize the family before the function:</p>
+
+    <div class="grid cols-2">
+      <div class="card">
+        <span class="icon">🔤</span>
+        <h3>Text Functions <span class="en">Text</span></h3>
+        <p><span class="en">PROPER</span> capitalizes the first letter of each word · <span class="en">LOWER</span> converts all uppercase letters to lowercase. ⚠️ "PROPER is mathematical" is a recurring trap — it is a <strong style="color:var(--accent)">text</strong> function.</p>
+      </div>
+      <div class="card">
+        <span class="icon">➗</span>
+        <h3>Math Functions <span class="en">Math</span></h3>
+        <p><span class="en">ROUND</span> for rounding · <span class="en">RANDBETWEEN</span> returns a new random integer <strong style="color:var(--text)">every time the sheet recalculates</strong> · <span class="en">SUMIF</span> sums with a condition — its third argument can be omitted when the condition range is the same as the sum range.</p>
+      </div>
+      <div class="card">
+        <span class="icon">📈</span>
+        <h3>Statistical Counting Functions</h3>
+        <p><span class="en">COUNT</span> counts <strong style="color:var(--accent)">numeric cells only</strong> · <span class="en">COUNTA</span> counts numeric and text cells together · <span class="en">COUNTIF(F3:F6,"passed")</span> counts with a condition — beware: the option without the quotation marks « " " » is a planted wrong answer!</p>
+      </div>
+      <div class="card">
+        <span class="icon">🔎</span>
+        <h3>Lookup Functions <span class="en">Lookup</span></h3>
+        <p><span class="en">VLOOKUP</span> searches for a value, then returns its <strong style="color:var(--accent)">data</strong> from a specific column · <span class="en">MATCH</span> searches for a value, then returns its <strong style="color:var(--accent)">order</strong> in the column. (data → VLOOKUP, order → MATCH).</p>
+      </div>
+      <div class="card">
+        <span class="icon">📅</span>
+        <h3>Date &amp; Time Functions</h3>
+        <p><span class="en">NOW</span> returns the serial number of the current date <strong style="color:var(--text)">and time</strong> · <span class="en">TODAY</span> returns the date only. Both belong to the <strong style="color:var(--accent)">Date &amp; Time</strong> family — not the "general functions"!</p>
+      </div>
+      <div class="card">
+        <span class="icon">🧮</span>
+        <h3>SUBTOTAL and Brackets</h3>
+        <p>When using <span class="en">SUBTOTAL</span>, <strong style="color:var(--accent)">3 levels</strong> appear at the side of the sheet. And operations enclosed in brackets are the <strong style="color:var(--accent)">first</strong> thing Excel calculates in a formula — not the last.</p>
+      </div>
+    </div>
+
+    <div class="analogy">
+      🧠 <strong>Memory trick:</strong> V in VLOOKUP = Value — "fetch the value and its data", while MATCH = "match it and tell me its place". NOW = the full current moment with date and time, whereas TODAY = just today's date.
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 4. Charts & printing ===================== -->
+<section id="charts">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">04.</span> Charts &amp; Printing</h2>
+    <p class="sec-lead">Excel turns table numbers into a chart to make the data easier to interpret and the results quicker to reach:</p>
+
+    <div class="grid cols-2">
+      <div class="card">
+        <span class="icon">📊</span>
+        <h3>Moving a Chart</h3>
+        <p>To move a chart to a new sheet or another file: the <strong style="color:var(--text)">"Move Chart"</strong> command on the <strong style="color:var(--accent)">Design</strong> tab. <strong>Pictures</strong>, however, have no "move" — only copy or cut and paste (trap!).</p>
+      </div>
+      <div class="card">
+        <span class="icon">🏷️</span>
+        <h3>Chart Title</h3>
+        <p>A chart must have a title describing its overall content, and its usual position is <strong style="color:var(--accent)">at the top of the chart</strong> — not the bottom (trap!).</p>
+      </div>
+      <div class="card">
+        <span class="icon">🖨️</span>
+        <h3>Print Titles <span class="en">Print Titles</span></h3>
+        <p>To repeat specific rows at the top of every printed page: <strong style="color:var(--text)">Print Titles → Rows to repeat at top</strong> on the Page Layout tab.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🖼️</span>
+        <h3>Sheet Background</h3>
+        <p>A picture can be used as a worksheet background <strong style="color:var(--accent)">for display only — it does not print</strong>. To actually print gridlines: the Print option under "Gridlines" on the Page Layout tab.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🔗</span>
+        <h3>Linking Sheets</h3>
+        <p>Two worksheets can be linked with the results shown in a third, and calculations can span <strong style="color:var(--text)">more than three sheets</strong> — Excel lets you combine multiple sheets and calculate across them.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🪟</span>
+        <h3>Switching Windows</h3>
+        <p>Moving between open workbooks: <strong style="color:var(--text)">Switch Windows</strong> on the <strong style="color:var(--accent)">View</strong> tab — not "Page Layout" (trap!). Zoom in/out also lives there.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 5. Errors & protection ===================== -->
+<section id="errors">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">05.</span> Errors &amp; Protection</h2>
+    <p class="sec-lead">A # at the start of a cell = Excel is complaining. Memorize the reason for each complaint:</p>
+
+    <div class="grid cols-2">
+      <div class="card">
+        <span class="icon">❓</span>
+        <h3><span class="en">#NAME?</span></h3>
+        <p>Appears when <strong style="color:var(--accent)">the equation needs to be corrected</strong> — usually a misspelled function name.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🔢</span>
+        <h3><span class="en">#NUM!</span></h3>
+        <p>Appears when the formula or function contains an <strong style="color:var(--accent)">invalid numerical value</strong>.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🟩</span>
+        <h3>The Green Triangle</h3>
+        <p>The memo's answer: it appears beside a cell that is <strong style="color:var(--text)">formatted as text but contains numbers</strong> (flag or triangle: two names for the same mark). ⚠️ Not stated verbatim in the official material — it says the <strong style="color:var(--bad)">red</strong> triangle indicates a comment.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🔐</span>
+        <h3>Protection in Two Ways</h3>
+        <p>A worksheet is protected in <strong style="color:var(--accent)">two ways</strong>, and users can be prevented from creating layouts or macros, moving/copying sheets, or making any edits. But what sheet password protection does NOT prevent: <strong style="color:var(--bad)">unauthorized users opening the sheet</strong>!</p>
+      </div>
+      <div class="card">
+        <span class="icon">🔒</span>
+        <h3>Locking Cells and Hiding Formulas</h3>
+        <p>Cell locking and formula hiding will not take effect <strong style="color:var(--accent)">until the workbook or worksheet is protected</strong> — locking alone, without protection, does nothing.</p>
+      </div>
+      <div class="card">
+        <span class="icon">💬</span>
+        <h3>Comments</h3>
+        <p>Inserting a comment in a cell and navigating between comments: the <strong style="color:var(--accent)">Review</strong> tab — not "View" (trap!).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 6. Glossary ===================== -->
+<section id="glossary">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">06.</span> Glossary of Terms — Cards You Flip with a Tap</h2>
+    <p class="sec-lead">Tap any card to flip it. Cards tagged "official" appear in the official material's own glossary:</p>
+    <div class="filters" id="filters"></div>
+    <div class="flip-grid" id="flip-grid"></div>
+  </div>
+</section>
+
+<div class="part-banner official-src">
+  <div class="container">
+    <span class="part-tag">Extra Explanations</span>
+    <h2>From the Official Curriculum</h2>
+    <p>Topics the memo does not cover — added from the official training material (Edition 3 / 2024).</p>
+  </div>
+</div>
+
+<!-- ===================== 7. Official extras ===================== -->
+<section id="official">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">07.</span> What the Memo Doesn't Cover</h2>
+    <p class="sec-lead">The official material (144 pages) adds entire topics with no memo questions:</p>
+
+    <div class="grid cols-2">
+      <div class="card">
+        <span class="icon">🎓</span>
+        <h3>The Section's Place in the Certificate</h3>
+        <p>Spreadsheets is program <strong style="color:var(--text)">BIT 04</strong> of the FDTC programs, built on <strong style="color:var(--text)">Excel</strong>, whose interface consists of: the title bar, Quick Access Toolbar, the Ribbon, the formula bar, and the status bar.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🚨</span>
+        <h3>The Complete Error Table</h3>
+        <p>The material lists all errors: <span class="en">#DIV/0!</span> division by zero · <span class="en">#N/A</span> value not available · <span class="en">#NAME?</span> unrecognized name · <span class="en">#NULL!</span> invalid intersection · <span class="en">#NUM!</span> invalid number · <span class="en">#REF!</span> deleted cell reference · <span class="en">#VALUE!</span> wrong argument type.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🧩</span>
+        <h3>Advanced Logical Functions</h3>
+        <p><span class="en">IFS</span> tests up to <strong style="color:var(--accent)">127 conditions</strong> · <span class="en">ISERROR</span> checks whether a value is an error · <span class="en">IFNA</span> handles the #N/A error with a fallback value.</p>
+      </div>
+      <div class="card">
+        <span class="icon">📉</span>
+        <h3>Statistical Analysis</h3>
+        <p><span class="en">CORREL</span> computes the correlation coefficient between two data sets. For advanced analysis: the <strong style="color:var(--text)">Analysis ToolPak and Solver</strong> add-ins are enabled from Options → Add-ins.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🧷</span>
+        <h3><span class="en">Consolidate</span></h3>
+        <p>To combine data from <strong style="color:var(--accent)">more than 3 worksheets</strong> into one sheet: the "Consolidate" command on the <strong style="color:var(--text)">Data</strong> tab.</p>
+      </div>
+      <div class="card">
+        <span class="icon">📁</span>
+        <h3>xlsx or xls?</h3>
+        <p>The modern <span class="en">.xlsx</span> extension is roughly <strong style="color:var(--accent)">3 times smaller</strong> than the old <span class="en">.xls</span> extension (versions 97–2003).</p>
+      </div>
+      <div class="card">
+        <span class="icon">⌨️</span>
+        <h3>Shortcuts from the Material</h3>
+        <p><kbd style="font-size:11px">Ctrl+T</kbd> create a table · <kbd style="font-size:11px">Alt+Enter</kbd> new line within a cell · <kbd style="font-size:11px">Ctrl+;</kbd> insert today's date · <kbd style="font-size:11px">Ctrl+F4</kbd> closes the workbook while <kbd style="font-size:11px">Alt+F4</kbd> closes Excel entirely.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🧮</span>
+        <h3>SUBTOTAL — The Extra Detail</h3>
+        <p>The levels are 3 when replacing the current subtotals — and become <strong style="color:var(--accent)">4 levels</strong> if you uncheck "Replace current subtotals".</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="part-banner memo-src">
+  <div class="container">
+    <span class="part-tag">Part Two · Questions</span>
+    <h2>Memo Questions</h2>
+    <p>Word traps first, then an interactive quiz in the English exam wording.</p>
+  </div>
+</div>
+
+<!-- ===================== 8. Traps ===================== -->
+<section id="traps">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">08.</span> Word Traps — Wrong Tab, Wrong Family</h2>
+    <p class="sec-lead">This section's traps: assigning a function to the wrong family or a command to the wrong tab. Tap any statement to reveal the verdict:</p>
+    <div id="traps-list"></div>
+  </div>
+</section>
+
+<!-- ===================== 9. Memo quiz ===================== -->
+<section id="quiz">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">09.</span> Memo Questions — Test Yourself 🎯</h2>
+    <p class="sec-lead">16 questions from the memo in their original English wording, with explanations backed by the official material.</p>
+    <div class="quiz-box" id="quiz-box"></div>
+  </div>
+</section>
+
+<div class="part-banner official-src">
+  <div class="container">
+    <span class="part-tag">Extra Questions</span>
+    <h2>Predicted Questions from the Official Curriculum</h2>
+    <p>22 practice questions on the topics the memo does not cover.</p>
+  </div>
+</div>
+
+<!-- ===================== 10. Predicted quiz ===================== -->
+<section id="predicted">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">10.</span> Predicted Questions 🔮</h2>
+    <p class="sec-lead">⚠️ Practice questions written from the official material's content — not copied from actual exams.</p>
+    <div class="quiz-box" id="predicted-box"></div>
+  </div>
+</section>
+
+<nav class="tabbar" aria-label="Quick navigation">
+  <a href="#basics" class="active"><span class="ico">📖</span>Guide</a>
+  <a href="#glossary"><span class="ico">📇</span>Glossary</a>
+  <a href="#official"><span class="ico">🏛️</span>Official</a>
+  <a href="#traps"><span class="ico">🧩</span>Quiz</a>
+</nav>
+
+<script src="../assets/app.js"></script>
+<script>
+/* ===== Tab map ===== */
+const TABS={
+  home:{icon:'🏠',ar:'Home',lat:'Home',
+    def:'<strong>The formatting and editing tab:</strong> Clipboard (copy/cut/paste and Paste Special), Font, Alignment, Styles, Editing.',
+    ex:'<strong>For the exam:</strong> cell content formatting is edited from here · Conditional Formatting is in the "Styles" group (not on Insert!) · Turning values from horizontal to vertical via Paste Special Transpose · Searching the sheet for a formula or value is in the Editing group.'},
+  insert:{icon:'➕',ar:'Insert',lat:'Insert',
+    def:'<strong>The adding tab:</strong> Tables, Illustrations, Charts, Headers &amp; Footers, Symbols.',
+    ex:'<strong>For the exam:</strong> charts are inserted from here to turn table numbers into a drawing that makes the data easier to interpret — but remember: moving a chart after creating it is on the "Design" tab, and Conditional Formatting is never here.'},
+  playout:{icon:'📐',ar:'Page Layout',lat:'Page Layout',
+    def:'<strong>The print-setup tab:</strong> Margins, Orientation, Size, Print Area, Background, Print Titles, Sheet Options.',
+    ex:'<strong>For the exam:</strong> gridlines <u>when printing</u> are here (the Print option) · Repeating rows at the top of every printed page: Print Titles → Rows to repeat at top · The sheet Background is here (display only, never printed).'},
+  formulas:{icon:'🧮',ar:'Formulas',lat:'Formulas',
+    def:'<strong>The functions tab:</strong> the Function Library by family, Defined Names, Formula Auditing.',
+    ex:'<strong>For the exam:</strong> naming a range with Define Name is in the "Defined Names" group here — the memo assigned it to the Data tab, but the official material confirms it is on <u>Formulas</u> ✅ (corrected). Function families: text/math/logical/basic.'},
+  data:{icon:'🗃️',ar:'Data',lat:'Data',
+    def:'<strong>The data-processing tab:</strong> Sort &amp; Filter, Data Tools, Outline, Consolidate.',
+    ex:'<strong>For the exam:</strong> Data Validation is in "Data Tools" (and creates the drop-down list) · Subtotal is in "Outline" · Consolidate, for more than 3 sheets, is here · Sort is ascending/descending, and Filter temporarily hides rows.'},
+  review:{icon:'✅',ar:'Review',lat:'Review',
+    def:'<strong>The proofing tab:</strong> spelling check, comments, protection.',
+    ex:'<strong>For the exam:</strong> inserting a comment in a cell is here (not on "View"!) · Navigating between comments with Previous/Next buttons is here · Sheet and workbook protection are in the "Protect" group.'},
+  view:{icon:'👁️',ar:'View',lat:'View',
+    def:'<strong>The display tab:</strong> workbook views, Show, Zoom, Window.',
+    ex:'<strong>For the exam:</strong> showing/hiding gridlines <u>on screen</u> is in the "Show" group · Zooming the workbook in and out is here (not on Review!) · Switch Windows is in the "Window" group (not on Page Layout!) · Freeze Panes.'}
+};
+const tabPanel=document.getElementById('tab-panel');
+function showTab(k){
+  const t=TABS[k];
+  tabPanel.innerHTML=`<h3>${t.icon} ${t.ar} tab</h3><span class="lat">${t.lat}</span><p>${t.def}</p><p style="margin-top:12px">${t.ex}</p>`;
+  document.querySelectorAll('[data-tab]').forEach(b=>b.classList.toggle('active',b.dataset.tab===k));
+}
+document.querySelectorAll('[data-tab]').forEach(b=>b.addEventListener('click',()=>showTab(b.dataset.tab)));
+showTab('home');
+
+/* ===== Word traps ===== */
+App.renderTraps('traps-list',[
+ {q:'Proper function belongs to <span class="mark">Mathematical</span> function.',ar:'',ok:false,
+  a:'False — PROPER is a <strong>Text</strong> function: it capitalizes the first letter of each word. (ROUND is the mathematical one).'},
+ {q:'Conditional format can be applied through the <span class="mark">Insert</span> tab.',ar:'',ok:false,
+  a:'False — Conditional Formatting is in the <strong>Styles</strong> group on the <strong>Home</strong> tab.'},
+ {q:'The NOW functions belong to the <span class="mark">general</span> functions.',ar:'',ok:false,
+  a:'False — NOW belongs to the <strong>Date &amp; Time</strong> family, and returns the serial number of the current date and time.'},
+ {q:'Zooming the workbook in and out is done from the <span class="mark">Review</span> tab.',ar:'',ok:false,
+  a:'False — Zoom is on the <strong>View</strong> tab. The Review tab is for proofing, comments and protection.'},
+ {q:'Open windows can be switched through the <span class="mark">Page Layout</span> tab.',ar:'',ok:false,
+  a:'False — Switch Windows is in the "Window" group on the <strong>View</strong> tab.'},
+ {q:'You can insert a comment in a cell using <span class="mark">view</span> tab.',ar:'',ok:false,
+  a:'False — inserting and navigating comments is on the <strong>Review</strong> tab.'},
+ {q:'Filtering is used to <span class="mark">arrange</span> values in ascending or descending order.',ar:'',ok:false,
+  a:'False — arranging is the job of <strong>Sort</strong>. Filter temporarily hides rows that don\'t match the condition and shows those that do.'},
+ {q:'There are 2 types of references, relative reference and <span class="mark">percentage</span> reference.',ar:'',ok:false,
+  a:'False — the two types are Relative and <strong>Absolute</strong> (with the $ sign, toggled with F4). There is no "percentage" reference.'},
+ {q:'The chart title is usually located at the <span class="mark">bottom</span> of the chart.',ar:'',ok:false,
+  a:'False — the title\'s usual position is at the <strong>Top</strong> of the chart.'},
+ {q:'When auto-filling numbers, we only enter <span class="mark">one</span> value.',ar:'',ok:false,
+  a:'False — we enter <strong>two values</strong> so Excel recognizes the pattern, then drag the fill handle.'},
+ {q:'Operations enclosed in brackets are the <span class="mark">last</span> calculations performed by Excel.',ar:'',ok:false,
+  a:'False — brackets are calculated <strong>first</strong>, before the other operations.'},
+ {q:'To transfer an image from one worksheet to another <span class="mark">by moving</span>.',ar:'',ok:false,
+  a:'False — the "Move" command is for charts (on the Design tab). Pictures are copied, or cut and pasted.'},
+ {q:'You <span class="mark">cannot</span> control a cell value using data validation option.',ar:'',ok:false,
+  a:'False — Data Validation exists precisely <strong>to control cell content</strong>, and drop-down lists are created from it.'},
+ {q:'Cell locking will not be activated until the workbook or the worksheet is protected.',ar:'',ok:true,
+  a:'Correct ✓ — locking and formula hiding only work once protection is enabled. A sound statement with no trap.'}
+]);
+
+/* ===== Memo questions ===== */
+App.initQuiz('quiz-box',[
+ {en:'You can also name the range from the ..... tab, in the Defined Names group, choose Define Name.',ar:'',
+  opts:['Data','Formulas','Insert','View'],a:1,
+  exp:'Formulas ✅ — the memo assigned it to the Data tab, but the official material confirms the "Defined Names" group is on the Formulas tab (and the memo itself recorded the correction).'},
+ {en:'The NOW function returns the serial number for the current date.',ar:'',
+  opts:['True ✓','False ✗'],a:0,
+  exp:'True per the memo — more precisely, the material says it returns the date <strong>and time</strong> together (Date and Time, as the memo itself noted). Date only is the TODAY function.'},
+ {en:'To calculate the number of passed students in a range, you use ...',ar:'',
+  opts:['COUNTIF(F3:F6, "passed")','COUNTIF(F3:F6, passed)','COUNT(F3:F6)','SUMIF(F3:F6)'],a:0,
+  exp:'COUNTIF with the "passed" condition — beware: the same answer without the quotation marks « " " » will appear among the options and is wrong (the memo\'s explicit warning).'},
+ {en:'To select range of cells in the worksheet, choose ...',ar:'',
+  opts:['Ctrl+Shift+End','Ctrl+A','Alt+Enter','F4'],a:0,
+  exp:'Ctrl+Shift+End selects from the current cell to the last used cell. To select a row within a range: Ctrl+Shift+Arrow.'},
+ {en:'When using SUBTOTAL function, we will notice on the right side there are ... levels.',ar:'',
+  opts:['Two','Three','Four','Five'],a:1,
+  exp:'Three levels ✅ (the material adds: they become 4 if you don\'t replace the current subtotals).'},
+ {en:'To move the chart to a new sheet or another file, choose "move chart" from the ... tab.',ar:'',
+  opts:['Insert','Home','Design','View'],a:2,
+  exp:'Design ✅ — the tab appears when the chart is selected, and it holds the Move Chart options.'},
+ {en:'The function ........ searches for a value written in a cell, then recalls its data in a specific column.',ar:'',
+  opts:['MATCH','VLOOKUP','COUNTIF','INDEX'],a:1,
+  exp:'VLOOKUP ✅ (the material, p.131) — it returns the data. If the question asks for its "order", the answer is MATCH.'},
+ {en:'The function ........ searches for a value written in a cell, then recalls its order in a specific column.',ar:'',
+  opts:['VLOOKUP','SUBTOTAL','MATCH','LOOKUP'],a:2,
+  exp:'MATCH ✅ — the word "order" is the key that distinguishes it from VLOOKUP, which returns "data".'},
+ {en:'We show or hide gridlines when printing from the ... tab.',ar:'',
+  opts:['View','Page Layout','Home','Data'],a:1,
+  exp:'With the phrase "when printing" → Page Layout ✅. Showing/hiding them on screen is on the View tab — both answers are correct depending on the wording (the memo\'s note).'},
+ {en:'The error.... appears when the equation needs to be corrected.',ar:'',
+  opts:['#NUM!','#REF!','#NAME?','#DIV/0!'],a:2,
+  exp:'#NAME? ✅ — usually caused by a misspelled function name. #NUM! is an invalid numerical value.'},
+ {en:'The error #NUM! appears when the formula or function contains ...',ar:'',
+  opts:['invalid numerical values','a misspelled name','a deleted reference','text instead of numbers'],a:0,
+  exp:'Invalid numerical values ✅.'},
+ {en:'You can set some rows to be repeated at the top while printing via ...',ar:'',
+  opts:['Freeze Panes','Print Titles','Page Break','Headers'],a:1,
+  exp:'Print Titles ✅ (the Rows to repeat at top option) on the Page Layout tab — don\'t confuse it with Freeze Panes, which only works on screen.'},
+ {en:'To search within the worksheet for a specific formula or value use ... tab.',ar:'',
+  opts:['Home','Data','Formulas','Review'],a:0,
+  exp:'Home — the Find command in the Editing group.'},
+ {en:'The conditional formatting is located in the group …',ar:'',
+  opts:['Insert','Editing','Styles','Format'],a:2,
+  exp:'Styles on the Home tab ✅ — and remember its definition: automatic formatting (like color) applied based on a cell\'s value under a specific condition, to make it stand out from the rest of the data.'},
+ {en:'Worksheet is protected in … ways.',ar:'',
+  opts:['Two','Three','Four','One'],a:0,
+  exp:'Two ways ✅. And remember: locking does not take effect until protection is enabled.'},
+ {en:'In Excel what can\'t be secured against password protecting a sheet?',ar:'',
+  opts:['Deleting rows','Unauthorized users can open the sheet','Editing cells','Creating a macro'],a:1,
+  exp:'Unauthorized users opening the sheet ✅ — sheet protection prevents editing (layouts, macros, moving, copying, deleting, adding) but does not stop the file from being opened and viewed.'}
+]);
+
+/* ===== Predicted questions ===== */
+App.initQuiz('predicted-box',[
+ {en:'The number of columns in an Excel worksheet is .....',ar:'',
+  opts:['1,048,576','16,384','65,536','256'],a:1,exp:'16,384 columns (A through XFD) — while the rows number 1,048,576.'},
+ {en:'The number of rows in an Excel worksheet is .....',ar:'',
+  opts:['16,384','65,536','1,048,576','1,000,000'],a:2,exp:'1,048,576 rows.'},
+ {en:'Compared to xls, the xlsx file format is approximately .....',ar:'',
+  opts:['3 times smaller','3 times larger','the same size','uncompressed'],a:0,exp:'About 3 times smaller — xlsx is built on XML compression, while xls is the old 97–2003 format.'},
+ {en:'The IFS function can test up to ..... conditions.',ar:'',
+  opts:['7','64','127','255'],a:2,exp:'127 conditions — an easier alternative to nesting multiple IF functions.'},
+ {en:'The ..... function returns a specified value if the formula results in #N/A error.',ar:'',
+  opts:['ISERROR','IFNA','IFERROR','NA'],a:1,exp:'IFNA is dedicated specifically to the #N/A error.'},
+ {en:'The ..... function checks whether a value is an error and returns TRUE or FALSE.',ar:'',
+  opts:['IFNA','MATCH','ISERROR','CHECK'],a:2,exp:'ISERROR returns TRUE for any error type.'},
+ {en:'The ..... function calculates the correlation coefficient between two data sets.',ar:'',
+  opts:['CORREL','COUNT','AVERAGE','TREND'],a:0,exp:'CORREL, one of the statistical functions in the official material.'},
+ {en:'Analysis ToolPak and Solver are enabled from .....',ar:'',
+  opts:['Insert tab','Options → Add-ins','Data tab directly','Review tab'],a:1,exp:'From File → Options → Add-ins, then Go — once enabled they appear on the Data tab.'},
+ {en:'To merge data from more than 3 worksheets into one, use the ..... command.',ar:'',
+  opts:['Consolidate','Merge Cells','Combine','Link'],a:0,exp:'Consolidate, on the Data tab.'},
+ {en:'The Consolidate command is found on the ..... tab.',ar:'',
+  opts:['Home','Insert','Data','Formulas'],a:2,exp:'Data.'},
+ {en:'The shortcut Ctrl+T is used to .....',ar:'',
+  opts:['create a table','close the workbook','insert the time','add a new sheet'],a:0,exp:'Create a Table from the selected data.'},
+ {en:'To start a new line inside the same cell, press .....',ar:'',
+  opts:['Enter','Alt+Enter','Shift+Enter','Ctrl+Enter'],a:1,exp:'Alt+Enter — Enter alone moves to the next cell.'},
+ {en:'The shortcut Ctrl+F4 is used to close the ....., while Alt+F4 closes .....',ar:'',
+  opts:['Excel / the workbook','the workbook / Excel','a sheet / a workbook','nothing / Excel'],a:1,exp:'Ctrl+F4 closes only the current workbook; Alt+F4 closes Excel entirely.'},
+ {en:'The shortcut Ctrl+; inserts .....',ar:'',
+  opts:['the current time','the current date','a comment','a function'],a:1,exp:'Today\'s date into the cell.'},
+ {en:'The TODAY function returns .....',ar:'',
+  opts:['date and time','the current time only','the current date only','a random date'],a:2,exp:'The current date only, without the time — unlike NOW, which returns both date and time.'},
+ {en:'The #REF! error appears when .....',ar:'',
+  opts:['a cell reference is not valid (e.g. deleted)','a name is misspelled','dividing by zero','a value is unavailable'],a:0,exp:'The cell reference is invalid — for example when cells the formula pointed to are deleted.'},
+ {en:'The #DIV/0! error appears when .....',ar:'',
+  opts:['a number is too large','a formula divides by zero or an empty cell','text is used in a formula','a reference is deleted'],a:1,exp:'Division by zero or by an empty cell.'},
+ {en:'The #VALUE! error appears when .....',ar:'',
+  opts:['the wrong type of argument is used (e.g. text instead of number)','the formula name is wrong','the cell is locked','a range is renamed'],a:0,exp:'The wrong argument type — such as performing arithmetic on text.'},
+ {en:'When "Replace current subtotals" is unchecked, SUBTOTAL shows ..... levels.',ar:'',
+  opts:['Three','Four','Five','Two'],a:1,exp:'Four levels — instead of the default three when replacing.'},
+ {en:'While editing a formula, pressing F4 on a cell reference .....',ar:'',
+  opts:['deletes it','toggles between relative and absolute reference','copies it','names the range'],a:1,exp:'Toggles between relative and absolute referencing by adding $ signs automatically.'},
+ {en:'A red triangle in the corner of a cell indicates .....',ar:'',
+  opts:['an error','a comment in the cell','a locked cell','an invalid number'],a:1,exp:'A comment in the cell — this is the triangle indicator explicitly stated in the official material.'},
+ {en:'The Quick Access Toolbar is used to .....',ar:'',
+  opts:['display the sheet name','keep frequently used commands always visible','show formulas','switch windows'],a:1,exp:'Keep frequent commands (Save, Undo, Redo) always visible above the ribbon — it is one of the interface components in the material\'s glossary.'}
+]);
+
+/* ===== Glossary ===== */
+App.renderGlossary({
+  gridId:'flip-grid',filtersId:'filters',
+  cats:{all:'All',base:'Basics',fx:'Functions',fmt:'Formatting & Display',data:'Data & Printing'},
+  officialSet:new Set(['Workbook','Range','Quick Access Toolbar','Gridline','Filtering','Conditional Formatting','Subtotal','Table Style','Drop-Down Menu','Absolute Value','Worksheet']),
+  terms:[
+   {c:'base',ar:'Workbook',en:'Workbook',d:'The entire Excel file with all the worksheets it contains.',e:'The whole Excel file containing worksheets.'},
+   {c:'base',ar:'Worksheet',en:'Worksheet',d:'A grid of 16,384 columns × 1,048,576 rows inside the workbook.',e:'A grid of 16,384 columns × 1,048,576 rows.'},
+   {c:'base',ar:'Range',en:'Range',d:'A block of adjacent cells such as L11:N15 (= 15 cells: 3 columns × 5 rows).',e:'A block of cells, e.g. L11:N15 = 15 cells.'},
+   {c:'base',ar:'Relative Reference',en:'Relative Reference',d:'Adjusts automatically when the formula is copied to other cells.',e:'Adjusts automatically when the formula is copied.'},
+   {c:'base',ar:'Absolute Reference',en:'Absolute Value',d:'Fixed on a specific cell with $ signs (like $A$1) — toggle with F4.',e:'Fixed with $ signs; toggle with F4.'},
+   {c:'base',ar:'Quick Access Toolbar',en:'Quick Access Toolbar',d:'At the top of the window: Save, Undo and Redo always visible.',e:'Save, Undo and Redo always visible.'},
+   {c:'base',ar:'Formula Bar',en:'Formula Bar',d:'Shows the cell\'s real content (value or formula) and lets you edit it.',e:'Shows and edits the real cell content.'},
+   {c:'fx',ar:'Data Lookup Function',en:'VLOOKUP',d:'Searches for a value in a cell, then returns its data from a specific column.',e:'Finds a value, returns its data from a column.'},
+   {c:'fx',ar:'Order Function',en:'MATCH',d:'Searches for a value, then returns its order (position) in the column.',e:'Finds a value, returns its position.'},
+   {c:'fx',ar:'Subtotal',en:'Subtotal',d:'Groups data and shows 3 outline levels at the side of the sheet (4 without replacing).',e:'Groups data; 3 outline levels appear.'},
+   {c:'fx',ar:'Conditional Sum',en:'SUMIF',d:'Sums the cells matching a condition — its third argument is omitted when the condition and sum ranges match.',e:'Sums cells matching a condition.'},
+   {c:'fx',ar:'Conditional Count',en:'COUNTIF',d:'Counts cells matching a condition, e.g. COUNTIF(F3:F6,"passed") to count passing students.',e:'Counts cells matching a condition.'},
+   {c:'fx',ar:'Counting',en:'COUNT / COUNTA',d:'COUNT for numeric cells only; COUNTA for numeric and text together.',e:'COUNT: numeric only; COUNTA: numeric and text.'},
+   {c:'fx',ar:'Capitalize Words',en:'PROPER',d:'A text function that capitalizes the first letter of each word.',e:'Text function: capitalizes each word\'s first letter.'},
+   {c:'fx',ar:'Lowercase',en:'LOWER',d:'A text function that converts all uppercase letters to lowercase.',e:'Text function: converts uppercase to lowercase.'},
+   {c:'fx',ar:'Random Number',en:'RANDBETWEEN',d:'A math function returning a new random integer every time the sheet recalculates.',e:'Returns a new random integer on each recalculation.'},
+   {c:'fx',ar:'Now / Today',en:'NOW / TODAY',d:'NOW: current date and time · TODAY: date only — both from the Date &amp; Time family.',e:'NOW: date & time; TODAY: date only.'},
+   {c:'fmt',ar:'Conditional Formatting',en:'Conditional Formatting',d:'Automatic formatting (like color) based on a cell\'s value under a set condition — Styles group, Home tab.',e:'Automatic formatting based on a condition; Styles group, Home tab.'},
+   {c:'fmt',ar:'Freezing',en:'Freezing',d:'Keeps an area of the sheet visible while scrolling through the rest of the columns and rows.',e:'Keeps an area visible while scrolling.'},
+   {c:'fmt',ar:'Paste Special',en:'Paste Special',d:'Includes Transpose: turning values from horizontal to vertical and back — Home tab.',e:'Includes Transpose: horizontal ↔ vertical.'},
+   {c:'fmt',ar:'Table Style',en:'Table Style',d:'Ready-made table formats — and Ctrl+T creates a table from the selected data.',e:'Ready table formats; Ctrl+T creates a table.'},
+   {c:'fmt',ar:'Merge Cells',en:'Merge / Unmerge',d:'Combining several cells into one, and undoing the merge — from the Home tab.',e:'Combine several cells into one.'},
+   {c:'data',ar:'Filtering',en:'Filtering',d:'Temporarily hides rows that don\'t match the condition and shows those that do — it is not sorting!',e:'Temporarily hides non-matching rows — not sorting!'},
+   {c:'data',ar:'Sorting',en:'Sorting',d:'Arranging values in ascending or descending order — from the Data tab.',e:'Ascending or descending order.'},
+   {c:'data',ar:'Data Validation',en:'Data Validation',d:'Controls cell content — in Data Tools, and it creates the drop-down list.',e:'Controls cell content; creates drop-down lists.'},
+   {c:'data',ar:'Drop-Down Menu',en:'Drop-Down Menu',d:'A list of options inside a cell — requires a cell range containing the options.',e:'In-cell options list; needs a source range.'},
+   {c:'data',ar:'Gridline',en:'Gridline',d:'Shown on screen from the View tab; printed from the Page Layout tab.',e:'Show: View tab · Print: Page Layout tab.'}
+  ]
+});
+
+App.initAccordions();
+App.initNav({basics:'#basics',tabsmap:'#basics',funcs:'#basics',charts:'#basics',errors:'#basics',glossary:'#glossary',official:'#official',traps:'#traps',quiz:'#traps',predicted:'#traps'});
+App.LANG='en';
+App.initShell('excel.html');
+</script>
+</body>
+</html>

@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cybersecurity, Simply — An Interactive Guide for Non-Specialists</title>
+<meta name="description" content="A simplified interactive guide explaining cybersecurity concepts for non-specialists: threats, the CIA triad, exam question traps, and how to protect yourself online.">
+<meta name="theme-color" content="#000000">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Cybersecurity">
+<link rel="manifest" href="../manifest.webmanifest">
+<link rel="icon" href="../icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../icon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/app.css">
+</head>
+<body>
+
+<header class="hero">
+  <div class="container">
+    <span class="shield">🛡️</span>
+    <h1>Cybersecurity <span>Simply</span></h1>
+    <p class="sub">An interactive guide that explains — with no technical background needed — how to understand the risks of the digital world and protect yourself and your data, with the original English wording for exam preparation.</p>
+    <span class="badge">Extracted from the digital transformation memo and verified against the official training material (Supreme Council of Universities / EG-CERT)</span>
+    <div class="stats">
+      <div class="stat"><b>37</b><span>memo questions</span></div>
+      <div class="stat"><b>27</b><span>key terms</span></div>
+      <div class="stat"><b>8</b><span>threats explained</span></div>
+      <div class="stat"><b>6</b><span>chapters in the official material</span></div>
+      <div class="stat"><b>22</b><span>new predicted questions</span></div>
+    </div>
+  </div>
+</header>
+
+<nav class="tabs" aria-label="Guide sections">
+  <div class="inner">
+    <a class="home-link" href="./">🏠 Home</a>
+    <a href="#basics" class="active">Basics</a>
+    <a href="#cia">CIA Triad</a>
+    <a href="#threats">Threats</a>
+    <a href="#hackers">Hacker Types</a>
+    <a href="#protect">Protect Yourself</a>
+    <a href="#glossary">Glossary</a>
+    <a href="#official">From the Official Curriculum</a>
+    <a href="#traps">Word Traps</a>
+    <a href="#quiz">Memo Questions</a>
+    <a href="#predicted">Predicted Questions</a>
+  </div>
+</nav>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="part-banner memo-src">
+  <div class="container">
+    <span class="part-tag">Part One · Interactive Explanations</span>
+    <h2>Memo Explanations</h2>
+    <p>A simplified explanation with everyday analogies for everything in the memo's cybersecurity section.</p>
+  </div>
+</div>
+
+<!-- ===================== 1. Basics ===================== -->
+<section id="basics">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">01.</span> What Is Cybersecurity?</h2>
+    <p class="sec-lead">
+      Cybersecurity <span class="en">Cybersecurity</span> is <strong style="color:var(--text)">the state of protection against criminal or unauthorized use of your electronic data</strong>.
+      In other words: everything you do to keep strangers away from your photos, messages, bank accounts, and files.
+    </p>
+
+    <div class="analogy">
+      🏠 <strong>Everyday analogy:</strong>
+      Think of your data as your home. Cybersecurity is the locks on the doors, the window curtains, the alarm bell, and your habit of never handing the house key to a stranger who knocks. No single lock is enough — it's a set of habits and tools working together.
+    </div>
+
+    <div class="grid cols-2">
+      <div class="card">
+        <span class="icon">⚔️</span>
+        <h3>What is a cyberattack? <span class="en">Cyberattack</span></h3>
+        <p>An attempt by attackers to damage or destroy a network or computer system. Like a thief trying to break down your front door — but over the internet.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🔑</span>
+        <h3>What is a password? <span class="en">Password</span></h3>
+        <p>A secret word or phrase you use to access your accounts. It is the "key to your digital home" — which is why it must never be easy to guess or reused across sites.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🔐</span>
+        <h3>What is encryption? <span class="en">Encryption</span></h3>
+        <p>Converting information into unreadable code to prevent unauthorized access. Like writing a message in a secret language that only someone with the "decryption key" can understand.</p>
+      </div>
+      <div class="card">
+        <span class="icon">💾</span>
+        <h3>What is a backup? <span class="en">Backup</span></h3>
+        <p>Copying your original files and storing them somewhere else (an external drive or the cloud). If your device is lost or infected by a virus, your files stay safe.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🪪</span>
+        <h3>What is authentication? <span class="en">Authentication</span></h3>
+        <p>Proving that you really are the account owner — and the memo's accepted example is the <strong style="color:var(--accent)">username</strong> <span class="en">Username</span>. Like showing your ID card before entering a building.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🧑</span>
+        <h3>The biggest threat to cybersecurity?</h3>
+        <p>Surprise: it is not technology, but <strong style="color:var(--warn)">the human factor</strong> <span class="en">The human factor</span>! Most breaches succeed because someone clicked a suspicious link or gave their information to someone who did not deserve trust.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ===================== 2. CIA Triad ===================== -->
+<section id="cia">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">02.</span> The Information Protection Triangle <span class="en">CIA Triad</span></h2>
+    <p class="sec-lead">
+      The guiding framework organizations follow to protect information — nine of the memo's 37 questions revolve around it alone, making it the most important part of the section.
+      <strong style="color:var(--text)">Click any corner of the triangle:</strong>
+    </p>
+
+    <div class="triad">
+      <svg class="triad-svg" viewBox="0 0 320 290" role="img" aria-label="Information protection triangle: confidentiality, integrity, and availability">
+        <polygon class="tri-side" points="160,34 288,250 32,250"></polygon>
+        <text class="tri-core" x="160" y="180">Information</text>
+        <text class="tri-core" x="160" y="198">Security</text>
+        <g class="tri-node" data-cia="c" tabindex="0" role="button" aria-label="Confidentiality">
+          <circle cx="160" cy="34" r="32"></circle>
+          <text class="sym" x="160" y="30">C</text>
+          <text x="160" y="48">Confidentiality</text>
+        </g>
+        <g class="tri-node" data-cia="i" tabindex="0" role="button" aria-label="Integrity">
+          <circle cx="288" cy="250" r="32"></circle>
+          <text class="sym" x="288" y="246">I</text>
+          <text x="288" y="264">Integrity</text>
+        </g>
+        <g class="tri-node" data-cia="a" tabindex="0" role="button" aria-label="Availability">
+          <circle cx="32" cy="250" r="32"></circle>
+          <text class="sym" x="32" y="246">A</text>
+          <text x="32" y="264">Availability</text>
+        </g>
+      </svg>
+      <div class="cia-detail" id="cia-panel" aria-live="polite"></div>
+    </div>
+
+    <div class="analogy">
+      💡 <strong>Bottom line:</strong> Any secure system must achieve all three together: data that is <strong>confidential</strong> so strangers cannot see it, <strong>intact</strong> so nobody tampers with it, and <strong>available</strong> to its owners when needed. If one side falls, the whole protection falls.
+    </div>
+    <div class="analogy">
+      📌 <strong>Exam note:</strong> The official training material sometimes writes the model's name in the order <span class="en">CAI Triad Model</span> instead of <span class="en">CIA</span> — don't be confused if you see either order in the exam; they mean the same thing: confidentiality, integrity, and availability.
+    </div>
+  </div>
+</section>
+<!-- ===================== 3. Threats ===================== -->
+<section id="threats">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">03.</span> The Most Common Threats — Know Your Enemy</h2>
+    <p class="sec-lead">Click any threat to learn what it is, how it works, and most importantly: how to avoid it.</p>
+
+    <div class="acc">
+      <button class="acc-head" aria-expanded="false"><span class="th-icon">🦠</span> Malware <span class="en">Malware</span> <span class="lvl high">High risk</span><span class="chev">▼</span></button>
+      <div class="acc-body"><div class="inner">
+        Programs specifically designed to disrupt, damage, or gain unauthorized access to a computer system. It is the big umbrella covering viruses, worms, and ransomware.
+        <div class="tip"><b>How do you protect yourself?</b> Install trusted antivirus software, and never download programs from unknown sources.</div>
+      </div></div>
+    </div>
+
+    <div class="acc">
+      <button class="acc-head" aria-expanded="false"><span class="th-icon">🧬</span> Computer Virus <span class="en">Virus</span> <span class="lvl high">High risk</span><span class="chev">▼</span></button>
+      <div class="acc-body"><div class="inner">
+        A piece of code able to copy itself, with a harmful effect on the device: damaging the system or destroying data. Just like a real virus — it spreads from file to file and from device to device.
+        <div class="tip"><b>How do you protect yourself?</b> Don't open email attachments from senders you don't know, and keep your system and software up to date.</div>
+      </div></div>
+    </div>
+
+    <div class="acc">
+      <button class="acc-head" aria-expanded="false"><span class="th-icon">🪱</span> Computer Worms <span class="en">Worms</span> <span class="lvl high">High risk</span><span class="chev">▼</span></button>
+      <div class="acc-body"><div class="inner">
+        According to the official material: malware that <strong>differs from viruses</strong> — it is standalone and needs no "host" to attach to, spreading on its own across networks. It often arrives via email attachments, then sends a copy of itself to every contact in the infected device's mailing list.
+        <div class="tip"><b>How do you protect yourself?</b> Enable the firewall and keep the operating system updated.</div>
+        <div class="tip" style="background:rgba(251,191,36,.08);border-right-color:var(--warn)"><b style="color:var(--warn)">Exam alert:</b> The memo phrased it as "a type of email virus that replicates itself" — a simplified wording that may appear that way in the exam, but the more accurate version (per the official material) is that worms are different from viruses.</div>
+      </div></div>
+    </div>
+
+    <div class="acc">
+      <button class="acc-head" aria-expanded="false"><span class="th-icon">💰</span> Ransomware <span class="en">Ransomware</span> <span class="lvl high">High risk</span><span class="chev">▼</span></button>
+      <div class="acc-body"><div class="inner">
+        Malicious software designed to block you from accessing your device and files until you pay a "ransom". Like a kidnapper holding your files hostage and demanding money for their return — and paying doesn't guarantee getting them back!
+        <div class="tip"><b>How do you protect yourself?</b> Regular backups are your strongest weapon: if your files are saved elsewhere, the blackmail loses its value.</div>
+      </div></div>
+    </div>
+
+    <div class="acc">
+      <button class="acc-head" aria-expanded="false"><span class="th-icon">🎣</span> Phishing <span class="en">Phishing</span> <span class="lvl high">High risk</span><span class="chev">▼</span></button>
+      <div class="acc-body"><div class="inner">
+        <strong>Fake</strong> messages and websites impersonating trusted parties (a bank, a shipping company, a government agency) to trick you into entering your login details on a bogus site yourself. It's called "phishing" because the attacker casts the bait and waits for someone to bite.
+        <div class="tip"><b>How do you protect yourself?</b> Don't click links in unexpected messages, and check the site's address letter by letter before entering any data.</div>
+      </div></div>
+    </div>
+
+    <div class="acc">
+      <button class="acc-head" aria-expanded="false"><span class="th-icon">🎭</span> Social Engineering <span class="en">Social Engineering</span> <span class="lvl high">High risk</span><span class="chev">▼</span></button>
+      <div class="acc-body"><div class="inner">
+        Manipulating people over the internet to reveal confidential information. This attack <strong>targets humans, not devices</strong> — a con artist plays the role of a bank employee or a friend in trouble to win your trust and then rob you.
+        <div class="tip"><b>How do you protect yourself?</b> Share less personal information publicly (this shrinks your <span class="en">attack surface</span>), and remember: no official body will ever ask for your password.</div>
+      </div></div>
+    </div>
+
+    <div class="acc">
+      <button class="acc-head" aria-expanded="false"><span class="th-icon">🔓</span> Password Attacks <span class="en">Password Attacks</span> <span class="lvl med">Medium risk</span><span class="chev">▼</span></button>
+      <div class="acc-body"><div class="inner">
+        Attacks in which attackers try to determine or guess the passwords of your protected accounts and social media platforms — by automatically trying millions of possibilities, or by using passwords leaked from other sites.
+        <div class="tip"><b>How do you protect yourself?</b> A long, unique password for every account + a password manager + multi-factor authentication.</div>
+      </div></div>
+    </div>
+
+    <div class="acc">
+      <button class="acc-head" aria-expanded="false"><span class="th-icon">🚧</span> Denial-of-Service Attack <span class="en">DoS</span> <span class="lvl med">Medium risk</span><span class="chev">▼</span></button>
+      <div class="acc-body"><div class="inner">
+        An attack that aims to flood systems or networks with heavy traffic to make them unavailable. Imagine a thousand people calling a restaurant at the same moment with fake orders — real customers can't get through. This attack strikes the "availability" side of the triad specifically.
+        <div class="tip"><b>Who should care?</b> This attack mostly targets websites and organizations, and specialized technical teams counter it — but understanding it explains why a famous site sometimes "goes down".</div>
+      </div></div>
+    </div>
+  </div>
+</section>
+<!-- ===================== 4. Hackers ===================== -->
+<section id="hackers">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">04.</span> Who Are Hackers? And Are They All Villains?</h2>
+    <p class="sec-lead">
+      A hacker <span class="en">Hacker</span> is a person who uses a computer to gain unauthorized access to other people's devices and steal their personal information.
+      But not everyone with hacking skills is a criminal — they are classified by "hat color":
+    </p>
+
+    <div class="grid cols-2">
+      <div class="card hat-card">
+        <span class="hat">🤍</span>
+        <span class="tag white">White Hat <span class="en">White Hat</span></span>
+        <h3>The ethical hacker</h3>
+        <p>Uses their skills to run "penetration tests", uncover security vulnerabilities, and report them to the organization's owner for pay — like a locksmith you hire to check your home's doors.</p>
+      </div>
+      <div class="card hat-card">
+        <span class="hat">🖤</span>
+        <span class="tag black">Black Hat <span class="en">Black Hat</span></span>
+        <h3>The cybercriminal</h3>
+        <p>Breaks into systems for criminal goals: data theft, blackmail, sabotage. This is the "thief" you protect yourself from, and the one meant by the memo's definition of a "computer hacker".</p>
+      </div>
+      <div class="card hat-card">
+        <span class="hat">🩶</span>
+        <span class="tag grey">Grey Hat <span class="en">Grey Hat</span></span>
+        <h3>Somewhere in between</h3>
+        <p>Breaks into systems without permission (which is wrong) but usually doesn't aim to cause harm — and may report the vulnerability after discovering it.</p>
+      </div>
+      <div class="card hat-card answer">
+        <span class="hat">🩵</span>
+        <span class="tag blue">Blue Hat <span class="en">Blue Hat</span></span>
+        <h3>Not a hacker!</h3>
+        <p>The official material classifies hackers into <strong>only three categories</strong> (black, white, and grey) and never mentions a "blue hat" — which is why the accepted answer to "Who is not a hacker?" is: <strong style="color:var(--accent)">the blue hat</strong>.</p>
+        <span class="memo-note">🎯 For the exam remember: Blue Hat → not a hacker (not mentioned in the curriculum)</span>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ===================== 6. Protect ===================== -->
+<section id="protect">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">05.</span> Protect Yourself — A Practical Checklist</h2>
+    <p class="sec-lead">These are the key protective habits mentioned in the memo. Tap every habit you actually practice and watch your protection score — your progress is saved automatically in your browser:</p>
+
+    <div class="progress-wrap">
+      <div class="progress-bar"><div class="progress-fill" id="prog-fill"></div></div>
+      <div class="progress-label" id="prog-label" aria-live="polite">Your protection score: 0 of 8</div>
+    </div>
+
+    <div class="check-list" id="check-list">
+      <button class="check-item" aria-pressed="false"><span class="box">✓</span><span><h4>🔑 Long, unique passwords</h4><p>Create a long, different password for every account, and use a password manager to remember them for you — one of the most important ways to protect your data.</p></span></button>
+      <button class="check-item" aria-pressed="false"><span class="box">✓</span><span><h4>📲 Multi-factor authentication (MFA)</h4><p>Using more than one method to verify your identity: a password + a code sent to your phone. Even if your password is stolen, your account stays locked.</p></span></button>
+      <button class="check-item" aria-pressed="false"><span class="box">✓</span><span><h4>🔒 Browse HTTPS sites only</h4><p>Avoid visiting websites whose address doesn't include HTTPS — the padlock in the address bar means your connection to the site is encrypted.</p></span></button>
+      <button class="check-item" aria-pressed="false"><span class="box">✓</span><span><h4>🛡️ Trusted antivirus software</h4><p>Installing reliable antivirus software helps stop malware and viruses before they reach your device.</p></span></button>
+      <button class="check-item" aria-pressed="false"><span class="box">✓</span><span><h4>💾 Regular backups</h4><p>Copy your important files to an external drive or a cloud service. It's your safety net against ransomware, failures, and loss.</p></span></button>
+      <button class="check-item" aria-pressed="false"><span class="box">✓</span><span><h4>📶 Beware of public Wi-Fi</h4><p>Public Wi-Fi networks (cafés, airports) are not secure — avoid logging into your bank accounts or entering sensitive data over them.</p></span></button>
+      <button class="check-item" aria-pressed="false"><span class="box">✓</span><span><h4>🤐 Share less personal information</h4><p>Limiting how much personal information you transmit and publish shrinks the social engineering "attack surface" — the less a scammer knows about you, the harder you are to fool.</p></span></button>
+      <button class="check-item" aria-pressed="false"><span class="box">✓</span><span><h4>🧐 Don't trust appearances</h4><p>A large number of downloads never guarantees an app is safe, and an "official-looking" message may be phishing. Always verify before you trust.</p></span></button>
+    </div>
+  </div>
+</section>
+<!-- ===================== 8. Glossary ===================== -->
+<section id="glossary">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">06.</span> Glossary of Terms</h2>
+    <p class="sec-lead">Click any card to flip it: the definition, then the original English wording as it appears in the memo. Use the filters to narrow down.</p>
+
+    <div class="filters" id="filters"></div>
+    <div class="flip-grid" id="flip-grid"></div>
+  </div>
+</section>
+<div class="part-banner official-src">
+  <div class="container">
+    <span class="part-tag">Extra Explanations</span>
+    <h2>From the Official Curriculum</h2>
+    <p>Topics the memo doesn't cover — added from the official training material (Supreme Council of Universities / EG-CERT).</p>
+  </div>
+</div>
+
+<!-- ===================== 5. Official material extras ===================== -->
+<section id="official">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">07.</span> From the Official Material — What the Memo Doesn't Cover</h2>
+    <p class="sec-lead">
+      The memo's questions focus almost entirely on the first chapter of the official material, while the material spans 6 full chapters.
+      These are the most important extra topics covered officially — new exam questions may come from them:
+    </p>
+
+    <div class="grid cols-2">
+      <div class="card">
+        <span class="icon">🧮</span>
+        <h3>The risk equation</h3>
+        <p>The official material distinguishes three concepts: a <strong style="color:var(--text)">security vulnerability</strong> <span class="en">Vulnerability</span> (a weakness in a device or program), and a <strong style="color:var(--text)">threat</strong> <span class="en">Threat</span> (whoever tries to exploit it), summed up in the equation: <strong style="color:var(--accent)">Threats + Vulnerability = Risks</strong>.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🏛️</span>
+        <h3>The relevant Egyptian bodies</h3>
+        <p><strong style="color:var(--text)">EG-CERT</strong>: the National Computer Emergency Readiness Team (established 2009 within the National Telecom Regulatory Authority) handles cyber incidents. And <strong style="color:var(--text)">ESCC</strong>: the Egyptian Supreme Cybersecurity Council (2014) sets the national strategic plan.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🐴</span>
+        <h3>More malware</h3>
+        <p><strong style="color:var(--text)">Trojans</strong>: hide inside a seemingly useful program and don't copy themselves; instead they open a "backdoor". <strong style="color:var(--text)">Spyware</strong>: collects your information and sends it to the attacker. <strong style="color:var(--text)">Rootkits</strong>: hide from antivirus software and allow remote control of your device.</p>
+      </div>
+      <div class="card">
+        <span class="icon">💥</span>
+        <h3>More attacks</h3>
+        <p><strong style="color:var(--text)">Zero-day</strong>: exploiting a new vulnerability for which no patch has been released yet. <strong style="color:var(--text)">Evil Twin</strong>: a fake Wi-Fi network carrying the original network's name. Plus email address spoofing, caller ID spoofing, and exploit kit injection.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🚦</span>
+        <h3>Traffic Light Protocol (TLP)</h3>
+        <p>A color system for sharing sensitive information: <strong style="color:var(--bad)">red</strong> (recipient only), <strong style="color:var(--warn)">amber</strong> (limited sharing within the organization), <strong style="color:var(--good)">green</strong> (within the same community, no public release), <strong style="color:var(--text)">white</strong> (unlimited sharing).</p>
+      </div>
+      <div class="card">
+        <span class="icon">⚖️</span>
+        <h3>Egyptian legislation</h3>
+        <p>The Anti-Cyber and Information Technology Crimes Law <strong style="color:var(--text)">175 of 2018</strong>, the Personal Data Protection Law <strong style="color:var(--text)">151 of 2020</strong>, the Child Law (12/1996 amended by 126/2008), and Article 57 of the Constitution (inviolability of private life).</p>
+      </div>
+      <div class="card">
+        <span class="icon">📵</span>
+        <h3>Cyberbullying and child protection</h3>
+        <p>A full chapter on bullying types (exclusion, catfishing, cyberstalking, doxing, impersonation...) and the signs a child is being targeted, with the <strong style="color:var(--accent)">16000 hotline</strong> for reporting online risks to children.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🛍️</span>
+        <h3>Scam websites and their signs</h3>
+        <p>Types: deceptive websites, fraudulent shopping with a fake link <span class="en">Spoofed URL</span>, lottery contests, and scare sites <span class="en">Scareware</span>. Their signs: emotionally charged wording, poor design, and spelling and grammar mistakes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="part-banner memo-src">
+  <div class="container">
+    <span class="part-tag">Part Two · Questions</span>
+    <h2>Memo Questions</h2>
+    <p>The absolute-word trap plus an interactive quiz built from the memo's actual questions.</p>
+  </div>
+</div>
+
+<!-- ===================== 7. Word traps ===================== -->
+<section id="traps">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">08.</span> The Absolute-Word Trap</h2>
+    <p class="sec-lead">
+      A recurring pattern in the memo's true/false questions: one absolute word like <span class="en">always</span> flips a statement from true to false, or a word is quietly swapped for another.
+      Click any statement to reveal the verdict and the reason — the trap word is <span class="mark">highlighted in red</span>.
+    </p>
+    <div id="traps-list"></div>
+  </div>
+</section>
+<!-- ===================== 7. Quiz ===================== -->
+<section id="quiz">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">09.</span> Memo Questions — Test Yourself 🎯</h2>
+    <p class="sec-lead">10 questions from the memo in their original English wording (as you'll see them in the exam) with an explanation for every answer.</p>
+
+    <div class="quiz-box" id="quiz-box"></div>
+  </div>
+</section>
+<div class="part-banner official-src">
+  <div class="container">
+    <span class="part-tag">Extra Questions</span>
+    <h2>Predicted Questions from the Official Curriculum</h2>
+    <p>22 practice questions from the chapters the memo doesn't cover.</p>
+  </div>
+</div>
+
+<!-- ===================== 6. Predicted questions ===================== -->
+<section id="predicted">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">10.</span> Predicted Questions 🔮</h2>
+    <p class="sec-lead">
+      22 new questions written from the chapters the memo <strong style="color:var(--text)">doesn't cover</strong> in the official material (the Egyptian bodies, extra malware and attacks, the TLP protocol, the laws, cyberbullying...) in the same style as the exam questions.
+      <br><span style="font-size:14px">⚠️ These are predicted practice questions based on the official material's content — not copied from actual exams.</span>
+    </p>
+    <div class="quiz-box" id="quiz2-box"></div>
+  </div>
+</section>
+<nav class="tabbar" aria-label="Quick navigation">
+  <a href="#basics" class="active"><span class="ico">📖</span>Guide</a>
+  <a href="#glossary"><span class="ico">📇</span>Glossary</a>
+  <a href="#official"><span class="ico">🏛️</span>Official</a>
+  <a href="#traps"><span class="ico">🧩</span>Quiz</a>
+</nav>
+
+<script src="../assets/app.js"></script>
+<script>
+/* ===== Nav active state ===== */
+const navLinks=document.querySelectorAll('nav.tabs a[href^="#"]');
+const sections=[...navLinks].map(a=>document.querySelector(a.getAttribute('href')));
+const tabLinks=document.querySelectorAll('.tabbar a');
+const TABMAP={basics:'#basics',cia:'#basics',threats:'#basics',hackers:'#basics',protect:'#basics',glossary:'#glossary',official:'#official',traps:'#traps',quiz:'#traps',predicted:'#traps'};
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      navLinks.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id));
+      const t=TABMAP[e.target.id];
+      if(t)tabLinks.forEach(a=>a.classList.toggle('active',a.getAttribute('href')===t));
+    }
+  });
+},{rootMargin:'-40% 0px -55% 0px'});
+sections.forEach(s=>s&&obs.observe(s));
+
+/* ===== CIA triad ===== */
+const CIA={
+  c:{icon:'🤫',ar:'Confidentiality',lat:'Confidentiality',
+     def:'The system\'s ability to keep data private and restrict access by unauthorized people — nobody reads your data except those you allow.',
+     ex:'<strong>Example from the memo:</strong> Encrypting the documents on your device so that only the authorized user can read them.<br><strong>Analogy:</strong> A letter inside a sealed envelope opened only by its addressee — not a postcard read by everyone it passes.'},
+  i:{icon:'✅',ar:'Integrity',lat:'Integrity',
+     def:'Ensuring nobody can modify the data without authorization, and guaranteeing its reliability, consistency, and accuracy — nobody edits your data without permission.',
+     ex:'<strong>Practical example:</strong> If your bank balance is 1000, nobody should be able to change it to 10 — not even by mistake.<br><strong>Analogy:</strong> A contract signed with an official seal; any attempt to scratch or alter it is discovered immediately.'},
+  a:{icon:'🕐',ar:'Availability',lat:'Availability',
+     def:'Ensuring that authorized users can access data when they need it, within a reasonable time frame, consistently and reliably.',
+     ex:'<strong>Practical example:</strong> Your banking app working when you need to make an urgent transfer — not being "out of service". A denial-of-service (DoS) attack targets this side specifically.<br><strong>Analogy:</strong> A 24-hour on-call pharmacy; the medicine is available when needed, not behind a locked door.'}
+};
+const ciaPanel=document.getElementById('cia-panel');
+function showCIA(k){
+  const t=CIA[k];
+  ciaPanel.innerHTML=`<h3>${t.icon} ${t.ar}</h3><span class="lat">${t.lat}</span><p>${t.def}</p><p style="margin-top:12px">${t.ex}</p>`;
+  document.querySelectorAll('.tri-node').forEach(n=>n.classList.toggle('on',n.dataset.cia===k));
+}
+document.querySelectorAll('.tri-node').forEach(n=>{
+  n.addEventListener('click',()=>showCIA(n.dataset.cia));
+  n.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();showCIA(n.dataset.cia);}});
+});
+showCIA('c');
+
+/* ===== Accordion ===== */
+document.querySelectorAll('.acc-head').forEach(h=>{
+  h.addEventListener('click',()=>{
+    const open=h.closest('.acc').classList.toggle('open');
+    h.setAttribute('aria-expanded',open);
+  });
+});
+
+/* ===== Word traps ===== */
+const TRAPS=[
+ {q:'A large number of downloads <span class="mark">always guarantees</span> that an app is safe.',
+  ar:'',ok:false,
+  a:'<b>False.</b> A high download count guarantees nothing — many malicious apps racked up millions of downloads before being discovered. The absolute word <span class="en">always</span> is what breaks the statement.'},
+ {q:'ATM Fraud <span class="mark">always requires</span> knowing the victim\'s PIN.',
+  ar:'',ok:false,
+  a:'<b>False.</b> Fraud can happen with or without knowing the PIN. Note <span class="en">always requires</span>.'},
+ {q:'Public Wi-Fi networks are <span class="mark">always secure</span>.',
+  ar:'',ok:false,
+  a:'<b>False.</b> The opposite is true: public networks are inherently <span class="en">unsecure</span>.'},
+ {q:'Online Piracy is <span class="mark">a legal</span> activity if done online.',
+  ar:'',ok:false,
+  a:'<b>False.</b> Piracy is <span class="en">illegal</span> whether it happens online or offline.'},
+ {q:'The CIA Triad model focuses on data availability, integrity, and <span class="mark">reliability</span>.',
+  ar:'',ok:false,
+  a:'<b>False.</b> The third side is <span class="en">confidentiality</span>, not <span class="en">reliability</span>. Here the trap is a swapped word, not an added absolute.'},
+ {q:'The primary goal of the CIA Triad is to protect data from any unauthorized access.',
+  ar:'',ok:true,
+  a:'<b>True.</b> The memo also adds integrity and availability to it, but the statement as written is accepted as correct.'},
+ {q:'In phishing attacks, victims provide their login information on fake websites.',
+  ar:'',ok:true,
+  a:'<b>True.</b> That is the essence of phishing: a fake site mimicking the real one, and the victim hands over their data themselves.'},
+ {q:'The social engineering targets people.',
+  ar:'',ok:true,
+  a:'<b>True.</b> Which explains why the human factor is considered the biggest threat to cybersecurity.'}
+];
+const trapsEl=document.getElementById('traps-list');
+TRAPS.forEach((t,i)=>{
+  const d=document.createElement('div');d.className='trap';
+  d.innerHTML=`<button class="trap-q" aria-expanded="false">
+      <span class="num">${String(i+1).padStart(2,'0')}</span>
+      <span class="txt"><span class="en">${t.q}</span><br><span class="ar-line">${t.ar}</span></span>
+      <span class="verdict" style="color:${t.ok?'var(--good)':'var(--bad)'}">${t.ok?'✓':'✕'}</span>
+    </button>
+    <div class="trap-a"><div class="trap-a-in">${t.a}</div></div>`;
+  const btn=d.querySelector('.trap-q');
+  btn.addEventListener('click',()=>{const o=d.classList.toggle('open');btn.setAttribute('aria-expanded',o);});
+  trapsEl.appendChild(d);
+});
+
+/* ===== Checklist (persisted) ===== */
+const CHECK_KEY='cyberguide-checklist';
+const items=document.querySelectorAll('.check-item');
+const fill=document.getElementById('prog-fill');
+const label=document.getElementById('prog-label');
+const msgs=[
+  'Start your journey to safety 💪',
+  'A good start — keep going!',
+  'Your protection is improving step by step',
+  'You are almost halfway there',
+  'Very good! Finish the rest',
+  'Strong protection 👏',
+  'Excellent! Almost at the top',
+  'Nearly complete — one step left!',
+  'Full score! You are a fortress 🏆'
+];
+function loadChecks(){
+  try{return JSON.parse(localStorage.getItem(CHECK_KEY))||[];}catch(e){return [];}
+}
+function saveChecks(){
+  const done=[...items].map((it,i)=>it.classList.contains('done')?i:-1).filter(i=>i>=0);
+  try{localStorage.setItem(CHECK_KEY,JSON.stringify(done));}catch(e){}
+}
+function updateProgress(){
+  const done=document.querySelectorAll('.check-item.done').length;
+  fill.style.width=(done/items.length*100)+'%';
+  label.textContent=`Your protection score: ${done} of ${items.length} — ${msgs[done]}`;
+}
+loadChecks().forEach(i=>{if(items[i]){items[i].classList.add('done');items[i].setAttribute('aria-pressed','true');}});
+items.forEach(it=>it.addEventListener('click',()=>{
+  const on=it.classList.toggle('done');
+  it.setAttribute('aria-pressed',on);
+  saveChecks();updateProgress();
+}));
+updateProgress();
+
+/* ===== Quiz ===== */
+const QUIZ=[
+  {en:'What is cybersecurity?',ar:'',
+   opts:['A program to speed up the internet','The state of protection against criminal or unauthorized use of electronic data','A type of virus','A social media app'],
+   a:1,exp:'Original wording: <span class="en">The state of protection against criminal or unauthorized use of electronic data.</span>'},
+  {en:'What is the biggest threat to cybersecurity?',ar:'',
+   opts:['Viruses','Old computers','The human factor','Wi-Fi'],
+   a:2,exp:'Answer: <span class="en">The human factor</span> — most breaches start with a human mistake like clicking a suspicious link.'},
+  {en:'The CIA Triad model includes …',ar:'',
+   opts:['Speed, strength, and accuracy','Confidentiality, integrity, and availability','Encryption, copying, and deletion','Attack, defense, and monitoring'],
+   a:1,exp:'<span class="en">Confidentiality, Integrity, Availability</span> — data that is confidential, intact, and available.'},
+  {en:'"Availability" ensures that authorized users can access data when they need it.',ar:'',
+   opts:['Confidentiality','Integrity','Availability','Encryption'],
+   a:2,exp:'<span class="en">Availability</span> ensures data is accessible to its owners within a reasonable time frame.'},
+  {en:'What is ransomware?',ar:'',
+   opts:['Software that speeds up the device','Malware that blocks access to your system until you pay money','Free protection software','A type of backup'],
+   a:1,exp:'<span class="en">Blocks access to a computer system until a certain amount of money is paid</span> — and backups are the best protection against it.'},
+  {en:'In phishing attacks, victims provide their login information on …',ar:'',
+   opts:['Fake websites','Official banking apps','ATM machines','Verified government sites'],
+   a:0,exp:'<span class="en">Fake websites</span> — the attacker builds a bogus site resembling the real one, and the victim hands over their data themselves.'},
+  {en:'Public Wi-Fi networks are always secure.',ar:'',
+   opts:['True','False'],
+   a:1,exp:'False — public networks are <span class="en">unsecure</span>. And watch out for the trap word <span class="en">always</span>.'},
+  {en:'Multi-Factor Authentication (MFA) means …',ar:'',
+   opts:['Using more than one method to verify identity','Changing the password daily','Using the same password for all accounts','Closing the account permanently'],
+   a:0,exp:'<span class="en">Using more than one method to verify identity</span> — for example, a password + a code sent to your phone.'},
+  {en:'Which of the following is an example of authentication?',ar:'',
+   opts:['Username','Firewall','Backup','Antivirus'],
+   a:0,exp:'The memo\'s accepted example: <span class="en">Username</span>. ⚠️ Note: this example is not in the official material, and technically a username is "identification" while authentication happens via the password — but it remains the accepted exam answer.'},
+  {en:'Which of the following is not a hacker?',ar:'',
+   opts:['Black hat hacker','White hat hacker','Blue hat hacker','Grey hat hacker'],
+   a:2,exp:'The <span class="en">Blue hat</span> — the official material classifies hackers into only three categories: black, white, and grey; blue is never mentioned.'}
+];
+/* Predicted questions from the chapters the memo doesn't cover — written from the official material */
+const QUIZ2=[
+  {en:'Threats + Vulnerability = .....',ar:'',
+   opts:['Risks','Crimes','Cyber services','Encryption'],
+   a:0,exp:'An equation stated verbatim in the first chapter of the official material: Threats + Vulnerability = Risks.'},
+  {en:'What is a security vulnerability?',ar:'',
+   opts:['A type of virus','Weaknesses in devices, software, or a service that can be exploited over the internet','Protection software','An organized cyberattack'],
+   a:1,exp:'<span class="en">Vulnerability</span>: weaknesses present in devices, software, or a specific service that can be exploited.'},
+  {en:'EG-CERT (National Computer Emergency Readiness Team) was established in .....',ar:'',
+   opts:['2003','2009','2014','2018'],
+   a:1,exp:'Established by the National Telecom Regulatory Authority (NTRA) in April 2009; it handles cyber incidents and supports government bodies.'},
+  {en:'The Egyptian Supreme Cybersecurity Council (ESCC) is responsible for .....',ar:'',
+   opts:['Repairing computers','Setting the national strategic plan for cybersecurity','Selling protection software','Managing university networks'],
+   a:1,exp:'Established by the Cabinet in 2014 and tasked with setting the national strategic plan for cybersecurity.'},
+  {en:'A zero-day attack exploits .....',ar:'',
+   opts:['An old, well-known vulnerability','A new vulnerability for which no patch has been released yet','A weak password','A device not connected to the internet'],
+   a:1,exp:'<span class="en">Zero-day</span>: a new security vulnerability for which no fix has been released yet — hence the name "zero-day".'},
+  {en:'Unlike viruses, Trojans do not replicate themselves; they are usually used to create a .....',ar:'',
+   opts:['Pop-up ad','Backdoor','Backup copy','Virtual network'],
+   a:1,exp:'A Trojan hides inside a seemingly useful program and is usually used to create a backdoor that attackers can exploit.'},
+  {en:'Malware designed to hide from users and antivirus programs while allowing remote control is called .....',ar:'',
+   opts:['Ransomware','Adware','Rootkits','Firewall'],
+   a:2,exp:'<span class="en">Rootkits</span>: advanced malware that hides from the end user and antivirus programs and opens a backdoor for remote control of the device.'},
+  {en:'Spyware is installed to .....',ar:'',
+   opts:['Speed up the device','Collect information about users and browsing habits and send it to the attacker','Delete viruses','Make backups'],
+   a:1,exp:'It collects information about users, systems, and browsing habits and sends it to the attacker, who may use it for blackmail or to download more malware.'},
+  {en:'Electronic blackmail is a crime where the attacker demands ..... to stop the attack.',ar:'',
+   opts:['A public apology','A sum of money','Likes and follows','Technical information'],
+   a:1,exp:'Per the official material: "In this crime a sum of money is demanded from an individual in exchange for stopping the attack or remedying its effects."'},
+  {en:'Penetration testing is .....',ar:'',
+   opts:['A real criminal attack','A security operation (a simulated attack) to uncover security vulnerabilities in a system','A type of virus','An operating system update'],
+   a:1,exp:'A cybersecurity operation (or simulated attack) that tries to uncover the vulnerabilities in a system and identify weak points — the work of white hat hackers.'},
+  {en:'In an Evil Twin attack, the attacker creates .....',ar:'',
+   opts:['A fake access point with the same name as the original network and a stronger signal','A self-replicating virus','A genuine shopping site','A free gaming app'],
+   a:0,exp:'<span class="en">Evil Twin</span>: a fake access point with the same network name (SSID) as the original and a stronger broadcast signal, so victims connect to it unintentionally.'},
+  {en:'WPA2 and WPA3 protocols are used to ..... data transferred between the router and wireless devices.',ar:'',
+   opts:['Delete','Encrypt','Compress','Sell'],
+   a:1,exp:'The second and third generations of the Wi-Fi Protected Access (WPA) protocol provide encryption of the information transferred between the router and wireless equipment.'},
+  {en:'A VPN encrypts communications at both ends of sending and receiving data.',ar:'',
+   opts:['True','False'],
+   a:0,exp:'True — which is why VPNs are recommended: they encrypt communications and mask traffic that was not sufficiently encrypted.'},
+  {en:'A recently released app with millions of downloads is most likely .....',ar:'',
+   opts:['A trustworthy app','A fraudulent app','An official update','A government app'],
+   a:1,exp:'Per the official material: trusted apps need a long time to reach high download counts; a newly released app with massive downloads is a fraud indicator.'},
+  {en:'According to the Traffic Light Protocol (TLP), information marked ..... may not be shared beyond the recipient.',ar:'',
+   opts:['White','Green','Red','Amber'],
+   a:2,exp:'Red = personal and confidential, for the recipient only. (Amber: limited sharing within the organization; green: within the same community, no public release; white: unlimited.)'},
+  {en:'The TLP color that allows unlimited sharing is .....',ar:'',
+   opts:['Red','White','Amber','Green'],
+   a:1,exp:'White = unlimited sharing with everyone through public communication channels (while respecting copyright).'},
+  {en:'Scareware scam websites trick you by using .....',ar:'',
+   opts:['Fake security alerts (pop-ups telling you your device is infected)','Genuine job offers','Sports news','Interactive maps'],
+   a:0,exp:'They use fake security alert pop-ups that frighten you into quickly downloading a file you think is a cure — when it is actually malware.'},
+  {en:'The Egyptian Anti-Cyber and Information Technology Crimes Law is Law No. .....',ar:'',
+   opts:['151 of 2020','175 of 2018','12 of 1996','126 of 2008'],
+   a:1,exp:'Law 175 of 2018 (45 articles in 4 chapters) — the first comprehensive Egyptian legislation against cyberspace crimes.'},
+  {en:'The Egyptian Personal Data Protection Law is Law No. .....',ar:'',
+   opts:['175 of 2018','151 of 2020','57 of 2014','10 of 2003'],
+   a:1,exp:'Law 151 of 2020 (49 articles) — it treats children\'s data as "sensitive personal data" in all cases.'},
+  {en:'Creating a fake online identity to build a relationship with the victim and gain their trust is called .....',ar:'',
+   opts:['Trolling','Catfishing','Flaming','Exclusion'],
+   a:1,exp:'<span class="en">Catfishing</span>: faking an identity with a bogus profile and pretending to be someone else to gain the victim\'s trust, obtain their information, and then abuse them.'},
+  {en:'Egypt\'s hotline for reporting online risks against children is .....',ar:'',
+   opts:['15000','16000','17000','122'],
+   a:1,exp:'Launched by the National Council for Childhood and Motherhood (NCCM) to protect children — for reporting cyberbullying, online harassment, and inappropriate content.'},
+  {en:'Paying the ransom always guarantees that attackers will decrypt your data.',ar:'',
+   opts:['True','False'],
+   a:1,exp:'False — the official material states: "Attackers may decrypt the data after receiving the ransom, but they usually do not." And watch out for the trap word <span class="en">always</span>.'}
+];
+
+function initQuiz(boxId,DATA){
+  let qi=0,score=0,answered=false;
+  const quizBox=document.getElementById(boxId);
+  function renderQ(){
+    if(qi>=DATA.length){showResult();return;}
+    const item=DATA[qi];answered=false;
+    quizBox.innerHTML=`
+      <div class="quiz-progress">
+        <span>Question ${qi+1} of ${DATA.length}</span>
+        <span style="color:var(--accent)">Score: ${score}</span>
+      </div>
+      <div class="quiz-bar"><i style="width:${qi/DATA.length*100}%"></i></div>
+      <div class="quiz-q"><span class="en">${item.en}</span></div>
+      <div class="quiz-q-ar">${item.ar}</div>
+      <div class="quiz-opts"></div>
+      <div class="quiz-feedback" aria-live="polite"></div>
+      <button class="quiz-next" disabled>${qi===DATA.length-1?'Show result 🏁':'Next question →'}</button>`;
+    const optsEl=quizBox.querySelector('.quiz-opts');
+    item.opts.forEach((o,i)=>{
+      const b=document.createElement('button');
+      b.className='quiz-opt';b.textContent=o;
+      b.addEventListener('click',()=>answer(i,b,item,optsEl));
+      optsEl.appendChild(b);
+    });
+    quizBox.querySelector('.quiz-next').addEventListener('click',()=>{qi++;renderQ();});
+  }
+  function answer(i,btn,item,optsEl){
+    if(answered)return;answered=true;
+    const fbEl=quizBox.querySelector('.quiz-feedback');
+    [...optsEl.children].forEach((b,j)=>{
+      b.disabled=true;
+      if(j===item.a)b.classList.add('correct');
+    });
+    if(i===item.a){score++;fbEl.className='quiz-feedback show ok';fbEl.innerHTML='✅ <b>Correct!</b> '+item.exp;}
+    else{btn.classList.add('wrong');fbEl.className='quiz-feedback show no';fbEl.innerHTML='❌ <b>Not the right answer.</b> '+item.exp;}
+    quizBox.querySelector('.quiz-progress span:last-child').textContent='Score: '+score;
+    quizBox.querySelector('.quiz-next').disabled=false;
+  }
+  function showResult(){
+    const pct=Math.round(score/DATA.length*100);
+    let msg,icon;
+    if(pct===100){icon='🏆';msg='Excellent! You are fully ready — a perfect score!';}
+    else if(pct>=70){icon='🎉';msg='Great result! You have a solid grasp of cybersecurity basics.';}
+    else if(pct>=40){icon='📖';msg='A good start — review the sections above and try again.';}
+    else{icon='💪';msg='No worries! Read the guide once more and your score will improve a lot.';}
+    quizBox.innerHTML=`
+      <div class="quiz-result">
+        <div style="font-size:56px">${icon}</div>
+        <div class="score">${score} / ${DATA.length}</div>
+        <p>${msg}</p>
+        <button class="quiz-next">Retake the quiz 🔄</button>
+      </div>`;
+    quizBox.querySelector('.quiz-next').addEventListener('click',()=>{qi=0;score=0;renderQ();});
+  }
+  renderQ();
+}
+initQuiz('quiz-box',QUIZ);
+initQuiz('quiz2-box',QUIZ2);
+
+/* ===== Glossary ===== */
+const CATS={all:'All',basic:'Core Concepts',mal:'Malware',att:'Attacks',def:'Defenses'};
+const TERMS=[
+ {c:'basic',ar:'Cybersecurity',en:'Cybersecurity',
+  d:'The state of protection against criminal or unauthorized use of electronic data.',
+  e:'The state of protection against criminal or unauthorized use of electronic data.'},
+ {c:'basic',ar:'Encryption',en:'Encryption',
+  d:'Converting information or data into code to prevent unauthorized access to it.',
+  e:'Converting information or data into code to prevent unauthorized access.'},
+ {c:'basic',ar:'Password',en:'Password',
+  d:'A secret word or phrase you use to access your online account.',
+  e:'A secret word or phrase used to access your online account.'},
+ {c:'basic',ar:'Authentication',en:'Authentication',
+  d:'Verifying the user\'s identity. The memo\'s accepted example: the username.',
+  e:'Example of authentication → Username.'},
+ {c:'basic',ar:'Backup',en:'Backup',
+  d:'Copying the original files stored on a laptop, desktop, or external hard drive.',
+  e:'Copying original files stored on a laptop, desktop, or external hard drive.'},
+ {c:'mal',ar:'Malware',en:'Malware',
+  d:'Programs specifically designed to disrupt, damage, or gain unauthorized access to a computer system.',
+  e:'Programs specifically designed to disrupt, damage, or gain unauthorized access to a computer system.'},
+ {c:'mal',ar:'Computer Virus',en:'Virus',
+  d:'A piece of code that can copy itself, with a harmful effect such as damaging the system or destroying data.',
+  e:'A piece of code that can copy itself and harm a device, such as damaging the system or destroying data.'},
+ {c:'mal',ar:'Computer Worms',en:'Worms',
+  d:'Standalone malware that differs from viruses (needs no host), spreads across networks, often arrives via email attachments, and sends a copy to all your contacts. (Memo wording: "a type of email virus".)',
+  e:'Standalone malware that, unlike viruses, needs no host; often spreads via email attachments, sending copies to every contact.'},
+ {c:'mal',ar:'Ransomware',en:'Ransomware',
+  d:'Malicious software designed to block access to a computer system until a certain amount of money is paid.',
+  e:'Malicious software designed to block access to a computer system until a certain amount of money is paid.'},
+ {c:'att',ar:'Cyberattack',en:'Cyberattack',
+  d:'An attempt to damage or destroy a computer network or system carried out by attackers.',
+  e:'An attempt to damage or destroy a computer network or system carried out by attackers.'},
+ {c:'att',ar:'Computer Hacker',en:'Hacker',
+  d:'A person who uses a computer to illegally break into your device and steal your personal information.',
+  e:'A person who uses a computer to illegally hack into your computer and steal your personal information.'},
+ {c:'att',ar:'Social Engineering',en:'Social Engineering',
+  d:'Manipulating people over the internet to reveal confidential information — it targets people, not devices.',
+  e:'Manipulating people over the internet to reveal confidential information.'},
+ {c:'att',ar:'Phishing',en:'Phishing',
+  d:'An attack in which victims provide their login information on fake websites.',
+  e:'In phishing attacks, victims provide their login information on fake websites.'},
+ {c:'att',ar:'Password Attacks',en:'Password Attacks',
+  d:'Attacks in which attackers try to discover the passwords of protected accounts and social media platforms.',
+  e:'Attacks in which attackers attempt to discover passwords for protected online accounts.'},
+ {c:'att',ar:'Denial of Service',en:'DoS Attack',
+  d:'Flooding systems or networks with heavy traffic to make them unavailable.',
+  e:'Overwhelm systems or networks with traffic to make them unavailable.'},
+ {c:'def',ar:'Multi-Factor Authentication',en:'MFA',
+  d:'Using more than one method to verify identity, rather than relying on the password alone.',
+  e:'Using more than one method to verify identity.'},
+ {c:'def',ar:'Password Manager',en:'Password Manager',
+  d:'One of the ways to protect your data: creating long, unique passwords and using a password manager.',
+  e:'Creating long unique passwords and using a password manager.'},
+ {c:'def',ar:'Secure Protocol',en:'HTTPS',
+  d:'Avoid visiting websites that do not have HTTPS in the URL.',
+  e:"Avoid visiting websites that don't have HTTPS in the URL."},
+ {c:'def',ar:'Antivirus',en:'Antivirus',
+  d:'Installing reliable antivirus software helps prevent malware and viruses.',
+  e:'Installing reliable antivirus software helps prevent malware and viruses.'},
+ {c:'def',ar:'Reducing the Attack Surface',en:'Attack Surface',
+  d:'Limiting the transmission of personal information shrinks the social engineering attack surface.',
+  e:'Minimizing the transmission of personal information reduces the social engineering attack surface.'},
+ {c:'basic',ar:'Security Vulnerability',en:'Vulnerability',
+  d:'Weaknesses present in devices, software, or a specific service that can be exploited over the internet. (Threats + Vulnerability = Risks)',
+  e:'Weaknesses in devices, software, or services that can be exploited over the internet.'},
+ {c:'mal',ar:'Trojan Horses',en:'Trojans',
+  d:'Malware hiding inside a seemingly useful program; it does not copy itself (unlike a virus) and is usually used to open a "backdoor" that attackers exploit.',
+  e:'Malware hiding inside a seemingly useful program; unlike viruses it does not replicate, and usually opens a backdoor.'},
+ {c:'mal',ar:'Spyware',en:'Spyware',
+  d:'Installed to collect information about the user and their browsing habits, sent to the attacker who may use it for blackmail or to download more malware.',
+  e:'Installed to collect information about users and browsing habits, sent to a remote attacker.'},
+ {c:'mal',ar:'Rootkits',en:'Rootkits',
+  d:'Advanced malware designed to hide from the user and antivirus programs, opening a backdoor that lets the attacker control the device remotely.',
+  e:'Advanced malware designed to hide from users and antivirus, opening a backdoor for remote control.'},
+ {c:'att',ar:'Zero-day Attack',en:'Zero-day Attack',
+  d:'The attacker exploits a new security vulnerability in a network for which no patch has been released yet.',
+  e:'Exploits a new security vulnerability for which no fix has been released yet.'},
+ {c:'att',ar:'Evil Twin',en:'Evil Twin Attack',
+  d:'The attacker creates a fake Wi-Fi access point carrying the same name as the original network with a stronger signal, so victims connect to it unintentionally.',
+  e:'A fake Wi-Fi access point with the same name as the original network, but a stronger signal.'},
+ {c:'def',ar:'Traffic Light Protocol',en:'TLP',
+  d:'A color system for sharing sensitive information safely: red (recipient only), amber (limited sharing), green (within the same community), white (unlimited).',
+  e:'Traffic Light Protocol: red (recipient only), amber (limited), green (community), white (unlimited sharing).'}
+];
+const grid=document.getElementById('flip-grid');
+const filtersEl=document.getElementById('filters');
+Object.entries(CATS).forEach(([k,v],i)=>{
+  const b=document.createElement('button');
+  b.className='chip'+(i===0?' on':'');b.textContent=v;
+  b.addEventListener('click',()=>{
+    document.querySelectorAll('.chip').forEach(c=>c.classList.remove('on'));
+    b.classList.add('on');renderTerms(k);
+  });
+  filtersEl.appendChild(b);
+});
+const OFFICIAL_TERMS=new Set(['Vulnerability','Trojans','Spyware','Rootkits','Zero-day Attack','Evil Twin Attack','TLP']);
+function renderTerms(k){
+  grid.innerHTML='';
+  TERMS.filter(t=>k==='all'||t.c===k).forEach(t=>{
+    const d=document.createElement('button');
+    d.className='flip';d.setAttribute('aria-label','Card: '+t.ar);
+    const isOff=OFFICIAL_TERMS.has(t.en);
+    d.innerHTML=`<div class="flip-inner">
+      <div class="flip-face flip-front"><span class="src ${isOff?'o':'m'}">${isOff?'Official':'Memo'}</span><div class="cat">${CATS[t.c]}</div><div class="term">${t.ar}</div><div class="en">${t.en}</div><div class="hint">Tap to see the meaning 👆</div></div>
+      <div class="flip-face flip-back"><div>${t.d}<div class="def-en">${t.e}</div></div></div>
+    </div>`;
+    d.addEventListener('click',()=>d.classList.toggle('flipped'));
+    grid.appendChild(d);
+  });
+}
+renderTerms('all');
+App.LANG='en';
+App.initShell('cyber.html');
+</script>
+</body>
+</html>

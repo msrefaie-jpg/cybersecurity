@@ -1,4 +1,6 @@
 /* مكونات مشتركة لصفحات دليل التحول الرقمي التفاعلي */
+/* اللغة تُكتشف من وسم <html lang> كي تعمل قبل ضبط App.LANG */
+const isEN = () => (typeof App !== 'undefined' && App.LANG === 'en') || document.documentElement.lang === 'en';
 const App = {
 
   /* تفعيل شريطي التنقل (العلوي والسفلي) وتتبع القسم النشط */
@@ -60,7 +62,7 @@ const App = {
     const update = () => {
       const done = document.querySelectorAll(cfg.listSel + ' .check-item.done').length;
       fill.style.width = (done / items.length * 100) + '%';
-      label.textContent = `${cfg.labelPrefix || 'تقدمك'}: ${done} من ${items.length}` + (msgs[done] ? ` — ${msgs[done]}` : '');
+      label.textContent = `${cfg.labelPrefix || (isEN() ? 'Your progress' : 'تقدمك')}: ${done} ${isEN() ? 'of' : 'من'} ${items.length}` + (msgs[done] ? ` — ${msgs[done]}` : '');
     };
     load().forEach(i => { if (items[i]) { items[i].classList.add('done'); items[i].setAttribute('aria-pressed', 'true'); } });
     items.forEach(it => it.addEventListener('click', () => {
@@ -74,21 +76,25 @@ const App = {
   /* اختبار تفاعلي: data = [{en,ar,opts,a,exp}] */
   initQuiz(boxId, DATA) {
     let qi = 0, score = 0, answered = false;
+    const en = isEN();
+    const T = en
+      ? { q: (i, n) => `Question ${i} of ${n}`, score: 'Score', result: 'Show result 🏁', next: 'Next question →' }
+      : { q: (i, n) => `السؤال ${i} من ${n}`, score: 'نتيجتك', result: 'عرض النتيجة 🏁', next: 'السؤال التالي ←' };
     const quizBox = document.getElementById(boxId);
     function renderQ() {
       if (qi >= DATA.length) { showResult(); return; }
       const item = DATA[qi]; answered = false;
       quizBox.innerHTML = `
         <div class="quiz-progress">
-          <span>السؤال ${qi + 1} من ${DATA.length}</span>
-          <span style="color:var(--accent)">نتيجتك: ${score}</span>
+          <span>${T.q(qi + 1, DATA.length)}</span>
+          <span style="color:var(--accent)">${T.score}: ${score}</span>
         </div>
         <div class="quiz-bar"><i style="width:${qi / DATA.length * 100}%"></i></div>
         <div class="quiz-q"><span class="en">${item.en}</span></div>
         <div class="quiz-q-ar">${item.ar}</div>
         <div class="quiz-opts"></div>
         <div class="quiz-feedback" aria-live="polite"></div>
-        <button class="quiz-next" disabled>${qi === DATA.length - 1 ? 'عرض النتيجة 🏁' : 'السؤال التالي ←'}</button>`;
+        <button class="quiz-next" disabled>${qi === DATA.length - 1 ? T.result : T.next}</button>`;
       const optsEl = quizBox.querySelector('.quiz-opts');
       item.opts.forEach((o, i) => {
         const b = document.createElement('button');
@@ -105,24 +111,24 @@ const App = {
         b.disabled = true;
         if (j === item.a) b.classList.add('correct');
       });
-      if (i === item.a) { score++; fbEl.className = 'quiz-feedback show ok'; fbEl.innerHTML = '✅ <b>إجابة صحيحة!</b> ' + item.exp; }
-      else { btn.classList.add('wrong'); fbEl.className = 'quiz-feedback show no'; fbEl.innerHTML = '❌ <b>ليست الإجابة الصحيحة.</b> ' + item.exp; }
-      quizBox.querySelector('.quiz-progress span:last-child').textContent = 'نتيجتك: ' + score;
+      if (i === item.a) { score++; fbEl.className = 'quiz-feedback show ok'; fbEl.innerHTML = (en ? '✅ <b>Correct!</b> ' : '✅ <b>إجابة صحيحة!</b> ') + item.exp; }
+      else { btn.classList.add('wrong'); fbEl.className = 'quiz-feedback show no'; fbEl.innerHTML = (en ? '❌ <b>Not quite.</b> ' : '❌ <b>ليست الإجابة الصحيحة.</b> ') + item.exp; }
+      quizBox.querySelector('.quiz-progress span:last-child').textContent = T.score + ': ' + score;
       quizBox.querySelector('.quiz-next').disabled = false;
     }
     function showResult() {
       const pct = Math.round(score / DATA.length * 100);
       let msg, icon;
-      if (pct === 100) { icon = '🏆'; msg = 'ممتاز! أنت جاهز تماماً — درجة كاملة!'; }
-      else if (pct >= 70) { icon = '🎉'; msg = 'نتيجة رائعة! لديك فهم قوي.'; }
-      else if (pct >= 40) { icon = '📖'; msg = 'بداية جيدة — راجع الأقسام بالأعلى وأعد المحاولة.'; }
-      else { icon = '💪'; msg = 'لا بأس! اقرأ الشروحات مرة أخرى وستتحسن نتيجتك كثيراً.'; }
+      if (pct === 100) { icon = '🏆'; msg = en ? 'Excellent! You are fully ready — a perfect score!' : 'ممتاز! أنت جاهز تماماً — درجة كاملة!'; }
+      else if (pct >= 70) { icon = '🎉'; msg = en ? 'Great result! You have a strong grasp.' : 'نتيجة رائعة! لديك فهم قوي.'; }
+      else if (pct >= 40) { icon = '📖'; msg = en ? 'A good start — review the sections above and try again.' : 'بداية جيدة — راجع الأقسام بالأعلى وأعد المحاولة.'; }
+      else { icon = '💪'; msg = en ? 'No worries! Re-read the explanations and your score will improve a lot.' : 'لا بأس! اقرأ الشروحات مرة أخرى وستتحسن نتيجتك كثيراً.'; }
       quizBox.innerHTML = `
         <div class="quiz-result">
           <div style="font-size:56px">${icon}</div>
           <div class="score">${score} / ${DATA.length}</div>
           <p>${msg}</p>
-          <button class="quiz-next">إعادة الاختبار 🔄</button>
+          <button class="quiz-next">${en ? 'Retake quiz 🔄' : 'إعادة الاختبار 🔄'}</button>
         </div>`;
       quizBox.querySelector('.quiz-next').addEventListener('click', () => { qi = 0; score = 0; renderQ(); });
     }
@@ -134,14 +140,18 @@ const App = {
     const grid = document.getElementById(cfg.gridId);
     const filtersEl = document.getElementById(cfg.filtersId);
     const officialSet = cfg.officialSet || new Set();
+    const en = isEN();
+    const T = en
+      ? { card: 'Card: ', off: 'Official', memo: 'Memo', hint: 'Tap to reveal 👆' }
+      : { card: 'بطاقة ', off: 'من المنهج', memo: 'من المذكرة', hint: 'اضغط لرؤية المعنى 👆' };
     function render(k) {
       grid.innerHTML = '';
       cfg.terms.filter(t => k === 'all' || t.c === k).forEach(t => {
         const d = document.createElement('button');
-        d.className = 'flip'; d.setAttribute('aria-label', 'بطاقة ' + t.ar);
+        d.className = 'flip'; d.setAttribute('aria-label', T.card + t.ar);
         const isOff = officialSet.has(t.en);
         d.innerHTML = `<div class="flip-inner">
-          <div class="flip-face flip-front"><span class="src ${isOff ? 'o' : 'm'}">${isOff ? 'من المنهج' : 'من المذكرة'}</span><div class="cat">${cfg.cats[t.c]}</div><div class="term">${t.ar}</div><div class="en">${t.en}</div><div class="hint">اضغط لرؤية المعنى 👆</div></div>
+          <div class="flip-face flip-front"><span class="src ${isOff ? 'o' : 'm'}">${isOff ? T.off : T.memo}</span><div class="cat">${cfg.cats[t.c]}</div><div class="term">${t.ar}</div><div class="en">${t.en}</div><div class="hint">${T.hint}</div></div>
           <div class="flip-face flip-back"><div>${t.d}<div class="def-en">${t.e}</div></div></div>
         </div>`;
         d.addEventListener('click', () => d.classList.toggle('flipped'));
@@ -177,21 +187,38 @@ App.CHAPTERS = [
   { href: 'cloud.html', icon: '☁️', name: 'الحوسبة السحابية', ready: true }
 ];
 
-/* قشرة التطبيق المشتركة: درج الفصول + تذييل الحقوق + تمركز التبويب النشط */
+/* الأسماء الإنجليزية للفصول (النسخة الإنجليزية en/) */
+App.CHAPTERS_EN = [
+  'Home', 'Cybersecurity', 'IT & Operating Systems', 'Word Processing (Word)',
+  'Presentations (PowerPoint)', 'Spreadsheets (Excel)', 'Databases (Access)',
+  'Mobile Applications', 'Web Search', 'Networks', 'Distance Learning', 'Cloud Computing'
+];
+
+/* قشرة التطبيق المشتركة: درج الفصول + تذييل الحقوق + تمركز التبويب النشط
+   App.LANG = 'en' قبل الاستدعاء يجعل القشرة إنجليزية (صفحات en/) */
 App.initShell = function (current) {
+  const en = isEN();
+  const S = en
+    ? { chapters: 'Course Chapters', close: 'Close', soon: 'Soon', tab: 'Chapters',
+        footer: 'A training app on the FDTC digital transformation course content<br>App copyright © Eng. Mohamed Salah',
+        langLabel: 'ع', langTitle: 'النسخة العربية', langHref: (c) => '../' + (c === './' ? '' : c) }
+    : { chapters: 'فصول الدورة', close: 'إغلاق', soon: 'قريباً', tab: 'الفصول',
+        footer: 'تطبيق تدريبي على محتوى دورة التحول الرقمي (FDTC)<br>حقوق التطبيق © م. محمد صلاح',
+        langLabel: 'EN', langTitle: 'English version', langHref: (c) => 'en/' + (c === './' ? '' : c) };
   // 1) درج الفصول
   const overlay = document.createElement('div');
   overlay.className = 'drawer-overlay';
   const drawer = document.createElement('aside');
   drawer.className = 'drawer';
-  drawer.setAttribute('aria-label', 'فصول الدورة');
-  let rows = '<div class="d-head"><h3>📚 فصول الدورة</h3><button class="d-close" aria-label="إغلاق">✕</button></div>';
-  App.CHAPTERS.forEach(ch => {
+  drawer.setAttribute('aria-label', S.chapters);
+  let rows = `<div class="d-head"><h3>📚 ${S.chapters}</h3><button class="d-close" aria-label="${S.close}">✕</button></div>`;
+  App.CHAPTERS.forEach((ch, i) => {
+    const name = en ? (App.CHAPTERS_EN[i] || ch.name) : ch.name;
     if (ch.ready) {
       const cur = ch.href === current ? ' current' : '';
-      rows += `<a href="${ch.href}" class="${cur.trim()}"><span class="d-ico">${ch.icon}</span>${ch.name}<span class="chev">${ch.href === current ? '●' : '‹'}</span></a>`;
+      rows += `<a href="${ch.href}" class="${cur.trim()}"><span class="d-ico">${ch.icon}</span>${name}<span class="chev">${ch.href === current ? '●' : '‹'}</span></a>`;
     } else {
-      rows += `<div class="soon-row"><span class="d-ico">${ch.icon}</span>${ch.name}<span class="soon-tag">قريباً</span></div>`;
+      rows += `<div class="soon-row"><span class="d-ico">${ch.icon}</span>${name}<span class="soon-tag">${S.soon}</span></div>`;
     }
   });
   drawer.innerHTML = rows;
@@ -205,15 +232,22 @@ App.initShell = function (current) {
   drawer.querySelector('.d-close').addEventListener('click', () => toggle(false));
   document.addEventListener('keydown', e => { if (e.key === 'Escape') toggle(false); });
 
-  // زر ☰ في الشريط العلوي
+  // زر ☰ وزر اللغة 🌐 في الشريط العلوي
   const navInner = document.querySelector('nav.tabs .inner');
   if (navInner) {
     const btn = document.createElement('button');
     btn.className = 'drawer-btn';
-    btn.setAttribute('aria-label', 'فصول الدورة');
+    btn.setAttribute('aria-label', S.chapters);
     btn.textContent = '☰';
     btn.addEventListener('click', () => toggle(true));
     navInner.insertBefore(btn, navInner.firstChild);
+    const lb = document.createElement('a');
+    lb.className = 'lang-btn';
+    lb.href = S.langHref(current);
+    lb.title = S.langTitle;
+    lb.textContent = S.langLabel;
+    lb.addEventListener('click', () => { try { localStorage.setItem('lang', en ? 'ar' : 'en'); } catch (e) {} });
+    navInner.insertBefore(lb, btn.nextSibling);
   }
 
   // تبويب «الفصول» في الشريط السفلي
@@ -221,7 +255,7 @@ App.initShell = function (current) {
   if (tabbar) {
     const t = document.createElement('a');
     t.href = '#';
-    t.innerHTML = '<span class="ico">☰</span>الفصول';
+    t.innerHTML = '<span class="ico">☰</span>' + S.tab;
     t.addEventListener('click', e => { e.preventDefault(); toggle(true); });
     tabbar.appendChild(t);
   }
@@ -229,7 +263,7 @@ App.initShell = function (current) {
   // 2) تذييل الحقوق
   const f = document.createElement('footer');
   f.className = 'app-footer';
-  f.innerHTML = 'تطبيق تدريبي على محتوى دورة التحول الرقمي (FDTC)<br>حقوق التطبيق © م. محمد صلاح';
+  f.innerHTML = S.footer;
   document.body.appendChild(f);
 
   // 3) إبقاء التبويب النشط ظاهراً في منتصف الشريط العلوي
