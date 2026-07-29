@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Databases (Access), Simply — Interactive Guide</title>
+<meta name="description" content="A simplified interactive guide to the Database Fundamentals section of the digital transformation course: tables, relationships, queries, forms and reports, with interactive quizzes.">
+<meta name="theme-color" content="#000000">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="FDTC Guide">
+<link rel="manifest" href="../manifest.webmanifest">
+<link rel="icon" href="../icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../icon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/app.css">
+</head>
+<body>
+
+<header class="hero">
+  <div class="container">
+    <span class="shield">🗄️</span>
+    <h1>Databases (Access) <span>Simply</span></h1>
+    <p class="sub">From raw data to useful information — tables, relationships, queries, forms and reports in one guide anyone can follow.</p>
+    <span class="badge">Extracted from the memo and verified against the official material (Database Fundamentals, Edition 3 / 2024)</span>
+    <div class="stats">
+      <div class="stat"><b>72</b><span>memo questions</span></div>
+      <div class="stat"><b>28</b><span>key terms</span></div>
+      <div class="stat"><b>22</b><span>predicted questions</span></div>
+      <div class="stat"><b>98</b><span>pages of official material</span></div>
+    </div>
+  </div>
+</header>
+
+<nav class="tabs" aria-label="Guide sections">
+  <div class="inner">
+    <a class="home-link" href="./">🏠 Home</a>
+    <a href="#concepts" class="active">Concepts</a>
+    <a href="#tables">Tables &amp; Fields</a>
+    <a href="#relations">Relationships</a>
+    <a href="#queries">Queries</a>
+    <a href="#forms">Forms &amp; Reports</a>
+    <a href="#glossary">Glossary</a>
+    <a href="#official">From the Official Curriculum</a>
+    <a href="#traps">Word Traps</a>
+    <a href="#quiz">Memo Questions</a>
+    <a href="#predicted">Predicted Questions</a>
+  </div>
+</nav>
+
+<div class="part-banner memo-src">
+  <div class="container">
+    <span class="part-tag">Part One · Interactive Explanations</span>
+    <h2>Memo Explanations</h2>
+    <p>A simplified explanation of everything covered in the memo's Databases section — matched item by item against the official material.</p>
+  </div>
+</div>
+
+<!-- ===================== 1. Concepts ===================== -->
+<section id="concepts">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">01.</span> Concepts — From Data to Information</h2>
+    <p class="sec-lead">
+      <strong style="color:var(--text)">Data</strong> is raw material; once processed (for example by merging several fields together), it becomes <strong style="color:var(--text)">Information</strong> — this equation is asked in every exam.
+    </p>
+
+    <div class="analogy">
+      🗄️ <strong>Analogy:</strong> a database is a smart filing cabinet: each <strong>table</strong> is a drawer, each <strong>record</strong> a file inside the drawer, and each <strong>field</strong> a slot in the file. And the "archivist" who decides who opens what is the database administrator, the DBA.
+    </div>
+
+    <div class="grid cols-2">
+      <div class="card">
+        <span class="icon">⚙️</span>
+        <h3>Database Management Systems</h3>
+        <p><span class="en">DBMS</span> programs store, update and retrieve data — the best known: <strong style="color:var(--accent)">Oracle</strong>, SQL Server and <strong style="color:var(--accent)">Access</strong>. Arithmetic or logical operations can be performed on the stored numeric values.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🪟</span>
+        <h3>The Main Window</h3>
+        <p>The database's main window consists of <strong style="color:var(--accent)">3 sections</strong>. Access ships with a default database called <strong style="color:var(--text)">Blank Database</strong>, and to create a ready-made store database: <strong style="color:var(--text)">Templates</strong>.</p>
+      </div>
+      <div class="card">
+        <span class="icon">👨‍💼</span>
+        <h3>Database Administrator <span class="en">DBA</span></h3>
+        <p>Responsible for controlling <strong style="color:var(--accent)">all permissions and uses</strong> of the database.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🕵️</span>
+        <h3>System Analyst <span class="en">System Analyst</span></h3>
+        <p>Analyzes the requirements of the entity that will use the system, identifies all the data and develops the specifications. ⚠️ Attributing this task to the "application programmer" is a recurring trap!</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 2. Tables & fields ===================== -->
+<section id="tables">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">02.</span> Tables &amp; Fields — Numbers to Memorize</h2>
+    <p class="sec-lead">This part's questions are numbers and locations: 64 characters, 200 default size, one field for the key:</p>
+
+    <div class="grid cols-2">
+      <div class="card">
+        <span class="icon">🔑</span>
+        <h3>Primary Key <span class="en">Primary Key</span></h3>
+        <p>The field that distinguishes records from each other. It consists of <strong style="color:var(--accent)">one field only</strong>, non-duplicate, and is preferably <strong style="color:var(--accent)">numeric</strong> — it can be replaced by a substitute field (an Alternative Key).</p>
+      </div>
+      <div class="card">
+        <span class="icon">📏</span>
+        <h3>Limits to Memorize</h3>
+        <p>A field name must not exceed <strong style="color:var(--accent)">64 characters</strong> (not 67!). And the default size of a text field is set to 200 from the <strong style="color:var(--accent)">Options</strong> command — not "Account".</p>
+      </div>
+      <div class="card">
+        <span class="icon">✳️</span>
+        <h3>The Required Property <span class="en">Required</span></h3>
+        <p>When set to <strong style="color:var(--text)">Yes</strong>, a value must be entered in the field — the record cannot be left blank.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🧱</span>
+        <h3>Creating and Formatting Tables</h3>
+        <p>A new table from the <strong style="color:var(--accent)">Create</strong> tab · table data formatting from the <strong style="color:var(--accent)">Home</strong> tab · saving the database under a new name with the <strong style="color:var(--text)">Save As</strong> command on the File tab.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 3. Relations ===================== -->
+<section id="relations">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">03.</span> Relationships — The Heart of the Database</h2>
+    <p class="sec-lead">There is no single isolated table in a real database — tables connect through three types of relationships:</p>
+
+    <div class="grid cols-2">
+      <div class="card">
+        <span class="icon">1️⃣</span>
+        <h3>One to One <span class="en">1:1</span></h3>
+        <p>One record matches exactly one record — like a citizen and their national ID number.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🔢</span>
+        <h3>One to Many <span class="en">1:M</span></h3>
+        <p>One record matches several records — like one department and its many students.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🔀</span>
+        <h3>Many to Many <span class="en">M:N</span></h3>
+        <p>Like a student and academic subjects: a student takes more than one subject, and a subject is taken by more than one student — this relationship needs an <strong style="color:var(--accent)">Intermediate Table</strong> (such as the Delivery table).</p>
+      </div>
+      <div class="card">
+        <span class="icon">🔗</span>
+        <h3>How Are Tables Linked?</h3>
+        <p>Through the <strong style="color:var(--accent)">Foreign</strong> field in one table and the <strong style="color:var(--accent)">Primary</strong> field in the other, provided they hold <strong style="color:var(--text)">the same value</strong> — the shared field must be of <strong style="color:var(--text)">the same type</strong>, with matching data type and size at creation. Relationships are created from the <strong style="color:var(--accent)">Database Tools</strong> tab.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🛡️</span>
+        <h3>Referential Integrity</h3>
+        <p><span class="en">Referential Integrity</span>: requiring that the primary-key data in the primary table <strong style="color:var(--text)">exists</strong> in the foreign-key field of the secondary table — so no "orphan" records appear.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🧹</span>
+        <h3>Normalization <span class="en">Normalization</span></h3>
+        <p>Rules that ensure <strong style="color:var(--accent)">the removal/scarcity of duplicated data</strong> — not "the accuracy of repeated data" (trap!). Its degrees range from 1NF to 5NF, and reaching <strong style="color:var(--text)">3NF</strong> is sufficient for most applications.</p>
+      </div>
+    </div>
+
+    <div class="analogy">
+      🎓 <strong>The student-and-results question:</strong> the memo considers the statement "the student's relationship with academic results is one-to-many" wrong, favoring many-to-many if the results are a consolidated grade report — while admitting this is the memo author's personal view. Memorize the certainty: <strong>student and academic subjects = many to many</strong>.
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 4. Queries ===================== -->
+<section id="queries">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">04.</span> Queries — Questions You Ask Your Data</h2>
+    <p class="sec-lead">A <span class="en">Query</span> is <strong style="color:var(--text)">a question about the data stored in your tables, or a request to perform an action on the data</strong>. Its four types come up a lot — click each type:</p>
+
+    <div class="cia-wrap" style="grid-template-columns:repeat(auto-fit,minmax(130px,1fr))">
+      <button class="cia-btn" data-tab="select"><span class="icon">🎯</span><h3>Select</h3><span class="en">Select</span></button>
+      <button class="cia-btn" data-tab="append"><span class="icon">➕</span><h3>Append</h3><span class="en">Append</span></button>
+      <button class="cia-btn" data-tab="delete"><span class="icon">🗑️</span><h3>Delete</h3><span class="en">Delete</span></button>
+      <button class="cia-btn" data-tab="crosstab"><span class="icon">📊</span><h3>Crosstab</h3><span class="en">Crosstab</span></button>
+    </div>
+    <div class="cia-detail" id="tab-panel" aria-live="polite"></div>
+  </div>
+</section>
+
+<!-- ===================== 5. Forms & reports ===================== -->
+<section id="forms">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">05.</span> Forms &amp; Reports — The Input Interface and the Print Interface</h2>
+    <p class="sec-lead">A <span class="en">Form</span> is the gateway for <strong style="color:var(--text)">entering</strong> data, and a <span class="en">Report</span> is the object for <strong style="color:var(--text)">displaying and printing</strong> it:</p>
+
+    <div class="grid cols-2">
+      <div class="card">
+        <span class="icon">📋</span>
+        <h3>The Form <span class="en">Form</span></h3>
+        <p>Used to enter data and display <strong style="color:var(--accent)">one record at a time</strong> — not all records at once (trap!). And <strong style="color:var(--text)">Form View</strong> is the view that displays the actual data.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🧙</span>
+        <h3>The Form Wizard <span class="en">Form Wizard</span></h3>
+        <p>For creating a form that includes fields from <strong style="color:var(--accent)">several linked tables</strong> in the same database — the "Split Form" is something else (trap!). And the field list must appear when creating from a table.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🖼️</span>
+        <h3>Form Background</h3>
+        <p>To add one: Format → Picture → choose the appropriate background → OK. To resize it to fit the space: the <strong style="color:var(--text)">Property Sheet</strong>, then choose "Form" from the details list.</p>
+      </div>
+      <div class="card">
+        <span class="icon">📄</span>
+        <h3>Reports <span class="en">Reports</span></h3>
+        <p>Objects for displaying and printing data. They are created from the <strong style="color:var(--accent)">Create menu first</strong> (not "Design then Create"!) · a report is viewed <strong style="color:var(--accent)">after naming it</strong> · its layout can be set to "Detailed" · and its data can be updated before printing if new data was added.</p>
+      </div>
+      <div class="card">
+        <span class="icon">📤</span>
+        <h3>Import and Export</h3>
+        <p>Both from the <strong style="color:var(--accent)">External Data</strong> tab. You can export as text and open it in Word, and edit reports after exporting to TXT with a word processor — and <strong style="color:var(--text)">export steps can be saved</strong> (the trap says the opposite!).</p>
+      </div>
+      <div class="card">
+        <span class="icon">🧭</span>
+        <h3>Navigation Pane and Info</h3>
+        <p>The Navigation Pane matters for easing report printing and getting a copy of the database's data. The <strong style="color:var(--text)">Info</strong> command shows database information: the number of tables, queries and <strong style="color:var(--accent)">forms</strong> (not "cells"!). Compact and Repair is on the <strong style="color:var(--accent)">Database Tools</strong> tab.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 6. Glossary ===================== -->
+<section id="glossary">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">06.</span> Glossary of Terms — Cards You Flip with a Tap</h2>
+    <p class="sec-lead">Tap any card to flip it. Cards tagged "official" were added from the official material:</p>
+    <div class="filters" id="filters"></div>
+    <div class="flip-grid" id="flip-grid"></div>
+  </div>
+</section>
+
+<div class="part-banner official-src">
+  <div class="container">
+    <span class="part-tag">Extra Explanations</span>
+    <h2>From the Official Curriculum</h2>
+    <p>Topics the memo does not cover — added from the official training material (Edition 3 / 2024).</p>
+  </div>
+</div>
+
+<!-- ===================== 7. Official extras ===================== -->
+<section id="official">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">07.</span> What the Memo Doesn't Cover</h2>
+    <p class="sec-lead">The official material (98 pages) adds entire topics with no memo questions:</p>
+
+    <div class="grid cols-2">
+      <div class="card">
+        <span class="icon">👥</span>
+        <h3>The Database Team — 8 Roles</h3>
+        <p>The material lists <strong style="color:var(--accent)">8 roles</strong> on the team, most notably: the database administrator (DBA), the system analyst, the database designer, the application programmer, and the end user.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🔍</span>
+        <h3>The Query Grid <span class="en">QBE</span></h3>
+        <p><span class="en">Query By Example</span>: the lower grid in query design where fields and Criteria are set — "query by example" instead of writing SQL commands by hand.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🔃</span>
+        <h3>Report Wizard Sorting</h3>
+        <p>The Report Wizard allows sorting by <strong style="color:var(--accent)">up to 4 fields</strong> — ascending or descending.</p>
+      </div>
+      <div class="card">
+        <span class="icon">📗</span>
+        <h3>The Preferred Export</h3>
+        <p>The material presents exporting to <strong style="color:var(--accent)">Excel</strong> as the first destination for exchanging table data, alongside other formats. ⚠️ The TXT text export mentioned in the memo is not stated explicitly in the official edition.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🧩</span>
+        <h3>The Split Form <span class="en">Split Form</span></h3>
+        <p>Creates two synchronized views of the same data: a form + a datasheet — which is not the "Form Wizard", the tool that gathers fields from several linked tables.</p>
+      </div>
+      <div class="card">
+        <span class="icon">📐</span>
+        <h3>The Five Normalization Degrees</h3>
+        <p>From <span class="en">1NF</span> to <span class="en">5NF</span> — each degree removes a kind of duplication, and reaching <strong style="color:var(--accent)">3NF is sufficient for most practical applications</strong>.</p>
+      </div>
+      <div class="card">
+        <span class="icon">⚖️</span>
+        <h3>Info or Tools? (A Reconciling Note)</h3>
+        <p>The official book also attributes Compact &amp; Repair and encryption to the <strong style="color:var(--text)">Info menu on the File tab</strong>, while the memo goes with the <strong style="color:var(--text)">Database Tools</strong> tab — both appear in the material's text ⚠️: the Info command shows the information and holds the compact button, and the Database Tools tab has the same command plus the "Analysis" group.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🎓</span>
+        <h3>An Internal-Contradiction Alert</h3>
+        <p>The student/subjects example appears in the official book with two conflicting wordings on two consecutive pages (p.59 vs p.60) — the accepted correct reading: <strong style="color:var(--accent)">many to many M:N</strong> via an intermediate table.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="part-banner memo-src">
+  <div class="container">
+    <span class="part-tag">Part Two · Questions</span>
+    <h2>Memo Questions</h2>
+    <p>Word traps first, then an interactive quiz in the English exam wording.</p>
+  </div>
+</div>
+
+<!-- ===================== 8. Traps ===================== -->
+<section id="traps">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">08.</span> Word Traps — Wrong Command, Wrong Number</h2>
+    <p class="sec-lead">This section's traps: swapping a command for a similar one, or a number for a close one. Tap any statement to reveal the verdict:</p>
+    <div id="traps-list"></div>
+  </div>
+</section>
+
+<!-- ===================== 9. Memo quiz ===================== -->
+<section id="quiz">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">09.</span> Memo Questions — Test Yourself 🎯</h2>
+    <p class="sec-lead">16 questions from the memo in their original English wording, with explanations backed by the official material.</p>
+    <div class="quiz-box" id="quiz-box"></div>
+  </div>
+</section>
+
+<div class="part-banner official-src">
+  <div class="container">
+    <span class="part-tag">Extra Questions</span>
+    <h2>Predicted Questions from the Official Curriculum</h2>
+    <p>22 practice questions on the topics the memo does not cover.</p>
+  </div>
+</div>
+
+<!-- ===================== 10. Predicted quiz ===================== -->
+<section id="predicted">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">10.</span> Predicted Questions 🔮</h2>
+    <p class="sec-lead">⚠️ Practice questions written from the official material's content — not copied from actual exams.</p>
+    <div class="quiz-box" id="predicted-box"></div>
+  </div>
+</section>
+
+<nav class="tabbar" aria-label="Quick navigation">
+  <a href="#concepts" class="active"><span class="ico">📖</span>Guide</a>
+  <a href="#glossary"><span class="ico">📇</span>Glossary</a>
+  <a href="#official"><span class="ico">🏛️</span>Official</a>
+  <a href="#traps"><span class="ico">🧩</span>Quiz</a>
+</nav>
+
+<script src="../assets/app.js"></script>
+<script>
+/* ===== Query types ===== */
+const TABS={
+  select:{icon:'🎯',ar:'Select Query',lat:'Select Query',
+    def:'Retrieves data <strong>directly as it is</strong> from one or more tables — the most commonly used type.',
+    ex:'<strong>For the exam:</strong> "To retrieve data as it is" → Select Query. And the spelling trap: the correct word is data, not date! (Retrieving the "date" instead of the "data" makes the statement wrong.)'},
+  append:{icon:'➕',ar:'Append Query',lat:'Append Query',
+    def:'<strong>Adds data</strong> to be saved in the table — it appends new records to an existing table.',
+    ex:'<strong>For the exam:</strong> "Data can be added to be saved in the table through a query called..." → Append Query.'},
+  delete:{icon:'🗑️',ar:'Delete Query',lat:'Delete Query',
+    def:'<strong>Deletes one or more records</strong> at once according to a condition.',
+    ex:'<strong>For the exam:</strong> deleting one or more student records, or removing graduating students\' records from the students table → Delete Query.'},
+  crosstab:{icon:'📊',ar:'Crosstab Query',lat:'Crosstab Query',
+    def:'<strong>Calculates the sum or average</strong> of grouped data, and restructures the data for easier analysis.',
+    ex:'<strong>For the exam:</strong> two questions with one answer: "calculates the sum or average of the collected data" and "to calculate and reconstruct data for easier analysis" → both are Crosstab Query.'}
+};
+const tabPanel=document.getElementById('tab-panel');
+function showTab(k){
+  const t=TABS[k];
+  tabPanel.innerHTML=`<h3>${t.icon} ${t.ar}</h3><span class="lat">${t.lat}</span><p>${t.def}</p><p style="margin-top:12px">${t.ex}</p>`;
+  document.querySelectorAll('[data-tab]').forEach(b=>b.classList.toggle('active',b.dataset.tab===k));
+}
+document.querySelectorAll('[data-tab]').forEach(b=>b.addEventListener('click',()=>showTab(b.dataset.tab)));
+showTab('select');
+
+/* ===== Word traps ===== */
+App.renderTraps('traps-list',[
+ {q:'Through the <span class="mark">Account</span> command, the default size of the text field can be set to 200.',ar:'',ok:false,
+  a:'False — the correct command is <strong>Options</strong>. "Account" manages the user account, not field settings.'},
+ {q:'The Delivery table must be in a <span class="mark">one to one</span> relationship.',ar:'',ok:false,
+  a:'False — the Delivery table is an intermediate table, and the relationship is <strong>Many to Many</strong>.'},
+ {q:'Selection query is used to retrieve <span class="mark">date</span> directly as it is.',ar:'',ok:false,
+  a:'A deliberate spelling error — the correct word is <strong>data</strong>, not date. Watch out for this subtle trap!'},
+ {q:'The responsibility of the <span class="mark">application programmer</span> is to analyze the requirements of the entity that will use the system.',ar:'',ok:false,
+  a:'False — that is the job of the <strong>System Analyst</strong>. The programmer implements what the analyst specified.'},
+ {q:'The database can be compressed and repaired from the <span class="mark">External Data</span> tab.',ar:'',ok:false,
+  a:'False — from the <strong>Database Tools</strong> tab (and from the Info command on the File tab). "External Data" is for import and export.'},
+ {q:'Through information command, we can get information about the database from number of tables, queries and the <span class="mark">cells</span> it contains.',ar:'',ok:false,
+  a:'False — it shows tables, queries and <strong>Forms</strong>. "Cells" is an Excel word smuggled in here!'},
+ {q:'Linking tables is done through the foreign field in one table and the <span class="mark">alternative</span> field in another table.',ar:'',ok:false,
+  a:'False — linking is between the foreign field and the <strong>Primary</strong> field, provided they hold the same value.'},
+ {q:'It is required that the length of the field name does not exceed <span class="mark">67</span> characters.',ar:'',ok:false,
+  a:'False — the maximum is <strong>64 characters</strong> ✅ confirmed by the official material.'},
+ {q:'The report can be viewed <span class="mark">before</span> naming it.',ar:'',ok:false,
+  a:'False — <strong>after</strong> naming it.'},
+ {q:'Normalization rules ensure the <span class="mark">accuracy</span> of repeated data.',ar:'',ok:false,
+  a:'False — they ensure the <strong>scarcity/removal</strong> of duplication, not its accuracy. Normalization exists precisely to get rid of duplicated data.'},
+ {q:'Reports are created through the <span class="mark">Design</span> menu and then Create Report.',ar:'',ok:false,
+  a:'False — the <strong>Create menu first</strong>.'},
+ {q:'Export steps <span class="mark">cannot</span> be saved.',ar:'',ok:false,
+  a:'False — export steps <strong>can</strong> be saved for reuse.'},
+ {q:'<span class="mark">Form</span> is a question about the data stored in a table.',ar:'',ok:false,
+  a:'False — that is the definition of a <strong>Query</strong>. A form is the interface for entering data and viewing it record by record.'},
+ {q:'The form is used to enter data and display <span class="mark">all records at once</span>.',ar:'',ok:false,
+  a:'False — it displays <strong>one record at a time</strong>.'},
+ {q:'The <span class="mark">split form</span> is used to create a form that includes data from several tables linked together.',ar:'',ok:false,
+  a:'False — that is the <strong>Form Wizard</strong>. The Split Form shows the same data in two views: a form + a datasheet.'},
+ {q:'A single table cannot exist without being connected to another table, otherwise we would not describe this as a database.',ar:'',ok:true,
+  a:'Correct ✓ per the memo\'s answer — with its note that a one-table database is theoretically possible but rare in practice.'}
+]);
+
+/* ===== Memo questions ===== */
+App.initQuiz('quiz-box',[
+ {en:'Through the ..... command, the default size of the text field can be set to 200.',ar:'',
+  opts:['Account','Options','Info','Save As'],a:1,
+  exp:'Options ✅ — the material confirms default settings are in Options (the value 200 specifically appears in the memo).'},
+ {en:'..... is responsible for controlling all the permissions and uses of the database.',ar:'',
+  opts:['System Analyst','Application Programmer','DBA','End User'],a:2,
+  exp:'The DBA (Database Administrator) ✅.'},
+ {en:'..... identifies user requirements and develops specifications to determine what is required from the databases.',ar:'',
+  opts:['Analyst','DBA','Programmer','Designer'],a:0,
+  exp:'The System Analyst ✅ — not the application programmer (a recurring trap).'},
+ {en:'You can create a relationship between two tables from .....',ar:'',
+  opts:['Create tab','Database Tools','External Data','Home tab'],a:1,
+  exp:'Database Tools ✅ — which also holds the "Analysis" group and Compact & Repair.'},
+ {en:'Database data can be exported to a text file from ..... tab.',ar:'',
+  opts:['Database Tools','File','External Data','Create'],a:2,
+  exp:'External Data ✅ for both import and export. ⚠️ Text export specifically appears in the memo but is not stated explicitly in the material.'},
+ {en:'Form View displays actual data.',ar:'',
+  opts:['True ✓','False ✗'],a:0,
+  exp:'True ✅ — the official material itself states that Form View displays the actual data.'},
+ {en:'Intermediate Table is used in ..... Relationship.',ar:'',
+  opts:['One to One','One to Many','Many to Many','All types'],a:2,
+  exp:'Many to Many M:N ✅ — the intermediate table breaks it into two one-to-many relationships.'},
+ {en:'The student\'s relationship with academic subjects is a relationship of .....',ar:'',
+  opts:['one to one','one to many','many to many','none'],a:2,
+  exp:'Many to many ✅ — a student takes more than one subject and a subject is taken by more than one student. (Note the book\'s internal contradiction on p.59/60 — the accepted reading is M:N.)'},
+ {en:'The “Selection query” type is used to retrieve data directly as it is.',ar:'',
+  opts:['True ✓','False ✗'],a:0,
+  exp:'True ✅ — and beware the booby-trapped version with date instead of data.'},
+ {en:'Data can be added to be saved in the table through a query called .....',ar:'',
+  opts:['Select Query','Append Query','Delete Query','Crosstab Query'],a:1,
+  exp:'Append Query ✅.'},
+ {en:'..... calculates the sum or average of the collected data.',ar:'',
+  opts:['Select Query','Append Query','Crosstab Query','Update Query'],a:2,
+  exp:'Crosstab Query ✅ — it is also the answer to "reconstructing data for easier analysis".'},
+ {en:'To remove records for graduating students from students table use .....',ar:'',
+  opts:['Append Query','Select Query','Delete Query','Crosstab Query'],a:2,
+  exp:'Delete Query ✅.'},
+ {en:'It is required that the length of the field name does not exceed .....',ar:'',
+  opts:['67','200','64','255'],a:2,
+  exp:'64 characters ✅ confirmed by the material — 67 is the trap.'},
+ {en:'When the required property is set to YES .....',ar:'',
+  opts:['a value must be entered','the field is hidden','the field becomes numeric','the record locks'],a:0,
+  exp:'A value must be entered ✅.'},
+ {en:'It is preferable that the key column fields be .....',ar:'',
+  opts:['text','numeric','date','image'],a:1,
+  exp:'Numeric ✅ — and the primary key is a single non-duplicate field, replaceable by an alternative key.'},
+ {en:'The result obtained from processing data is .....',ar:'',
+  opts:['Data','Information','A table','A record'],a:1,
+  exp:'Information ✅ — processing data (like merging several fields together) produces information.'}
+]);
+
+/* ===== Predicted questions ===== */
+App.initQuiz('predicted-box',[
+ {en:'A database is .....',ar:'',
+  opts:['a random pile of files','an organized collection of related data','a printing program','a network protocol'],a:1,exp:'An organized collection of related data, easy to store and retrieve.'},
+ {en:'Microsoft Access is classified as a .....',ar:'',
+  opts:['word processor','spreadsheet','DBMS','operating system'],a:2,exp:'A database management system (DBMS) — like Oracle and SQL Server.'},
+ {en:'The database team consists of ..... roles.',ar:'',
+  opts:['3','5','8','10'],a:2,exp:'8 roles per the official material — including the DBA, system analyst, designer, programmer and end user.'},
+ {en:'QBE stands for .....',ar:'',
+  opts:['Query By Example','Quick Base Entry','Query Builder Engine','Quality Based Export'],a:0,exp:'Query By Example — the lower query-design grid.'},
+ {en:'The QBE grid is used to .....',ar:'',
+  opts:['draw charts','specify fields and criteria for a query','format reports','create relationships'],a:1,exp:'Specifying fields and Criteria without writing SQL by hand.'},
+ {en:'The number of relationship types between tables is .....',ar:'',
+  opts:['2','3','4','5'],a:1,exp:'Three: one to one, one to many, many to many.'},
+ {en:'Normalization degrees range from 1NF to .....',ar:'',
+  opts:['2NF','3NF','5NF','7NF'],a:2,exp:'5NF — and reaching 3NF is sufficient for most applications.'},
+ {en:'Reaching ..... is sufficient for most practical applications.',ar:'',
+  opts:['1NF','2NF','3NF','5NF'],a:2,exp:'The third degree, 3NF.'},
+ {en:'The Report Wizard allows sorting by up to ..... fields.',ar:'',
+  opts:['2','4','6','8'],a:1,exp:'4 fields, ascending or descending.'},
+ {en:'A many-to-many relationship is implemented using .....',ar:'',
+  opts:['one big table','an intermediate (junction) table','two primary keys in one table','a report'],a:1,exp:'An intermediate table that breaks it into two one-to-many relationships.'},
+ {en:'Referential Integrity requires that data in the primary key field of the primary table .....',ar:'',
+  opts:['be deleted','be present in the foreign key field of the secondary table','be text only','be hidden'],a:1,exp:'Present in the secondary table\'s foreign-key field — so no orphan records arise.'},
+ {en:'A Select query can retrieve data from .....',ar:'',
+  opts:['one table only','one or more tables','forms only','reports only'],a:1,exp:'One or more tables.'},
+ {en:'The Split Form displays .....',ar:'',
+  opts:['two synchronized views: form and datasheet','data from unrelated databases','reports','charts'],a:0,exp:'Two synchronized views of the same data: a form + a datasheet.'},
+ {en:'To create a database from scratch, choose .....',ar:'',
+  opts:['Templates','Blank Database','Import','Backup'],a:1,exp:'Blank Database — while Templates are for ready-made databases (like a store database).'},
+ {en:'The Save As command is located in the ..... tab.',ar:'',
+  opts:['Home','Create','File','Database Tools'],a:2,exp:'File — for saving the database under a new name.'},
+ {en:'The primary key consists of .....',ar:'',
+  opts:['one field only','two fields','all table fields','a query'],a:0,exp:'One field only, non-duplicate, and preferably numeric.'},
+ {en:'The foreign key is .....',ar:'',
+  opts:['a duplicate primary key in the same table','a field linking to the primary key of another table','a password','a report field'],a:1,exp:'A field in one table linked to another table\'s primary key with the same value and type.'},
+ {en:'The common field between two linked tables must have .....',ar:'',
+  opts:['different types','the same type and size','text type always','no data'],a:1,exp:'The same type, with matching data type and size at creation.'},
+ {en:'The Info command (File tab) shows .....',ar:'',
+  opts:['only the file name','information about the database: tables, queries and forms','cells count','nothing'],a:1,exp:'Database information: the number of tables, queries and forms — and per the book it also holds Compact & Repair and encryption.'},
+ {en:'The ..... tab contains an Analysis group.',ar:'',
+  opts:['Home','Create','Database Tools','External Data'],a:2,exp:'Database Tools.'},
+ {en:'Exporting table data to ..... is presented as the preferred exchange format.',ar:'',
+  opts:['Excel','PowerPoint','Paint','ZIP'],a:0,exp:'Excel — per the official material\'s presentation of the export options.'},
+ {en:'The Navigation Pane is important for .....',ar:'',
+  opts:['facilitating report printing and getting a copy of database data','deleting the database','changing passwords','drawing charts'],a:0,exp:'Easing report printing and getting a copy of the database\'s data — and it shows every object in the database.'}
+]);
+
+/* ===== Glossary ===== */
+App.renderGlossary({
+  gridId:'flip-grid',filtersId:'filters',
+  cats:{all:'All',concept:'Concepts',table:'Tables & Fields',rel:'Relationships',obj:'Queries & Forms'},
+  officialSet:new Set(['QBE','Split Form','Normalization Degrees']),
+  terms:[
+   {c:'concept',ar:'Data',en:'Data',d:'Raw material before processing: numbers and text that carry no complete meaning on their own.',e:'Raw facts before processing.'},
+   {c:'concept',ar:'Information',en:'Information',d:'The result of processing data — like merging several fields into a new table.',e:'The result of processing data.'},
+   {c:'concept',ar:'Database',en:'Database',d:'A set of connected, related tables — rarely built on a single isolated table.',e:'Related, connected tables.'},
+   {c:'concept',ar:'DBMS',en:'DBMS',d:'Software for storing, updating and retrieving data: Oracle, SQL Server, Access.',e:'Oracle, SQL Server, Access.'},
+   {c:'concept',ar:'Database Administrator',en:'DBA',d:'Controls all permissions and uses.',e:'Controls all permissions and uses.'},
+   {c:'concept',ar:'System Analyst',en:'System Analyst',d:'Analyzes the entity\'s requirements, identifies the data and develops the specifications.',e:'Analyzes requirements, develops specifications.'},
+   {c:'concept',ar:'Main Window',en:'Main Window',d:'Consists of 3 sections — and Access starts with a default Blank Database.',e:'Consists of 3 sections.'},
+   {c:'table',ar:'Table',en:'Table',d:'The data-storage unit: rows (records) and columns (fields) — created from the Create tab.',e:'Records and fields; created from the Create tab.'},
+   {c:'table',ar:'Field',en:'Field',d:'A table column — its name must not exceed 64 characters; the default text size is set from Options.',e:'Name ≤ 64 characters.'},
+   {c:'table',ar:'Record',en:'Record',d:'A full row in the table representing one entity (a student, for example).',e:'A full row representing one entity.'},
+   {c:'table',ar:'Primary Key',en:'Primary Key',d:'One non-duplicate field distinguishing each record — preferably numeric.',e:'One non-duplicate field; preferably numeric.'},
+   {c:'table',ar:'Alternative Key',en:'Alternative Key',d:'A field that can take the place of the primary key.',e:'Can replace the primary key.'},
+   {c:'table',ar:'Foreign Key',en:'Foreign Key',d:'A field linking its table to another table\'s primary key — with the same value, type and size.',e:'Links to another table\'s primary key.'},
+   {c:'table',ar:'Required Property',en:'Required',d:'When set to Yes, a value must be entered in the field.',e:'Yes = a value must be entered.'},
+   {c:'rel',ar:'One to One',en:'One to One',d:'One record matches exactly one record — like a citizen and their national ID.',e:'One record ↔ one record.'},
+   {c:'rel',ar:'One to Many',en:'One to Many',d:'One record matches several records — like a department and its students.',e:'One record ↔ many records.'},
+   {c:'rel',ar:'Many to Many',en:'Many to Many',d:'Like students and subjects — needs an intermediate table breaking it into two 1:M relationships.',e:'Needs an intermediate table.'},
+   {c:'rel',ar:'Intermediate Table',en:'Intermediate Table',d:'The junction table in a many-to-many relationship (like the Delivery table).',e:'Junction table in M:N relationships.'},
+   {c:'rel',ar:'Referential Integrity',en:'Referential Integrity',d:'Primary-key data in the primary table must exist in the secondary table\'s foreign key.',e:'Primary-key data must exist in the foreign key field.'},
+   {c:'rel',ar:'Normalization',en:'Normalization',d:'Rules for removing data duplication — not "ensuring the accuracy of duplicates"!',e:'Eliminates data duplication.'},
+   {c:'rel',ar:'Normalization Degrees',en:'Normalization Degrees',d:'From 1NF to 5NF — and reaching 3NF is sufficient for most applications.',e:'1NF to 5NF; 3NF is sufficient.'},
+   {c:'obj',ar:'Query',en:'Query',d:'A question about the data stored in your tables, or a request to perform an action on it.',e:'A question about stored data, or an action request.'},
+   {c:'obj',ar:'Select Query',en:'Select Query',d:'Retrieves data as it is from one or more tables.',e:'Retrieves data as it is.'},
+   {c:'obj',ar:'Crosstab Query',en:'Crosstab Query',d:'Calculates the sum or average and restructures the data for easier analysis.',e:'Sum/average of grouped data.'},
+   {c:'obj',ar:'Query Grid',en:'QBE',d:'Query By Example: the grid for setting fields and criteria in query design.',e:'Fields and criteria grid in query design.'},
+   {c:'obj',ar:'Form',en:'Form',d:'The data-entry interface — shows one record at a time, and Form View displays the actual data.',e:'One record at a time; Form View shows actual data.'},
+   {c:'obj',ar:'Split Form',en:'Split Form',d:'Two synchronized views of the same data: a form + a datasheet.',e:'Synchronized form + datasheet views.'},
+   {c:'obj',ar:'Report',en:'Report',d:'The object for displaying and printing data — created from the Create menu and previewed after naming.',e:'Displays and prints data.'}
+  ]
+});
+
+App.initAccordions();
+App.initNav({concepts:'#concepts',tables:'#concepts',relations:'#concepts',queries:'#concepts',forms:'#concepts',glossary:'#glossary',official:'#official',traps:'#traps',quiz:'#traps',predicted:'#traps'});
+App.LANG='en';
+App.initShell('db.html');
+</script>
+</body>
+</html>
