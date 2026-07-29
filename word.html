@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>معالج النصوص (وورد) ببساطة — دليل تفاعلي</title>
+<meta name="description" content="دليل تفاعلي مبسّط لقسم معالج النصوص (وورد) من دورة التحول الرقمي: خريطة التبويبات، الاختصارات، الحواشي والتعليقات، واختبارات تفاعلية.">
+<meta name="theme-color" content="#0f172a">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="التحول الرقمي">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/app.css">
+</head>
+<body>
+
+<header class="hero">
+  <div class="container">
+    <span class="shield">📝</span>
+    <h1>معالج النصوص (وورد) <span>ببساطة</span></h1>
+    <p class="sub">دليل تفاعلي يعلّمك أين تجد كل أمر في وورد — فجوهر امتحان هذا القسم سؤال واحد يتكرر: «من أي تبويب وأي مجموعة؟»</p>
+    <span class="badge">مُستخلص من المذكرة ومُطابَق مع المادة الرسمية (BIT 02 — Word 2019، الإصدار 3 / 2024)</span>
+    <div class="stats">
+      <div class="stat"><b>49</b><span>سؤالاً في المذكرة</span></div>
+      <div class="stat"><b>28</b><span>مصطلحاً أساسياً</span></div>
+      <div class="stat"><b>22</b><span>سؤالاً متوقعاً</span></div>
+      <div class="stat"><b>114</b><span>صفحة بالمادة الرسمية</span></div>
+    </div>
+  </div>
+</header>
+
+<nav class="tabs" aria-label="أقسام الدليل">
+  <div class="inner">
+    <a class="home-link" href="./">🏠 الرئيسية</a>
+    <a href="#ui" class="active">الواجهة وتبويب ملف</a>
+    <a href="#tabsmap">خريطة التبويبات</a>
+    <a href="#notes">حاشية أم تعليق ختامي؟</a>
+    <a href="#keys">الاختصارات</a>
+    <a href="#glossary">القاموس</a>
+    <a href="#official">من المنهج الرسمي</a>
+    <a href="#traps">مصيدة الكلمات</a>
+    <a href="#quiz">أسئلة المذكرة</a>
+    <a href="#predicted">أسئلة متوقعة</a>
+  </div>
+</nav>
+
+<div class="part-banner memo-src">
+  <div class="container">
+    <span class="part-tag">الجزء الأول · الشروحات التفاعلية</span>
+    <h2>شروحات المذكرة</h2>
+    <p>شرح مبسّط لكل ما ورد في قسم معالج النصوص بالمذكرة — مبني على خريطة «أين أجد كل أمر؟».</p>
+  </div>
+</div>
+
+<!-- ===================== 1. UI & File tab ===================== -->
+<section id="ui">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">01.</span> واجهة البرنامج وتبويب «ملف»</h2>
+    <p class="sec-lead">
+      واجهة وورد تتكون من <strong style="color:var(--text)">8 مكونات</strong>: شريط العنوان، أدوات الوصول السريع، تبويب ملف، الشريط <span class="en">Ribbon</span>، المسطرة، شريط التمرير، التكبير/التصغير، وشريط المعلومات.
+    </p>
+
+    <div class="analogy">
+      🧰 <strong>تشبيه:</strong> الشريط <span class="en">Ribbon</span> كصندوق عدة منظم: <strong>التبويبات</strong> أدراجه الكبيرة (الصفحة الرئيسية، إدراج...)، و<strong>المجموعات</strong> الحجيرات داخل كل درج (الخط، الفقرة...)، و<strong>الأوامر</strong> هي الأدوات نفسها. أغلب أسئلة الامتحان = «في أي درج وأي حجيرة توجد الأداة؟»
+    </div>
+
+    <div class="grid cols-2">
+      <div class="card">
+        <span class="icon">🎀</span>
+        <h3>الشريط <span class="en">Ribbon</span></h3>
+        <p>مُضمَّن في تطبيقات Office منذ إصدار <strong style="color:var(--accent)">Office 2007</strong> — معلومة امتحانية مباشرة. ويتكون من: تبويبات + مجموعات + أوامر.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🗂️</span>
+        <h3>تبويب ملف = <span class="en">Backstage</span></h3>
+        <p>النقر عليه يعرض طريقة عرض Backstage: جديد، فتح، حفظ، طباعة (Ctrl+P)، مشاركة، تصدير، إغلاق (Ctrl+W). والمستند الجديد يسمى تلقائياً <span class="en">Document 1</span>.</p>
+      </div>
+      <div class="card">
+        <span class="icon">💾</span>
+        <h3>تنسيقات الحفظ</h3>
+        <p>ثمانية تنسيقات: docx (الافتراضي)، doc (متوافق مع 97-2003)، dotx/dot (قوالب)، RTF، txt، htm، PDF — <strong style="color:var(--bad)">وليس منها exe أبداً</strong> (سؤال الاستثناء).</p>
+      </div>
+      <div class="card">
+        <span class="icon">📏</span>
+        <h3>شريط المعلومات والمسطرة</h3>
+        <p>شريط المعلومات يعرض: رقم الصفحة، عدد الصفحات، عدد الكلمات، واللغة. والمسطرتان (أفقية ورأسية) تُظهَران من مجموعة <strong style="color:var(--accent)">إظهار Show</strong> بتبويب <strong style="color:var(--accent)">عرض View</strong>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 2. Tabs map ===================== -->
+<section id="tabsmap">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">02.</span> خريطة التبويبات — أين أجد كل أمر؟</h2>
+    <p class="sec-lead"><strong style="color:var(--text)">اضغط على أي تبويب</strong> لترى مجموعاته وأوامره الامتحانية — هذه الخريطة تجيب على ثلثي أسئلة المذكرة:</p>
+
+    <div class="cia-wrap" style="grid-template-columns:repeat(auto-fit,minmax(120px,1fr))">
+      <button class="cia-btn" data-tab="home"><span class="icon">🏠</span><h3>الرئيسية</h3><span class="en">Home</span></button>
+      <button class="cia-btn" data-tab="insert"><span class="icon">➕</span><h3>إدراج</h3><span class="en">Insert</span></button>
+      <button class="cia-btn" data-tab="design"><span class="icon">🎨</span><h3>تصميم</h3><span class="en">Design</span></button>
+      <button class="cia-btn" data-tab="layout"><span class="icon">📐</span><h3>تخطيط</h3><span class="en">Layout</span></button>
+      <button class="cia-btn" data-tab="refs"><span class="icon">📚</span><h3>مراجع</h3><span class="en">References</span></button>
+      <button class="cia-btn" data-tab="review"><span class="icon">✅</span><h3>مراجعة</h3><span class="en">Review</span></button>
+      <button class="cia-btn" data-tab="view"><span class="icon">👁️</span><h3>عرض</h3><span class="en">View</span></button>
+    </div>
+    <div class="cia-detail" id="tab-panel" aria-live="polite"></div>
+  </div>
+</section>
+
+<!-- ===================== 3. Footnote vs Endnote ===================== -->
+<section id="notes">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">03.</span> حاشية أم تعليق ختامي؟ وأي وضع عرض؟</h2>
+    <p class="sec-lead">أكثر نقطتين خلطاً في الامتحان — احسمهما هنا:</p>
+
+    <div class="grid cols-2">
+      <div class="card">
+        <span class="icon">⬇️</span>
+        <h3>الحاشية السفلية <span class="en">Footnote</span></h3>
+        <p>تظهر في <strong style="color:var(--accent)">الهامش السفلي لكل صفحة</strong>. تُدرج من تبويب <strong>مراجع References</strong> (وليس من الرئيسية!) — وبالاختصار Ctrl+Alt+F.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🔚</span>
+        <h3>التعليق الختامي <span class="en">Endnote</span></h3>
+        <p>يظهر في <strong style="color:var(--accent)">نهاية المستند كله</strong> — وليس أسفل كل صفحة. نص المادة حرفياً: «الحواشي تظهر في الهامش السفلي لكل صفحة، أما التعليق الختامي فيظهر في نهاية المستند».</p>
+      </div>
+      <div class="card">
+        <span class="icon">🖨️</span>
+        <h3>تخطيط الطباعة <span class="en">Print Layout</span></h3>
+        <p>طريقة العرض <strong style="color:var(--accent)">الافتراضية</strong> — وفيها فقط تظهر إعدادات الرأس والتذييل. لا تظهر في وضع القراءة!</p>
+      </div>
+      <div class="card">
+        <span class="icon">📃</span>
+        <h3>المسودة <span class="en">Draft</span></h3>
+        <p>وضع للكتابة السريعة — <strong style="color:var(--bad)">الرؤوس والتذييلات غير مرئية فيه</strong> (نص المادة). وهو إجابة سؤال «لا يظهر الرأس والتذييل في عرض...».</p>
+      </div>
+    </div>
+
+    <div class="analogy">
+      💡 <strong>خدعة الحفظ:</strong> Foot = قدم الصفحة (أسفل كل صفحة) · End = نهاية الكتاب كله. وTrack Changes: يمكنك التنقل بين التغييرات المتعقبة <strong>والموافقة عليها أو رفضها</strong> — عبارة «لا يمكن الموافقة أو الرفض» خاطئة دائماً.
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 4. Shortcuts ===================== -->
+<section id="keys">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">04.</span> اختصارات لوحة المفاتيح ⌨️</h2>
+    <p class="sec-lead">من جدولي الاختصارات في المادة الرسمية (ص25 وص90) وأسئلة المذكرة:</p>
+
+    <div class="grid cols-3">
+      <div class="card key-card"><kbd>Ctrl + P</kbd><h3>طباعة المستند</h3><p>من تبويب ملف</p></div>
+      <div class="card key-card"><kbd>Ctrl + W</kbd><h3>إغلاق ملف الوورد</h3><p>سؤال مذكرة مباشر</p></div>
+      <div class="card key-card"><kbd>Ctrl + F</kbd><h3>بحث</h3><p>مجموعة التحرير — الرئيسية</p></div>
+      <div class="card key-card"><kbd>Ctrl + H</kbd><h3>استبدال</h3><p>الاستبدال ممكن دائماً!</p></div>
+      <div class="card key-card"><kbd>Ctrl + Enter</kbd><h3>فاصل صفحات</h3><p>Page Break من تبويب إدراج</p></div>
+      <div class="card key-card"><kbd>Ctrl + Alt + M</kbd><h3>تعليق جديد</h3><p>⚠️ إجابة المذكرة — الاختصار غير مذكور بالمادة</p></div>
+      <div class="card key-card"><kbd>Ctrl + Alt + F</kbd><h3>حاشية سفلية</h3><p>من جدول اختصارات المادة</p></div>
+      <div class="card key-card"><kbd>Ctrl + Alt + D</kbd><h3>تعليق ختامي</h3><p>من جدول اختصارات المادة</p></div>
+      <div class="card key-card"><kbd>F9</kbd><h3>تحديث المراجع</h3><p>بعد تحديد الكل Ctrl+A</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 5. Glossary ===================== -->
+<section id="glossary">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">05.</span> قاموس المصطلحات</h2>
+    <p class="sec-lead">اضغط على أي بطاقة لقلبها — وكل بطاقة موسومة بمصدرها.</p>
+    <div class="filters" id="filters"></div>
+    <div class="flip-grid" id="flip-grid"></div>
+  </div>
+</section>
+
+<div class="part-banner official-src">
+  <div class="container">
+    <span class="part-tag">شروحات إضافية</span>
+    <h2>من المنهج الرسمي</h2>
+    <p>موضوعات لا تغطيها المذكرة — مضافة من المادة التدريبية الرسمية.</p>
+  </div>
+</div>
+
+<!-- ===================== 6. Official extras ===================== -->
+<section id="official">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">06.</span> ما لا تغطيه المذكرة</h2>
+    <p class="sec-lead">المادة الرسمية (114 صفحة، Word 2019) تغطي موضوعات كاملة بلا أسئلة في المذكرة:</p>
+
+    <div class="grid cols-2">
+      <div class="card">
+        <span class="icon">🎓</span>
+        <h3>موقع القسم في الشهادة</h3>
+        <p>معالج النصوص هو البرنامج <strong style="color:var(--text)">BIT 02</strong> من برامج FDTC العشرة، مدته يومان (جلستان × 120 دقيقة يومياً)، والمقرر مبني على Word 2019.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🔐</span>
+        <h3>حماية المستند — 6 خيارات</h3>
+        <p>للقراءة فقط، التشفير بكلمة مرور (<strong style="color:var(--text)">أقصى مستويات الأمان</strong>)، وضع علامة نهائي، تقييد التحرير، تقييد الوصول، والتوقيع الرقمي. كلمة المرور حساسة لحالة الأحرف وحدها الأقصى <strong style="color:var(--text)">15 حرفاً</strong> ولا يمكن استعادتها إن فُقدت.</p>
+      </div>
+      <div class="card">
+        <span class="icon">✉️</span>
+        <h3>دمج المراسلات <span class="en">Mail Merge</span></h3>
+        <p>تبويب «مراسلات» بخمس مجموعات لإنشاء خطابات وشهادات مخصصة بالجملة. مصادر قائمة المستلمين: قائمة جديدة، أو ملف <strong style="color:var(--text)">Excel/Access</strong>، أو جهات اتصال <strong style="color:var(--text)">Outlook</strong>.</p>
+      </div>
+      <div class="card">
+        <span class="icon">📑</span>
+        <h3>فواصل المقاطع الأربعة</h3>
+        <p><span class="en">Section Breaks</span>: الصفحة التالية، مستمر، صفحة زوجية، صفحة فردية — تتيح اتجاهات وترويسات مختلفة داخل نفس المستند.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🌀</span>
+        <h3>التفاف النص <span class="en">Wrap Text</span></h3>
+        <p>سبعة خيارات لعلاقة الصورة بالنص: سطري، مربع، مشدود، عبر، أعلى وأسفل، خلف النص، أمام النص — من مجموعة «ترتيب» بتبويب تخطيط.</p>
+      </div>
+      <div class="card">
+        <span class="icon">📇</span>
+        <h3>الفهارس وجداول المصادر</h3>
+        <p>وضع علامة إدخال للفهرس <kbd style="font-size:11px">Alt+Shift+X</kbd>، وجدول المصادر TOA للاستشهادات القانونية، والاقتباسات بنمطي <strong style="color:var(--text)">APA / MLA</strong> للعلوم الاجتماعية.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🪞</span>
+        <h3>مقارنة المستندات</h3>
+        <p><span class="en">Compare</span> بتبويب مراجعة: يقارن ملفين (أصلي ومراجَع) جنباً إلى جنب مع تلوين الاختلافات — ودمجهما يفتح ثلاث نوافذ.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🤖</span>
+        <h3>الماكرو والمخطط التفصيلي</h3>
+        <p>الماكرو يسجّل سلسلة نقرات وكتابة لإعادة تنفيذها بزر أو اختصار. والمخطط التفصيلي يعرض العناوين بمستويات من <strong style="color:var(--text)">1 إلى 9</strong>. والترجمة في وورد تشترط الاتصال بالإنترنت.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="part-banner memo-src">
+  <div class="container">
+    <span class="part-tag">الجزء الثاني · الأسئلة</span>
+    <h2>أسئلة المذكرة</h2>
+    <p>مصيدة الكلمات واختبار تفاعلي من أسئلة المذكرة الفعلية (49 سؤالاً).</p>
+  </div>
+</div>
+
+<!-- ===================== 7. Word traps ===================== -->
+<section id="traps">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">07.</span> مصيدة الكلمات — التبويب الخطأ والموضع الخطأ</h2>
+    <p class="sec-lead">مصائد هذا القسم: نسب الأمر لتبويب أو موضع غير موضعه. اضغط أي عبارة لكشف الحكم:</p>
+    <div id="traps-list"></div>
+  </div>
+</section>
+
+<!-- ===================== 8. Memo quiz ===================== -->
+<section id="quiz">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">08.</span> أسئلة المذكرة — اختبر نفسك 🎯</h2>
+    <p class="sec-lead">16 سؤالاً من المذكرة بصياغتها الإنجليزية الأصلية مع ترجمة وشرح مستند إلى صفحات المادة الرسمية.</p>
+    <div class="quiz-box" id="quiz-box"></div>
+  </div>
+</section>
+
+<div class="part-banner official-src">
+  <div class="container">
+    <span class="part-tag">أسئلة إضافية</span>
+    <h2>أسئلة متوقعة من المنهج الرسمي</h2>
+    <p>22 سؤالاً تدريبياً من الموضوعات التي لا تغطيها المذكرة.</p>
+  </div>
+</div>
+
+<!-- ===================== 9. Predicted quiz ===================== -->
+<section id="predicted">
+  <div class="container">
+    <h2 class="sec-title"><span class="num">09.</span> أسئلة متوقعة 🔮</h2>
+    <p class="sec-lead">⚠️ أسئلة تدريبية مصوغة من محتوى المادة الرسمية — وليست منقولة من امتحانات فعلية.</p>
+    <div class="quiz-box" id="quiz2-box"></div>
+  </div>
+</section>
+
+<nav class="tabbar" aria-label="تنقل سريع">
+  <a href="#ui" class="active"><span class="ico">📖</span>الشرح</a>
+  <a href="#official"><span class="ico">🏛️</span>المنهج</a>
+  <a href="#traps"><span class="ico">🧩</span>الأسئلة</a>
+  <a href="#glossary"><span class="ico">📇</span>القاموس</a>
+</nav>
+
+<script src="assets/app.js"></script>
+<script>
+/* ===== خريطة التبويبات ===== */
+const TABS={
+  home:{icon:'🏠',ar:'الصفحة الرئيسية',lat:'Home',
+    def:'<strong>5 مجموعات:</strong> الحافظة (نسخ/قص/لصق)، الخط، الفقرة، الأنماط، التحرير.',
+    ex:'<strong>امتحانياً:</strong> البحث Ctrl+F والاستبدال Ctrl+H من مجموعة «التحرير» — والاستبدال ممكن دائماً. النمط السريع الذي تنشئه يظهر في معرض الأنماط. ولا تنسيق لأي كلمة قبل تحديدها أولاً.'},
+  insert:{icon:'➕',ar:'إدراج',lat:'Insert',
+    def:'<strong>مجموعاته:</strong> صفحات، جداول، رسومات توضيحية Illustrations، ارتباطات، تعليقات، رأس وتذييل الصفحة، نص، رموز.',
+    ex:'<strong>امتحانياً:</strong> فاصل الصفحات من «صفحات» (Ctrl+Enter) · المخطط Chart من «الرسومات التوضيحية» وليس من الصور! · ترقيم الصفحات من «رأس وتذييل الصفحة» · سطر التوقيع من مجموعة «نص» · المعادلة من مجموعة «رموز» · النماذج ثلاثية الأبعاد من Illustrations.'},
+  design:{icon:'🎨',ar:'تصميم',lat:'Design',
+    def:'<strong>مجموعتاه:</strong> تنسيق المستند (النسق Themes، الألوان، الخطوط)، وخلفية الصفحة Page Background.',
+    ex:'<strong>امتحانياً:</strong> العلامة المائية Watermark ولون الصفحة وحدود الصفحة — ثلاثتها من مجموعة «خلفية الصفحة Page Background».'},
+  layout:{icon:'📐',ar:'تخطيط',lat:'Layout',
+    def:'<strong>3 مجموعات:</strong> إعداد الصفحة Page Setup، فقرة، ترتيب Arrange.',
+    ex:'<strong>امتحانياً — مجموعة إعداد الصفحة تضم 7 أوامر:</strong> الهوامش! والاتجاه والحجم! والأعمدة (الكتابة في 3 أعمدة!) والفواصل Breaks! وأرقام الأسطر والواصلة. قاعدة ذهبية: أي سؤال عن هوامش/حجم/أعمدة/فواصل → المجموعة: Page Setup، التبويب: Layout.'},
+  refs:{icon:'📚',ar:'مراجع',lat:'References',
+    def:'<strong>مجموعاته:</strong> جدول المحتويات، الحواشي السفلية، البحث، الاقتباسات والمراجع، التسميات التوضيحية، الفهرس.',
+    ex:'<strong>امتحانياً:</strong> الحاشية السفلية Footnote تُدرج من هنا (وليس من الرئيسية!) بالاختصار Ctrl+Alt+F، والتعليق الختامي Ctrl+Alt+D. وقبل جدول المحتويات التلقائي: طبّق أنماط العناوين.'},
+  review:{icon:'✅',ar:'مراجعة',lat:'Review',
+    def:'<strong>10 مجموعات</strong> أهمها: التدقيق (الإملاء والمرادفات وعدد الكلمات)، اللغة، التعليقات، تعقب التغييرات، تغييرات، مقارنة، حماية.',
+    ex:'<strong>امتحانياً:</strong> الترجمة من مجموعة «اللغة» هنا — وThesaurus «قاموس مرادفات» لا مترجم! · إضافة تعليق على الكلمات من هذا التبويب · التغييرات المتعقبة يمكن التنقل بينها والموافقة عليها أو رفضها من مجموعة «تغييرات».'},
+  view:{icon:'👁️',ar:'عرض',lat:'View',
+    def:'<strong>8 مجموعات:</strong> طرق عرض، تجربة شاملة، تحريك الصفحة، إظهار Show، تكبير/تصغير، نافذة Window، وحدات الماكرو، SharePoint.',
+    ex:'<strong>امتحانياً:</strong> المسطرة من مجموعة «إظهار Show» · انقسام Split لعرض مقاطع مختلفة بنفس الوقت · ترتيب الكل Arrange All للإطارات معاً أفقياً · تبديل النوافذ Switch Windows من مجموعة «نافذة» · جزء التنقل للتنقل بعرض هيكلي منظم · المسودة Draft بلا رأس وتذييل.'}
+};
+const tabPanel=document.getElementById('tab-panel');
+function showTab(k){
+  const t=TABS[k];
+  tabPanel.innerHTML=`<h3>${t.icon} تبويب ${t.ar}</h3><span class="lat">${t.lat}</span><p>${t.def}</p><p style="margin-top:12px">${t.ex}</p>`;
+  document.querySelectorAll('[data-tab]').forEach(b=>b.classList.toggle('active',b.dataset.tab===k));
+}
+document.querySelectorAll('[data-tab]').forEach(b=>b.addEventListener('click',()=>showTab(b.dataset.tab)));
+showTab('home');
+
+/* ===== مصيدة الكلمات ===== */
+App.renderTraps('traps-list',[
+ {q:'The endnote appears in the <span class="mark">bottom margin of each page</span>.',
+  ar:'يظهر التعليق الختامي في الهامش السفلي لكل صفحة.',ok:false,
+  a:'<b>خطأ.</b> نص المادة (م82): «الحواشي تظهر في الهامش السفلي لكل صفحة، أما التعليق الختامي فيظهر في نهاية المستند».'},
+ {q:'Translation is available within Word via the <span class="mark">Thesaurus</span> tool.',
+  ar:'الترجمة متاحة في وورد عبر أداة قاموس المرادفات.',ok:false,
+  a:'<b>خطأ.</b> Thesaurus قاموس مرادفات (مجموعة التدقيق)؛ الترجمة من مجموعة «اللغة» بتبويب مراجعة (المادة م97-98).'},
+ {q:'Text <span class="mark">cannot be replaced</span> within a Word document.',
+  ar:'لا يمكن استبدال النص داخل مستند وورد.',ok:false,
+  a:'<b>خطأ.</b> الاستبدال متاح من مجموعة التحرير بتبويب الرئيسية أو بالاختصار Ctrl+H (المادة م39).'},
+ {q:'The header and footer appear in <span class="mark">read mode</span>.',
+  ar:'يظهر الرأس والتذييل في وضع القراءة.',ok:false,
+  a:'<b>خطأ.</b> يظهران في تخطيط الطباعة Print Layout — وهو وضع العرض الافتراضي (المادة م101).'},
+ {q:'To move a word, it <span class="mark">must</span> be cut.',
+  ar:'لنقل كلمة لا بد من قصها.',ok:false,
+  a:'<b>خطأ.</b> القص طريقة، لكن توجد طرق أخرى (السحب والإفلات مثلاً) — كلمة «لا بد» هي المصيدة.'},
+ {q:'We can add a chart from <span class="mark">photo</span> option.',
+  ar:'يمكن إضافة مخطط من خيار الصورة.',ok:false,
+  a:'<b>خطأ.</b> المخطط Chart يُدرج من مجموعة «الرسومات التوضيحية Illustrations» بتبويب إدراج (المادة م44 وم50).'},
+ {q:'Paragraph borders appear on the horizontal ruler <span class="mark">only</span>.',
+  ar:'تظهر حدود الفقرة على المسطرة الأفقية فقط.',ok:false,
+  a:'<b>خطأ.</b> نص المادة (م35): «تظهر حدود الفقرات على المسطرة الأفقية والعمودية بالنقر على بداية الفقرة».'},
+ {q:'You can move between tracked changes but <span class="mark">can\'t approve or reject</span> them.',
+  ar:'يمكنك التنقل بين التغييرات المتعقبة لكن لا يمكنك الموافقة عليها أو رفضها.',ok:false,
+  a:'<b>خطأ.</b> نص المادة (م98-99): «يمكنك التحرك بين التغييرات... ويمكنك أيضاً الموافقة أو الرفض».'},
+ {q:'A footnote is inserted from a <span class="mark">master (Home)</span> tab.',
+  ar:'تُدرج الحاشية السفلية من التبويب الرئيسي.',ok:false,
+  a:'<b>خطأ.</b> من تبويب «مراجع References» — مجموعة الحواشي السفلية (المادة م81-82).'},
+ {q:'A page break can be inserted from <span class="mark">Breaks tab</span>.',
+  ar:'يمكن إدراج فاصل صفحة من تبويب «فواصل».',ok:false,
+  a:'<b>خطأ.</b> «الفواصل Breaks» ليست تبويباً — بل أمر في مجموعة إعداد الصفحة بتبويب تخطيط؛ وفاصل الصفحات يُدرج أيضاً من تبويب إدراج (Ctrl+Enter).'}
+]);
+
+/* ===== أسئلة المذكرة ===== */
+App.initQuiz('quiz-box',[
+ {en:'To control document margins, select … (group)',ar:'للتحكم في هوامش المستند نختار مجموعة...',
+  opts:['Page Background','Page Setup','Arrange','Paragraph'],a:1,
+  exp:'مجموعة إعداد الصفحة Page Setup بتبويب تخطيط — أول أوامرها «الهوامش» (المادة م68).'},
+ {en:'Ribbon has been included in Office applications since Office …',ar:'أُدرج الشريط في تطبيقات أوفيس منذ إصدار...',
+  opts:['2003','2007','2010','2016'],a:1,
+  exp:'نص المادة (م13): «تم تضمين Ribbon في تطبيقات مجموعة Office منذ Office 2007».'},
+ {en:'Spelling errors in Word are marked with a … line under the word.',ar:'الأخطاء الإملائية يشار إليها بخط ... تحت الكلمة.',
+  opts:['blue','red','green','yellow'],a:1,
+  exp:'أحمر — إجابة المذكرة. ⚠️ المادة تؤكد وضع الخط تحت الأخطاء (م97) دون تحديد اللون نصاً.'},
+ {en:'Press … key to print the document.',ar:'لطباعة المستند نضغط...',
+  opts:['Ctrl + W','Ctrl + P','Ctrl + N','Ctrl + H'],a:1,
+  exp:'Ctrl+P — من جدول اختصارات تبويب ملف بالمادة (م25).'},
+ {en:'To view different sections of a document at the same time …',ar:'لعرض مقاطع مختلفة من المستند في نفس الوقت...',
+  opts:['Arrange All','Split','New Window','Zoom'],a:1,
+  exp:'انقسام Split — «لتقسيم الإطار الحالي إلى جزأين حتى يتم عرض مقاطع مختلفة في نفس الوقت» (المادة م106).'},
+ {en:'The shortcut to close the Word file is …',ar:'اختصار إغلاق ملف الوورد...',
+  opts:['Ctrl + Q','Ctrl + W','Alt + C','Ctrl + E'],a:1,
+  exp:'Ctrl+W — «الأمر Close في تبويب ملف أو بالضغط على CTRL+W» (المادة م23 وم25).'},
+ {en:'To write a comment on word press key …',ar:'لكتابة تعليق على كلمة نضغط...',
+  opts:['Ctrl + Alt + M','Ctrl + Alt + F','Ctrl + M','Alt + C'],a:0,
+  exp:'Ctrl+Alt+M — إجابة المذكرة. ⚠️ الاختصار غير وارد بالمادة (الوارد: Ctrl+Alt+F للحاشية وCtrl+Alt+D للختامي)، لكن إضافة التعليق مؤكدة من تبويب مراجعة.'},
+ {en:'To add page numbering within a word document using … group',ar:'لإضافة ترقيم صفحات نستخدم مجموعة...',
+  opts:['Text','Header and Footer','Symbols','Pages'],a:1,
+  exp:'مجموعة رأس وتذييل الصفحة بتبويب إدراج — تضم «رقم الصفحة Page Number» (المادة م54-55).'},
+ {en:'It is possible to control the display of the ruler from the …',ar:'يمكن التحكم في إظهار المسطرة من...',
+  opts:['Show group (View tab)','Editing group','Window group','Zoom group'],a:0,
+  exp:'مجموعة إظهار Show بتبويب عرض (المادة م103).'},
+ {en:'You can write in a Word document in three columns through a group …',ar:'يمكن الكتابة في ثلاثة أعمدة من مجموعة...',
+  opts:['Paragraph','Page Setup','Arrange','Styles'],a:1,
+  exp:'الأعمدة Columns ضمن مجموعة إعداد الصفحة بتبويب تخطيط: عمود/اثنان/ثلاثة... (المادة م70).'},
+ {en:'To control adding a cell or column within a table from the tab …',ar:'لإضافة خلية أو عمود داخل جدول من تبويب...',
+  opts:['Table Design','Table Layout','Insert','Home'],a:1,
+  exp:'تخطيط الجدول Table Layout — يضم مجموعة «صفوف وأعمدة» (المادة م43-44). أما تنسيق الجدول فمن Table Design.'},
+ {en:'…… is a set of characteristics, such as font name, size and color, paragraph alignment and spacing.',ar:'... مجموعة خصائص مثل اسم الخط وحجمه ولونه ومحاذاة الفقرة وتباعدها.',
+  opts:['Theme','Style','Template','Format'],a:1,
+  exp:'النمط Style — التعريف حرفي من المادة (م38).'},
+ {en:'The document can be saved in different formats except …',ar:'يمكن حفظ المستند بتنسيقات مختلفة ما عدا...',
+  opts:['.pdf','.rtf','.exe','.txt'],a:2,
+  exp:'جدول تنسيقات الحفظ الثمانية بالمادة (م21) لا يتضمن exe — فهو امتداد برامج تنفيذية لا مستندات.'},
+ {en:'Allow to move through the pages of document in a structured view …',ar:'يتيح التنقل عبر صفحات المستند بعرض منظم...',
+  opts:['Split','Navigation pane','Outline','Zoom'],a:1,
+  exp:'جزء التنقل — «تسمح لك بالتحرك خلال صفحات المستند بطريقة عرض هيكلية» (المادة م104).'},
+ {en:'The headers and footers were not visible in … view.',ar:'الرأس والتذييل غير مرئيين في عرض...',
+  opts:['Print Layout','Draft','Web Layout','Read Mode'],a:1,
+  exp:'المسودة Draft — «الرؤوس والتذييلات لم تكن مرئية في طريقة العرض هذه» (المادة م101).'},
+ {en:'To choose wide margins within the document from the … (tab)',ar:'لاختيار هوامش عريضة من تبويب...',
+  opts:['Design','Layout','Insert','View'],a:1,
+  exp:'تبويب تخطيط Layout — الهوامش الجاهزة (عادية/ضيقة/عريضة/معكوسة...) من مجموعة إعداد الصفحة (المادة م68-69).'}
+]);
+
+/* ===== أسئلة متوقعة ===== */
+App.initQuiz('quiz2-box',[
+ {en:'The main components of the Word interface are ..... components.',ar:'مكونات واجهة وورد الرئيسية عددها...',
+  opts:['5','6','8','10'],a:2,exp:'ثمانية: شريط العنوان، الوصول السريع، تبويب ملف، الشريط، المسطرة، التمرير، التكبير، شريط المعلومات (المادة م13-14).'},
+ {en:'A new document is automatically named .....',ar:'المستند الجديد يسمى تلقائياً...',
+  opts:['New File','Document 1','Untitled','My Document'],a:1,exp:'Document 1 (مستند 1) ويظهر على شريط العنوان (المادة م14).'},
+ {en:'Clicking the File tab displays the ..... view.',ar:'النقر على تبويب ملف يعرض طريقة عرض...',
+  opts:['Backstage','Draft','Outline','Print'],a:0,exp:'Microsoft Office Backstage (المادة م14).'},
+ {en:'The maximum length of a document protection password is ..... characters.',ar:'الحد الأقصى لطول كلمة مرور حماية المستند...',
+  opts:['8','12','15','20'],a:2,exp:'15 حرفاً، وهي حساسة لحالة الأحرف ولا يمكن استعادتها إن فُقدت (المادة م16-17).'},
+ {en:'The highest level of document security protection is .....',ar:'أقصى مستويات الأمان في حماية المستند...',
+  opts:['Read Only','Encrypt with Password','Mark as Final','Restrict Editing'],a:1,exp:'التشفير بكلمة مرور هو أقصى مستويات الأمان من بين خيارات الحماية الستة (المادة م17).'},
+ {en:'The format compatible with Word 97 up to Word 2003 is .....',ar:'التنسيق المتوافق مع وورد 97 حتى 2003 هو...',
+  opts:['docx','doc','dotx','rtf'],a:1,exp:'doc — أما docx فالافتراضي الحديث وdotx للقوالب (جدول المادة م21).'},
+ {en:'The Export command converts the file directly to .....',ar:'أمر التصدير Export يحول الملف مباشرة إلى...',
+  opts:['PDF','HTML','TXT','EXE'],a:0,exp:'PDF — لمشاركته وطباعته بأمان (المادة م23).'},
+ {en:'The Home tab contains ..... groups.',ar:'يحتوي تبويب الصفحة الرئيسية على ... مجموعات.',
+  opts:['3','4','5','7'],a:2,exp:'خمس: الحافظة، الخط، الفقرة، الأنماط، التحرير (المادة م27).'},
+ {en:'The shortcut Ctrl+H opens .....',ar:'الاختصار Ctrl+H يفتح...',
+  opts:['البحث','الاستبدال Replace','التعليقات','المرادفات'],a:1,exp:'الاستبدال من مجموعة التحرير؛ والبحث Ctrl+F (المادة م39).'},
+ {en:'A page break can be inserted using the shortcut .....',ar:'يمكن إدراج فاصل صفحات بالاختصار...',
+  opts:['Ctrl + Enter','Ctrl + B','Alt + Enter','Shift + Enter'],a:0,exp:'Ctrl+Enter — من مجموعة صفحات بتبويب إدراج (المادة م41).'},
+ {en:'The quick Insert Table grid allows a maximum of ..... cells.',ar:'شبكة إدراج الجدول السريعة بحد أقصى...',
+  opts:['8×8','10×8','10×10','12×6'],a:1,exp:'10×8 خلايا؛ للأكبر استخدم أمر Insert Table (المادة م42).'},
+ {en:'The Cover Page is always inserted .....',ar:'صفحة الغلاف تُدرج دائماً...',
+  opts:['عند مؤشر الكتابة','في بداية المستند وبلا ترقيم','في نهاية المستند','بعد جدول المحتويات'],a:1,exp:'في بداية المستند بغض النظر عن مكان المؤشر، وتتميز بعدم ترقيمها (المادة م40).'},
+ {en:'The Layout tab consists of ..... main groups.',ar:'يتكون تبويب تخطيط من ... مجموعات رئيسية.',
+  opts:['2','3','5','7'],a:1,exp:'ثلاث: إعداد الصفحة، فقرة، ترتيب (المادة م68).'},
+ {en:'In Mirrored margins, .....',ar:'في الهوامش المعكوسة Mirrored...',
+  opts:['يتساوى الهامشان دائماً','الهامش الأيسر صورة معكوسة للأيمن','يختفي الهامش السفلي','تنعكس اتجاهات الكتابة'],a:1,exp:'الأيسر صورة معكوسة للأيمن — مناسبة للتجليد (المادة م68-69).'},
+ {en:'Section Breaks types are ..... types.',ar:'أنواع فواصل المقاطع...',
+  opts:['2','3','4','6'],a:2,exp:'أربعة: الصفحة التالية، مستمر، صفحة زوجية، صفحة فردية (المادة م72).'},
+ {en:'Before creating an automatic Table of Contents you must .....',ar:'قبل إنشاء جدول محتويات تلقائي يجب...',
+  opts:['طباعة المستند','تطبيق أنماط العناوين','إدراج فهرس','حفظ الملف PDF'],a:1,exp:'تطبيق أنماط العناوين (عنوان 1، عنوان 2...) ثم التحديث إما أرقام الصفحات فقط أو الجدول كاملاً (المادة م80).'},
+ {en:'To mark an index entry, press .....',ar:'لوضع علامة إدخال في الفهرس نضغط...',
+  opts:['Alt + Shift + X','Ctrl + Alt + F','Alt + S','F9'],a:0,exp:'Alt+Shift+X من جدول اختصارات المراجع (المادة م88 وم90).'},
+ {en:'Citations in social sciences documents usually use ..... styles.',ar:'الاقتباسات في العلوم الاجتماعية تستخدم عادة نمطي...',
+  opts:['ISO / ANSI','APA / MLA','IEEE / ACM','Chicago / Harvard'],a:1,exp:'MLA أو APA — ونوع المصدر الافتراضي «كتاب» (المادة م84).'},
+ {en:'Recipient lists for Mail Merge can come from all of the following except .....',ar:'قوائم مستلمي دمج المراسلات تأتي من كل مما يلي ما عدا...',
+  opts:['Excel','Access','Outlook contacts','PowerPoint'],a:3,exp:'المصادر: قائمة جديدة أو Excel/Access أو جهات اتصال Outlook — لا PowerPoint (المادة م92).'},
+ {en:'Translation in Word requires .....',ar:'الترجمة في وورد تشترط...',
+  opts:['نسخة مدفوعة','اتصال الحاسوب بالإنترنت','تثبيت قاموس','حساب مايكروسوفت'],a:1,exp:'تشترط اتصال الحاسوب بالإنترنت (المادة م98).'},
+ {en:'The default document view in Word is .....',ar:'طريقة العرض الافتراضية في وورد...',
+  opts:['Read Mode','Print Layout','Web Layout','Draft'],a:1,exp:'تخطيط الطباعة Print Layout (المادة م101).'},
+ {en:'The Outline view arranges headings in levels from 1 to .....',ar:'المخطط التفصيلي يرتب العناوين بمستويات من 1 إلى...',
+  opts:['5','7','9','12'],a:2,exp:'تسعة مستويات (المادة م102). وتحديث المراجع التبادلية: Ctrl+A ثم F9.'}
+]);
+
+/* ===== القاموس ===== */
+App.renderGlossary({
+  gridId:'flip-grid',filtersId:'filters',
+  cats:{all:'الكل',ui:'الواجهة',ins:'إدراج وتصميم',lay:'تخطيط ومراجع',rev:'مراجعة وعرض'},
+  officialSet:new Set(['Backstage','Mail Merge','Macro','TOA','Cross-reference','Outline View']),
+  terms:[
+   {c:'ui',ar:'الشريط',en:'Ribbon',d:'شريط الأوامر الرئيسي: تبويبات + مجموعات + أوامر. مُضمَّن في أوفيس منذ إصدار 2007.',e:'Included in Office applications since Office 2007.'},
+   {c:'ui',ar:'طريقة عرض ملف',en:'Backstage',d:'الشاشة التي تظهر بالنقر على تبويب ملف: جديد، فتح، حفظ، طباعة، تصدير، إغلاق.',e:'The view shown when clicking the File tab.'},
+   {c:'ui',ar:'شريط المعلومات',en:'Status Bar',d:'أسفل النافذة: رقم الصفحة، عدد الصفحات، عدد الكلمات، واللغة.',e:'Shows page number, pages count, word count and language.'},
+   {c:'ui',ar:'النمط',en:'Style',d:'مجموعة خصائص: اسم الخط وحجمه ولونه ومحاذاة الفقرة وتباعدها وحدودها وتظليلها.',e:'A set of characteristics: font name, size, color, alignment, spacing, borders and shading.'},
+   {c:'ui',ar:'البحث والاستبدال',en:'Find & Replace',d:'من مجموعة التحرير بتبويب الرئيسية: بحث Ctrl+F واستبدال Ctrl+H.',e:'Editing group, Home tab: Ctrl+F / Ctrl+H.'},
+   {c:'ins',ar:'فاصل الصفحات',en:'Page Break',d:'من مجموعة صفحات بتبويب إدراج، وبالاختصار Ctrl+Enter.',e:'Pages group, Insert tab; shortcut Ctrl+Enter.'},
+   {c:'ins',ar:'الرسومات التوضيحية',en:'Illustrations',d:'مجموعة بتبويب إدراج تضم: الصور، الأشكال، الأيقونات، النماذج ثلاثية الأبعاد، SmartArt، والمخطط Chart.',e:'Insert-tab group: pictures, shapes, icons, 3D models, SmartArt and Chart.'},
+   {c:'ins',ar:'رأس وتذييل الصفحة',en:'Header & Footer',d:'مجموعة بتبويب إدراج تضم ترقيم الصفحات Page Number ومواضعه.',e:'Insert-tab group containing Page Number.'},
+   {c:'ins',ar:'سطر التوقيع',en:'Signature Line',d:'يُدرج من مجموعة «نص Text» بتبويب إدراج.',e:'Inserted from the Text group on the Insert tab.'},
+   {c:'ins',ar:'المعادلة',en:'Equation',d:'تُدرج من مجموعة «رموز Symbols» بتبويب إدراج.',e:'Inserted from the Symbols group on the Insert tab.'},
+   {c:'ins',ar:'العلامة المائية',en:'Watermark',d:'من مجموعة «خلفية الصفحة Page Background» بتبويب تصميم — مع لون الصفحة وحدودها.',e:'Page Background group on the Design tab.'},
+   {c:'ins',ar:'النسق',en:'Themes',d:'تنسيق شامل للمستند (ألوان + خطوط + تأثيرات) من تبويب تصميم.',e:'Overall document formatting from the Design tab.'},
+   {c:'lay',ar:'إعداد الصفحة',en:'Page Setup',d:'المجموعة الأهم بتبويب تخطيط: الهوامش، الاتجاه، الحجم، الأعمدة، الفواصل، أرقام الأسطر، الواصلة.',e:'Layout-tab group: margins, orientation, size, columns, breaks.'},
+   {c:'lay',ar:'الفواصل',en:'Breaks',d:'أمر ضمن إعداد الصفحة: فواصل صفحات (صفحة/عمود/التفاف) وفواصل مقاطع أربعة.',e:'Page breaks and four section break types, within Page Setup.'},
+   {c:'lay',ar:'الحاشية السفلية',en:'Footnote',d:'تظهر في الهامش السفلي لكل صفحة — تُدرج من تبويب مراجع (Ctrl+Alt+F).',e:'Appears at the bottom of each page; References tab (Ctrl+Alt+F).'},
+   {c:'lay',ar:'التعليق الختامي',en:'Endnote',d:'يظهر في نهاية المستند كله وليس أسفل كل صفحة (Ctrl+Alt+D).',e:'Appears at the end of the document (Ctrl+Alt+D).'},
+   {c:'lay',ar:'جدول المحتويات',en:'Table of Contents',d:'من تبويب مراجع — يتطلب تطبيق أنماط العناوين أولاً، ويُحدَّث كلياً أو أرقام صفحات فقط.',e:'References tab; requires heading styles first.'},
+   {c:'lay',ar:'جدول المصادر',en:'TOA',d:'قائمة بجميع المصادر القانونية المذكورة بالمستند مع صفحات الاستشهاد، مرتبة بالفئة.',e:'Table of Authorities: all cited sources with page numbers.'},
+   {c:'lay',ar:'الإسناد الترافقي',en:'Cross-reference',d:'يُدرج مراجع تبادلية كارتباطات تشعبية، ويُحدَّث بـ F9.',e:'Inserted as hyperlinks; updated with F9.'},
+   {c:'rev',ar:'قاموس المرادفات',en:'Thesaurus',d:'أداة مرادفات في مجموعة التدقيق — ليست أداة ترجمة! الترجمة من مجموعة اللغة.',e:'A synonyms tool — NOT for translation.'},
+   {c:'rev',ar:'تعقب التغييرات',en:'Track Changes',d:'بتبويب مراجعة — يمكن التنقل بين التغييرات والموافقة عليها أو رفضها من مجموعة «تغييرات».',e:'You can move between changes and approve or reject them.'},
+   {c:'rev',ar:'تخطيط الطباعة',en:'Print Layout',d:'طريقة العرض الافتراضية — وفيها تظهر إعدادات الرأس والتذييل.',e:'The default view; headers/footers visible.'},
+   {c:'rev',ar:'المسودة',en:'Draft',d:'وضع كتابة سريع — الرؤوس والتذييلات غير مرئية فيه.',e:'Headers and footers are not visible in this view.'},
+   {c:'rev',ar:'المخطط التفصيلي',en:'Outline View',d:'يعرض العناوين بمستويات من 1 إلى 9 مرتبة حسب المستوى.',e:'Headings in levels 1 to 9.'},
+   {c:'rev',ar:'انقسام',en:'Split',d:'يقسم الإطار لجزأين لعرض مقاطع مختلفة من المستند في نفس الوقت.',e:'Splits the window to view different sections at once.'},
+   {c:'rev',ar:'ترتيب الكل وتبديل النوافذ',en:'Arrange All',d:'ترتيب الكل: الإطارات معاً أفقياً؛ وتبديل النوافذ للتنقل بين الملفات المفتوحة — مجموعة نافذة بتبويب عرض.',e:'Window group, View tab.'},
+   {c:'rev',ar:'جزء التنقل',en:'Navigation Pane',d:'التحرك خلال صفحات المستند بطريقة عرض هيكلية للانتقال لصفحة أو عنوان.',e:'Move through pages in a structured view.'},
+   {c:'rev',ar:'دمج المراسلات',en:'Mail Merge',d:'إنشاء خطابات وشهادات بالجملة من قائمة مستلمين (Excel/Access/Outlook) — تبويب مراسلات.',e:'Bulk letters from a recipient list (Excel/Access/Outlook).'},
+   {c:'rev',ar:'الماكرو',en:'Macro',d:'تسجيل سلسلة نقرات وكتابة لإعادة تنفيذها بزر أو اختصار — تبويب عرض.',e:'Records actions to replay via button or shortcut.'}
+  ]
+});
+
+App.initAccordions();
+App.initNav({ui:'#ui',tabsmap:'#ui',notes:'#ui',keys:'#ui',glossary:'#glossary',official:'#official',traps:'#traps',quiz:'#traps',predicted:'#traps'});
+</script>
+</body>
+</html>
