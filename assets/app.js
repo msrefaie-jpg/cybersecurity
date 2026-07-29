@@ -260,13 +260,40 @@ App.initShell = function (current) {
     tabbar.appendChild(t);
   }
 
-  // 2) تذييل الحقوق
+  // 2) شريط التنقل بين الفصول (السابق/التالي) + تذييل الحقوق
+  const ready = App.CHAPTERS
+    .map((ch, i) => ({ href: ch.href, icon: ch.icon, ready: ch.ready, name: en ? (App.CHAPTERS_EN[i] || ch.name) : ch.name }))
+    .filter(c => c.ready && c.href !== './');
+  const idx = ready.findIndex(c => c.href === current);
   const f = document.createElement('footer');
   f.className = 'app-footer';
   f.innerHTML = S.footer;
+  if (idx > -1) {
+    const prev = ready[idx - 1], next = ready[idx + 1];
+    const lbl = en ? { p: '← Previous chapter', n: 'Next chapter →' } : { p: '→ الفصل السابق', n: 'الفصل التالي ←' };
+    const pager = document.createElement('nav');
+    pager.className = 'pager';
+    pager.setAttribute('aria-label', en ? 'Chapter navigation' : 'التنقل بين الفصول');
+    pager.innerHTML = `<div class="container pager-in">
+      ${prev ? `<a class="pg prev" href="${prev.href}"><span class="pg-l">${lbl.p}</span><span class="pg-t">${prev.icon} ${prev.name}</span></a>` : '<span class="pg ghost" aria-hidden="true"></span>'}
+      ${next ? `<a class="pg next" href="${next.href}"><span class="pg-l">${lbl.n}</span><span class="pg-t">${next.icon} ${next.name}</span></a>` : '<span class="pg ghost" aria-hidden="true"></span>'}
+    </div>`;
+    document.body.appendChild(pager);
+  }
   document.body.appendChild(f);
 
-  // 3) إبقاء التبويب النشط ظاهراً في منتصف الشريط العلوي
+  // 3) جلب مسبق للصفحات المجاورة والنسخة اللغوية الأخرى وروابط الدرج عند التحويم
+  const prefetch = (href) => {
+    if (!href || href === '#' || href.startsWith('#') || document.querySelector(`link[data-pf="${CSS.escape(href)}"]`)) return;
+    const l = document.createElement('link');
+    l.rel = 'prefetch'; l.href = href; l.dataset.pf = href;
+    document.head.appendChild(l);
+  };
+  if (idx > -1) { if (ready[idx - 1]) prefetch(ready[idx - 1].href); if (ready[idx + 1]) prefetch(ready[idx + 1].href); }
+  prefetch(S.langHref(current));
+  drawer.querySelectorAll('a[href]').forEach(a => a.addEventListener('pointerenter', () => prefetch(a.getAttribute('href')), { once: true }));
+
+  // 4) إبقاء التبويب النشط ظاهراً في منتصف الشريط العلوي
   if (navInner) {
     const center = () => {
       const act = navInner.querySelector('a.active');
